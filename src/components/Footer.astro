@@ -1,0 +1,69 @@
+---
+import Logo from "./Logo.astro";
+
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: "Πλοήγηση",
+    links: [
+      { href: "#home", label: "Αρχική" },
+      { href: "#products", label: "Προϊόντα" },
+      { href: "#why-us", label: "Γιατί Εμάς" },
+      { href: "#about", label: "Σχετικά" },
+    ],
+  },
+  {
+    title: "Εταιρεία",
+    links: [
+      { href: "#faq", label: "Ερωτήσεις" },
+      { href: "#contact", label: "Επικοινωνία" },
+    ],
+  },
+];
+---
+
+<footer class="relative bg-navy-950 pt-20 pb-10 text-white">
+  <div class="container-page">
+    <div class="grid gap-12 border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
+      <div>
+        <Logo variant="light" />
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
+          Επίσημος αντιπρόσωπος και διανομέας φωτοβολταϊκών πάνελ, inverters, μπαταριών και
+          φορτιστών EV, για Ευρώπη και Λατινική Αμερική, από το 2008.
+        </p>
+      </div>
+
+      {
+        columns.map((col) => (
+          <div>
+            <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase">{col.title}</p>
+            <ul class="mt-5 flex flex-col gap-3">
+              {col.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-white/65 transition-colors hover:text-white">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      <div>
+        <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase">Επικοινωνία</p>
+        <ul class="mt-5 flex flex-col gap-3 text-sm text-white/65">
+          <li><a href="tel:+306976724504" class="hover:text-white">+30 697 672 4504</a></li>
+          <li><a href="mailto:info@atechenergy.eu" class="hover:text-white">info@atechenergy.eu</a></li>
+          <li class="leading-relaxed">7ο χλμ Θεσσαλονίκης – Καβάλας, Ευκαρπία 564 29</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
+      <p class="text-xs text-white/40">© {year} Alphatech Energy. Με επιφύλαξη παντός δικαιώματος.</p>
+      <p class="text-xs text-white/40">Επίσημος Διανομέας: Risen Group · SYL · Lithium Valley · Twinsel</p>
+    </div>
+  </div>
+</footer>

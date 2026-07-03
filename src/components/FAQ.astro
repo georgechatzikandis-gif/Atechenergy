@@ -1,0 +1,61 @@
+---
+const faqs = [
+  {
+    q: "Ποιες χώρες εξυπηρετείτε;",
+    a: "Διανέμουμε φωτοβολταϊκά προϊόντα σε όλη την Ευρώπη και τη Λατινική Αμερική, με άμεση εξυπηρέτηση εγκαταστατών, χονδρεμπόρων και μεγάλων έργων.",
+  },
+  {
+    q: "Προσφέρετε τεχνική υποστήριξη πριν και μετά την πώληση;",
+    a: "Ναι. Η ομάδα μας παρέχει τεχνική καθοδήγηση στην επιλογή εξοπλισμού, καθώς και υποστήριξη μετά την παράδοση για κάθε ερώτημα σχετικά με τα προϊόντα.",
+  },
+  {
+    q: "Μπορώ να λάβω εξατομικευμένη προσφορά για μεγάλο έργο;",
+    a: "Φυσικά. Επικοινωνήστε μαζί μας με τις προδιαγραφές του έργου σας και θα ετοιμάσουμε προσφορά με ανταγωνιστική τιμολόγηση και ρεαλιστικούς χρόνους παράδοσης.",
+  },
+  {
+    q: "Ποιες μάρκες αντιπροσωπεύετε;",
+    a: "Είμαστε επίσημος αντιπρόσωπος και διανομέας των Risen Group (φωτοβολταϊκά πάνελ), SYL (μπαταρίες), Lithium Valley (μπαταρίες) και Twinsel, μεταξύ άλλων εξειδικευμένων συνεργατών.",
+  },
+  {
+    q: "Παρέχετε εγγύηση στα προϊόντα;",
+    a: "Όλα τα προϊόντα συνοδεύονται από την επίσημη εγγύηση κατασκευαστή, σύμφωνα με τις διεθνείς προδιαγραφές ποιότητας κάθε μάρκας.",
+  },
+  {
+    q: "Πόσο γρήγορα μπορεί να παραδοθεί μια παραγγελία;",
+    a: "Ο χρόνος παράδοσης εξαρτάται από το μέγεθος και τον προορισμό της παραγγελίας. Θα σας ενημερώσουμε για ρεαλιστικό χρονοδιάγραμμα κατά την προσφορά.",
+  },
+];
+---
+
+<section id="faq" class="relative bg-white py-24 sm:py-32">
+  <div class="container-page">
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div data-reveal>
+        <span class="eyebrow border-azure-500/20 text-azure-600">Συχνές Ερωτήσεις</span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+          Έχετε απορίες; Έχουμε απαντήσεις.
+        </h2>
+        <p class="mt-4 text-navy-900/60">
+          Δεν βρήκατε αυτό που ψάχνατε; Επικοινωνήστε μαζί μας απευθείας.
+        </p>
+        <a href="#contact" class="btn btn-outline mt-8">Επικοινωνήστε Μαζί Μας</a>
+      </div>
+
+      <div class="divide-y divide-navy-900/8 rounded-3xl border border-navy-900/8" data-reveal>
+        {
+          faqs.map((f) => (
+            <details class="group p-6 open:bg-ice-100/40 sm:p-7">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-bold text-navy-900 marker:content-none">
+                {f.q}
+                <svg class="h-5 w-5 shrink-0 text-azure-500 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <p class="mt-4 text-sm leading-relaxed text-navy-900/60">{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

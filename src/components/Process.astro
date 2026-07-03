@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Επικοινωνία & Ανάγκες",
+    desc: "Μας περιγράφετε το έργο σας — μέγεθος, προδιαγραφές και χρονοδιάγραμμα.",
+  },
+  {
+    n: "02",
+    title: "Τεχνική Συμβουλευτική",
+    desc: "Προτείνουμε τον βέλτιστο συνδυασμό πάνελ, inverter και αποθήκευσης για τις ανάγκες σας.",
+  },
+  {
+    n: "03",
+    title: "Εξατομικευμένη Προσφορά",
+    desc: "Λαμβάνετε λεπτομερή προσφορά με ανταγωνιστική τιμολόγηση και χρόνους παράδοσης.",
+  },
+  {
+    n: "04",
+    title: "Παράδοση & Υποστήριξη",
+    desc: "Φροντίζουμε τη διανομή και παραμένουμε διαθέσιμοι για τεχνική υποστήριξη μετά την παράδοση.",
+  },
+];
+---
+
+<section class="relative bg-navy-950 py-24 text-white sm:py-32">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <span class="eyebrow border-white/20 bg-white/10 text-azure-200">Πώς Δουλεύουμε</span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        Από την πρώτη επαφή έως την παράδοση
+      </h2>
+    </div>
+
+    <div class="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="pointer-events-none absolute top-10 right-0 left-0 hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent lg:block"></div>
+      {
+        steps.map((s, i) => (
+          <div class="relative" data-reveal style={`transition-delay:${i * 80}ms`}>
+            <div class="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.04] font-display text-2xl font-extrabold text-azure-300 backdrop-blur-xl">
+              {s.n}
+            </div>
+            <h3 class="mt-6 font-display text-lg font-bold text-white">{s.title}</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-white/60">{s.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+---
+import GridPattern from "./GridPattern.astro";
+
+const pillars = [
+  {
+    title: "Το Όραμά Μας",
+    text: "Να παρέχουμε ποιοτικά και αξιόπιστα προϊόντα, στοχεύοντας σε μακροχρόνιες, αξιόπιστες και αποδοτικές συνεργασίες.",
+    icon: "M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178ZM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
+  },
+  {
+    title: "Ο Στόχος Μας",
+    text: "Η παροχή αξιόπιστων λύσεων και αποδοτικών προϊόντων για τους συνεργάτες και πελάτες μας, στις πιο ανταγωνιστικές τιμές.",
+    icon: "M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5",
+  },
+  {
+    title: "Οι Αξίες Μας",
+    text: "Αξιοπιστία, τεχνική αρτιότητα και σεβασμός στο περιβάλλον σε κάθε συνεργασία που αναλαμβάνουμε.",
+    icon: "M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+  },
+];
+---
+
+<section id="about" class="relative overflow-hidden bg-navy-950 py-24 text-white sm:py-32">
+  <GridPattern id="about-grid" class="text-white" opacity={0.08} />
+  <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-azure-500/10 blur-[140px]"></div>
+
+  <div class="container-page relative grid gap-16 lg:grid-cols-2 lg:items-start">
+    <div data-reveal>
+      <span class="eyebrow border-white/20 bg-white/10 text-azure-200">Σχετικά με Εμάς</span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        Χτίζοντας πάνω σε 15+ χρόνια εμπειρίας στην αγορά ενέργειας
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/70">
+        Η <span class="font-semibold text-white">Alphatech</span> ιδρύθηκε το <span class="font-semibold text-white">2008</span>
+        με σκοπό να προσφέρει επώνυμα, ποιοτικά και αξιόπιστα προϊόντα στις πιο ανταγωνιστικές
+        τιμές. Έχοντας σύμμαχο μεγάλα ονόματα της παγκόσμιας αγοράς, καθώς και εξειδικευμένους
+        συνεργάτες, η εταιρεία μας είναι επίσημος αντιπρόσωπος και διανομέας για την Ευρώπη και
+        τη Λατινική Αμερική.
+      </p>
+
+      <div class="mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+        <div>
+          <p class="font-display text-3xl font-extrabold text-white">2008</p>
+          <p class="mt-1 text-sm text-white/55">Έτος Ίδρυσης</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-extrabold text-white">2</p>
+          <p class="mt-1 text-sm text-white/55">Ήπειροι Διανομής</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-extrabold text-white">4+</p>
+          <p class="mt-1 text-sm text-white/55">Επίσημες Συνεργασίες</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-5" data-reveal>
+      {
+        pillars.map((p) => (
+          <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl transition-colors duration-300 hover:bg-white/[0.07]">
+            <div class="flex items-start gap-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-azure-400 to-azure-600 text-white">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d={p.icon} />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">{p.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-white/65">{p.text}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
