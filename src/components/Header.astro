@@ -11,15 +11,10 @@ const navLinks = [
 ];
 ---
 
-<header
-  id="site-header"
-  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
-  data-header
->
+<header id="site-header" class="fixed inset-x-0 top-0 z-50">
   <div class="container-page">
     <div
-      class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-navy-900/70 px-4 py-3 shadow-[0_8px_32px_-12px_rgba(5,11,22,0.5)] backdrop-blur-xl transition-colors duration-300 sm:px-6"
-      data-header-bar
+      class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-navy-900/85 px-4 py-3 shadow-[0_8px_32px_-12px_rgba(5,11,22,0.5)] backdrop-blur-md sm:px-6"
     >
       <a href="#home" class="shrink-0" aria-label="Alphatech Energy — Αρχική">
         <Logo variant="light" />
@@ -99,8 +94,6 @@ const navLinks = [
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const menu = document.querySelector<HTMLDivElement>("[data-mobile-menu]");
   const links = document.querySelectorAll<HTMLAnchorElement>("[data-mobile-link]");
-  const header = document.querySelector<HTMLElement>("[data-header]");
-  const bar = document.querySelector<HTMLElement>("[data-header-bar]");
 
   let open = false;
   const setOpen = (value: boolean) => {
@@ -117,16 +110,4 @@ const navLinks = [
 
   toggle?.addEventListener("click", () => setOpen(!open));
   links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
-
-  let lastScroll = 0;
-  const onScroll = () => {
-    const y = window.scrollY;
-    if (bar) {
-      bar.classList.toggle("bg-navy-900/95", y > 12);
-      bar.classList.toggle("bg-navy-900/70", y <= 12);
-    }
-    lastScroll = y;
-  };
-  document.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 </script>
