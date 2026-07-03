@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/manrope";
+
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Manrope Variable", system-ui, sans-serif;
+
+  /* Brand palette, derived from the Alphatech mark */
+  --color-navy-950: #050b16;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f2044;
+  --color-navy-700: #16305e;
+  --color-navy-600: #1c3f7c;
+  --color-azure-600: #1f63b8;
+  --color-azure-500: #2f7fe0;
+  --color-azure-400: #4a97ee;
+  --color-azure-300: #7cb9f5;
+  --color-ice-200: #cfe6fd;
+  --color-ice-100: #eaf4fe;
+  --color-gold-400: #cd9f4f;
+  --color-gold-300: #e4c47f;
+
+  --shadow-glow: 0 20px 60px -20px rgb(47 127 224 / 0.45);
+  --shadow-card: 0 1px 2px rgb(10 22 40 / 0.06), 0 12px 32px -12px rgb(10 22 40 / 0.12);
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-navy-900);
+    background: #ffffff;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background: var(--color-azure-500);
+    color: white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-out;
+  }
+  .btn-primary {
+    @apply text-white shadow-[0_10px_30px_-8px_rgb(47_127_224_/_0.6)];
+    background: linear-gradient(135deg, var(--color-azure-500), var(--color-navy-700));
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-[0_16px_36px_-8px_rgb(47_127_224_/_0.75)];
+  }
+  .btn-ghost {
+    @apply border border-white/25 bg-white/5 text-white backdrop-blur-md hover:bg-white/10;
+  }
+  .btn-outline {
+    @apply border border-navy-900/15 text-navy-900 hover:border-azure-500 hover:text-azure-600;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-azure-400/30 bg-azure-500/10 px-4 py-1.5 text-xs font-bold tracking-[0.18em] text-azure-600 uppercase;
+  }
+
+  /* [data-reveal] elements only start hidden once .js-ready confirms JS is
+     running and the observer is armed — keeps content visible if JS fails. */
+  .js-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js-ready [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

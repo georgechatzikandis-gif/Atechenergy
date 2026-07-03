@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const { title, description, path = "/" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonicalURL = new URL(base.replace(/\/$/, "") + path, Astro.site);
+const ogImage = new URL(`${base.replace(/\/$/, "")}/og-image.jpg`, Astro.site);
+const faviconHref = `${base.replace(/\/$/, "")}/favicon.svg`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Alphatech Energy",
+  alternateName: "Alphatech Co Ltd",
+  url: "https://atechenergy.eu",
+  logo: "https://atechenergy.eu/favicon.svg",
+  foundingDate: "2008",
+  description:
+    "Επίσημος αντιπρόσωπος και διανομέας φωτοβολταϊκών πάνελ, inverters, μπαταριών αποθήκευσης και φορτιστών EV για την Ευρώπη και Λατινική Αμερική.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "7ο χλμ Θεσσαλονίκης - Καβάλας, περιοχή Τιτάν",
+    addressLocality: "Ευκαρπία, Θεσσαλονίκη",
+    postalCode: "564 29",
+    addressCountry: "GR",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+30-697-672-4504",
+    contactType: "sales",
+    email: "info@atechenergy.eu",
+    areaServed: ["EU", "Latin America"],
+  },
+  sameAs: [],
+};
+---
+
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={faviconHref} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a1628" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="el_GR" />
+    <meta property="og:site_name" content="Alphatech Energy" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="antialiased">
+    <slot />
+
+    <script>
+      const targets = document.querySelectorAll("[data-reveal]");
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      );
+      targets.forEach((el) => io.observe(el));
+
+      // Only hide elements once the observer is armed, so a slow or failed
+      // script never leaves content permanently invisible.
+      document.documentElement.classList.add("js-ready");
+
+      // bfcache restores don't re-fire the observer for already-passed elements.
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) {
+          targets.forEach((el) => el.classList.add("is-visible"));
+        }
+      });
+    </script>
+  </body>
+</html>

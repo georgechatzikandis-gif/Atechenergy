@@ -1,0 +1,87 @@
+---
+const partners = ["RISEN GROUP", "SYL BATTERIES", "LITHIUM VALLEY", "TWINSEL"];
+
+const regions = [
+  {
+    name: "Ευρώπη",
+    desc: "Κύριος πυλώνας δραστηριότητας με άμεση εξυπηρέτηση συνεργατών και ταχεία διανομή.",
+  },
+  {
+    name: "Λατινική Αμερική",
+    desc: "Αναπτυσσόμενο δίκτυο συνεργατών με στόχο τη διεύρυνση της παρουσίας μας στην αγορά.",
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-white py-24 sm:py-32">
+  <div class="container-page">
+    <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+      <div data-reveal>
+        <span class="eyebrow border-azure-500/20 text-azure-600">Διανομή</span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+          Ενεργό δίκτυο διανομής σε Ευρώπη &amp; Λατινική Αμερική
+        </h2>
+        <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+          Ως επίσημος αντιπρόσωπος κορυφαίων κατασκευαστών, εξυπηρετούμε συνεργάτες και πελάτες
+          με ταχύτητα, συνέπεια και τεχνική υποστήριξη — σε κάθε στάδιο της αλυσίδας εφοδιασμού.
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          {
+            regions.map((r) => (
+              <div class="rounded-2xl border border-navy-900/8 bg-ice-100/60 p-6">
+                <div class="flex items-center gap-2.5">
+                  <svg class="h-5 w-5 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                  <h3 class="font-display font-bold text-navy-900">{r.name}</h3>
+                </div>
+                <p class="mt-2.5 text-sm leading-relaxed text-navy-900/60">{r.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-8 flex items-start gap-2.5 text-sm text-navy-900/55">
+          <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6" />
+          </svg>
+          <p><span class="font-semibold text-navy-900">Έδρα:</span> 7ο χλμ Θεσσαλονίκης – Καβάλας, περιοχή Τιτάν, Ευκαρπία 564 29, Ελλάδα</p>
+        </div>
+      </div>
+
+      <div class="relative" data-reveal>
+        <div class="relative mx-auto aspect-square max-w-md rounded-[2.5rem] border border-navy-900/8 bg-gradient-to-br from-ice-100 to-white p-10">
+          <svg viewBox="0 0 200 200" class="h-full w-full text-azure-500" aria-hidden="true">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-opacity="0.15" stroke-width="1"></circle>
+            <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" stroke-opacity="0.2" stroke-width="1"></circle>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" stroke-opacity="0.25" stroke-width="1"></circle>
+            <line x1="60" y1="60" x2="140" y2="140" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+            <line x1="140" y1="60" x2="60" y2="140" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+            <circle cx="60" cy="60" r="5" fill="currentColor"></circle>
+            <circle cx="140" cy="140" r="7" fill="currentColor" class="animate-float"></circle>
+            <circle cx="140" cy="60" r="4" fill="currentColor" fill-opacity="0.6"></circle>
+            <circle cx="60" cy="140" r="4" fill="currentColor" fill-opacity="0.6"></circle>
+            <circle cx="100" cy="100" r="9" fill="#0d2249" stroke="white" stroke-width="3"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 border-t border-navy-900/8 pt-12" data-reveal>
+      <p class="text-center text-xs font-bold tracking-[0.18em] text-navy-900/40 uppercase">
+        Επίσημος Συνεργάτης &amp; Διανομέας
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-14 gap-y-6">
+        {
+          partners.map((p) => (
+            <span class="font-display text-lg font-extrabold tracking-wide text-navy-900/35 transition-colors hover:text-navy-900/70 sm:text-xl">
+              {p}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

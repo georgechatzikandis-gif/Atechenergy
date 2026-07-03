@@ -1,0 +1,35 @@
+---
+interface Props {
+  variant?: "dark" | "light";
+  class?: string;
+}
+const { variant = "dark", class: className = "" } = Astro.props;
+---
+
+<span class={`inline-flex items-center gap-2.5 ${className}`}>
+  <svg
+    viewBox="0 0 120 108"
+    class="h-8 w-auto shrink-0 sm:h-9"
+    role="img"
+    aria-label="Alphatech logomark"
+  >
+    <defs>
+      <linearGradient id="atech-mark" x1="8%" y1="95%" x2="98%" y2="5%">
+        <stop offset="0%" stop-color="#0d2249"></stop>
+        <stop offset="48%" stop-color="#1f5fa8"></stop>
+        <stop offset="100%" stop-color="#5aa9f0"></stop>
+      </linearGradient>
+    </defs>
+    <path
+      fill="url(#atech-mark)"
+      fill-rule="evenodd"
+      d="M60 4 L114 100 L72 100 L60 76 L48 100 L6 100 Z"
+    ></path>
+    <path fill="#0d2249" d="M60 58 L76 100 L44 100 Z"></path>
+  </svg>
+  <span
+    class={`font-display text-xl font-extrabold tracking-tight sm:text-2xl ${variant === "dark" ? "text-navy-900" : "text-white"}`}
+  >
+    ALPHA<span class="bg-gradient-to-r from-azure-500 to-azure-300 bg-clip-text text-transparent">TECH</span>
+  </span>
+</span>
