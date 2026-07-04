@@ -1,13 +1,16 @@
 ---
 import Logo from "./Logo.astro";
 
+const isHome = Astro.url.pathname === "/";
+const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
+
 const navLinks = [
-  { href: "#home", label: "Αρχική" },
-  { href: "#products", label: "Προϊόντα" },
-  { href: "#why-us", label: "Γιατί Εμάς" },
-  { href: "#about", label: "Σχετικά" },
-  { href: "#faq", label: "Ερωτήσεις" },
-  { href: "#contact", label: "Επικοινωνία" },
+  { href: isHome ? "#home" : "/", label: "Αρχική" },
+  { href: "/products/", label: "Προϊόντα" },
+  { href: anchor("why-us"), label: "Γιατί Εμάς" },
+  { href: anchor("about"), label: "Σχετικά" },
+  { href: anchor("faq"), label: "Ερωτήσεις" },
+  { href: anchor("contact"), label: "Επικοινωνία" },
 ];
 ---
 
@@ -16,7 +19,7 @@ const navLinks = [
     <div
       class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-navy-900/85 px-4 py-3 shadow-[0_8px_32px_-12px_rgba(5,11,22,0.5)] backdrop-blur-md sm:px-6"
     >
-      <a href="#home" class="shrink-0" aria-label="Alphatech Energy — Αρχική">
+      <a href={isHome ? "#home" : "/"} class="shrink-0" aria-label="Alphatech Energy — Αρχική">
         <Logo variant="light" />
       </a>
 
@@ -43,7 +46,7 @@ const navLinks = [
           </svg>
           +30 697 672 4504
         </a>
-        <a href="#contact" class="btn btn-primary">Ζητήστε Προσφορά</a>
+        <a href={anchor("contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
       </div>
 
       <button
@@ -83,7 +86,7 @@ const navLinks = [
           <a href="tel:+306976724504" class="mt-2 rounded-xl px-4 py-3 text-base font-semibold text-azure-300">
             +30 697 672 4504
           </a>
-          <a href="#contact" class="btn btn-primary mt-2 justify-center" data-mobile-link>Ζητήστε Προσφορά</a>
+          <a href={anchor("contact")} class="btn btn-primary mt-2 justify-center" data-mobile-link>Ζητήστε Προσφορά</a>
         </nav>
       </div>
     </div>

@@ -3,21 +3,24 @@ import Logo from "./Logo.astro";
 
 const year = new Date().getFullYear();
 
+const isHome = Astro.url.pathname === "/";
+const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
+
 const columns = [
   {
     title: "Πλοήγηση",
     links: [
-      { href: "#home", label: "Αρχική" },
-      { href: "#products", label: "Προϊόντα" },
-      { href: "#why-us", label: "Γιατί Εμάς" },
-      { href: "#about", label: "Σχετικά" },
+      { href: isHome ? "#home" : "/", label: "Αρχική" },
+      { href: "/products/", label: "Προϊόντα" },
+      { href: anchor("why-us"), label: "Γιατί Εμάς" },
+      { href: anchor("about"), label: "Σχετικά" },
     ],
   },
   {
     title: "Εταιρεία",
     links: [
-      { href: "#faq", label: "Ερωτήσεις" },
-      { href: "#contact", label: "Επικοινωνία" },
+      { href: anchor("faq"), label: "Ερωτήσεις" },
+      { href: anchor("contact"), label: "Επικοινωνία" },
     ],
   },
 ];
