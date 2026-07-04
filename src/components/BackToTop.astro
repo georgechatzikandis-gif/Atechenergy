@@ -1,0 +1,38 @@
+---
+---
+
+<button
+  type="button"
+  id="back-to-top"
+  aria-label="Επιστροφή στην αρχή της σελίδας"
+  class="fixed right-5 bottom-5 z-40 flex h-12 w-12 items-center justify-center rounded-full text-white opacity-0 shadow-[0_10px_30px_-8px_rgb(47_127_224_/_0.6)] transition-opacity duration-300 pointer-events-none sm:right-8 sm:bottom-8"
+  style="background: linear-gradient(135deg, var(--color-azure-500), var(--color-navy-700));"
+>
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"></path>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById("back-to-top");
+  const hero = document.getElementById("home");
+
+  if (btn && hero) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const show = !entry.isIntersecting;
+        btn.classList.toggle("opacity-100", show);
+        btn.classList.toggle("opacity-0", !show);
+        btn.classList.toggle("pointer-events-auto", show);
+        btn.classList.toggle("pointer-events-none", !show);
+      },
+      { threshold: 0 }
+    );
+    io.observe(hero);
+  }
+
+  btn?.addEventListener("click", () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+</script>
