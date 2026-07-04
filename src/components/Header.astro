@@ -1,12 +1,14 @@
 ---
 import Logo from "./Logo.astro";
+import { base, withBase } from "../lib/paths";
 
-const isHome = Astro.url.pathname === "/";
-const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
+const isHome = Astro.url.pathname === base;
+const anchor = (id: string) => (isHome ? `#${id}` : withBase(`#${id}`));
+const homeHref = isHome ? "#home" : base;
 
 const navLinks = [
-  { href: isHome ? "#home" : "/", label: "Αρχική" },
-  { href: "/products/", label: "Προϊόντα" },
+  { href: homeHref, label: "Αρχική" },
+  { href: withBase("products/"), label: "Προϊόντα" },
   { href: anchor("why-us"), label: "Γιατί Εμάς" },
   { href: anchor("about"), label: "Σχετικά" },
   { href: anchor("faq"), label: "Ερωτήσεις" },
@@ -19,7 +21,7 @@ const navLinks = [
     <div
       class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-navy-900/85 px-4 py-3 shadow-[0_8px_32px_-12px_rgba(5,11,22,0.5)] backdrop-blur-md sm:px-6"
     >
-      <a href={isHome ? "#home" : "/"} class="shrink-0" aria-label="Alphatech Energy — Αρχική">
+      <a href={homeHref} class="shrink-0" aria-label="Alphatech Energy — Αρχική">
         <Logo variant="light" />
       </a>
 

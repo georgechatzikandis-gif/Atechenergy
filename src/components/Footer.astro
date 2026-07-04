@@ -1,17 +1,18 @@
 ---
 import Logo from "./Logo.astro";
+import { base, withBase } from "../lib/paths";
 
 const year = new Date().getFullYear();
 
-const isHome = Astro.url.pathname === "/";
-const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
+const isHome = Astro.url.pathname === base;
+const anchor = (id: string) => (isHome ? `#${id}` : withBase(`#${id}`));
 
 const columns = [
   {
     title: "Πλοήγηση",
     links: [
-      { href: isHome ? "#home" : "/", label: "Αρχική" },
-      { href: "/products/", label: "Προϊόντα" },
+      { href: isHome ? "#home" : base, label: "Αρχική" },
+      { href: withBase("products/"), label: "Προϊόντα" },
       { href: anchor("why-us"), label: "Γιατί Εμάς" },
       { href: anchor("about"), label: "Σχετικά" },
     ],
