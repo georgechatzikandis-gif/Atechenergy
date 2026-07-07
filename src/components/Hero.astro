@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import GridPattern from "./GridPattern.astro";
+import HeroCarousel from "./HeroCarousel.astro";
 import { withBase } from "../lib/paths";
-import hybridMicroinverter from "../assets/products/hybrid-microinverter-2000w.jpg";
 
 const badges = [
   { label: "Αξιόπιστα Προϊόντα", icon: "shield" },
@@ -67,32 +66,6 @@ const icons: Record<string, string> = {
       </dl>
     </div>
 
-    <div class="relative" data-reveal>
-      <div class="relative mx-auto max-w-md">
-        <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-2xl">
-          <div class="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white p-8 sm:p-10">
-            <div
-              class="pointer-events-none absolute inset-0"
-              style="background:radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--color-azure-500) 14%, transparent), transparent 70%)"
-            >
-            </div>
-            <Image
-              src={hybridMicroinverter}
-              alt="Υβριδικό Microinverter 2000W της Alphatech"
-              width={440}
-              height={310}
-              class="relative h-auto w-full drop-shadow-xl"
-            />
-          </div>
-          <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 bg-navy-950 px-6 py-4 text-center">
-            <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
-            <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-            <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
-            <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-            <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <HeroCarousel />
   </div>
 </section>

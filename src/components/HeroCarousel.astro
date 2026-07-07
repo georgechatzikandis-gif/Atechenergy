@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import topconPanels from "../assets/hero/risen-topcon-panels.jpg";
+import hjtPanels from "../assets/hero/risen-hjt-panels.jpg";
+import batteryStorage from "../assets/hero/risen-battery-storage.jpg";
+
+const slides = [
+  { image: topconPanels, tag: "TOPCON PANELS", title: "Topcon Πάνελ" },
+  { image: hjtPanels, tag: "HETEROJUNCTION", title: "HJT Πάνελ" },
+  { image: batteryStorage, tag: "ENERGY STORAGE", title: "Μπαταρίες Αποθήκευσης" },
+];
+---
+
+<div class="relative" data-reveal>
+  <div class="relative mx-auto max-w-md">
+    <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-2xl">
+      <div class="relative aspect-[4/3] overflow-hidden" data-hero-carousel>
+        {
+          slides.map((s, i) => (
+            <div
+              class="absolute inset-0 transition-all duration-700 ease-out"
+              data-slide
+              style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
+            >
+              <Image
+                src={s.image}
+                alt={s.title}
+                width={440}
+                height={330}
+                loading={i === 0 ? "eager" : "lazy"}
+                class="h-full w-full object-cover"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 to-transparent p-5 pt-10">
+                <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase">{s.tag}</p>
+                <p class="mt-0.5 font-display text-lg font-bold text-white">{s.title}</p>
+              </div>
+            </div>
+          ))
+        }
+
+        <div class="absolute right-0 bottom-3 left-0 flex justify-center gap-2">
+          {
+            slides.map((_, i) => (
+              <button
+                type="button"
+                class="h-1.5 rounded-full bg-white/50 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-white w-1.5"
+                data-dot={i}
+                data-active={i === 0}
+                aria-label={`Προβολή διαφάνειας ${i + 1}`}
+              />
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 bg-navy-950 px-6 py-4 text-center">
+        <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]");
+
+  roots.forEach((root) => {
+    const slideEls = Array.from(root.querySelectorAll<HTMLElement>("[data-slide]"));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-dot]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    const render = () => {
+      slideEls.forEach((el, i) => {
+        const offset = i === current ? "0" : i < current ? "-100%" : "100%";
+        el.style.transform = `translateX(${offset})`;
+        el.style.opacity = i === current ? "1" : "0";
+      });
+      dots.forEach((dot, i) => dot.setAttribute("data-active", String(i === current)));
+    };
+
+    const goTo = (index: number) => {
+      current = (index + slideEls.length) % slideEls.length;
+      render();
+    };
+
+    const start = () => {
+      if (reduceMotion || timer) return;
+      timer = setInterval(() => goTo(current + 1), 4500);
+    };
+    const stop = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    dots.forEach((dot, i) =>
+      dot.addEventListener("click", () => {
+        goTo(i);
+        stop();
+        start();
+      })
+    );
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+
+    render();
+    start();
+  });
+</script>
