@@ -23,25 +23,25 @@ const steps = [
 ];
 ---
 
-<section class="relative bg-navy-950 py-24 text-white sm:py-32">
+<section class="relative bg-ice-100/40 py-24 sm:py-32">
   <div class="container-page">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <span class="eyebrow border-white/20 bg-white/10 text-azure-200">Πώς Δουλεύουμε</span>
-      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+      <span class="eyebrow border-azure-500/20 text-azure-600">Πώς Δουλεύουμε</span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
         Από την πρώτη επαφή έως την παράδοση
       </h2>
     </div>
 
     <div class="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="pointer-events-none absolute top-10 right-0 left-0 hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent lg:block"></div>
+      <div class="pointer-events-none absolute top-10 right-0 left-0 hidden h-px bg-gradient-to-r from-transparent via-navy-900/10 to-transparent lg:block"></div>
       {
         steps.map((s, i) => (
           <div class="relative" data-reveal style={`transition-delay:${i * 80}ms`}>
-            <div class="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.07] font-display text-2xl font-extrabold text-azure-300">
+            <div class="flex h-20 w-20 items-center justify-center rounded-2xl border border-navy-900/8 bg-white font-display text-2xl font-extrabold text-azure-600 shadow-card">
               {s.n}
             </div>
-            <h3 class="mt-6 font-display text-lg font-bold text-white">{s.title}</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-white/60">{s.desc}</p>
+            <h3 class="mt-6 font-display text-lg font-bold text-navy-900">{s.title}</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-navy-900/60">{s.desc}</p>
           </div>
         ))
       }
