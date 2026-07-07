@@ -1,59 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import ProductArt from "./ProductArt.astro";
-import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
-import hybridMicroinverter from "../assets/products/hybrid-microinverter-2000w.jpg";
-
-const products = [
-  {
-    name: "Μονοκρυσταλλικά Πάνελ",
-    tag: "Monocrystalline PV Module",
-    desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
-    art: "mono",
-  },
-  {
-    name: "Topcon Πάνελ",
-    tag: "Topcon Panels",
-    desc: "Τεχνολογία αιχμής N-type με ενισχυμένη απόδοση και χαμηλότερη ετήσια φθορά.",
-    art: "topcon",
-  },
-  {
-    name: "HJT Πάνελ",
-    tag: "Heterojunction Panels",
-    desc: "Υβριδική τεχνολογία κελιών για μέγιστη απόδοση σε κάθε συνθήκη φωτισμού.",
-    art: "hjt",
-  },
-  {
-    name: "Μπαταρίες Αποθήκευσης",
-    tag: "PV Storage Batteries",
-    desc: "Συστήματα αποθήκευσης ενέργειας για αυτονομία και βελτιστοποίηση της κατανάλωσης.",
-    art: "battery",
-  },
-  {
-    name: "Inverters",
-    tag: "Grid & Hybrid Inverters",
-    desc: "Αξιόπιστοι μετατροπείς ισχύος από κορυφαίους κατασκευαστές, για κάθε τύπο έργου.",
-    art: "inverter",
-  },
-  {
-    name: "Φορτιστές EV",
-    tag: "EV Chargers",
-    desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
-    art: "ev",
-  },
-  {
-    name: "Διακόπτης Ασφαλείας Πυρόσβεσης",
-    tag: "Firefighter Safety Switch",
-    desc: "Ταχεία διακοπή της υψηλής τάσης μεταξύ πάνελ και inverter σε περίπτωση έκτακτης ανάγκης, για κυκλώματα έως 1500V.",
-    photo: firefighterSwitch,
-  },
-  {
-    name: "Υβριδικό Microinverter 2000W",
-    tag: "Hybrid Microinverter 2000W",
-    desc: "97% μέγιστη απόδοση, 4 MPPT trackers, WiFi και συμβατότητα με μπαταρίες LiFePO4 — παράγει, αποθηκεύει και εξοικονομεί ενέργεια.",
-    photo: hybridMicroinverter,
-  },
-] satisfies { name: string; tag: string; desc: string; art?: "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev"; photo?: ImageMetadata }[];
+import { products } from "../data/products";
+import { withBase } from "../lib/paths";
 
 const specs = [
   { value: "132", label: "Cell Monocrystalline Module" },
@@ -81,7 +30,8 @@ const specs = [
     <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         products.map((p, i) => (
-          <div
+          <a
+            href={withBase(`products/${p.slug}/`)}
             class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]"
             data-reveal
             style={`transition-delay:${i * 60}ms`}
@@ -103,8 +53,14 @@ const specs = [
               <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
               <h3 class="mt-2 font-display text-xl font-bold text-navy-900">{p.name}</h3>
               <p class="mt-3 text-sm leading-relaxed text-navy-900/60">{p.desc}</p>
+              <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-600">
+                Περισσότερα
+                <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
