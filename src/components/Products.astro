@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import ProductArt from "./ProductArt.astro";
+import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
+import hybridMicroinverter from "../assets/products/hybrid-microinverter-2000w.jpg";
 
 const products = [
   {
@@ -38,7 +41,19 @@ const products = [
     desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
     art: "ev",
   },
-] as const;
+  {
+    name: "Διακόπτης Ασφαλείας Πυρόσβεσης",
+    tag: "Firefighter Safety Switch",
+    desc: "Ταχεία διακοπή της υψηλής τάσης μεταξύ πάνελ και inverter σε περίπτωση έκτακτης ανάγκης, για κυκλώματα έως 1500V.",
+    photo: firefighterSwitch,
+  },
+  {
+    name: "Υβριδικό Microinverter 2000W",
+    tag: "Hybrid Microinverter 2000W",
+    desc: "97% μέγιστη απόδοση, 4 MPPT trackers, WiFi και συμβατότητα με μπαταρίες LiFePO4 — παράγει, αποθηκεύει και εξοικονομεί ενέργεια.",
+    photo: hybridMicroinverter,
+  },
+] satisfies { name: string; tag: string; desc: string; art?: "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev"; photo?: ImageMetadata }[];
 
 const specs = [
   { value: "132", label: "Cell Monocrystalline Module" },
@@ -71,8 +86,18 @@ const specs = [
             data-reveal
             style={`transition-delay:${i * 60}ms`}
           >
-            <div class="flex h-40 items-center justify-center bg-gradient-to-br from-ice-100 to-white">
-              <ProductArt kind={p.art} class="h-32 w-auto transition-transform duration-500 group-hover:scale-105" />
+            <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+              {p.photo ? (
+                <Image
+                  src={p.photo}
+                  alt={p.name}
+                  width={340}
+                  height={220}
+                  class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <ProductArt kind={p.art!} class="h-32 w-auto transition-transform duration-500 group-hover:scale-105" />
+              )}
             </div>
             <div class="p-8 pt-6">
               <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
