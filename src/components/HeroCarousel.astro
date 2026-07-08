@@ -14,7 +14,7 @@ const slides = [
 <div class="relative" data-reveal>
   <div class="relative mx-auto max-w-full">
     <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-2xl">
-      <div class="relative aspect-[16/9] overflow-hidden" data-hero-carousel>
+      <div class="relative aspect-[16/9] touch-pan-y overflow-hidden select-none" data-hero-carousel>
         {
           slides.map((s, i) => (
             <div
@@ -28,7 +28,8 @@ const slides = [
                 width={440}
                 height={330}
                 loading={i === 0 ? "eager" : "lazy"}
-                class="h-full w-full object-cover"
+                draggable={false}
+                class="h-full w-full object-cover [-webkit-user-drag:none]"
               />
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 to-transparent p-5 pt-10">
                 <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase">{s.tag}</p>
@@ -109,6 +110,41 @@ const slides = [
 
     root.addEventListener("mouseenter", stop);
     root.addEventListener("mouseleave", start);
+
+    // Swipe / drag navigation (touch and mouse via the Pointer Events API).
+    let dragStartX: number | null = null;
+    let dragStartY: number | null = null;
+    let dragging = false;
+    const SWIPE_THRESHOLD = 40;
+
+    root.addEventListener("pointerdown", (e) => {
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+      dragging = true;
+      stop();
+      e.preventDefault();
+    });
+
+    root.addEventListener("pointerup", (e) => {
+      if (!dragging || dragStartX === null || dragStartY === null) return;
+      const deltaX = e.clientX - dragStartX;
+      const deltaY = e.clientY - dragStartY;
+      dragging = false;
+      dragStartX = null;
+      dragStartY = null;
+      // Ignore mostly-vertical drags so page scrolling on touch isn't hijacked.
+      if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+        goTo(current + (deltaX < 0 ? 1 : -1));
+      }
+      start();
+    });
+
+    root.addEventListener("pointercancel", () => {
+      dragging = false;
+      dragStartX = null;
+      dragStartY = null;
+      start();
+    });
 
     render();
     start();
