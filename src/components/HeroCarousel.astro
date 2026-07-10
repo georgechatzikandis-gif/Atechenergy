@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import topconPanels from "../assets/hero/risen-topcon-panels.jpg";
 import hjtPanels from "../assets/hero/risen-hjt-panels.jpg";
 import batteryStorage from "../assets/hero/risen-battery-storage.jpg";
-import microinverters from "../assets/hero/tsun-microinverters.jpg";
+import microinverters from "../assets/products/hybrid-microinverter-2000w.jpg";
 import ciStorage from "../assets/hero/lithiumvalley-ci-storage.jpg";
 import homeStorage from "../assets/hero/lithiumvalley-home-storage.jpg";
 
@@ -11,13 +11,13 @@ const slides = [
   { image: topconPanels, tag: "TOPCON PANELS", title: "Topcon Πάνελ", width: 1600, height: 985 },
   { image: hjtPanels, tag: "HETEROJUNCTION", title: "HJT Πάνελ", width: 1600, height: 1034 },
   { image: batteryStorage, tag: "ENERGY STORAGE", title: "Μπαταρίες Αποθήκευσης", width: 1600, height: 810 },
-  { image: microinverters, tag: "MICROINVERTERS", title: "Υβριδικά Microinverters", width: 1600, height: 813 },
-  { image: ciStorage, tag: "C&I ENERGY STORAGE", title: "Αποθήκευση για Επιχειρήσεις", width: 1600, height: 934 },
+  { image: microinverters, tag: "MICROINVERTERS", title: "Υβριδικά Microinverters", width: 1600, height: 998 },
+  { image: ciStorage, tag: "C&I ENERGY STORAGE", title: "Αποθήκευση για Επιχειρήσεις", width: 1600, height: 810 },
   { image: homeStorage, tag: "HOME ENERGY STORAGE", title: "Οικιακή Αποθήκευση & EV", width: 1600, height: 1071 },
 ];
 ---
 
-<div class="relative h-[68vh] min-h-[440px] touch-pan-y overflow-hidden bg-navy-950 select-none sm:h-[74vh] lg:h-[82vh]" data-hero-carousel>
+<div class="relative h-[62vh] min-h-[420px] touch-pan-y overflow-hidden bg-navy-950 select-none sm:h-[68vh] lg:h-[76vh]" data-hero-carousel>
   {
     slides.map((s, i) => (
       <div
@@ -32,7 +32,7 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain p-6 sm:p-10 lg:p-14 [-webkit-user-drag:none]"
+          class="h-full w-full object-contain object-top p-4 sm:p-6 lg:p-10 [-webkit-user-drag:none]"
         />
         <div class="absolute bottom-32 left-4 sm:bottom-36 sm:left-6">
           <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{s.tag}</p>
