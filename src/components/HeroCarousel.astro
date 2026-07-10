@@ -3,65 +3,68 @@ import { Image } from "astro:assets";
 import topconPanels from "../assets/hero/risen-topcon-panels.jpg";
 import hjtPanels from "../assets/hero/risen-hjt-panels.jpg";
 import batteryStorage from "../assets/hero/risen-battery-storage.jpg";
+import microinverters from "../assets/hero/tsun-microinverters.jpg";
+import ciStorage from "../assets/hero/lithiumvalley-ci-storage.jpg";
+import homeStorage from "../assets/hero/lithiumvalley-home-storage.jpg";
 
 const slides = [
-  { image: topconPanels, tag: "TOPCON PANELS", title: "Topcon Πάνελ" },
-  { image: hjtPanels, tag: "HETEROJUNCTION", title: "HJT Πάνελ" },
-  { image: batteryStorage, tag: "ENERGY STORAGE", title: "Μπαταρίες Αποθήκευσης" },
+  { image: topconPanels, tag: "TOPCON PANELS", title: "Topcon Πάνελ", width: 1600, height: 985 },
+  { image: hjtPanels, tag: "HETEROJUNCTION", title: "HJT Πάνελ", width: 1600, height: 1034 },
+  { image: batteryStorage, tag: "ENERGY STORAGE", title: "Μπαταρίες Αποθήκευσης", width: 1600, height: 810 },
+  { image: microinverters, tag: "MICROINVERTERS", title: "Υβριδικά Microinverters", width: 1600, height: 718 },
+  { image: ciStorage, tag: "C&I ENERGY STORAGE", title: "Αποθήκευση για Επιχειρήσεις", width: 1600, height: 648 },
+  { image: homeStorage, tag: "HOME ENERGY STORAGE", title: "Οικιακή Αποθήκευση & EV", width: 1600, height: 1071 },
 ];
 ---
 
-<div class="relative" data-reveal>
-  <div class="relative mx-auto max-w-full">
-    <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-2xl">
-      <div class="relative aspect-[16/9] touch-pan-y overflow-hidden select-none" data-hero-carousel>
-        {
-          slides.map((s, i) => (
-            <div
-              class="absolute inset-0 transition-all duration-700 ease-out"
-              data-slide
-              style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
-            >
-              <Image
-                src={s.image}
-                alt={s.title}
-                width={960}
-                height={540}
-                loading={i === 0 ? "eager" : "lazy"}
-                draggable={false}
-                class="h-full w-full object-cover [-webkit-user-drag:none]"
-              />
-              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 to-transparent p-5 pt-10">
-                <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase">{s.tag}</p>
-                <p class="mt-0.5 font-display text-lg font-bold text-white">{s.title}</p>
-              </div>
-            </div>
-          ))
-        }
-
-        <div class="absolute right-0 bottom-3 left-0 flex justify-center gap-2">
-          {
-            slides.map((_, i) => (
-              <button
-                type="button"
-                class="h-1.5 rounded-full bg-white/50 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-white w-1.5"
-                data-dot={i}
-                data-active={i === 0}
-                aria-label={`Προβολή διαφάνειας ${i + 1}`}
-              />
-            ))
-          }
+<div class="absolute inset-0 -z-10 touch-pan-y overflow-hidden bg-navy-950 select-none" data-hero-carousel>
+  {
+    slides.map((s, i) => (
+      <div
+        class="absolute inset-0 transition-all duration-700 ease-out"
+        data-slide
+        style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
+      >
+        <Image
+          src={s.image}
+          alt={s.title}
+          width={s.width}
+          height={s.height}
+          loading={i === 0 ? "eager" : "lazy"}
+          draggable={false}
+          class="h-full w-full object-cover [-webkit-user-drag:none]"
+        />
+        <div class="absolute top-28 left-0 sm:left-2">
+          <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase">{s.tag}</p>
+          <p class="mt-0.5 font-display text-lg font-bold text-white">{s.title}</p>
         </div>
       </div>
+    ))
+  }
 
-      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 bg-navy-950 px-6 py-4 text-center">
-        <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
-        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-        <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
-        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-        <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
-      </div>
-    </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-navy-950/85 via-navy-950/35 to-navy-950/90"></div>
+  <div class="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-navy-950 to-transparent"></div>
+
+  <div class="absolute right-0 bottom-24 left-0 z-10 flex justify-center gap-2">
+    {
+      slides.map((_, i) => (
+        <button
+          type="button"
+          class="h-1.5 w-1.5 rounded-full bg-white/50 transition-all duration-300 data-[active=true]:w-6 data-[active=true]:bg-white"
+          data-dot={i}
+          data-active={i === 0}
+          aria-label={`Προβολή διαφάνειας ${i + 1}`}
+        />
+      ))
+    }
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 px-6 py-4 text-center">
+    <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
+    <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+    <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
+    <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+    <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
   </div>
 </div>
 
