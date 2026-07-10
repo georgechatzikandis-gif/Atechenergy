@@ -32,18 +32,18 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain p-8 pt-24 sm:p-12 sm:pt-28 lg:p-16 lg:pt-32 [-webkit-user-drag:none]"
+          class="h-full w-full object-contain p-6 sm:p-10 lg:p-14 [-webkit-user-drag:none]"
         />
-        <div class="absolute top-24 left-4 sm:top-28 sm:left-6">
-          <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase">{s.tag}</p>
-          <p class="mt-0.5 font-display text-lg font-bold text-white">{s.title}</p>
+        <div class="absolute bottom-32 left-4 sm:bottom-36 sm:left-6">
+          <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{s.tag}</p>
+          <p class="mt-0.5 font-display text-lg font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{s.title}</p>
         </div>
       </div>
     ))
   }
 
-  <div class="absolute inset-0 bg-gradient-to-b from-navy-950/85 via-navy-950/35 to-navy-950/90"></div>
-  <div class="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-navy-950 to-transparent"></div>
+  <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-navy-950/60 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-950 to-transparent"></div>
 
   <div class="absolute right-0 bottom-24 left-0 z-10 flex justify-center gap-2">
     {
