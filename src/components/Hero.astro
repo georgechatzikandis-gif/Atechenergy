@@ -3,10 +3,12 @@ import HeroCarousel from "./HeroCarousel.astro";
 import { withBase } from "../lib/paths";
 ---
 
-<section id="home" class="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-navy-950 pb-14 sm:pb-16">
+<section id="home" class="relative">
   <HeroCarousel />
+</section>
 
-  <div class="container-page relative z-10 mt-auto">
+<section class="relative overflow-hidden bg-navy-950 py-16 sm:py-20">
+  <div class="container-page relative z-10">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
       <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm">Ενέργεια για ένα Βιώσιμο Μέλλον</span>
 
