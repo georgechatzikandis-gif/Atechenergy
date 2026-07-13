@@ -7,11 +7,51 @@ import solarPanels from "../assets/hero/tsun-solar-panels.jpg";
 import lineup from "../assets/hero/tsun-lineup.jpg";
 
 const slides = [
-  { image: solartrunkTrio, alt: "TSUN SolarTrunk Storage Units", width: 896, height: 1200 },
-  { image: powertrunkSolo, alt: "TSUN PowerTrunk Storage Unit", width: 896, height: 1200 },
-  { image: microinverters, alt: "TSUN Microinverters", width: 896, height: 1200 },
-  { image: solarPanels, alt: "TSUN Solar Panels", width: 896, height: 1200 },
-  { image: lineup, alt: "TSUN Full Product Lineup", width: 896, height: 1200 },
+  {
+    image: solartrunkTrio,
+    alt: "TSUN SolarTrunk MSU4000Elite",
+    width: 896,
+    height: 1200,
+    label: "Αποθήκευση Ενέργειας",
+    title: "SolarTrunk MSU4000Elite",
+    subtitle: "Micro Hybrid Storage Unit · Plug & Play · EV Ready",
+  },
+  {
+    image: powertrunkSolo,
+    alt: "TSUN PowerTrunk MAU 5000",
+    width: 896,
+    height: 1200,
+    label: "Αποθήκευση Ενέργειας",
+    title: "PowerTrunk MAU 5000",
+    subtitle: "All-in-One Energy Storage Solution",
+  },
+  {
+    image: microinverters,
+    alt: "TSUN Microinverters",
+    width: 896,
+    height: 1200,
+    label: "Μικροαντιστροφείς",
+    title: "No.1 Powerful Microinverter",
+    subtitle: "Make Safety Affordable",
+  },
+  {
+    image: solarPanels,
+    alt: "TSUN Solar Panels",
+    width: 896,
+    height: 1200,
+    label: "Φωτοβολταϊκά Πάνελ",
+    title: "TSUN Solar Panels",
+    subtitle: "High Efficiency · Premium Performance",
+  },
+  {
+    image: lineup,
+    alt: "TSUN Full Product Lineup",
+    width: 896,
+    height: 1200,
+    label: "Πλήρης Σειρά Προϊόντων",
+    title: "Ολοκληρωμένες Λύσεις",
+    subtitle: "Microinverters · Storage Systems · Solar Panels",
+  },
 ];
 ---
 
@@ -32,11 +72,27 @@ const slides = [
           draggable={false}
           class="h-full w-full object-cover object-center [-webkit-user-drag:none]"
         />
+
+        {/* Bottom gradient for text readability */}
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+
+        {/* Product details */}
+        <div class="slide-text absolute inset-x-0 bottom-14 z-10 px-6 sm:px-10">
+          <span class="slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+            {s.label}
+          </span>
+          <h2 class="slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            {s.title}
+          </h2>
+          <p class="slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
+            {s.subtitle}
+          </p>
+        </div>
       </div>
     ))
   }
 
-  <div class="absolute inset-x-0 bottom-6 z-20 flex justify-center gap-2">
+  <div class="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2">
     {
       slides.map((_, i) => (
         <button
@@ -50,6 +106,34 @@ const slides = [
     }
   </div>
 </div>
+
+<style>
+  .slide-label,
+  .slide-title,
+  .slide-subtitle {
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 0.6s;
+  }
+
+  [data-slide][data-active="true"] .slide-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.22s;
+  }
+  [data-slide][data-active="true"] .slide-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.36s;
+  }
+  [data-slide][data-active="true"] .slide-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+</style>
 
 <script>
   const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]");
@@ -66,6 +150,7 @@ const slides = [
         const offset = i === current ? "0" : i < current ? "-100%" : "100%";
         el.style.transform = `translateX(${offset})`;
         el.style.opacity = i === current ? "1" : "0";
+        el.setAttribute("data-active", String(i === current));
       });
       dots.forEach((dot, i) => dot.setAttribute("data-active", String(i === current)));
     };
@@ -130,7 +215,9 @@ const slides = [
       start();
     });
 
-    render();
+    // Double rAF ensures initial CSS paint (all hidden) happens before
+    // render() sets data-active, so the stagger transition fires on load
+    requestAnimationFrame(() => requestAnimationFrame(() => render()));
     start();
   });
 </script>
