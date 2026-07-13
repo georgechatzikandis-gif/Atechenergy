@@ -108,6 +108,22 @@ const slides = [
 </div>
 
 <style is:global>
+  /* ── Ken Burns: slow zoom while slide is active ── */
+  @keyframes hero-ken-burns {
+    from { transform: scale(1) translateZ(0); }
+    to   { transform: scale(1.09) translateZ(0); }
+  }
+
+  [data-slide][data-active="true"] img {
+    animation: hero-ken-burns 5.5s ease-out forwards;
+    will-change: transform;
+  }
+  [data-slide]:not([data-active="true"]) img {
+    animation: none;
+    transform: scale(1) translateZ(0);
+  }
+
+  /* ── Text stagger pop-in ── */
   .hero-slide-label,
   .hero-slide-title,
   .hero-slide-subtitle {
