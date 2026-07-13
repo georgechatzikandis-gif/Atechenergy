@@ -78,13 +78,13 @@ const slides = [
 
         {/* Product details */}
         <div class="slide-text absolute inset-x-0 bottom-14 z-10 px-6 sm:px-10">
-          <span class="slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+          <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
             {s.label}
           </span>
-          <h2 class="slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+          <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
             {s.title}
           </h2>
-          <p class="slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
+          <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
             {s.subtitle}
           </p>
         </div>
@@ -107,10 +107,10 @@ const slides = [
   </div>
 </div>
 
-<style>
-  .slide-label,
-  .slide-title,
-  .slide-subtitle {
+<style is:global>
+  .hero-slide-label,
+  .hero-slide-title,
+  .hero-slide-subtitle {
     opacity: 0;
     transform: translateY(22px);
     transition-property: opacity, transform;
@@ -118,17 +118,17 @@ const slides = [
     transition-duration: 0.6s;
   }
 
-  [data-slide][data-active="true"] .slide-label {
+  [data-slide][data-active="true"] .hero-slide-label {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.22s;
   }
-  [data-slide][data-active="true"] .slide-title {
+  [data-slide][data-active="true"] .hero-slide-title {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.36s;
   }
-  [data-slide][data-active="true"] .slide-subtitle {
+  [data-slide][data-active="true"] .hero-slide-subtitle {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.5s;
