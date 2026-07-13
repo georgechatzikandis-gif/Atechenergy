@@ -23,12 +23,22 @@ const slides = [
       >
         <Image
           src={s.image}
+          alt=""
+          width={640}
+          height={Math.round((640 * s.height) / s.width)}
+          loading={i === 0 ? "eager" : "lazy"}
+          draggable={false}
+          aria-hidden="true"
+          class="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl brightness-[0.45] [-webkit-user-drag:none]"
+        />
+        <Image
+          src={s.image}
           alt={s.title}
           width={s.width}
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-cover object-center [-webkit-user-drag:none]"
+          class="absolute inset-0 h-full w-full object-contain object-center p-4 pt-24 sm:p-8 sm:pt-24 lg:p-10 [-webkit-user-drag:none]"
         />
       </div>
     ))
