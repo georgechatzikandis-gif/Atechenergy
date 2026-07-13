@@ -1,43 +1,29 @@
 ---
 import HeroCarousel from "./HeroCarousel.astro";
 import { withBase } from "../lib/paths";
-
-const badges = [
-  { label: "Αξιόπιστα Προϊόντα", icon: "shield" },
-  { label: "Εγγύηση Κορυφαίας Ποιότητας", icon: "award" },
-  { label: "Βιώσιμη Ενέργεια", icon: "leaf" },
-  { label: "Σεβασμός στο Περιβάλλον", icon: "globe" },
-];
-
-const icons: Record<string, string> = {
-  shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z",
-  award: "M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8.5 13.5 7 22l5-3 5 3-1.5-8.5",
-  leaf: "M11 20A9 9 0 0 1 2 11c5 0 9-4 9-9a9 9 0 0 1 9 9c-5 0-9 4-9 9Z",
-  globe: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10Z",
-};
 ---
 
-<section id="home" class="relative isolate overflow-hidden bg-navy-950 pb-16 sm:pb-20">
+<section id="home" class="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-navy-950 pb-14 sm:pb-16">
   <HeroCarousel />
 
-  <div class="container-page relative z-10">
-    <div class="mx-auto mt-10 max-w-3xl text-center sm:mt-14" data-reveal>
+  <div class="container-page relative z-10 mt-auto">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
       <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm">Ενέργεια για ένα Βιώσιμο Μέλλον</span>
 
-      <h1 class="mt-6 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+      <h1 class="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
         Αξιόπιστες Ενεργειακές Λύσεις για
         <span class="bg-gradient-to-r from-azure-300 via-azure-200 to-white bg-clip-text text-transparent">
           Φωτοβολταϊκά Έργα
         </span>
       </h1>
 
-      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
         Φωτοβολταϊκά πάνελ, inverters, μπαταρίες αποθήκευσης και φορτιστές EV από κορυφαίους
         κατασκευαστές — με τεχνική υποστήριξη και ανταγωνιστικές τιμές, σε όλη την Ευρώπη
         και τη Λατινική Αμερική.
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         <a href="#contact" class="btn btn-primary">
           Ζητήστε Προσφορά
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -47,18 +33,13 @@ const icons: Record<string, string> = {
         <a href={withBase("products/")} class="btn btn-ghost">Δείτε τα Προϊόντα</a>
       </div>
 
-      <dl class="mt-16 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 sm:gap-x-4">
-        {
-          badges.map((b) => (
-            <div class="flex items-start gap-2.5 sm:flex-col sm:items-center sm:text-center">
-              <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-300 sm:mt-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d={icons[b.icon]}></path>
-              </svg>
-              <dt class="text-sm leading-snug font-medium text-white/75">{b.label}</dt>
-            </div>
-          ))
-        }
-      </dl>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 pt-5 text-center">
+        <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
+      </div>
     </div>
   </div>
 </section>

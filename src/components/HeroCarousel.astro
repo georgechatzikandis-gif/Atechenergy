@@ -13,7 +13,7 @@ const slides = [
 ];
 ---
 
-<div class="relative aspect-[4/3] max-h-[88vh] touch-pan-y overflow-hidden bg-navy-950 select-none sm:aspect-[16/10] lg:aspect-[2/1]" data-hero-carousel>
+<div class="absolute inset-0 touch-pan-y overflow-hidden bg-navy-950 select-none" data-hero-carousel>
   {
     slides.map((s, i) => (
       <div
@@ -28,19 +28,20 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain object-center p-2 sm:p-4 lg:p-6 [-webkit-user-drag:none]"
+          class="h-full w-full object-contain object-top p-4 pt-24 sm:p-8 sm:pt-24 lg:object-cover lg:p-0 [-webkit-user-drag:none]"
         />
-        <div class="absolute bottom-14 left-4 sm:bottom-16 sm:left-6">
-          <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{s.tag}</p>
-          <p class="mt-0.5 font-display text-lg font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{s.title}</p>
+        <div class="absolute top-24 left-4 sm:left-6 lg:top-28">
+          <p class="text-[11px] font-bold tracking-[0.14em] text-azure-300 uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">{s.tag}</p>
+          <p class="mt-0.5 font-display text-lg font-bold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">{s.title}</p>
         </div>
       </div>
     ))
   }
 
-  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-950 to-transparent"></div>
+  <div class="absolute inset-0 bg-navy-950/25 lg:bg-navy-950/40"></div>
+  <div class="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-navy-950 via-navy-950/70 to-transparent"></div>
 
-  <div class="absolute right-0 bottom-6 left-0 z-10 flex justify-center gap-2">
+  <div class="absolute inset-x-0 bottom-5 z-20 flex justify-center gap-2">
     {
       slides.map((_, i) => (
         <button
@@ -53,14 +54,6 @@ const slides = [
       ))
     }
   </div>
-</div>
-
-<div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 bg-navy-950 px-6 py-4 text-center">
-  <span class="text-xs font-bold tracking-wide text-white/90">2008 · Ίδρυση</span>
-  <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-  <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
-  <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-  <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
 </div>
 
 <script>
