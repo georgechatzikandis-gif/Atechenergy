@@ -1,19 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import topconPanels from "../assets/hero/risen-topcon-panels.jpg";
-import hjtPanels from "../assets/hero/risen-hjt-panels.jpg";
-import batteryStorage from "../assets/hero/risen-battery-storage.jpg";
-import microinverters from "../assets/hero/hybrid-microinverter.jpg";
+import powertrunk from "../assets/hero/tsun-powertrunk.jpg";
+import solartrunk from "../assets/hero/tsun-solartrunk.jpg";
+import microinverterSafety from "../assets/hero/tsun-microinverter-safety.jpg";
+import microinverterPower from "../assets/hero/tsun-microinverter-power.jpg";
 
 const slides = [
-  { image: topconPanels, tag: "TOPCON PANELS", title: "Topcon Πάνελ", width: 1600, height: 985 },
-  { image: hjtPanels, tag: "HETEROJUNCTION", title: "HJT Πάνελ", width: 1600, height: 1034 },
-  { image: batteryStorage, tag: "ENERGY STORAGE", title: "Μπαταρίες Αποθήκευσης", width: 1600, height: 810 },
-  { image: microinverters, tag: "MICROINVERTERS", title: "Υβριδικά Microinverters", width: 1700, height: 1060 },
+  { image: powertrunk, alt: "TSUN PowerTrunk", width: 1284, height: 2228 },
+  { image: solartrunk, alt: "TSUN SolarTrunk", width: 1284, height: 2228 },
+  { image: microinverterSafety, alt: "TSUN Microinverter Safety", width: 1284, height: 2228 },
+  { image: microinverterPower, alt: "TSUN Microinverter Power", width: 1284, height: 2228 },
 ];
 ---
 
-<div class="relative aspect-[16/11] max-h-[92svh] w-full touch-pan-y overflow-hidden bg-navy-950 select-none sm:aspect-[16/10] lg:aspect-[16/9]" data-hero-carousel>
+<div class="relative h-full w-full touch-pan-y overflow-hidden bg-navy-950 select-none" data-hero-carousel>
   {
     slides.map((s, i) => (
       <div
@@ -23,7 +23,7 @@ const slides = [
       >
         <Image
           src={s.image}
-          alt={s.title}
+          alt={s.alt}
           width={s.width}
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
@@ -95,7 +95,6 @@ const slides = [
     root.addEventListener("mouseenter", stop);
     root.addEventListener("mouseleave", start);
 
-    // Swipe / drag navigation (touch and mouse via the Pointer Events API).
     let dragStartX: number | null = null;
     let dragStartY: number | null = null;
     let dragging = false;
@@ -116,7 +115,6 @@ const slides = [
       dragging = false;
       dragStartX = null;
       dragStartY = null;
-      // Ignore mostly-vertical drags so page scrolling on touch isn't hijacked.
       if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
         goTo(current + (deltaX < 0 ? 1 : -1));
       }
