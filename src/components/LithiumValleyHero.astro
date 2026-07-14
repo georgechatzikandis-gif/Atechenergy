@@ -1,0 +1,52 @@
+---
+import { withBase } from "../lib/paths";
+import LithiumValleyCarousel from "./LithiumValleyCarousel.astro";
+---
+
+<section id="lithiumvalley" class="relative h-[100svh] min-h-[520px] bg-navy-950">
+  <LithiumValleyCarousel />
+
+  {/* Partner badge overlay — top left */}
+  <div class="pointer-events-none absolute left-5 top-5 z-30 flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 backdrop-blur-sm">
+    <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="background-color:#34d399"></span>
+    <span class="text-[10px] font-bold tracking-widest uppercase text-white/80">Συνεργάτης</span>
+  </div>
+</section>
+
+<section class="relative overflow-hidden bg-navy-950 pt-36 pb-20 sm:pt-40 sm:pb-24">
+  <div class="container-page relative z-10">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <span class="eyebrow border-white/25 bg-white/10 backdrop-blur-sm" style="color:#6ee7b7">Λύσεις Αποθήκευσης Ενέργειας</span>
+
+      <h2 class="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+        Lithium Valley —
+        <span class="bg-gradient-to-r bg-clip-text text-transparent" style="background-image:linear-gradient(to right,#6ee7b7,#34d399,#ffffff)">
+          Μπαταρίες Νέας Γενιάς
+        </span>
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+        Συστήματα αποθήκευσης λιθίου για κατοικίες, βιομηχανικές εγκαταστάσεις και ναυτιλιακές
+        εφαρμογές. Αξιόπιστη τεχνολογία LiFePO₄ με υψηλή ασφάλεια και μακρά διάρκεια ζωής.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="btn btn-primary">
+          Ζητήστε Προσφορά
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
+        <a href={withBase("products/")} class="btn btn-ghost">Δείτε τα Προϊόντα</a>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 pt-5 text-center">
+        <span class="text-xs font-bold tracking-wide text-white/90">LiFePO₄ Technology</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide" style="color:#6ee7b7">Επίσημος Συνεργάτης</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <span class="text-xs font-bold tracking-wide text-white/90">Home · C&amp;I · Marine</span>
+      </div>
+    </div>
+  </div>
+</section>
