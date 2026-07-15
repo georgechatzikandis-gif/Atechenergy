@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import { withBase } from "../lib/paths";
 import HeroCarousel from "./HeroCarousel.astro";
+import lvAward from "../assets/credentials/lv-distributor-award.jpg";
+import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
 ---
 
 <section id="home" class="relative h-[100svh] min-h-[520px] bg-navy-950">
@@ -41,6 +44,35 @@ import HeroCarousel from "./HeroCarousel.astro";
         <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
         <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
         <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
+      </div>
+
+      {/* Credential cards */}
+      <div class="mt-10 border-t border-white/10 pt-8">
+        <p class="mb-6 text-[10px] font-bold tracking-[0.25em] uppercase text-white/35">
+          Επίσημη Αντιπροσωπεία & Βραβεία
+        </p>
+        <div class="mx-auto grid max-w-sm grid-cols-2 gap-4">
+          {/* Lithium Valley Award */}
+          <div class="group overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10 transition-transform duration-500 hover:scale-[1.02]">
+            <Image
+              src={lvAward}
+              alt="Lithium Valley Official Distributor Award — Alphatech Co Ltd"
+              width={600}
+              height={600}
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
+          {/* Risen Storage Certificate */}
+          <div class="group overflow-hidden rounded-2xl bg-white p-2 shadow-2xl shadow-black/60 ring-1 ring-white/20 transition-transform duration-500 hover:scale-[1.02]">
+            <Image
+              src={risenCert}
+              alt="Risen Storage Authorized Distributor Certificate — Alphatech Co Ltd"
+              width={557}
+              height={800}
+              class="h-full w-full object-cover object-top"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
