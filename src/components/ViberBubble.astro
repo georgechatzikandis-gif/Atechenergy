@@ -197,9 +197,8 @@
     const msg  = msgEl.value.trim();
     if (!name || !msg) return;
 
-    const subject = encodeURIComponent(`Νέο μήνυμα chat — ${name}`);
-    const body    = encodeURIComponent(`Από: ${name}\n\n${msg}`);
-    window.location.href = `mailto:info@atechenergy.eu?subject=${subject}&body=${body}`;
+    const text = encodeURIComponent(`Από: ${name}\n${msg}`);
+    window.location.href = `viber://chat?number=%2B306976724504&text=${text}`;
 
     form.classList.add("hidden");
     okEl.classList.remove("hidden");
