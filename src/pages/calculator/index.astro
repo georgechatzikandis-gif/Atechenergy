@@ -1,0 +1,565 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import BackToTop from "../../components/BackToTop.astro";
+import { withBase } from "../../lib/paths";
+
+const title = "C&I Energy Calculator | Alphatech Energy";
+const description =
+  "Υπολογίστε ενδεικτικά το κατάλληλο φωτοβολταϊκό και σύστημα αποθήκευσης για supermarket, κρεοπωλεία, ψυκτικές αποθήκες και επιχειρήσεις με συνεχή φορτία ψύξης.";
+---
+
+<BaseLayout title={title} description={description} path="/calculator/">
+  <Header />
+
+  <main class="pt-20" style="background:#071525; min-height:100vh;">
+
+    <!-- ── HERO ── -->
+    <section style="background:linear-gradient(to bottom,#0d1f36,#071525);" class="px-6 py-14 sm:py-20 text-center">
+      <div class="mx-auto max-w-2xl">
+        <span class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase mb-6"
+          style="color:#00e5b4;border:1px solid rgba(0,229,180,0.3);">
+          ⚡ Ενεργειακή Προμελέτη σε 2 Λεπτά
+        </span>
+        <h1 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          C&I Energy <span style="color:#00e5b4;">Calculator</span>
+        </h1>
+        <p class="mt-5 text-base leading-relaxed sm:text-lg" style="color:rgba(255,255,255,0.6);">
+          Υπολογίστε ενδεικτικά το κατάλληλο φωτοβολταϊκό και σύστημα αποθήκευσης για supermarket,
+          κρεοπωλεία, ψυκτικές αποθήκες και επιχειρήσεις με συνεχή φορτία ψύξης.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-2">
+          {["☀️ PV sizing","🔋 BESS επιλογή","💶 Ετήσια εξοικονόμηση","🌍 CO₂","⏱️ Απόσβεση"].map(t => (
+            <span class="rounded-full px-3.5 py-1.5 text-xs font-medium"
+              style="color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);">{t}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CALCULATOR ── -->
+    <section class="px-4 sm:px-6 pb-16">
+      <div class="mx-auto max-w-2xl space-y-5">
+
+        <h2 class="text-2xl font-extrabold text-white">Υπολογισμός συστήματος</h2>
+        <p class="text-sm" style="color:rgba(255,255,255,0.45);">
+          Συμπληρώστε τα βασικά ενεργειακά στοιχεία. Τα αποτελέσματα ανανεώνονται άμεσα.
+        </p>
+
+        <!-- Input card -->
+        <div class="rounded-2xl p-6 space-y-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-white">Στοιχεία εγκατάστασης</h3>
+            <span class="text-xs font-bold rounded-full px-3 py-1"
+              style="background:rgba(0,229,180,0.12);color:#00e5b4;border:1px solid rgba(0,229,180,0.3);">LIVE CALC</span>
+          </div>
+
+          <!-- Business type -->
+          <div>
+            <label class="clabel">Τύπος επιχείρησης</label>
+            <select id="inp-business" class="csel">
+              <option value="supermarket">Super Market</option>
+              <option value="butcher">Κρεοπωλείο</option>
+              <option value="coldstore">Ψυκτικές Αποθήκες</option>
+              <option value="bakery">Αρτοποιείο</option>
+              <option value="restaurant">Εστιατόριο / Catering</option>
+              <option value="other">Άλλο</option>
+            </select>
+          </div>
+
+          <!-- Annual kWh -->
+          <div>
+            <label class="clabel">Ετήσια κατανάλωση</label>
+            <div class="relative">
+              <input id="inp-annual" type="number" placeholder="420000" class="cinput w-full pr-14" />
+              <span class="cunit">kWh</span>
+            </div>
+          </div>
+
+          <!-- Monthly bill -->
+          <div>
+            <label class="clabel">Μηνιαίος λογαριασμός</label>
+            <div class="relative">
+              <input id="inp-bill" type="number" placeholder="7500" class="cinput w-full pr-8" />
+              <span class="cunit">€</span>
+            </div>
+          </div>
+
+          <!-- Energy price -->
+          <div>
+            <label class="clabel">Τιμή ενέργειας</label>
+            <div class="relative">
+              <input id="inp-price" type="number" step="0.01" placeholder="0.18" class="cinput w-full pr-16" />
+              <span class="cunit">€/kWh</span>
+            </div>
+          </div>
+
+          <!-- Operating hours -->
+          <div>
+            <label class="clabel">Ώρες λειτουργίας</label>
+            <select id="inp-hours" class="csel">
+              <option value="24/7">24/7</option>
+              <option value="16h">08:00 – 23:00 (16ω)</option>
+              <option value="14h">08:00 – 22:00 (14ω)</option>
+              <option value="12h">08:00 – 20:00 (12ω)</option>
+            </select>
+          </div>
+
+          <!-- Cooling slider -->
+          <div>
+            <label class="clabel">
+              Κατανάλωση που αφορά ψύξη
+              <span style="color:rgba(255,255,255,0.35);font-size:0.7rem;margin-left:0.3rem;">εκτίμηση</span>
+            </label>
+            <div class="flex items-center gap-4">
+              <input id="inp-cooling" type="range" min="0" max="100" value="40" class="cslider flex-1" />
+              <span id="lbl-cooling" class="text-sm font-bold rounded-lg px-3 py-1.5 min-w-[3.5rem] text-center shrink-0"
+                style="background:#00e5b4;color:#071525;">40%</span>
+            </div>
+          </div>
+
+          <!-- Roof -->
+          <div>
+            <label class="clabel">Διαθέσιμη στέγη</label>
+            <div class="relative">
+              <input id="inp-roof" type="number" placeholder="1200" class="cinput w-full pr-10" />
+              <span class="cunit">m²</span>
+            </div>
+          </div>
+
+          <!-- Goal -->
+          <div>
+            <label class="clabel">Στόχος λύσης</label>
+            <select id="inp-goal" class="csel">
+              <option value="pv+bess">ΦΒ + Μπαταρία</option>
+              <option value="pv">Μόνο ΦΒ</option>
+              <option value="bess">Μόνο Μπαταρία</option>
+            </select>
+          </div>
+
+          <!-- Advanced -->
+          <details class="group">
+            <summary class="flex cursor-pointer select-none list-none items-center gap-2 text-sm font-semibold"
+              style="color:#00e5b4;">
+              <svg class="h-4 w-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              Προηγμένες παραδοχές
+            </summary>
+            <div class="mt-4 space-y-4 pt-4" style="border-top:1px solid rgba(255,255,255,0.08);">
+              <div>
+                <label class="clabel text-xs">Ηλιακή απόδοση (kWh/kWp/έτος)</label>
+                <input id="inp-yield" type="number" value="1500" class="cinput w-full" />
+              </div>
+              <div>
+                <label class="clabel text-xs">Κόστος ΦΒ (€/kWp)</label>
+                <input id="inp-pv-cost" type="number" value="600" class="cinput w-full" />
+              </div>
+              <div>
+                <label class="clabel text-xs">Κόστος BESS (€/kWh)</label>
+                <input id="inp-bess-cost" type="number" value="350" class="cinput w-full" />
+              </div>
+            </div>
+          </details>
+
+          <button id="btn-calc" class="w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-opacity hover:opacity-90 active:scale-[0.99]"
+            style="background:#00e5b4;color:#071525;">
+            Υπολογισμός Λύσης →
+          </button>
+
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.3);">
+            Ενδεικτικό εργαλείο αρχικής αξιολόγησης. Δεν αντικαθιστά τεχνική μελέτη,
+            ανάλυση 15λέπτων μετρήσεων, στατική επάρκεια ή όρους σύνδεσης.
+          </p>
+        </div>
+
+        <!-- ── RESULTS (hidden until calc) ── -->
+        <div id="results" class="hidden space-y-4">
+
+          <!-- Main savings -->
+          <div class="rounded-2xl p-6" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
+            <p class="text-sm" style="color:rgba(255,255,255,0.5);">Εκτιμώμενο συνολικό ετήσιο όφελος</p>
+            <div class="mt-1 font-display font-extrabold text-white leading-none" style="font-size:2.8rem;">
+              <span id="res-savings">—</span>
+              <span class="text-2xl ml-1">€ / έτος</span>
+            </div>
+            <p id="res-savings-pct" class="mt-2 text-sm" style="color:rgba(255,255,255,0.45);"></p>
+          </div>
+
+          <!-- 4 tiles -->
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              {id:"res-pv",  icon:"☀️", label:"Προτεινόμενο ΦΒ"},
+              {id:"res-bess",icon:"🔋", label:"Εγκατεστημένο BESS"},
+              {id:"res-payback",icon:"⏱️",label:"Απλή απόσβεση"},
+              {id:"res-co2", icon:"🌍", label:"CO₂ / έτος"},
+            ].map(t => (
+              <div class="rounded-2xl p-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
+                <div class="text-2xl mb-1">{t.icon}</div>
+                <div id={t.id} class="text-2xl font-extrabold text-white">—</div>
+                <div class="text-xs mt-0.5" style="color:rgba(255,255,255,0.45);">{t.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Monthly chart -->
+          <div class="rounded-2xl p-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-bold text-white">Μηνιαία κατανάλωση και συμψηφισμός</h3>
+              <div class="flex items-center gap-3 text-xs" style="color:rgba(255,255,255,0.5);">
+                <span class="flex items-center gap-1.5">
+                  <span class="inline-block h-2 w-2 rounded-full" style="background:#3b82f6;"></span>Πριν
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="inline-block h-2 w-2 rounded-full" style="background:#00e5b4;"></span>Μετά
+                </span>
+              </div>
+            </div>
+            <svg id="monthly-chart" viewBox="0 0 340 140" class="w-full" style="overflow:visible;"></svg>
+          </div>
+
+          <!-- Recommended equipment -->
+          <div class="rounded-2xl p-6" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
+            <h3 class="font-bold text-white mb-5">Προτεινόμενος εξοπλισμός</h3>
+            <div id="equipment-list" class="space-y-5"></div>
+          </div>
+
+          <!-- PDF -->
+          <button onclick="window.print()"
+            class="w-full py-4 rounded-xl font-bold text-sm tracking-wide text-white transition-opacity hover:opacity-75"
+            style="background:#0d1f36;border:2px solid rgba(255,255,255,0.15);">
+            🖨️ &nbsp;Εκτύπωση / Αποθήκευση PDF
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BESS CATALOG ── -->
+    <section class="px-4 sm:px-6 pb-20">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="text-2xl font-extrabold text-white mb-2">Διαθέσιμος εξοπλισμός BESS</h2>
+        <p class="text-sm mb-6" style="color:rgba(255,255,255,0.45);">
+          Τα μοντέλα έχουν ενσωματωθεί στη μηχανή επιλογής του calculator με βάση χωρητικότητα και ονομαστική ισχύ.
+        </p>
+        <div id="bess-catalog" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="px-4 sm:px-6 pb-24">
+      <div class="mx-auto max-w-2xl">
+        <div class="rounded-2xl p-8" style="background:#0d1f36;border:1px solid rgba(0,229,180,0.2);">
+          <h2 class="text-2xl font-extrabold text-white leading-tight">
+            Χρειάζεστε τεχνική<br />προμελέτη;
+          </h2>
+          <p class="mt-3 text-sm leading-relaxed" style="color:rgba(255,255,255,0.55);">
+            Στείλτε τα στοιχεία του έργου και το αποτέλεσμα του calculator στην ομάδα της Alphatech.
+          </p>
+          <a href={withBase("#contact")}
+            class="mt-6 flex items-center justify-center w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-opacity hover:opacity-90"
+            style="background:#00e5b4;color:#071525;">
+            Ζητήστε Δωρεάν Μελέτη
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer note -->
+    <div class="pb-6 text-center text-xs" style="color:rgba(255,255,255,0.25);">
+      © 2026 ALPHATECH · C&I Energy Calculator · Τα αποτελέσματα είναι ενδεικτικά.
+    </div>
+
+  </main>
+
+  <Footer />
+  <BackToTop />
+</BaseLayout>
+
+<!-- ═══════════════════════════════════════════ STYLES ═══ -->
+<style>
+  .clabel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 0.375rem;
+  }
+  .cinput {
+    background: #071525;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  .cinput:focus { border-color: #00e5b4; }
+  .cinput::placeholder { color: rgba(255,255,255,0.22); }
+  .cunit {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.35);
+    pointer-events: none;
+  }
+  .csel {
+    background: #071525 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center / 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0.75rem;
+    padding: 0.875rem 2.5rem 0.875rem 1rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 100%;
+    transition: border-color 0.15s;
+  }
+  .csel:focus { border-color: #00e5b4; }
+  .csel option { background: #0d1f36; }
+  .cslider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.14);
+    outline: none;
+    cursor: pointer;
+  }
+  .cslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: #00e5b4;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(0,229,180,0.18);
+  }
+  .cslider::-moz-range-thumb {
+    width: 22px; height: 22px;
+    border: none; border-radius: 50%;
+    background: #00e5b4; cursor: pointer;
+  }
+  @media print {
+    header, footer, #btn-calc, button { display: none !important; }
+    main { padding-top: 0 !important; background: white !important; }
+    * { color: #000 !important; border-color: #ccc !important; background: white !important; }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════ SCRIPT ═══ -->
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────
+const MONTHLY_PROFILES = {
+  supermarket: [7.2,6.8,7.5,8.0,9.2,10.8,11.5,11.0,9.5,8.0,5.8,4.7],
+  butcher:     [7.5,7.0,7.5,8.0,9.0,10.5,11.0,10.5,9.0,7.5,6.0,5.5],
+  coldstore:   [8.0,7.0,7.5,8.0,9.5,11.0,12.0,11.5,9.5,7.5,5.0,4.5],
+  bakery:      [8.8,8.5,8.5,8.0,8.5,8.5,8.5,8.5,8.5,8.5,7.8,8.9],
+  restaurant:  [7.0,7.0,8.0,8.5,9.0,10.0,11.0,11.0,9.5,8.5,6.5,5.0],
+  other:       [8.0,7.5,8.0,8.5,9.0,10.0,10.5,10.0,9.0,8.0,6.5,5.0],
+};
+const SOLAR_PROFILE = [4.2,5.3,8.1,9.8,11.4,12.5,13.0,12.1,10.1,7.4,4.2,1.9];
+const MONTH_LABELS  = ['Ι','Φ','Μ','Α','Μ','Ι','Ι','Α','Σ','Ο','Ν','Δ'];
+
+const BESS_MODELS = [
+  {id:'SC100A50P-06W', kwh:100.3, kw:50,  cool:'Smart air cooling', ip:'IP55', cycles:'≥8.000 κύκλοι', tags:['Air cooled','50 kW','All-in-one']},
+  {id:'SC114A50P-06W', kwh:114.6, kw:50,  cool:'Smart air cooling', ip:'IP55', cycles:'≥8.000 κύκλοι', tags:['Air cooled','50 kW','Backup']},
+  {id:'SC208L50P-06W', kwh:208,   kw:50,  cool:'Liquid cooling',    ip:'IP54', cycles:'≥8.000 κύκλοι', tags:['Liquid cooled','50 kW','15-year design']},
+  {id:'SU215E100LM',   kwh:215,   kw:100, cool:'Liquid cooling · Ενσωματωμένο PCS', ip:'IP55', cycles:'', tags:['100 kW','Plug & Play','On/Off-grid'], extra:'έως 5 cabinets παράλληλα'},
+  {id:'SC261L125P-01M',kwh:261,   kw:125, cool:'Liquid cooling',    ip:'IP54', cycles:'≥8.000 κύκλοι', tags:['125 kW','Liquid cooled','High power']},
+];
+
+// ── HELPERS ─────────────────────────────────────────────────────────────
+const $ = (id) => document.getElementById(id);
+const val = (id, fallback = 0) => parseFloat($(id)?.value) || fallback;
+
+function selectBess(targetKwh) {
+  if (targetKwh <= 0) return {totalKwh:0, cabinets:0, model:null};
+  for (const m of BESS_MODELS) {
+    if (m.kwh >= targetKwh) return {totalKwh:m.kwh, cabinets:1, model:m};
+  }
+  // Multi-cabinet with SC114A50P-06W
+  const base = BESS_MODELS[1];
+  const n = Math.ceil(targetKwh / base.kwh);
+  return {totalKwh:Math.round(n * base.kwh * 10)/10, cabinets:n, model:base};
+}
+
+// ── MAIN CALC ────────────────────────────────────────────────────────────
+function runCalc() {
+  const annualKwh   = val('inp-annual');
+  const energyPrice = val('inp-price', 0.18);
+  const monthlyBill = val('inp-bill') || (annualKwh * energyPrice / 12);
+  const coolingPct  = parseInt($('inp-cooling').value) || 40;
+  const roofM2      = val('inp-roof');
+  const goal        = $('inp-goal').value;
+  const business    = $('inp-business').value;
+  const hoursVal    = $('inp-hours').value;
+  const solarYield  = val('inp-yield', 1500);
+  const pvCostKwp   = val('inp-pv-cost', 600);
+  const bessCostKwh = val('inp-bess-cost', 350);
+
+  if (!annualKwh || !roofM2) return;
+
+  // Night hours (hours without solar production)
+  const nightH = {['24/7']:10, ['16h']:14, ['14h']:14, ['12h']:16}[hoursVal] ?? 10;
+
+  // ── PV ──
+  const pvFromRoof = roofM2 * 0.175;
+  const pvFromLoad = annualKwh / solarYield * 0.85;
+  const pvKwp = goal === 'bess' ? 0 : Math.round(Math.min(pvFromRoof, pvFromLoad) / 5) * 5;
+  const pvAnnual = pvKwp * solarYield;
+
+  // ── BESS ──
+  const dailyKwh       = annualKwh / 365;
+  const dailyCoolingKwh = dailyKwh * (coolingPct / 100);
+  const bessTarget     = goal === 'pv'  ? 0 : dailyCoolingKwh * (nightH / 24);
+  const bess           = selectBess(bessTarget);
+
+  // ── SAVINGS ──
+  const scRate     = goal === 'pv+bess' ? 0.98 : 0.65;
+  const pvSavings  = pvAnnual * scRate * energyPrice;
+  const annualBill = monthlyBill * 12 || annualKwh * energyPrice;
+  const totalSav   = Math.min(pvSavings, annualBill * 0.95);
+  const savPct     = Math.round((totalSav / annualBill) * 100);
+
+  // ── COST & PAYBACK ──
+  const pvCost    = pvKwp * pvCostKwp;
+  const bCost     = bess.totalKwh * bessCostKwh;
+  const totalCost = goal === 'pv+bess' ? pvCost + bCost :
+                    goal === 'pv'       ? pvCost : bCost;
+  const payback   = totalCost / (totalSav || 1);
+
+  // ── CO2 ──
+  const co2 = Math.round(pvAnnual * 0.35 / 1000);
+
+  // ── MONTHLY BARS ──
+  const profile  = MONTHLY_PROFILES[business] ?? MONTHLY_PROFILES.other;
+  const mBefore  = profile.map(p => annualKwh * p / 100);
+  const mSolar   = SOLAR_PROFILE.map(p => pvAnnual * p / 100);
+  const mAfter   = mBefore.map((b, i) => Math.max(0, b - mSolar[i] * scRate));
+
+  // ── UPDATE DOM ──
+  $('results').classList.remove('hidden');
+  $('res-savings').textContent     = Math.round(totalSav).toLocaleString('el-GR');
+  $('res-savings-pct').textContent = `${savPct}% εκτιμώμενη μείωση συνολικού κόστους`;
+  $('res-pv').textContent          = pvKwp ? `${pvKwp} kWp` : '—';
+  $('res-bess').textContent        = bess.totalKwh ? `${bess.totalKwh} kWh` : '—';
+  $('res-payback').textContent     = payback > 0 ? `${(Math.round(payback*10)/10).toLocaleString('el-GR')} έτη` : '—';
+  $('res-co2').textContent         = co2 ? `${co2} t` : '—';
+
+  drawChart(mBefore, mAfter);
+  renderEquipment(pvKwp, pvAnnual, bess, bessTarget, goal);
+}
+
+// ── CHART ────────────────────────────────────────────────────────────────
+function drawChart(before, after) {
+  const svg  = $('monthly-chart');
+  const W=340, H=120, PAD=16, LH=16;
+  const chartH = H - LH;
+  const maxV   = Math.max(...before, 1);
+  const barW   = (W - PAD*2) / 12;
+  const scale  = chartH / maxV;
+
+  let out = `<line x1="${PAD}" y1="${chartH}" x2="${W-PAD}" y2="${chartH}" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>`;
+
+  before.forEach((b, i) => {
+    const x  = PAD + i * barW;
+    const bh = b * scale;
+    const ah = after[i] * scale;
+    const gw = barW * 0.36;
+    out += `<rect x="${x+barW*0.06}" y="${chartH-bh}" width="${gw}" height="${bh}" rx="2" fill="#3b82f6" opacity="0.75"/>`;
+    out += `<rect x="${x+barW*0.50}" y="${chartH-ah}" width="${gw}" height="${ah}" rx="2" fill="#00e5b4" opacity="0.85"/>`;
+    out += `<text x="${x+barW/2}" y="${H}" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="9">${MONTH_LABELS[i]}</text>`;
+  });
+
+  svg.innerHTML = out;
+}
+
+// ── EQUIPMENT CARD ────────────────────────────────────────────────────────
+function renderEquipment(pvKwp, pvAnnual, bess, bessTarget, goal) {
+  let html = '';
+
+  if (goal !== 'bess' && pvKwp > 0) {
+    html += `
+      <div style="padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;">
+          <div>
+            <div style="font-weight:700;color:#fff;font-size:0.9rem;">Φωτοβολταϊκό σύστημα</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.25rem;">
+              ${pvKwp} kWp · Εκτιμώμενη παραγωγή ${(Math.round(pvAnnual/1000)*1000).toLocaleString('el-GR')} kWh/έτος · EMS / Zero Export όπου απαιτείται
+            </div>
+          </div>
+          <span style="flex-shrink:0;border-radius:0.5rem;padding:0.2rem 0.75rem;font-size:0.75rem;font-weight:700;background:rgba(0,229,180,0.12);color:#00e5b4;">${pvKwp} kWp</span>
+        </div>
+      </div>`;
+  }
+
+  if (goal !== 'pv' && bess.model) {
+    const cab = bess.cabinets > 1 ? `${bess.cabinets} × cabinet` : '1 × cabinet';
+    html += `
+      <div style="padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;">
+          <div>
+            <div style="font-weight:700;color:#fff;font-size:0.9rem;">${bess.model.id}</div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.25rem;">
+              ${bess.model.kwh} kWh / ${bess.model.kw} kW · ${bess.model.cool} · ${bess.model.ip}${bess.model.cycles ? ' · '+bess.model.cycles : ''}
+            </div>
+          </div>
+          <span style="flex-shrink:0;border-radius:0.5rem;padding:0.2rem 0.75rem;font-size:0.75rem;font-weight:700;background:rgba(0,229,180,0.12);color:#00e5b4;">${cab}</span>
+        </div>
+      </div>`;
+    if (bess.cabinets > 1) {
+      html += `
+        <div style="border-radius:0.75rem;padding:0.875rem 1rem;font-size:0.75rem;line-height:1.6;color:rgba(255,220,100,0.8);background:rgba(255,200,0,0.07);border-left:3px solid rgba(255,200,0,0.35);">
+          Στόχος BESS: περίπου ${Math.round(bessTarget)} kWh / ${bess.model.kw} kW. Επιλεγμένη διαμόρφωση: ${bess.totalKwh} kWh / ${bess.cabinets * bess.model.kw} kW.
+          Η τελική επιλογή απαιτεί καμπύλη φορτίου 15 λεπτών και επιβεβαίωση από μηχανικό.
+        </div>`;
+    }
+  }
+
+  $('equipment-list').innerHTML = html || '<p style="color:rgba(255,255,255,0.35);font-size:0.875rem;">Συμπληρώστε τα στοιχεία για να δείτε τον προτεινόμενο εξοπλισμό.</p>';
+}
+
+// ── BESS CATALOG ──────────────────────────────────────────────────────────
+function renderCatalog() {
+  const ICON = `<svg viewBox="0 0 40 50" fill="none" style="width:28px;height:34px;"><rect x="4" y="2" width="32" height="46" rx="4" stroke="#60a5fa" stroke-width="2.5"/><rect x="9" y="8" width="22" height="5" rx="1.5" fill="#60a5fa" opacity="0.55"/><rect x="9" y="17" width="22" height="5" rx="1.5" fill="#60a5fa" opacity="0.55"/><rect x="9" y="26" width="22" height="5" rx="1.5" fill="#60a5fa" opacity="0.55"/><circle cx="20" cy="40" r="3.5" fill="#00e5b4"/></svg>`;
+
+  $('bess-catalog').innerHTML = BESS_MODELS.map(m => `
+    <div style="border-radius:1rem;padding:1.5rem;background:#0d1f36;border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;">
+      <div style="position:absolute;right:0;top:0;width:7rem;height:7rem;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.15),transparent);pointer-events:none;"></div>
+      <div style="display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:0.75rem;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);margin-bottom:1rem;">
+        ${ICON}
+      </div>
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;">${m.id}</div>
+      <div style="font-size:1.75rem;font-weight:900;color:#00e5b4;margin-bottom:0.2rem;">${m.kwh} kWh</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;">
+        ${m.kw} kW · ${m.cool} · LiFePO₄ · ${m.ip}${m.cycles ? ' · '+m.cycles : ''}${m.extra ? ' · '+m.extra : ''}
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+        ${m.tags.map(t => `<span style="border-radius:999px;padding:0.2rem 0.75rem;font-size:0.7rem;font-weight:500;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.1);">${t}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────
+document.getElementById('inp-cooling').addEventListener('input', function() {
+  document.getElementById('lbl-cooling').textContent = this.value + '%';
+  runCalc();
+});
+
+['inp-annual','inp-bill','inp-price','inp-hours','inp-roof','inp-goal',
+ 'inp-business','inp-yield','inp-pv-cost','inp-bess-cost'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) { el.addEventListener('input', runCalc); el.addEventListener('change', runCalc); }
+});
+
+document.getElementById('btn-calc').addEventListener('click', runCalc);
+
+renderCatalog();
+</script>
