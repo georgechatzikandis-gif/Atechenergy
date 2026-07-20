@@ -8,11 +8,11 @@ import lvBattery from "../assets/hero/hero-img3463.jpg";
 import lvHomeStorage from "../assets/hero/hero-img3464.jpg";
 
 const slides = [
-  { image: powertrunk, alt: "TSUN PowerTrunk", width: 1284, height: 2228, href: withBase("products/hybrid-microinverter-2000w/") },
-  { image: hyperIonPro, alt: "Risen Hyper-ion Pro Solar Panel", width: 896, height: 1200, href: null },
-  { image: risenCiStorage, alt: "Risen C&I Energy Storage System", width: 896, height: 1200, href: withBase("products/risen-ci-energy-storage/") },
-  { image: lvBattery, alt: "LithiumValley 12V 100Ah Pro Rechargeable Li-ion Battery", width: 896, height: 1200, href: null },
-  { image: lvHomeStorage, alt: "LithiumValley Home Energy Storage System with Solar and EV Charging", width: 896, height: 1200, href: null },
+  { image: powertrunk, alt: "TSUN PowerTrunk", width: 1284, height: 2228, href: withBase("products/hybrid-microinverter-2000w/"), scale: 1 },
+  { image: hyperIonPro, alt: "Risen Hyper-ion Pro Solar Panel", width: 896, height: 1200, href: null, scale: 1 },
+  { image: risenCiStorage, alt: "Risen C&I Energy Storage System", width: 896, height: 1200, href: withBase("products/risen-ci-energy-storage/"), scale: 1 },
+  { image: lvBattery, alt: "LithiumValley 12V 100Ah Pro Rechargeable Li-ion Battery", width: 896, height: 1200, href: null, scale: 0.72 },
+  { image: lvHomeStorage, alt: "LithiumValley Home Energy Storage System with Solar and EV Charging", width: 896, height: 1200, href: null, scale: 0.72 },
 ];
 ---
 
@@ -32,7 +32,8 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain [-webkit-user-drag:none]"
+          class="h-full w-full object-contain [-webkit-user-drag:none] transition-transform duration-700"
+          style={s.scale !== 1 ? `transform: scale(${s.scale})` : undefined}
         />
       </div>
     ))
