@@ -1,0 +1,277 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+import deviceRender from "../../../assets/products/mi-device-render.jpg";
+import installation from "../../../assets/products/mi-installation.jpg";
+import batteryStack from "../../../assets/products/mi-battery-stack.jpg";
+
+const title = "TSUN Hybrid Microinverter 2000W TSOL-MH2000 | Alphatech Energy";
+const description =
+  "TSUN TSOL-MH2000 Hybrid Microinverter: 700W ανά πάνελ, 4 MPPT trackers, 2000W on/off-grid, εναλλαγή <10ms, IP67, WiFi & Bluetooth — παράγει, αποθηκεύει και εξοικονομεί ενέργεια σε ένα σύστημα.";
+---
+
+<BaseLayout title={title} description={description} path="/products/hybrid-microinverter-2000w/">
+  <Header />
+  <main class="pt-24">
+
+    {/* ── Breadcrumb ── */}
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">Hybrid Microinverter 2000W</span>
+        </nav>
+      </div>
+    </div>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="flex items-center justify-center overflow-hidden rounded-[2rem] bg-[#f5ede0] shadow-card" data-reveal>
+          <Image
+            src={deviceRender}
+            alt="TSUN TSOL-MH2000 Hybrid Microinverter"
+            width={800}
+            height={841}
+            class="h-auto w-full max-w-sm object-contain p-6 sm:max-w-md"
+          />
+        </div>
+
+        <div data-reveal>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">TSUN · TSOL-MH2000</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            Υβριδικό Microinverter 2000W
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+            Το κεντρικό στοιχείο ενός plug & play υβριδικού συστήματος αποθήκευσης. Παράγει, αποθηκεύει και εξοικονομεί ενέργεια — με εναλλαγή on/off-grid σε λιγότερο από 10ms για αδιάλειπτη παροχή ρεύματος.
+          </p>
+
+          {/* Key stats */}
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            {[
+              { value: "700W", label: "ανά πάνελ" },
+              { value: "4×", label: "MPPT" },
+              { value: "<10ms", label: "εναλλαγή" },
+            ].map((s) => (
+              <div class="rounded-2xl border border-navy-900/8 bg-white px-4 py-3 text-center shadow-card">
+                <p class="font-display text-2xl font-extrabold text-azure-600">{s.value}</p>
+                <p class="mt-0.5 text-xs font-semibold text-navy-900/50">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <ul class="mt-6 space-y-2">
+            {[
+              "700W ανά πάνελ — έως 2800W συνολική ισχύς εισόδου (4 πάνελ)",
+              "4 ανεξάρτητα MPPT trackers — μέγιστη απόδοση ακόμα και με σκίαση",
+              "2000W on-grid/off-grid + 150% overload για 2 δευτερόλεπτα",
+              "IP67 · λειτουργία -40°C έως +65°C · WiFi & Bluetooth",
+            ].map((f) => (
+              <li class="flex items-start gap-2.5 text-sm font-medium text-navy-900/75">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("products/")} class="btn btn-outline">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M11 18l-6-6 6-6"></path>
+              </svg>
+              Όλα τα Προϊόντα
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Max Solar Power section ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center" data-reveal>
+        <div class="overflow-hidden rounded-2xl shadow-card">
+          <Image
+            src={installation}
+            alt="TSUN Hybrid Microinverter εγκατεστημένο σε τοίχο με TSUN battery stack και πλυντήριο"
+            width={800}
+            height={785}
+            class="h-auto w-full object-cover"
+          />
+        </div>
+
+        <div>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Μέγιστη Απόδοση</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Max Solar Power,<br />Backup That Never Blinks
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Έως 700W ανά πάνελ (2800W συνολικά) με 4 MPPT trackers για μέγιστη εκμετάλλευση κάθε ακτίνας φωτός. Η έξυπνη φόρτιση/εκφόρτιση μειώνει τους λογαριασμούς ρεύματος άμεσα.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
+              <p class="font-display text-3xl font-extrabold text-azure-600">700W</p>
+              <p class="mt-1 text-sm font-semibold text-navy-900/60">ανά πάνελ</p>
+              <p class="mt-1 text-xs text-navy-900/45">Έως 2800W συνολικά (4 πάνελ)</p>
+            </div>
+            <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
+              <p class="font-display text-3xl font-extrabold text-azure-600">4× MPPT</p>
+              <p class="mt-1 text-sm font-semibold text-navy-900/60">Ανεξάρτητοι trackers</p>
+              <p class="mt-1 text-xs text-navy-900/45">Εξάγει περισσότερη ενέργεια</p>
+            </div>
+          </div>
+
+          <div class="mt-5 rounded-2xl border border-navy-900/8 bg-ice-100/60 p-5">
+            <p class="text-sm font-bold text-navy-900">Power When You Need It Most</p>
+            <p class="mt-1.5 text-sm leading-relaxed text-navy-900/60">
+              2000W on/off-grid + 150% overload (2s) = zero surge anxiety.<br />
+              Smart Charge/Discharge · On/Off-Grid Ready · 150% Overload
+            </p>
+            <p class="mt-2 text-xs text-navy-900/40">
+              * Η έξοδος μπορεί να περιορίζεται από τοπικούς κανονισμούς — π.χ. 800W για Γερμανία.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Safety section ── */}
+    <section class="bg-ice-100/40 py-16 sm:py-20">
+      <div class="container-page" data-reveal>
+        <div class="mb-10 text-center">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Αξιοπιστία</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Safety You Can Trust
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              icon: "🛡️",
+              title: "Ασφάλεια πρώτα",
+              desc: "Σχεδίαση 60V χαμηλής τάσης + απομόνωση υψηλής συχνότητας μειώνει το ρεύμα διαρροής. Κέλυφος ολοκληρωμένο αλουμινίου εξασφαλίζει σταθερή, ψυχρή λειτουργία κάθε μέρα.",
+            },
+            {
+              icon: "🔧",
+              title: "Συντήρηση — απλή υπόθεση",
+              desc: "Αρθρωτές συνδέσεις = γρήγορες επιδιορθώσεις. Κατασκευή IP67 αντέχει από -40°C παγετούς μέχρι +65°C καύσωνες.",
+            },
+            {
+              icon: "✅",
+              title: "Πιστοποιημένο, χωρίς περιπλοκές",
+              desc: "Πληροί όλα τα πρότυπα δικτύου. Χρήση αμέσως με αξιόπιστη απόδοση για χρόνια.",
+            },
+          ].map((c) => (
+            <div class="rounded-2xl bg-white p-7 shadow-card">
+              <span class="text-3xl" aria-hidden="true">{c.icon}</span>
+              <h3 class="mt-4 font-display text-lg font-bold text-navy-900">{c.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-navy-900/60">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Battery stack photo */}
+        <div class="mt-10 overflow-hidden rounded-2xl shadow-card" data-reveal>
+          <Image
+            src={batteryStack}
+            alt="TSUN battery stack — στοίβα μπαταριών TSUN συνδεδεμένη με microinverter"
+            width={800}
+            height={461}
+            class="h-64 w-full object-cover sm:h-80"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* ── Full features grid ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Χαρακτηριστικά</h2>
+        <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            "700W ανά πάνελ — έως 2800W συνολική ισχύς εισόδου (4 πάνελ)",
+            "4 ανεξάρτητα MPPT trackers — μέγιστη απόδοση ακόμα και με σκίαση",
+            "2000W on-grid/off-grid έξοδος + 150% overload για 2 δευτερόλεπτα",
+            "Εναλλαγή on-grid/off-grid σε <10ms — αδιάλειπτη παροχή ρεύματος",
+            "IP67 αδιάβροχη κατασκευή — λειτουργία από -40°C έως +65°C",
+            "60V χαμηλή τάση + απομόνωση υψηλής συχνότητας για ασφαλή λειτουργία",
+            "Έξυπνη φόρτιση/εκφόρτιση από PV module ή δίκτυο",
+            "WiFi, Bluetooth & RS485 — παρακολούθηση και έλεγχος από οπουδήποτε",
+            "Συμβατό με πολλούς τύπους μπαταριών LiFePO4",
+            "Zero Export (προαιρετικά) — συμμόρφωση με κανονισμούς δικτύου",
+          ].map((f) => (
+            <li class="flex items-start gap-3 rounded-2xl border border-navy-900/8 bg-ice-100/40 p-5">
+              <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span class="text-sm leading-relaxed font-medium text-navy-900/80">{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    {/* ── Specs table ── */}
+    <section class="bg-ice-100/40 py-16 sm:py-20">
+      <div class="container-page" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+        <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
+          {[
+            { label: "Μοντέλο", value: "TSOL-MH2000" },
+            { label: "Ισχύς Εισόδου PV", value: "400~700+ Wp ανά πάνελ" },
+            { label: "Αριθμός Πάνελ", value: "1 έως 4" },
+            { label: "Max Ισχύς Φόρτισης/Εκφόρτισης", value: "2000W" },
+            { label: "Max Ισχύς AC On-grid", value: "2000W (ή 800W ανά χώρα)" },
+            { label: "Max Ισχύς AC Off-grid", value: "2000W" },
+            { label: "Overload", value: "150% (2s)" },
+            { label: "Εναλλαγή On/Off-grid", value: "<10ms" },
+            { label: "Βαθμός Προστασίας", value: "IP67" },
+            { label: "Θερμοκρασία Λειτουργίας", value: "-40°C έως +65°C" },
+            { label: "Συνδεσιμότητα", value: "WiFi, Bluetooth, RS485" },
+            { label: "Διαστάσεις (ΠxΥxΒ mm)", value: "360 × 320 × 51" },
+            { label: "Βάρος", value: "8 kg" },
+          ].map((s, i) => (
+            <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
+              <span class="text-sm text-navy-900/60">{s.label}</span>
+              <span class="text-sm font-bold text-navy-900 text-right">{s.value}</span>
+            </div>
+          ))}
+        </div>
+        <p class="mt-4 text-xs text-navy-900/40">
+          Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
+        </p>
+      </div>
+    </section>
+
+    {/* ── CTA ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14" data-reveal>
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">
+            Ενδιαφέρεστε για το TSUN TSOL-MH2000;
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">
+            Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>
