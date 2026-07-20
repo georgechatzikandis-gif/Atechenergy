@@ -126,18 +126,19 @@ const description =
     </div>
 
     {/* ── 1. Distributed PV Power Plant ── */}
-    <section class="bg-white py-16 sm:py-20">
-      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center" data-reveal>
-        <div class="overflow-hidden rounded-2xl shadow-card">
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed on mobile, card-style on desktop */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-right lg:w-1/2 lg:ml-10">
           <Image
             src={rooftopSolar}
             alt="Κατανεμημένο Φωτοβολταϊκό Πάρκο — αεροφωτογραφία βιομηχανικής εγκατάστασης"
             width={800}
             height={460}
-            class="h-auto w-full object-cover"
+            class="aspect-video w-full object-cover"
           />
         </div>
-        <div>
+        <div class="lg:overflow-hidden">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 01</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Κατανεμημένο Φωτοβολταϊκό Σύστημα
@@ -163,9 +164,9 @@ const description =
     </section>
 
     {/* ── 2. BIPV System ── */}
-    <section class="bg-ice-100/40 py-16 sm:py-20">
+    <section class="bg-ice-100/40 py-12 sm:py-16 lg:py-20">
       <div class="container-page" data-reveal>
-        <div class="mb-10 text-center">
+        <div class="mb-8 text-center">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 02</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Σύστημα BIPV — Δομικά Ενσωματωμένα Φωτοβολταϊκά
@@ -175,28 +176,25 @@ const description =
           </p>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div class="overflow-hidden rounded-2xl shadow-card">
-            <Image
-              src={sunsetSolar}
-              alt="BIPV — Βιομηχανική οροφή με φωτοβολταϊκά πάνελ στο ηλιοβασίλεμα"
-              width={800}
-              height={460}
-              class="h-64 w-full object-cover sm:h-72"
-            />
-          </div>
-          <div class="overflow-hidden rounded-2xl shadow-card">
-            <Image
-              src={bipvPanels}
-              alt="BIPV — Κοντινό πλάνο ενσωματωμένων φωτοβολταϊκών πάνελ σε βιομηχανική στέγη"
-              width={800}
-              height={480}
-              class="h-64 w-full object-cover sm:h-72"
-            />
-          </div>
+        {/* Full-bleed 2-column on mobile via -mx, 2-col grid inside */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 grid grid-cols-2 gap-0.5 sm:gap-1 lg:gap-4 lg:rounded-2xl overflow-hidden">
+          <Image
+            src={sunsetSolar}
+            alt="BIPV — Βιομηχανική οροφή με φωτοβολταϊκά πάνελ στο ηλιοβασίλεμα"
+            width={800}
+            height={460}
+            class="aspect-[4/3] w-full object-cover"
+          />
+          <Image
+            src={bipvPanels}
+            alt="BIPV — Κοντινό πλάνο ενσωματωμένων φωτοβολταϊκών πάνελ σε βιομηχανική στέγη"
+            width={800}
+            height={480}
+            class="aspect-[4/3] w-full object-cover"
+          />
         </div>
 
-        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             { title: "Αισθητική Ενσωμάτωση", desc: "Ένα λεπτό σχέδιο που ταιριάζει αρμονικά με την αρχιτεκτονική του κτιρίου." },
             { title: "Διπλή Λειτουργία", desc: "Δομικό υλικό και ενεργειακή πηγή ταυτόχρονα — μέγιστη αξιοποίηση επιφάνειας." },
@@ -212,9 +210,9 @@ const description =
     </section>
 
     {/* ── 3. Integrated Solar & Storage (DC / AC Coupled) ── */}
-    <section class="bg-white py-16 sm:py-20">
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
       <div class="container-page" data-reveal>
-        <div class="mb-10 text-center">
+        <div class="mb-8 text-center">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 03</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Ολοκληρωμένο Σύστημα Παραγωγής & Αποθήκευσης
@@ -224,7 +222,7 @@ const description =
           </p>
         </div>
 
-        <div class="grid gap-8 md:grid-cols-2">
+        <div class="grid gap-6 md:grid-cols-2">
           <div class="rounded-2xl border border-azure-500/20 bg-gradient-to-br from-navy-950 to-navy-800 p-8 text-white">
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-azure-500/20">
               <svg class="h-5 w-5 text-azure-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -269,9 +267,19 @@ const description =
     </section>
 
     {/* ── 4. Ground-mounted Power Plant ── */}
-    <section class="bg-ice-100/40 py-16 sm:py-20">
-      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center" data-reveal>
-        <div class="order-2 lg:order-1">
+    <section class="bg-ice-100/40 py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed image on mobile */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-left lg:w-1/2 lg:mr-10">
+          <Image
+            src={groundSolar}
+            alt="Κεντρικός φωτοβολταϊκός σταθμός εδάφους — σειρές πάνελ σε ανοιχτό χώρο"
+            width={800}
+            height={460}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+        <div class="lg:overflow-hidden">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 04</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Κεντρικός Φωτοβολταϊκός Σταθμός Εδάφους
@@ -293,31 +301,23 @@ const description =
             ))}
           </ul>
         </div>
-        <div class="order-1 overflow-hidden rounded-2xl shadow-card lg:order-2">
-          <Image
-            src={groundSolar}
-            alt="Κεντρικός φωτοβολταϊκός σταθμός εδάφους — σειρές πάνελ σε ανοιχτό χώρο"
-            width={800}
-            height={460}
-            class="h-auto w-full object-cover"
-          />
-        </div>
       </div>
     </section>
 
     {/* ── 5. Energy Storage Power Station ── */}
-    <section class="bg-white py-16 sm:py-20">
-      <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center" data-reveal>
-        <div class="overflow-hidden rounded-2xl shadow-card">
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed image on mobile */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-right lg:w-1/2 lg:ml-10">
           <Image
             src={storageContainers}
             alt="Βιομηχανικός σταθμός αποθήκευσης ενέργειας — containers"
             width={800}
             height={460}
-            class="h-auto w-full object-cover"
+            class="aspect-video w-full object-cover"
           />
         </div>
-        <div>
+        <div class="lg:overflow-hidden">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 05</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Σταθμός Αποθήκευσης Ενέργειας
@@ -325,7 +325,7 @@ const description =
           <p class="mt-4 text-base leading-relaxed text-navy-900/60">
             Χρησιμοποιεί ηλεκτροχημικές μπαταρίες για αποθήκευση, μετατροπή και απόδοση ηλεκτρικής ενέργειας. Περιλαμβάνει τα απαραίτητα συστήματα σύνδεσης δικτύου, συντήρησης και επιθεώρησης. Για δίκτυα τάσης 10(6)kV και άνω, ενσωματώνει επιπλέον συλλεκτήριους αγωγούς και μετασχηματιστές ανύψωσης.
           </p>
-          <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="mt-5 grid grid-cols-2 gap-3">
             {[
               "Ηλεκτροχημικές μπαταρίες LiFePO₄",
               "Σύνδεση 10(6)kV και άνω",
@@ -360,13 +360,13 @@ const description =
         </div>
 
         <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div class="overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl bg-white/5 ring-1 ring-white/10">
             <Image
               src={productSU5016}
               alt="Risen Energy SU5016U2500KC Energy Storage System"
               width={800}
               height={420}
-              class="h-auto w-full object-contain"
+              class="aspect-video w-full object-contain"
             />
           </div>
 
