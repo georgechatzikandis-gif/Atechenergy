@@ -1,5 +1,5 @@
 import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
-import hybridMicroinverter from "../assets/products/hybrid-microinverter-2000w.jpg";
+import hybridMicroinverter from "../assets/hero/tsun-microinverters.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
@@ -107,24 +107,37 @@ export const products: Product[] = [
   {
     slug: "hybrid-microinverter-2000w",
     name: "Υβριδικό Microinverter 2000W",
-    tag: "Hybrid Microinverter 2000W",
-    desc: "97% μέγιστη απόδοση, 4 MPPT trackers, WiFi και συμβατότητα με μπαταρίες LiFePO4 — παράγει, αποθηκεύει και εξοικονομεί ενέργεια.",
+    tag: "TSUN Hybrid Microinverter — TSOL-MH2000",
+    desc: "700W ανά πάνελ, 4 MPPT trackers, 2000W on/off-grid, IP67, WiFi & Bluetooth — παράγει, αποθηκεύει και εξοικονομεί ενέργεια σε ένα μοναδικό σύστημα.",
     longDesc:
-      "Το υβριδικό microinverter 2000W συνδυάζει παραγωγή, αποθήκευση και εξοικονόμηση ενέργειας σε μία συμπαγή, αδιάβροχη μονάδα. Με 4 ανεξάρτητα MPPT trackers μεγιστοποιεί την απόδοση ακόμη και σε μερική σκίαση, ενώ η συνδεσιμότητα WiFi και Bluetooth επιτρέπει παρακολούθηση του συστήματος σε πραγματικό χρόνο.",
+      "Το TSUN Hybrid Microinverter TSOL-MH2000 είναι το κεντρικό στοιχείο ενός plug & play υβριδικού συστήματος αποθήκευσης. Συνδέεται μεταξύ φωτοβολταϊκών πάνελ και μπαταρίας, φορτίζει την περίσσεια ενέργειας και την αποδίδει όταν χρειαστεί. Υποστηρίζει on-grid, off-grid και αποθήκευση ενέργειας — με εναλλαγή on/off-grid σε λιγότερο από 10ms για αδιάλειπτη παροχή ρεύματος.",
     photo: hybridMicroinverter,
     features: [
-      "97% μέγιστη απόδοση αιχμής",
-      "4 ανεξάρτητα MPPT trackers",
-      "WiFi και αδιάβροχη κατασκευή",
-      "Συμβατό με μπαταρίες LiFePO4",
-      "Συνδεσιμότητα Bluetooth",
+      "700W ανά πάνελ — έως 2800W συνολική ισχύς εισόδου (4 πάνελ)",
+      "4 ανεξάρτητα MPPT trackers — μέγιστη απόδοση ακόμα και με σκίαση",
+      "2000W on-grid/off-grid έξοδος + 150% overload για 2 δευτερόλεπτα",
+      "Εναλλαγή on-grid/off-grid σε <10ms — αδιάλειπτη παροχή ρεύματος",
+      "IP67 αδιάβροχη κατασκευή — λειτουργία από -40°C έως +65°C",
+      "60V χαμηλή τάση + απομόνωση υψηλής συχνότητας για ασφαλή λειτουργία",
+      "Έξυπνη φόρτιση/εκφόρτιση από PV module ή δίκτυο",
+      "WiFi, Bluetooth & RS485 — παρακολούθηση και έλεγχος από οπουδήποτε",
+      "Συμβατό με πολλούς τύπους μπαταριών LiFePO4",
+      "Zero Export (προαιρετικά) — συμμόρφωση με κανονισμούς δικτύου",
     ],
     specs: [
-      { label: "Ισχύς Εξόδου", value: "2000W" },
-      { label: "Μέγιστη Απόδοση", value: "97%" },
-      { label: "MPPT Trackers", value: "4" },
-      { label: "Συνδεσιμότητα", value: "WiFi & Bluetooth" },
-      { label: "Συμβατότητα Μπαταρίας", value: "LiFePO4" },
+      { label: "Μοντέλο", value: "TSOL-MH2000" },
+      { label: "Ισχύς Εισόδου PV", value: "400~700+ Wp ανά πάνελ" },
+      { label: "Αριθμός Πάνελ", value: "1 έως 4" },
+      { label: "Max Ισχύς Φόρτισης/Εκφόρτισης", value: "2000W" },
+      { label: "Max Ισχύς AC On-grid", value: "2000W (ή 800W ανά χώρα)" },
+      { label: "Max Ισχύς AC Off-grid", value: "2000W" },
+      { label: "Overload", value: "150% (2s)" },
+      { label: "Εναλλαγή On/Off-grid", value: "<10ms" },
+      { label: "Βαθμός Προστασίας", value: "IP67" },
+      { label: "Θερμοκρασία Λειτουργίας", value: "-40°C έως +65°C" },
+      { label: "Συνδεσιμότητα", value: "WiFi, Bluetooth, RS485" },
+      { label: "Διαστάσεις (ΠxΥxΒ mm)", value: "360 × 320 × 51" },
+      { label: "Βάρος", value: "8 kg" },
     ],
   },
 ];
