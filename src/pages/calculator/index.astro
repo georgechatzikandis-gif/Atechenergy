@@ -72,7 +72,7 @@ const description =
           <div>
             <label class="clabel">Ετήσια κατανάλωση</label>
             <div class="relative">
-              <input id="inp-annual" type="number" placeholder="420000" class="cinput w-full pr-14" />
+              <input id="inp-annual" type="number" value="420000" class="cinput w-full pr-14" />
               <span class="cunit">kWh</span>
             </div>
           </div>
@@ -81,7 +81,7 @@ const description =
           <div>
             <label class="clabel">Μηνιαίος λογαριασμός</label>
             <div class="relative">
-              <input id="inp-bill" type="number" placeholder="7500" class="cinput w-full pr-8" />
+              <input id="inp-bill" type="number" value="7500" class="cinput w-full pr-8" />
               <span class="cunit">€</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ const description =
           <div>
             <label class="clabel">Τιμή ενέργειας</label>
             <div class="relative">
-              <input id="inp-price" type="number" step="0.01" placeholder="0.18" class="cinput w-full pr-16" />
+              <input id="inp-price" type="number" step="0.01" value="0.18" class="cinput w-full pr-16" />
               <span class="cunit">€/kWh</span>
             </div>
           </div>
@@ -123,7 +123,7 @@ const description =
           <div>
             <label class="clabel">Διαθέσιμη στέγη</label>
             <div class="relative">
-              <input id="inp-roof" type="number" placeholder="1200" class="cinput w-full pr-10" />
+              <input id="inp-roof" type="number" value="1200" class="cinput w-full pr-10" />
               <span class="cunit">m²</span>
             </div>
           </div>
@@ -353,7 +353,7 @@ const description =
 </style>
 
 <!-- ═══════════════════════════════════════════ SCRIPT ═══ -->
-<script>
+<script is:inline>
 // ── DATA ────────────────────────────────────────────────────────────────
 const MONTHLY_PROFILES = {
   supermarket: [7.2,6.8,7.5,8.0,9.2,10.8,11.5,11.0,9.5,8.0,5.8,4.7],
@@ -403,7 +403,10 @@ function runCalc() {
   const pvCostKwp   = val('inp-pv-cost', 600);
   const bessCostKwh = val('inp-bess-cost', 350);
 
-  if (!annualKwh || !roofM2) return;
+  if (!annualKwh || !roofM2) {
+    alert('Παρακαλώ συμπληρώστε την ετήσια κατανάλωση (kWh) και τη διαθέσιμη στέγη (m²).');
+    return;
+  }
 
   // Night hours (hours without solar production)
   const nightH = {['24/7']:10, ['16h']:14, ['14h']:14, ['12h']:16}[hoursVal] ?? 10;
@@ -562,4 +565,5 @@ document.getElementById('inp-cooling').addEventListener('input', function() {
 document.getElementById('btn-calc').addEventListener('click', runCalc);
 
 renderCatalog();
+runCalc();
 </script>
