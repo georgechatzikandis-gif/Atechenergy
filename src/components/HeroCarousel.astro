@@ -1,63 +1,18 @@
 ---
 import { Image } from "astro:assets";
 import { withBase } from "../lib/paths";
-import microinverters from "../assets/hero/tsun-microinverters.jpg";
+import powertrunk from "../assets/hero/tsun-powertrunk.jpg";
 import hyperIonPro from "../assets/hero/risen-hyper-ion-pro.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 import lvBattery from "../assets/hero/hero-img3463.jpg";
 import lvHomeStorage from "../assets/hero/hero-img3464.jpg";
 
 const slides = [
-  {
-    image: microinverters,
-    alt: "TSUN Microinverters",
-    width: 896,
-    height: 1200,
-    label: "Μικροαντιστροφείς",
-    title: "No.1 Powerful Microinverter",
-    subtitle: "Make Safety Affordable",
-    href: withBase("products/hybrid-microinverter-2000w/"),
-  },
-  {
-    image: hyperIonPro,
-    alt: "Risen Hyper-ion Pro Solar Panel",
-    width: 896,
-    height: 1200,
-    label: "Φωτοβολταϊκά Πάνελ",
-    title: "Hyper-ion Pro",
-    subtitle: "24.7% Efficiency · 767W · 0BB Cell Technology",
-    href: null,
-  },
-  {
-    image: risenCiStorage,
-    alt: "Risen C&I Energy Storage System",
-    width: 896,
-    height: 1200,
-    label: "Βιομηχανικές Λύσεις",
-    title: "C&I Energy Storage",
-    subtitle: "More Reliable · More Efficient · Grid-Scale",
-    href: withBase("products/risen-ci-energy-storage/"),
-  },
-  {
-    image: lvBattery,
-    alt: "LithiumValley 12V 100Ah Pro Rechargeable Li-ion Battery",
-    width: 896,
-    height: 1200,
-    label: "Μπαταρίες Li-ion",
-    title: "12V 100Ah Pro",
-    subtitle: "Rechargeable Li-ion · Marine & Outdoor",
-    href: null,
-  },
-  {
-    image: lvHomeStorage,
-    alt: "LithiumValley Home Energy Storage System with Solar and EV Charging",
-    width: 896,
-    height: 1200,
-    label: "Οικιακές Λύσεις",
-    title: "Home Energy System",
-    subtitle: "Solar · Storage · EV Charging",
-    href: null,
-  },
+  { image: powertrunk, alt: "TSUN PowerTrunk", width: 1284, height: 2228, href: withBase("products/hybrid-microinverter-2000w/"), scale: 1 },
+  { image: hyperIonPro, alt: "Risen Hyper-ion Pro Solar Panel", width: 896, height: 1200, href: null, scale: 1 },
+  { image: risenCiStorage, alt: "Risen C&I Energy Storage System", width: 896, height: 1200, href: withBase("products/risen-ci-energy-storage/"), scale: 1 },
+  { image: lvBattery, alt: "LithiumValley 12V 100Ah Pro Rechargeable Li-ion Battery", width: 896, height: 1200, href: null, scale: 0.72 },
+  { image: lvHomeStorage, alt: "LithiumValley Home Energy Storage System with Solar and EV Charging", width: 896, height: 1200, href: null, scale: 0.72 },
 ];
 ---
 
@@ -77,29 +32,14 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain [-webkit-user-drag:none]"
+          class="h-full w-full object-contain [-webkit-user-drag:none] transition-transform duration-700"
+          style={s.scale !== 1 ? `transform: scale(${s.scale})` : undefined}
         />
-
-        {/* Bottom-left gradient for text readability */}
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-
-        {/* Product details — bottom left */}
-        <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
-          <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
-            {s.label}
-          </span>
-          <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-            {s.title}
-          </h2>
-          <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
-            {s.subtitle}
-          </p>
-        </div>
       </div>
     ))
   }
 
-  <div class="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2">
+  <div class="absolute inset-x-0 bottom-6 z-20 flex justify-center gap-2">
     {
       slides.map((_, i) => (
         <button
@@ -114,39 +54,11 @@ const slides = [
   </div>
 </div>
 
-<style is:global>
-  /* ── Text stagger pop-in ── */
-  .hero-slide-label,
-  .hero-slide-title,
-  .hero-slide-subtitle {
-    opacity: 0;
-    transform: translateY(22px);
-    transition-property: opacity, transform;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    transition-duration: 0.6s;
-  }
-
-  [data-slide][data-active="true"] .hero-slide-label {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.22s;
-  }
-  [data-slide][data-active="true"] .hero-slide-title {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.36s;
-  }
-  [data-slide][data-active="true"] .hero-slide-subtitle {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.5s;
-  }
-</style>
-
 <script>
-  const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]");
+  const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]:not([data-carousel-init])");
 
   roots.forEach((root) => {
+    root.setAttribute("data-carousel-init", "true");
     const slideEls = Array.from(root.querySelectorAll<HTMLElement>("[data-slide]"));
     const dots = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-dot]"));
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -158,7 +70,6 @@ const slides = [
         const offset = i === current ? "0" : i < current ? "-100%" : "100%";
         el.style.transform = `translateX(${offset})`;
         el.style.opacity = i === current ? "1" : "0";
-        el.setAttribute("data-active", String(i === current));
       });
       dots.forEach((dot, i) => dot.setAttribute("data-active", String(i === current)));
     };
@@ -226,9 +137,7 @@ const slides = [
       start();
     });
 
-    // Double rAF ensures initial CSS paint (all hidden) happens before
-    // render() sets data-active, so the stagger transition fires on load
-    requestAnimationFrame(() => requestAnimationFrame(() => render()));
+    render();
     start();
   });
 </script>
