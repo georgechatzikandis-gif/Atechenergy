@@ -1,5 +1,5 @@
 import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
-import hybridMicroinverter from "../assets/hero/tsun-microinverters.jpg";
+import hybridMicroinverter from "../assets/hero/tsun-powertrunk.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
