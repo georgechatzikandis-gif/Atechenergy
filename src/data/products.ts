@@ -1,5 +1,6 @@
 import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
 import hybridMicroinverter from "../assets/products/hybrid-microinverter-2000w.jpg";
+import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
 
@@ -57,6 +58,31 @@ export const products: Product[] = [
     tag: "EV Chargers",
     desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
     art: "ev",
+  },
+  {
+    slug: "risen-ci-energy-storage",
+    name: "C&I Αποθήκευση Ενέργειας",
+    tag: "Risen C&I Energy Storage System",
+    desc: "Βιομηχανικά συστήματα αποθήκευσης ενέργειας Risen Energy για εμπορικές και βιομηχανικές εγκαταστάσεις.",
+    longDesc:
+      "Τα C&I συστήματα αποθήκευσης ενέργειας Risen Energy προσφέρουν αξιόπιστη, κλιμακώσιμη αποθήκευση για εμπορικές και βιομηχανικές εγκαταστάσεις. Με τεχνολογία LiFePO₄, ολοκληρωμένο BMS και έξυπνη διαχείριση O&M, βελτιστοποιούν το κόστος ενέργειας, μειώνουν την εξάρτηση από το δίκτυο και εξασφαλίζουν συνεχή ροή ισχύος ακόμη και σε περίπτωση διακοπής.",
+    photo: risenCiStorage,
+    features: [
+      "Ολοκληρωμένη ασφάλεια (Comprehensive Safety)",
+      "Υψηλή αξιοπιστία για βιομηχανικά περιβάλλοντα",
+      "Έξυπνη διαχείριση λειτουργίας & συντήρησης (Intelligent O&M)",
+      "Κλιμακώσιμη αρχιτεκτονική — από C&I έως utility-scale",
+      "Τεχνολογία LiFePO₄ με μακρά διάρκεια ζωής",
+      "Πλήρης ενσωμάτωση δικτύου (Grid-connected & Off-grid)",
+    ],
+    specs: [
+      { label: "Τύπος", value: "C&I / Utility-scale ESS" },
+      { label: "Τεχνολογία Κυψέλης", value: "LiFePO₄" },
+      { label: "Εφαρμογή", value: "Εμπορικές & Βιομηχανικές" },
+      { label: "Λειτουργία", value: "Grid-connected / Off-grid" },
+      { label: "Κατασκευαστής", value: "Risen Energy" },
+      { label: "Κατηγορίες", value: "Residential · C&I · Utility-scale" },
+    ],
   },
   {
     slug: "firefighter-safety-switch",
