@@ -1,0 +1,295 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+import heroImg from "../../../assets/hero/hero-img3464.jpg";
+import batW2 from "../../../assets/products/lv-bat-w2-56ac.jpg";
+import batW5 from "../../../assets/products/lv-bat-w5-12da.jpg";
+import w15 from "../../../assets/products/lv-w15-5a.jpg";
+import w16 from "../../../assets/products/lv-w16-5a.jpg";
+
+const title = "LithiumValley Οικιακή Αποθήκευση Ενέργειας | Alphatech Energy";
+const description =
+  "Οικιακά συστήματα αποθήκευσης ενέργειας LithiumValley: μπαταρίες LiFePO₄ τοίχου και δαπέδου για κατοικίες και μικρές επιχειρήσεις. Επίσημος διανομέας στην Ελλάδα.";
+
+const products = [
+  {
+    image: batW2,
+    model: "LV-BAT-W2.56Ac",
+    name: "Wall-Mounted Battery",
+    capacity: "2.56 kWh",
+    voltage: "51.2V",
+    chemistry: "LiFePO₄",
+    cycles: "6,000+",
+    badge: null,
+    features: [
+      "Χωρητικότητα 2.56 kWh",
+      "Τεχνολογία LiFePO₄",
+      "Εγκατάσταση τοίχου (wall-mount)",
+      "IP65 προστασία",
+      "BMS ενσωματωμένο",
+      "Συμβατό με υβριδικά inverters",
+    ],
+  },
+  {
+    image: batW5,
+    model: "LV-BAT-W5.12Da",
+    name: "Wall-Mounted Battery",
+    capacity: "5.12 kWh",
+    voltage: "51.2V",
+    chemistry: "LiFePO₄",
+    cycles: "6,000+",
+    badge: null,
+    features: [
+      "Χωρητικότητα 5.12 kWh",
+      "Τεχνολογία LiFePO₄",
+      "Εγκατάσταση τοίχου (wall-mount)",
+      "IP65 προστασία",
+      "BMS ενσωματωμένο",
+      "Modular — επεκτάσιμο",
+    ],
+  },
+  {
+    image: w15,
+    model: "W15-5A",
+    name: "Residential LFP Battery",
+    capacity: "15 kWh",
+    voltage: "48V",
+    chemistry: "LiFePO₄",
+    cycles: "6,000+",
+    badge: null,
+    features: [
+      "Χωρητικότητα 15 kWh",
+      "Δαπέδιο με ρόδες (mobile)",
+      "Τεχνολογία LiFePO₄",
+      "Υψηλή ενεργειακή πυκνότητα",
+      "BMS ενσωματωμένο",
+      "Εύκολη μετακίνηση & εγκατάσταση",
+    ],
+  },
+  {
+    image: w16,
+    model: "W16-5A",
+    name: "Residential LFP Battery",
+    capacity: "16 kWh",
+    voltage: "48V",
+    chemistry: "LiFePO₄",
+    cycles: "6,000+",
+    badge: "NEW",
+    features: [
+      "Χωρητικότητα 16 kWh",
+      "Δαπέδιο — wall-mount design",
+      "Νέα γενιά LiFePO₄",
+      "Υψηλότερη απόδοση φόρτισης",
+      "BMS ενσωματωμένο",
+      "Επεκτάσιμο σε σειρά / παράλληλα",
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path="/products/lithiumvalley-residential/">
+  <Header />
+  <main class="pt-24">
+
+    {/* ── Breadcrumb ── */}
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">LithiumValley Οικιακή Αποθήκευση</span>
+        </nav>
+      </div>
+    </div>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="flex items-center justify-center overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
+          <Image
+            src={heroImg}
+            alt="LithiumValley Home Energy Storage System"
+            width={600}
+            height={600}
+            class="h-auto w-full object-cover"
+          />
+        </div>
+
+        <div data-reveal>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">LithiumValley · Οικιακή Αποθήκευση</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            Συστήματα Αποθήκευσης για Κατοικίες
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+            Αξιόπιστη αποθήκευση ενέργειας για κατοικίες και μικρές επιχειρήσεις. Οι μπαταρίες LithiumValley με τεχνολογία LiFePO₄ εξασφαλίζουν ενεργειακή αυτονομία, μεγάλη διάρκεια ζωής και ασφαλή λειτουργία.
+          </p>
+
+          <ul class="mt-6 space-y-2.5">
+            {[
+              "Τεχνολογία LiFePO₄ — 6,000+ κύκλοι φόρτισης",
+              "Τοίχου & δαπέδιου τύπου για κάθε χώρο",
+              "Ενσωματωμένο BMS — προστασία φορτίου",
+              "Συμβατά με κορυφαία υβριδικά inverters",
+              "Επίσημος διανομέας LithiumValley στην Ελλάδα",
+              "Τεχνική υποστήριξη & εγγύηση",
+            ].map((f) => (
+              <li class="flex items-start gap-2.5 text-sm font-medium text-navy-900/75">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("products/")} class="btn btn-outline">Όλα τα Προϊόντα</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Award badge ── */}
+    <section class="bg-white py-8 border-t border-b border-navy-900/6">
+      <div class="container-page flex flex-wrap items-center justify-center gap-6 text-center">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-azure-50 text-azure-600">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-xs font-bold uppercase tracking-wide text-navy-900/40">Αναγνώριση</p>
+            <p class="text-sm font-semibold text-navy-900">Επίσημος Βραβευμένος Διανομέας</p>
+          </div>
+        </div>
+        <div class="h-8 w-px bg-navy-900/10 hidden sm:block" aria-hidden="true"></div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-azure-50 text-azure-600">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-xs font-bold uppercase tracking-wide text-navy-900/40">Εγγύηση</p>
+            <p class="text-sm font-semibold text-navy-900">10 χρόνια εγγύηση προϊόντος</p>
+          </div>
+        </div>
+        <div class="h-8 w-px bg-navy-900/10 hidden sm:block" aria-hidden="true"></div>
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-azure-50 text-azure-600">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-xs font-bold uppercase tracking-wide text-navy-900/40">Τεχνολογία</p>
+            <p class="text-sm font-semibold text-navy-900">LiFePO₄ — 6,000+ κύκλοι</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Products Grid ── */}
+    <section class="bg-ice-50/40 py-20 sm:py-24">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="eyebrow">Σειρά Οικιακής Αποθήκευσης</span>
+          <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            Μπαταρίες LithiumValley
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Βρείτε το ιδανικό σύστημα αποθήκευσης για την κατοικία σας. Όλα τα μοντέλα διαθέτουν τεχνολογία LiFePO₄ και ενσωματωμένο BMS.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+          {products.map((p) => (
+            <div class="group relative flex flex-col overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card transition-shadow hover:shadow-lg">
+              {p.badge && (
+                <div class="absolute top-3 right-3 z-10 rounded-full bg-[#00e5b4] px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-navy-900">
+                  {p.badge}
+                </div>
+              )}
+              <div class="flex items-center justify-center bg-ice-50 p-6 h-56">
+                <Image
+                  src={p.image}
+                  alt={`${p.model} — ${p.name}`}
+                  width={300}
+                  height={400}
+                  class="h-full w-auto max-h-44 object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="flex flex-1 flex-col p-5">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-azure-600">{p.model}</p>
+                <h3 class="mt-1 font-display text-base font-bold text-navy-900">{p.name}</h3>
+
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-navy-900/5 px-2.5 py-1 text-xs font-semibold text-navy-900/70">{p.capacity}</span>
+                  <span class="rounded-full bg-navy-900/5 px-2.5 py-1 text-xs font-semibold text-navy-900/70">{p.voltage}</span>
+                  <span class="rounded-full bg-azure-50 px-2.5 py-1 text-xs font-semibold text-azure-700">{p.chemistry}</span>
+                </div>
+
+                <ul class="mt-4 flex-1 space-y-1.5">
+                  {p.features.map((f) => (
+                    <li class="flex items-start gap-2 text-xs text-navy-900/60">
+                      <svg class="mt-0.5 h-3.5 w-3.5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={withBase("#contact")}
+                  class="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-azure-200 bg-azure-50 py-2.5 text-sm font-semibold text-azure-700 transition-colors hover:bg-azure-100"
+                >
+                  Ζητήστε Τιμή
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Contact CTA ── */}
+    <section id="contact" class="bg-navy-950 py-20 sm:py-24">
+      <div class="container-page text-center" data-reveal>
+        <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm">Επικοινωνήστε μαζί μας</span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          Ζητήστε Προσφορά για<br/>
+          <span class="bg-gradient-to-r from-azure-300 via-azure-200 to-white bg-clip-text text-transparent">
+            Μπαταρίες LithiumValley
+          </span>
+        </h2>
+        <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/70">
+          Στείλτε μας τις ενεργειακές σας ανάγκες και θα σας προτείνουμε το κατάλληλο σύστημα αποθήκευσης με ανταγωνιστική τιμή και τεχνική υποστήριξη.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="tel:+306976724504" class="btn btn-primary">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.51 2 2 0 0 1 3.6 1.34h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.71 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.71A2 2 0 0 1 21.61 16.92z"/>
+            </svg>
+            +30 697 672 4504
+          </a>
+          <a href="mailto:info@atechenergy.gr" class="btn btn-ghost">
+            info@atechenergy.gr
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>
