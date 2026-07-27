@@ -291,6 +291,100 @@ const controlBoxModels = [
       </div>
     </section>
 
+    {/* ── Firefighter Safety Switch ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="eyebrow">String-Level Safety</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+            PEFS-EL Series — Firefighter Safety Switch
+          </h2>
+          <p class="mt-3 text-base leading-relaxed text-navy-900/60">
+            Το PROJOY PEFS-EL Series String-level Firefighter Safety Switch εφαρμόζεται σε οικιακά και C&amp;I φωτοβολταϊκά. Μέγιστη τάση βρόχου έως 1500V. Σε περίπτωση έκτακτης ανάγκης, αποκόπτει άμεσα την υψηλή τάση μεταξύ PV modules και inverter.
+          </p>
+        </div>
+
+        {/* Features */}
+        <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+          {[
+            "1500V, 63A — 1 έως 10 Strings μοντέλα",
+            "V0 flame retardant grade · anti-UV F1 grade",
+            "Πιστοποιήσεις: TÜV, CE, CB, SAA, UL",
+            "IP65 design · Optional anti-PIL",
+          ].map((f) => (
+            <div class="flex items-start gap-3 rounded-xl border border-navy-900/6 bg-ice-50 px-4 py-3">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span class="text-sm text-navy-900/70">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Standards */}
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-reveal>
+          {[
+            { icon: "⚡", title: "Max 1500V / Max 50A", desc: "Για υψηλής ισχύος PV πάνελ" },
+            { icon: "🔌", title: "Arc Fault Protection", desc: "Προαιρετική προστασία τόξου" },
+            { icon: "🔄", title: "PID Recovery", desc: "Αποκατάσταση Potential Induced Degradation" },
+            { icon: "🔥", title: "Flame retardant UL94-V0", desc: "Υψηλή αντίσταση φλόγας" },
+            { icon: "🛠️", title: "Easy Installation", desc: "Γρήγορη εγκατάσταση χωρίς εργαλεία" },
+            { icon: "🛡️", title: "Physical Isolation", desc: "Φυσική αποµόνωση κυκλώµατος" },
+            { icon: "🌧️", title: "IP65 Outdoor", desc: "Πλήρης προστασία για εξωτερικούς χώρους" },
+            { icon: "🌡️", title: "Over temp > 70°C", desc: "Αυτόματο shutdown υπερθέρμανσης" },
+            { icon: "📡", title: "FB1 / FB2 Monitoring", desc: "Εξωτερική παρακολούθηση μέσω FB1 FB2" },
+          ].map((item) => (
+            <div class="rounded-xl border border-navy-900/6 bg-ice-50/60 p-4 text-center">
+              <div class="mb-2 text-2xl">{item.icon}</div>
+              <p class="text-sm font-bold text-navy-900">{item.title}</p>
+              <p class="mt-1 text-xs text-navy-900/55">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Models */}
+        <div class="mt-12" data-reveal>
+          <p class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-navy-900/40">Διαθέσιμα Μοντέλα</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["PEFS-EL Series (1–2 Strings)", "PEFS-EL Series (3–5 Strings)", "PEFS-EL Series (6–10 Strings)"].map((m) => (
+              <span class="rounded-full border border-azure-200 bg-azure-50 px-4 py-2 text-sm font-semibold text-azure-700">
+                {m}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Tech Table */}
+        <div class="mt-10 overflow-x-auto rounded-2xl border border-navy-900/8 shadow-sm" data-reveal>
+          <table class="w-full min-w-[480px] text-sm">
+            <thead>
+              <tr class="bg-navy-900 text-white">
+                <th class="px-4 py-3 text-left font-semibold">Παράμετρος</th>
+                <th class="px-4 py-3 text-right font-semibold">Τιμή</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: "PV System Voltage", value: "≤ 1500V" },
+                { label: "Electrical Life", value: "≥ 1500 times" },
+                { label: "System Insulating Impedance", value: "≥ 200kΩ" },
+                { label: "AC Input Voltage Range", value: "100Vac – 270Vac" },
+                { label: "PID Recovery Voltage to Earth (night)", value: "+600V" },
+                { label: "Module Type Required", value: "P Crystalline Silicon Type" },
+                { label: "Short-Term Power Consumption", value: "14W" },
+                { label: "PID Recovery Current Output (night)", value: "6.7mA" },
+              ].map((row, ri) => (
+                <tr class={ri % 2 === 0 ? "bg-white" : "bg-ice-50/60"}>
+                  <td class="px-4 py-3 font-medium text-navy-900/80">{row.label}</td>
+                  <td class="px-4 py-3 text-right font-semibold text-azure-700">{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     {/* ── Contact ── */}
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page text-center" data-reveal>
