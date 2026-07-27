@@ -23,11 +23,11 @@ const steps = [
 ];
 ---
 
-<section class="relative bg-ice-100/40 py-24 sm:py-32">
+<section class="relative bg-ice-100/40 py-24 sm:py-32 xl:py-40 2xl:py-48">
   <div class="container-page">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
       <span class="eyebrow border-azure-500/20 text-azure-600">Πώς Δουλεύουμε</span>
-      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
         Από την πρώτη επαφή έως την παράδοση
       </h2>
     </div>
@@ -37,11 +37,11 @@ const steps = [
       {
         steps.map((s, i) => (
           <div class="relative" data-reveal style={`transition-delay:${i * 80}ms`}>
-            <div class="flex h-20 w-20 items-center justify-center rounded-2xl border border-navy-900/8 bg-white font-display text-2xl font-extrabold text-azure-600 shadow-card">
+            <div class="flex h-20 w-20 items-center justify-center rounded-2xl border border-navy-900/8 bg-white font-display text-2xl font-extrabold text-azure-600 shadow-card xl:h-24 xl:w-24 xl:text-3xl 2xl:h-28 2xl:w-28 2xl:text-4xl">
               {s.n}
             </div>
-            <h3 class="mt-6 font-display text-lg font-bold text-navy-900">{s.title}</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-navy-900/60">{s.desc}</p>
+            <h3 class="mt-6 font-display text-lg font-bold text-navy-900 xl:text-xl 2xl:text-2xl">{s.title}</h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-navy-900/60 xl:text-base 2xl:text-lg">{s.desc}</p>
           </div>
         ))
       }
