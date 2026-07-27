@@ -5,6 +5,8 @@ import microinverters from "../assets/hero/tsun-microinverters.jpg";
 import hyperIonPro from "../assets/hero/risen-hyper-ion-pro.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 import projoyPefs from "../assets/hero/projoy-pefs-combiner.jpg";
+import projoyPromo from "../assets/hero/projoy-rapid-shutdown-promo.jpg";
+import suntechPromo from "../assets/hero/suntech-ultra-t2-promo.jpg";
 import lvBattery from "../assets/hero/hero-img3463.jpg";
 import lvHomeStorage from "../assets/hero/hero-img3464.jpg";
 
@@ -52,6 +54,31 @@ const slides = [
     subtitle: "Safe. Smart. Reliable. · IP66 · Plug & Play",
     href: withBase("products/projoy-pefs-rapid-shutdown/"),
     scale: 1,
+    hideText: false,
+  },
+  {
+    image: projoyPromo,
+    alt: "Projoy Rapid Shutdown System — Official Distributor Alphatech Energy",
+    width: 1536,
+    height: 1024,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    scale: 1,
+    hideText: true,
+  },
+  {
+    image: suntechPromo,
+    alt: "Suntech Ultra T 2.0 — Official Distributor Alphatech Energy",
+    width: 1600,
+    height: 904,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: null,
+    scale: 1,
+    hideText: true,
   },
   {
     image: lvBattery,
@@ -98,21 +125,23 @@ const slides = [
           style={s.scale !== 1 ? `transform: scale(${s.scale})` : undefined}
         />
 
-        {/* Bottom-left gradient for text readability */}
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-
-        {/* Product details — bottom left */}
-        <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
-          <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
-            {s.label}
-          </span>
-          <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-            {s.title}
-          </h2>
-          <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
-            {s.subtitle}
-          </p>
-        </div>
+        {/* Bottom-left gradient + text — hidden for poster slides */}
+        {!s.hideText && (
+          <>
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+            <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
+              <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+                {s.label}
+              </span>
+              <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                {s.title}
+              </h2>
+              <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
+                {s.subtitle}
+              </p>
+            </div>
+          </>
+        )}
       </div>
     ))
   }
