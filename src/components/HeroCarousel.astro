@@ -121,8 +121,7 @@ const slides = [
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
           draggable={false}
-          class="h-full w-full object-contain [-webkit-user-drag:none] transition-transform duration-700"
-          style={s.scale !== 1 ? `transform: scale(${s.scale})` : undefined}
+          class="h-full w-full object-cover object-center [-webkit-user-drag:none] transition-transform duration-700"
         />
 
         {/* Bottom-left gradient + text — hidden for poster slides */}
