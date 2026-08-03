@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import ViberBubble from "../components/ViberBubble.astro";
 
 interface Props {
   title: string;
@@ -75,7 +74,6 @@ const organizationSchema = {
   </head>
   <body class="antialiased">
     <slot />
-    <ViberBubble />
 
     <script>
       const targets = document.querySelectorAll("[data-reveal]");
