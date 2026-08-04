@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 import { withBase } from "../lib/paths";
 import microinverters from "../assets/hero/tsun-microinverters.jpg";
-import hyperIonPro from "../assets/hero/risen-hyper-ion-pro.jpg";
-import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
-import projoyPefs from "../assets/hero/projoy-pefs-combiner.jpg";
-import projoyPromo from "../assets/hero/projoy-rapid-shutdown-promo.jpg";
-import suntechPromo from "../assets/hero/suntech-ultra-t2-promo.jpg";
-import lvBattery from "../assets/hero/hero-img3463.jpg";
-import lvHomeStorage from "../assets/hero/hero-img3464.jpg";
+import slide02 from "../assets/hero/01-suntech-ultra-t2.png";
+import slide03 from "../assets/hero/02-home-energy-storage.png";
+import slide04 from "../assets/hero/03-marine-batteries.png";
+import slide05 from "../assets/hero/04-risen-container-storage.png";
+import slide06 from "../assets/hero/05-projoy-pefs-combiner.png";
+import slide07 from "../assets/hero/06-projoy-rapid-shutdown.png";
+import slide08 from "../assets/hero/07-risen-hyper-ion-pro.png";
 
 const slides = [
   {
@@ -20,87 +20,84 @@ const slides = [
     title: "No.1 Powerful Microinverter",
     subtitle: "Make Safety Affordable",
     href: withBase("products/hybrid-microinverter-2000w/"),
-    scale: 1,
-  },
-  {
-    image: hyperIonPro,
-    alt: "Risen Hyper-ion Pro Solar Panel",
-    width: 896,
-    height: 1200,
-    label: "Φωτοβολταϊκά Πάνελ",
-    title: "Hyper-ion Pro",
-    subtitle: "24.7% Efficiency · 767W · 0BB Cell Technology",
-    href: null,
-    scale: 1,
-  },
-  {
-    image: risenCiStorage,
-    alt: "Risen C&I Energy Storage System",
-    width: 896,
-    height: 1200,
-    label: "Βιομηχανικές Λύσεις",
-    title: "C&I Energy Storage",
-    subtitle: "More Reliable · More Efficient · Grid-Scale",
-    href: withBase("products/risen-ci-energy-storage/"),
-    scale: 1,
-  },
-  {
-    image: projoyPefs,
-    alt: "Projoy PEFS Series PV Combiner Box — Alphatech Energy",
-    width: 1284,
-    height: 946,
-    label: "PV Combiner Box",
-    title: "PEFS Series",
-    subtitle: "Safe. Smart. Reliable. · IP66 · Plug & Play",
-    href: withBase("products/projoy-pefs-rapid-shutdown/"),
-    scale: 1,
     hideText: false,
   },
   {
-    image: projoyPromo,
-    alt: "Projoy Rapid Shutdown System — Official Distributor Alphatech Energy",
-    width: 1536,
-    height: 1024,
-    label: "",
-    title: "",
-    subtitle: "",
-    href: withBase("products/projoy-pefs-rapid-shutdown/"),
-    scale: 1,
-    hideText: true,
-  },
-  {
-    image: suntechPromo,
-    alt: "Suntech Ultra T 2.0 — Official Distributor Alphatech Energy",
-    width: 1600,
-    height: 904,
+    image: slide02,
+    alt: "Suntech Ultra T 2.0 — Φωτοβολταϊκά Πάνελ Υψηλής Απόδοσης",
+    width: 1376,
+    height: 768,
     label: "",
     title: "",
     subtitle: "",
     href: null,
-    scale: 1,
     hideText: true,
   },
   {
-    image: lvBattery,
-    alt: "LithiumValley 12V 100Ah Pro Rechargeable Li-ion Battery",
-    width: 896,
-    height: 1200,
-    label: "Μπαταρίες Li-ion",
-    title: "12V 100Ah Pro",
-    subtitle: "Rechargeable Li-ion · Marine & Outdoor",
+    image: slide03,
+    alt: "Σύστημα Αποθήκευσης Ενέργειας Κατοικιών — LithiumValley",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
     href: withBase("products/lithiumvalley-residential/"),
-    scale: 0.85,
+    hideText: true,
   },
   {
-    image: lvHomeStorage,
-    alt: "LithiumValley Home Energy Storage System with Solar and EV Charging",
-    width: 896,
-    height: 1200,
-    label: "Οικιακές Λύσεις",
-    title: "Home Energy System",
-    subtitle: "Solar · Storage · EV Charging",
+    image: slide04,
+    alt: "LithiumValley Μπαταρίες Li-ion για Σκάφος και Υπαίθριο",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
     href: withBase("products/lithiumvalley-residential/"),
-    scale: 0.85,
+    hideText: true,
+  },
+  {
+    image: slide05,
+    alt: "Risen C&I Βιομηχανικό Σύστημα Αποθήκευσης Ενέργειας σε Container",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: withBase("products/risen-ci-energy-storage/"),
+    hideText: true,
+  },
+  {
+    image: slide06,
+    alt: "Projoy PEFS Σειρά PV Combiner Box — IP66 Plug & Play",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: true,
+  },
+  {
+    image: slide07,
+    alt: "Projoy Rapid Shutdown System — Επίσημος Διανομέας Alphatech Energy",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: true,
+  },
+  {
+    image: slide08,
+    alt: "Risen Hyper-ion Pro — 24.7% Απόδοση · 767W · 0BB Cell Technology",
+    width: 1376,
+    height: 768,
+    label: "",
+    title: "",
+    subtitle: "",
+    href: null,
+    hideText: true,
   },
 ];
 ---
@@ -120,9 +117,11 @@ const slides = [
           width={s.width}
           height={s.height}
           loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
+          fetchpriority={i === 0 ? "high" : undefined}
+          sizes="100vw"
           draggable={false}
-          class="h-full w-full object-contain [-webkit-user-drag:none] transition-transform duration-700"
-          style={s.scale !== 1 ? `transform: scale(${s.scale})` : undefined}
+          class="block h-full w-full object-contain object-center [-webkit-user-drag:none]"
         />
 
         {/* Bottom-left gradient + text — hidden for poster slides */}
