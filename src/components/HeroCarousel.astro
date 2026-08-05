@@ -89,7 +89,7 @@ const slides = [
           fetchpriority={i === 0 ? "high" : undefined}
           sizes="100vw"
           draggable={false}
-          class={`block h-full w-full object-center sm:object-contain [-webkit-user-drag:none] ${i >= 4 ? "object-contain" : "object-cover"}`}
+          class={`block h-full w-full object-center sm:object-contain [-webkit-user-drag:none] ${i === 0 ? "object-cover" : "object-contain"}`}
         />
       </div>
     ))
