@@ -10,16 +10,20 @@ import slide06 from "../assets/hero/05-projoy-pefs-combiner.png";
 import slide07 from "../assets/hero/06-projoy-rapid-shutdown.png";
 import slide08 from "../assets/hero/07-risen-hyper-ion-pro.png";
 import mSlide02 from "../assets/hero/m-01-suntech-ultra-t2.png";
+import mSlide03 from "../assets/hero/m-02-home-energy-storage.png";
 import mSlide04 from "../assets/hero/m-03-marine-batteries.png";
 import mSlide05 from "../assets/hero/m-04-risen-container-storage.png";
 import mSlide06 from "../assets/hero/m-05-projoy-pefs-combiner.png";
+import mSlide07 from "../assets/hero/m-06-projoy-rapid-shutdown.png";
 import mSlide08 from "../assets/hero/m-07-risen-hyper-ion-pro.png";
 
-const [gm02, gm04, gm05, gm06, gm08] = await Promise.all([
+const [gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
   getImage({ src: mSlide02, width: 928, height: 1152 }),
+  getImage({ src: mSlide03, width: 928, height: 1152 }),
   getImage({ src: mSlide04, width: 928, height: 1152 }),
   getImage({ src: mSlide05, width: 928, height: 1152 }),
   getImage({ src: mSlide06, width: 928, height: 1152 }),
+  getImage({ src: mSlide07, width: 928, height: 1152 }),
   getImage({ src: mSlide08, width: 928, height: 1152 }),
 ]);
 
@@ -42,7 +46,7 @@ const slides = [
   },
   {
     image: slide03,
-    mobileSrc: null,
+    mobileSrc: gm03.src,
     alt: "Σύστημα Αποθήκευσης Ενέργειας Κατοικιών — LithiumValley",
     width: 1376,
     height: 768,
@@ -74,7 +78,7 @@ const slides = [
   },
   {
     image: slide07,
-    mobileSrc: null,
+    mobileSrc: gm07.src,
     alt: "Projoy Rapid Shutdown System — Επίσημος Διανομέας Alphatech Energy",
     width: 1376,
     height: 768,
