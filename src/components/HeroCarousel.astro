@@ -34,7 +34,11 @@ const slides = [
     alt: "TSUN PowerTrunk Μικροαντιστροφέας",
     width: 1284,
     height: 2228,
+    label: "Μικροαντιστροφείς",
+    title: "TSUN PowerTrunk",
+    subtitle: "Hybrid Microinverter · 2000W",
     href: withBase("products/hybrid-microinverter-2000w/"),
+    hideText: false,
   },
   {
     image: slide02,
@@ -42,7 +46,11 @@ const slides = [
     alt: "Suntech Ultra T 2.0 — Φωτοβολταϊκά Πάνελ Υψηλής Απόδοσης",
     width: 1376,
     height: 768,
+    label: "Φωτοβολταϊκά Πάνελ",
+    title: "Suntech Ultra T 2.0",
+    subtitle: "48-cell · 54-cell · 66-cell",
     href: null,
+    hideText: false,
   },
   {
     image: slide03,
@@ -50,7 +58,11 @@ const slides = [
     alt: "Σύστημα Αποθήκευσης Ενέργειας Κατοικιών — LithiumValley",
     width: 1376,
     height: 768,
+    label: "Οικιακές Λύσεις",
+    title: "Home Energy System",
+    subtitle: "Solar · Storage · EV Charging",
     href: withBase("products/lithiumvalley-residential/"),
+    hideText: false,
   },
   {
     image: slide04,
@@ -58,7 +70,11 @@ const slides = [
     alt: "LithiumValley Μπαταρίες Li-ion για Σκάφος και Υπαίθριο",
     width: 1376,
     height: 768,
+    label: "Μπαταρίες Li-ion",
+    title: "LithiumValley 12V Pro",
+    subtitle: "Rechargeable Li-ion · Marine & Outdoor",
     href: withBase("products/lithiumvalley-residential/"),
+    hideText: false,
   },
   {
     image: slide05,
@@ -66,7 +82,11 @@ const slides = [
     alt: "Risen C&I Βιομηχανικό Σύστημα Αποθήκευσης Ενέργειας σε Container",
     width: 1376,
     height: 768,
+    label: "Βιομηχανικές Λύσεις",
+    title: "C&I Energy Storage",
+    subtitle: "More Reliable · More Efficient · Grid-Scale",
     href: withBase("products/risen-ci-energy-storage/"),
+    hideText: false,
   },
   {
     image: slide06,
@@ -74,7 +94,11 @@ const slides = [
     alt: "Projoy PEFS Σειρά PV Combiner Box — IP66 Plug & Play",
     width: 1376,
     height: 768,
+    label: "PV Combiner Box",
+    title: "PEFS Series",
+    subtitle: "Safe. Smart. Reliable. · IP66 · Plug & Play",
     href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: false,
   },
   {
     image: slide07,
@@ -82,7 +106,11 @@ const slides = [
     alt: "Projoy Rapid Shutdown System — Επίσημος Διανομέας Alphatech Energy",
     width: 1376,
     height: 768,
+    label: "Πυρασφάλεια",
+    title: "Rapid Shutdown System",
+    subtitle: "Advanced Fire Safety for PV Systems",
     href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: false,
   },
   {
     image: slide08,
@@ -90,7 +118,11 @@ const slides = [
     alt: "Risen Hyper-ion Pro — 24.7% Απόδοση · 767W · 0BB Cell Technology",
     width: 1376,
     height: 768,
+    label: "Φωτοβολταϊκά Πάνελ",
+    title: "Risen Hyper-ion Pro",
+    subtitle: "24.7% Efficiency · 767W · 0BB Cell Technology",
     href: null,
+    hideText: false,
   },
 ];
 ---
@@ -133,11 +165,28 @@ const slides = [
             class={`block h-full w-full object-center [-webkit-user-drag:none] ${i === 0 ? "object-cover" : "object-contain"} sm:object-contain`}
           />
         )}
+
+        {!s.hideText && (
+          <>
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+            <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
+              <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+                {s.label}
+              </span>
+              <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                {s.title}
+              </h2>
+              <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
+                {s.subtitle}
+              </p>
+            </div>
+          </>
+        )}
       </div>
     ))
   }
 
-  <div class="absolute inset-x-0 bottom-6 z-20 flex justify-center gap-2">
+  <div class="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2">
     {
       slides.map((_, i) => (
         <button
@@ -151,6 +200,35 @@ const slides = [
     }
   </div>
 </div>
+
+<style is:global>
+  /* ── Text stagger pop-in ── */
+  .hero-slide-label,
+  .hero-slide-title,
+  .hero-slide-subtitle {
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 0.6s;
+  }
+
+  [data-slide][data-active="true"] .hero-slide-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.22s;
+  }
+  [data-slide][data-active="true"] .hero-slide-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.36s;
+  }
+  [data-slide][data-active="true"] .hero-slide-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+</style>
 
 <script>
   const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]:not([data-carousel-init])");
@@ -168,6 +246,7 @@ const slides = [
         const offset = i === current ? "0" : i < current ? "-100%" : "100%";
         el.style.transform = `translateX(${offset})`;
         el.style.opacity = i === current ? "1" : "0";
+        el.setAttribute("data-active", String(i === current));
       });
       dots.forEach((dot, i) => dot.setAttribute("data-active", String(i === current)));
     };
@@ -235,7 +314,9 @@ const slides = [
       start();
     });
 
-    render();
+    // Double rAF ensures initial CSS paint (all hidden) happens before
+    // render() sets data-active, so the stagger transition fires on load
+    requestAnimationFrame(() => requestAnimationFrame(() => render()));
     start();
   });
 </script>
