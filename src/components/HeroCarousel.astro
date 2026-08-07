@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import { withBase } from "../lib/paths";
 import microinverters from "../assets/hero/tsun-microinverters.jpg";
 import slide02 from "../assets/hero/01-suntech-ultra-t2.png";
@@ -9,10 +9,24 @@ import slide05 from "../assets/hero/04-risen-container-storage.png";
 import slide06 from "../assets/hero/05-projoy-pefs-combiner.png";
 import slide07 from "../assets/hero/06-projoy-rapid-shutdown.png";
 import slide08 from "../assets/hero/07-risen-hyper-ion-pro.png";
+import mSlide02 from "../assets/hero/m-01-suntech-ultra-t2.png";
+import mSlide04 from "../assets/hero/m-03-marine-batteries.png";
+import mSlide05 from "../assets/hero/m-04-risen-container-storage.png";
+import mSlide06 from "../assets/hero/m-05-projoy-pefs-combiner.png";
+import mSlide08 from "../assets/hero/m-07-risen-hyper-ion-pro.png";
+
+const [gm02, gm04, gm05, gm06, gm08] = await Promise.all([
+  getImage({ src: mSlide02, width: 928, height: 1152 }),
+  getImage({ src: mSlide04, width: 928, height: 1152 }),
+  getImage({ src: mSlide05, width: 928, height: 1152 }),
+  getImage({ src: mSlide06, width: 928, height: 1152 }),
+  getImage({ src: mSlide08, width: 928, height: 1152 }),
+]);
 
 const slides = [
   {
     image: microinverters,
+    mobileSrc: null,
     alt: "TSUN Microinverters",
     width: 896,
     height: 1200,
@@ -24,6 +38,7 @@ const slides = [
   },
   {
     image: slide02,
+    mobileSrc: gm02.src,
     alt: "Suntech Ultra T 2.0 — Φωτοβολταϊκά Πάνελ Υψηλής Απόδοσης",
     width: 1376,
     height: 768,
@@ -35,6 +50,7 @@ const slides = [
   },
   {
     image: slide03,
+    mobileSrc: null,
     alt: "Σύστημα Αποθήκευσης Ενέργειας Κατοικιών — LithiumValley",
     width: 1376,
     height: 768,
@@ -46,6 +62,7 @@ const slides = [
   },
   {
     image: slide04,
+    mobileSrc: gm04.src,
     alt: "LithiumValley Μπαταρίες Li-ion για Σκάφος και Υπαίθριο",
     width: 1376,
     height: 768,
@@ -57,6 +74,7 @@ const slides = [
   },
   {
     image: slide05,
+    mobileSrc: gm05.src,
     alt: "Risen C&I Βιομηχανικό Σύστημα Αποθήκευσης Ενέργειας σε Container",
     width: 1376,
     height: 768,
@@ -68,6 +86,7 @@ const slides = [
   },
   {
     image: slide06,
+    mobileSrc: gm06.src,
     alt: "Projoy PEFS Σειρά PV Combiner Box — IP66 Plug & Play",
     width: 1376,
     height: 768,
@@ -79,6 +98,7 @@ const slides = [
   },
   {
     image: slide07,
+    mobileSrc: null,
     alt: "Projoy Rapid Shutdown System — Επίσημος Διανομέας Alphatech Energy",
     width: 1376,
     height: 768,
@@ -90,6 +110,7 @@ const slides = [
   },
   {
     image: slide08,
+    mobileSrc: gm08.src,
     alt: "Risen Hyper-ion Pro — 24.7% Απόδοση · 767W · 0BB Cell Technology",
     width: 1376,
     height: 768,
@@ -111,18 +132,35 @@ const slides = [
         data-href={s.href ?? ""}
         style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
       >
-        <Image
-          src={s.image}
-          alt={s.alt}
-          width={s.width}
-          height={s.height}
-          loading={i === 0 ? "eager" : "lazy"}
-          decoding="async"
-          fetchpriority={i === 0 ? "high" : undefined}
-          sizes="100vw"
-          draggable={false}
-          class={`block h-full w-full object-center sm:object-contain [-webkit-user-drag:none] ${i === 0 ? "object-cover" : "object-contain"}`}
-        />
+        {s.mobileSrc ? (
+          <picture class="block h-full w-full">
+            <source media="(max-width: 639px)" srcset={s.mobileSrc} />
+            <Image
+              src={s.image}
+              alt={s.alt}
+              width={s.width}
+              height={s.height}
+              loading="lazy"
+              decoding="async"
+              sizes="100vw"
+              draggable={false}
+              class="h-full w-full object-cover sm:object-contain object-center [-webkit-user-drag:none]"
+            />
+          </picture>
+        ) : (
+          <Image
+            src={s.image}
+            alt={s.alt}
+            width={s.width}
+            height={s.height}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            sizes="100vw"
+            draggable={false}
+            class={`block h-full w-full object-center [-webkit-user-drag:none] ${i === 0 ? "object-cover" : "object-contain"} sm:object-contain`}
+          />
+        )}
 
         {/* Bottom-left gradient + text — hidden for poster slides */}
         {!s.hideText && (
