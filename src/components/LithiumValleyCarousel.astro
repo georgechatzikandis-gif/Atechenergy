@@ -1,16 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import homeStorage from "../assets/lithiumvalley/lv-home-storage.jpg";
+import { Image, getImage } from "astro:assets";
+import ciLandscape from "../assets/lithiumvalley/lv-ci-landscape.png";
+import ciPortrait from "../assets/lithiumvalley/lv-ci-portrait.png";
+
+const mCi = await getImage({ src: ciPortrait, width: 928, height: 1152 });
 
 const slides = [
   {
-    image: homeStorage,
-    alt: "Lithium Valley Home Energy Storage System",
-    width: 896,
-    height: 1200,
-    label: "Αποθήκευση Κατοικιών",
-    title: "Home Energy Storage",
-    subtitle: "Solar Integration · Stackable Battery · Off-Grid Ready",
+    image: ciLandscape,
+    mobileSrc: mCi.src,
+    alt: "LithiumValley Reliable C&I Energy Storage",
+    width: 1376,
+    height: 768,
   },
 ];
 ---
@@ -23,31 +24,18 @@ const slides = [
         data-slide
         style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
       >
-        <Image
-          src={s.image}
-          alt={s.alt}
-          width={s.width}
-          height={s.height}
-          loading={i === 0 ? "eager" : "lazy"}
-          draggable={false}
-          class="h-full w-full object-cover object-center [-webkit-user-drag:none]"
-        />
-
-        {/* Bottom gradient for text readability */}
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-
-        {/* Product details */}
-        <div class="slide-text absolute inset-x-0 bottom-14 z-10 px-6 sm:px-10">
-          <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase mb-2" style="color:#6ee7b7">
-            {s.label}
-          </span>
-          <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
-            {s.title}
-          </h2>
-          <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
-            {s.subtitle}
-          </p>
-        </div>
+        <picture class="block h-full w-full">
+          <source media="(max-width: 639px)" srcset={s.mobileSrc} />
+          <Image
+            src={s.image}
+            alt={s.alt}
+            width={s.width}
+            height={s.height}
+            loading={i === 0 ? "eager" : "lazy"}
+            draggable={false}
+            class="h-full w-full object-contain object-center [-webkit-user-drag:none]"
+          />
+        </picture>
       </div>
     ))
   }
