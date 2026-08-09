@@ -1,8 +1,10 @@
 import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
 import hybridMicroinverter from "../assets/hero/tsun-powertrunk.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
+import suntechLogo from "../assets/brands/suntech-logo.png";
+import risenLogo from "../assets/brands/risen-logo.png";
 
-export type ProductArtKind = "mono" | "hjt" | "battery" | "inverter" | "ev";
+export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
 
 export interface Product {
   slug: string;
@@ -12,6 +14,7 @@ export interface Product {
   longDesc?: string;
   art?: ProductArtKind;
   photo?: ImageMetadata;
+  distributor?: string;
   features?: string[];
   specs?: { label: string; value: string }[];
 }
@@ -23,6 +26,17 @@ export const products: Product[] = [
     tag: "Monocrystalline PV Module",
     desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
     art: "mono",
+    photo: suntechLogo,
+    distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY · SUNTECH",
+  },
+  {
+    slug: "topcon-panels",
+    name: "Topcon Πάνελ",
+    tag: "Topcon Panels",
+    desc: "Τεχνολογία αιχμής N-type με ενισχυμένη απόδοση και χαμηλότερη ετήσια φθορά.",
+    art: "topcon",
+    photo: risenLogo,
+    distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY · SUNTECH",
   },
   {
     slug: "hjt-panels",
