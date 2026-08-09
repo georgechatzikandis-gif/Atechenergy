@@ -49,6 +49,11 @@ const specs = [
                 <ProductArt kind={p.art!} class="h-32 w-auto transition-transform duration-500 group-hover:scale-105" />
               )}
             </div>
+            {p.distributor && (
+              <p class="border-t border-navy-900/8 px-8 py-2 text-center text-[10px] font-bold tracking-[0.18em] text-navy-900/40 uppercase">
+                {p.distributor}
+              </p>
+            )}
             <div class="p-8 pt-6">
               <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
               <h3 class="mt-2 font-display text-xl font-bold text-navy-900">{p.name}</h3>
