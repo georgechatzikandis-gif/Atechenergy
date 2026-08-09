@@ -1,6 +1,6 @@
 ---
 interface Props {
-  kind: "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
+  kind: "mono" | "hjt" | "battery" | "inverter" | "ev";
   class?: string;
 }
 const { kind, class: className = "" } = Astro.props;
@@ -41,24 +41,6 @@ function hexPoints(cx: number, cy: number, r: number): string {
           <line x1={34 + ((c + 1) * 132) / 4} y1={24} x2={34 + ((c + 1) * 132) / 4} y2={126} stroke="#7cb9f5" stroke-opacity="0.4" stroke-width="1" />
         ))}
         <polygon points="34,24 90,24 60,126 34,126" fill={`url(#sheen-${uid})`} />
-      </g>
-    )
-  }
-
-  {
-    kind === "topcon" && (
-      <g>
-        <rect x="34" y="24" width="132" height="102" rx="6" fill={`url(#panel-${uid})`} stroke="#4a97ee" stroke-width="1.5" />
-        {Array.from({ length: 5 }).map((_, r) => (
-          <line x1={34} y1={24 + ((r + 1) * 102) / 6} x2={166} y2={24 + ((r + 1) * 102) / 6} stroke="#7cb9f5" stroke-opacity="0.35" stroke-width="1" />
-        ))}
-        {Array.from({ length: 3 }).map((_, c) => (
-          <line x1={34 + ((c + 1) * 132) / 4} y1={24} x2={34 + ((c + 1) * 132) / 4} y2={126} stroke="#7cb9f5" stroke-opacity="0.35" stroke-width="1" />
-        ))}
-        <rect x="34" y="24" width="132" height="102" rx="6" fill="none" stroke="#7cb9f5" stroke-width="2" stroke-dasharray="1 5" opacity="0.6" />
-        <polygon points="34,60 166,24 166,40 34,76" fill="#5aa9f0" opacity="0.35" />
-        <circle cx="150" cy="38" r="9" fill="#0d2249" stroke="#7cb9f5" stroke-width="1.5" />
-        <text x="150" y="41" font-size="8" font-weight="700" fill="#cfe6fd" text-anchor="middle">N</text>
       </g>
     )
   }
