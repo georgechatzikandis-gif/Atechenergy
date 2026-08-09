@@ -2,7 +2,7 @@ import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg"
 import hybridMicroinverter from "../assets/hero/tsun-microinverters.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 
-export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
+export type ProductArtKind = "mono" | "hjt" | "battery" | "inverter" | "ev";
 
 export interface Product {
   slug: string;
@@ -23,13 +23,6 @@ export const products: Product[] = [
     tag: "Monocrystalline PV Module",
     desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
     art: "mono",
-  },
-  {
-    slug: "topcon-panels",
-    name: "Topcon Πάνελ",
-    tag: "Topcon Panels",
-    desc: "Τεχνολογία αιχμής N-type με ενισχυμένη απόδοση και χαμηλότερη ετήσια φθορά.",
-    art: "topcon",
   },
   {
     slug: "hjt-panels",
