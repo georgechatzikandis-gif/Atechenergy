@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - claude/website-redesign-premium-iw4ber
+      - claude/website-redesign-premium-iw4ber-srowug
   workflow_dispatch:
 
 permissions:

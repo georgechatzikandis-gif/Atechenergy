@@ -20,36 +20,36 @@ const pillars = [
 ];
 ---
 
-<section id="about" class="relative overflow-hidden bg-navy-950 py-24 text-white sm:py-32">
-  <GridPattern id="about-grid" class="text-white" opacity={0.08} />
-  <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-azure-500/10 blur-[140px]"></div>
+<section id="about" class="relative overflow-hidden bg-gradient-to-b from-white to-ice-100/40 py-24 sm:py-32 xl:py-40 2xl:py-48">
+  <GridPattern id="about-grid" class="text-navy-900" opacity={0.05} />
+  <div class="pointer-events-none absolute top-0 left-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full" style="background:radial-gradient(circle, color-mix(in srgb, var(--color-azure-500) 10%, transparent) 0%, transparent 70%)"></div>
 
   <div class="container-page relative grid gap-16 lg:grid-cols-2 lg:items-start">
     <div data-reveal>
-      <span class="eyebrow border-white/20 bg-white/10 text-azure-200">Σχετικά με Εμάς</span>
-      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+      <span class="eyebrow border-azure-500/20 text-azure-600">Σχετικά με Εμάς</span>
+      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
         Χτίζοντας πάνω σε 15+ χρόνια εμπειρίας στην αγορά ενέργειας
       </h2>
-      <p class="mt-6 text-lg leading-relaxed text-white/70">
-        Η <span class="font-semibold text-white">Alphatech</span> ιδρύθηκε το <span class="font-semibold text-white">2008</span>
+      <p class="mt-6 text-lg leading-relaxed text-navy-900/60 xl:text-xl 2xl:text-2xl">
+        Η <span class="font-semibold text-navy-900">Alphatech</span> ιδρύθηκε το <span class="font-semibold text-navy-900">2008</span>
         με σκοπό να προσφέρει επώνυμα, ποιοτικά και αξιόπιστα προϊόντα στις πιο ανταγωνιστικές
         τιμές. Έχοντας σύμμαχο μεγάλα ονόματα της παγκόσμιας αγοράς, καθώς και εξειδικευμένους
         συνεργάτες, η εταιρεία μας είναι επίσημος αντιπρόσωπος και διανομέας για την Ευρώπη και
         τη Λατινική Αμερική.
       </p>
 
-      <div class="mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+      <div class="mt-10 grid grid-cols-3 gap-6 border-t border-navy-900/10 pt-8">
         <div>
-          <p class="font-display text-3xl font-extrabold text-white">2008</p>
-          <p class="mt-1 text-sm text-white/55">Έτος Ίδρυσης</p>
+          <p class="font-display text-3xl font-extrabold text-navy-900 xl:text-4xl 2xl:text-5xl">2008</p>
+          <p class="mt-1 text-sm text-navy-900/50 xl:text-base">Έτος Ίδρυσης</p>
         </div>
         <div>
-          <p class="font-display text-3xl font-extrabold text-white">2</p>
-          <p class="mt-1 text-sm text-white/55">Ήπειροι Διανομής</p>
+          <p class="font-display text-3xl font-extrabold text-navy-900 xl:text-4xl 2xl:text-5xl">2</p>
+          <p class="mt-1 text-sm text-navy-900/50 xl:text-base">Ήπειροι Διανομής</p>
         </div>
         <div>
-          <p class="font-display text-3xl font-extrabold text-white">4+</p>
-          <p class="mt-1 text-sm text-white/55">Επίσημες Συνεργασίες</p>
+          <p class="font-display text-3xl font-extrabold text-navy-900 xl:text-4xl 2xl:text-5xl">4+</p>
+          <p class="mt-1 text-sm text-navy-900/50 xl:text-base">Επίσημες Συνεργασίες</p>
         </div>
       </div>
     </div>
@@ -57,16 +57,16 @@ const pillars = [
     <div class="grid gap-5" data-reveal>
       {
         pillars.map((p) => (
-          <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl transition-colors duration-300 hover:bg-white/[0.07]">
-            <div class="flex items-start gap-4">
-              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-azure-400 to-azure-600 text-white">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="rounded-3xl border border-navy-900/8 bg-white p-7 shadow-card transition-colors duration-300 hover:border-azure-400/30">
+            <div class="flex items-start gap-4 xl:gap-6">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-azure-400 to-azure-600 text-white xl:h-14 xl:w-14 2xl:h-16 2xl:w-16">
+                <svg class="h-5 w-5 xl:h-6 xl:w-6 2xl:h-7 2xl:w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d={p.icon} />
                 </svg>
               </div>
               <div>
-                <h3 class="font-display text-lg font-bold text-white">{p.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-white/65">{p.text}</p>
+                <h3 class="font-display text-lg font-bold text-navy-900 xl:text-xl 2xl:text-2xl">{p.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-navy-900/60 xl:text-base 2xl:text-lg">{p.text}</p>
               </div>
             </div>
           </div>

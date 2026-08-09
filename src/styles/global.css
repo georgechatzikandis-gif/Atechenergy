@@ -6,6 +6,9 @@
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-display: "Manrope Variable", system-ui, sans-serif;
 
+  /* Custom breakpoints for large screens */
+  --breakpoint-3xl: 1920px;
+
   /* Brand palette, derived from the Alphatech mark */
   --color-navy-950: #050b16;
   --color-navy-900: #0a1628;
@@ -77,7 +80,7 @@
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:max-w-[1400px] xl:px-12 2xl:max-w-[1600px] 2xl:px-16 3xl:max-w-[1840px] 3xl:px-20;
   }
 
   .btn {

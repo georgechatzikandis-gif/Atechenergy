@@ -1,23 +1,27 @@
 ---
 import Logo from "./Logo.astro";
+import { base, withBase } from "../lib/paths";
 
 const year = new Date().getFullYear();
+
+const isHome = Astro.url.pathname === base;
+const anchor = (id: string) => (isHome ? `#${id}` : withBase(`#${id}`));
 
 const columns = [
   {
     title: "Πλοήγηση",
     links: [
-      { href: "#home", label: "Αρχική" },
-      { href: "#products", label: "Προϊόντα" },
-      { href: "#why-us", label: "Γιατί Εμάς" },
-      { href: "#about", label: "Σχετικά" },
+      { href: isHome ? "#home" : base, label: "Αρχική" },
+      { href: withBase("products/"), label: "Προϊόντα" },
+      { href: anchor("why-us"), label: "Γιατί Εμάς" },
+      { href: anchor("about"), label: "Σχετικά" },
     ],
   },
   {
     title: "Εταιρεία",
     links: [
-      { href: "#faq", label: "Ερωτήσεις" },
-      { href: "#contact", label: "Επικοινωνία" },
+      { href: anchor("faq"), label: "Ερωτήσεις" },
+      { href: anchor("contact"), label: "Επικοινωνία" },
     ],
   },
 ];
@@ -56,6 +60,7 @@ const columns = [
         <ul class="mt-5 flex flex-col gap-3 text-sm text-white/65">
           <li><a href="tel:+306976724504" class="hover:text-white">+30 697 672 4504</a></li>
           <li><a href="mailto:info@atechenergy.eu" class="hover:text-white">info@atechenergy.eu</a></li>
+          <li><a href="viber://chat?number=%2B306976724504" class="hover:text-white">Viber: +30 697 672 4504</a></li>
           <li class="leading-relaxed">7ο χλμ Θεσσαλονίκης – Καβάλας, Ευκαρπία 564 29</li>
         </ul>
       </div>

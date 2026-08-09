@@ -1,0 +1,142 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import BackToTop from "../../components/BackToTop.astro";
+import ProductArt from "../../components/ProductArt.astro";
+import { products, type Product } from "../../data/products";
+import { withBase } from "../../lib/paths";
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const title = `${product.name} | Alphatech Energy`;
+const description = product.longDesc ?? product.desc;
+---
+
+<BaseLayout title={title} description={description} path={`/products/${product.slug}/`}>
+  <Header />
+  <main class="pt-24">
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">{product.name}</span>
+        </nav>
+      </div>
+    </div>
+
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="flex items-center justify-center rounded-[2rem] border border-navy-900/8 bg-white p-10 shadow-card" data-reveal>
+          {
+            product.photo ? (
+              <Image src={product.photo} alt={product.name} width={520} height={360} class="h-auto w-full max-w-md object-contain" />
+            ) : (
+              <ProductArt kind={product.art!} class="h-56 w-auto" />
+            )
+          }
+        </div>
+
+        <div data-reveal>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{product.tag}</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">{product.name}</h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">{product.longDesc ?? product.desc}</p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("products/")} class="btn btn-outline">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M11 18l-6-6 6-6"></path>
+              </svg>
+              Όλα τα Προϊόντα
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-navy-900/10 pt-6">
+            <a href="tel:+306976724504" class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-azure-600">
+              <svg class="h-4 w-4 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              +30 697 672 4504
+            </a>
+            <a href="mailto:info@atechenergy.eu" class="flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-azure-600">
+              <svg class="h-4 w-4 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 0 9 8 9-8"></path>
+              </svg>
+              info@atechenergy.eu
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {
+      product.features && (
+        <section class="bg-white py-16 sm:py-20">
+          <div class="container-page">
+            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Χαρακτηριστικά</h2>
+            <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {product.features.map((f) => (
+                <li class="flex items-start gap-3 rounded-2xl border border-navy-900/8 bg-ice-100/40 p-5">
+                  <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <span class="text-sm leading-relaxed font-medium text-navy-900/80">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      product.specs && (
+        <section class="bg-ice-100/40 py-16 sm:py-20">
+          <div class="container-page">
+            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+            <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white">
+              {product.specs.map((s, i) => (
+                <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
+                  <span class="text-sm text-navy-900/60">{s.label}</span>
+                  <span class="text-sm font-bold text-navy-900">{s.value}</span>
+                </div>
+              ))}
+            </div>
+            <p class="mt-4 text-xs text-navy-900/40">
+              Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
+            </p>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14">
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">Ενδιαφέρεστε για {product.name};</h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">
+            Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>

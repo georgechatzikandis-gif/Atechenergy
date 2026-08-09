@@ -1,0 +1,322 @@
+---
+import { Image, getImage } from "astro:assets";
+import { withBase } from "../lib/paths";
+import microinverters from "../assets/hero/tsun-microinverters.jpg";
+import slide02 from "../assets/hero/01-suntech-ultra-t2.png";
+import slide03 from "../assets/hero/02-home-energy-storage.png";
+import slide04 from "../assets/hero/03-marine-batteries.png";
+import slide05 from "../assets/lithiumvalley/lv-ci-landscape.png";
+import slide06 from "../assets/hero/05-projoy-pefs-combiner.png";
+import slide07 from "../assets/hero/06-projoy-rapid-shutdown.png";
+import slide08 from "../assets/hero/07-risen-hyper-ion-pro.png";
+import mSlide02 from "../assets/hero/m-01-suntech-ultra-t2.png";
+import mSlide03 from "../assets/hero/m-02-home-energy-storage.png";
+import mSlide04 from "../assets/hero/m-03-marine-batteries.png";
+import mSlide05 from "../assets/lithiumvalley/lv-ci-portrait.png";
+import mSlide06 from "../assets/hero/m-05-projoy-pefs-combiner.png";
+import mSlide07 from "../assets/hero/m-06-projoy-rapid-shutdown.png";
+import mSlide08 from "../assets/hero/m-07-risen-hyper-ion-pro.png";
+
+const [gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
+  getImage({ src: mSlide02, width: 928, height: 1152 }),
+  getImage({ src: mSlide03, width: 928, height: 1152 }),
+  getImage({ src: mSlide04, width: 928, height: 1152 }),
+  getImage({ src: mSlide05, width: 928, height: 1152 }),
+  getImage({ src: mSlide06, width: 928, height: 1152 }),
+  getImage({ src: mSlide07, width: 928, height: 1152 }),
+  getImage({ src: mSlide08, width: 928, height: 1152 }),
+]);
+
+const slides = [
+  {
+    image: microinverters,
+    mobileSrc: null,
+    alt: "TSUN Microinverters",
+    width: 896,
+    height: 1200,
+    label: "Μικροαντιστροφείς",
+    title: "No.1 Powerful Microinverter",
+    subtitle: "Make Safety Affordable",
+    href: withBase("products/hybrid-microinverter-2000w/"),
+    hideText: false,
+  },
+  {
+    image: slide02,
+    mobileSrc: gm02.src,
+    alt: "Suntech Ultra T 2.0 — Φωτοβολταϊκά Πάνελ Υψηλής Απόδοσης",
+    width: 1376,
+    height: 768,
+    label: "Φωτοβολταϊκά Πάνελ",
+    title: "Suntech Ultra T 2.0",
+    subtitle: "48-cell · 54-cell · 66-cell",
+    href: null,
+    hideText: false,
+  },
+  {
+    image: slide03,
+    mobileSrc: gm03.src,
+    alt: "Σύστημα Αποθήκευσης Ενέργειας Κατοικιών — LithiumValley",
+    width: 1376,
+    height: 768,
+    label: "Οικιακές Λύσεις",
+    title: "Home Energy System",
+    subtitle: "Solar · Storage · EV Charging",
+    href: withBase("products/lithiumvalley-residential/"),
+    hideText: false,
+  },
+  {
+    image: slide04,
+    mobileSrc: gm04.src,
+    alt: "LithiumValley Μπαταρίες Li-ion για Σκάφος και Υπαίθριο",
+    width: 1376,
+    height: 768,
+    label: "Μπαταρίες Li-ion",
+    title: "LithiumValley 12V Pro",
+    subtitle: "Rechargeable Li-ion · Marine & Outdoor",
+    href: withBase("products/lithiumvalley-residential/"),
+    hideText: false,
+  },
+  {
+    image: slide05,
+    mobileSrc: gm05.src,
+    alt: "LithiumValley Reliable C&I Energy Storage",
+    width: 1376,
+    height: 768,
+    label: "Βιομηχανικές Λύσεις",
+    title: "C&I Energy Storage",
+    subtitle: "LithiumValley · Reliable · Grid-Scale",
+    href: withBase("products/lithiumvalley-residential/"),
+    hideText: false,
+  },
+  {
+    image: slide06,
+    mobileSrc: gm06.src,
+    alt: "Projoy PEFS Σειρά PV Combiner Box — IP66 Plug & Play",
+    width: 1376,
+    height: 768,
+    label: "PV Combiner Box",
+    title: "PEFS Series",
+    subtitle: "Safe. Smart. Reliable. · IP66 · Plug & Play",
+    href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: false,
+  },
+  {
+    image: slide07,
+    mobileSrc: gm07.src,
+    alt: "Projoy Rapid Shutdown System — Επίσημος Διανομέας Alphatech Energy",
+    width: 1376,
+    height: 768,
+    label: "Πυρασφάλεια",
+    title: "Rapid Shutdown System",
+    subtitle: "Advanced Fire Safety for PV Systems",
+    href: withBase("products/projoy-pefs-rapid-shutdown/"),
+    hideText: false,
+  },
+  {
+    image: slide08,
+    mobileSrc: gm08.src,
+    alt: "Risen Hyper-ion Pro — 24.7% Απόδοση · 767W · 0BB Cell Technology",
+    width: 1376,
+    height: 768,
+    label: "Φωτοβολταϊκά Πάνελ",
+    title: "Risen Hyper-ion Pro",
+    subtitle: "24.7% Efficiency · 767W · 0BB Cell Technology",
+    href: null,
+    hideText: false,
+  },
+];
+---
+
+<div class="relative h-full w-full touch-pan-y overflow-hidden bg-navy-950 select-none" data-hero-carousel role="region" aria-label="Προϊόντα carousel">
+  {
+    slides.map((s, i) => (
+      <div
+        class={`absolute inset-0 transition-all duration-700 ease-out${s.href ? " cursor-pointer" : ""}`}
+        data-slide
+        data-href={s.href ?? ""}
+        style={`transform:translateX(${i === 0 ? "0" : "100%"});opacity:${i === 0 ? "1" : "0"}`}
+      >
+        {s.mobileSrc ? (
+          <picture class="block h-full w-full">
+            <source media="(max-width: 639px)" srcset={s.mobileSrc} />
+            <Image
+              src={s.image}
+              alt={s.alt}
+              width={s.width}
+              height={s.height}
+              loading="lazy"
+              decoding="async"
+              sizes="100vw"
+              draggable={false}
+              class="h-full w-full object-contain object-center [-webkit-user-drag:none]"
+            />
+          </picture>
+        ) : (
+          <Image
+            src={s.image}
+            alt={s.alt}
+            width={s.width}
+            height={s.height}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            sizes="100vw"
+            draggable={false}
+            class={`block h-full w-full object-center [-webkit-user-drag:none] ${i === 0 ? "object-cover" : "object-contain"} sm:object-contain`}
+          />
+        )}
+
+        {/* Bottom-left gradient + text — hidden for poster slides */}
+        {!s.hideText && (
+          <>
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+            <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
+              <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+                {s.label}
+              </span>
+              <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+                {s.title}
+              </h2>
+              <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
+                {s.subtitle}
+              </p>
+            </div>
+          </>
+        )}
+      </div>
+    ))
+  }
+
+  <div class="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2">
+    {
+      slides.map((_, i) => (
+        <button
+          type="button"
+          class="h-2 w-2 rounded-full bg-white/60 shadow transition-all duration-300 data-[active=true]:w-7 data-[active=true]:bg-white"
+          data-dot={i}
+          data-active={i === 0}
+          aria-label={`Προβολή διαφάνειας ${i + 1}`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style is:global>
+  /* ── Text stagger pop-in ── */
+  .hero-slide-label,
+  .hero-slide-title,
+  .hero-slide-subtitle {
+    opacity: 0;
+    transform: translateY(22px);
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 0.6s;
+  }
+
+  [data-slide][data-active="true"] .hero-slide-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.22s;
+  }
+  [data-slide][data-active="true"] .hero-slide-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.36s;
+  }
+  [data-slide][data-active="true"] .hero-slide-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+</style>
+
+<script>
+  const roots = document.querySelectorAll<HTMLElement>("[data-hero-carousel]");
+
+  roots.forEach((root) => {
+    const slideEls = Array.from(root.querySelectorAll<HTMLElement>("[data-slide]"));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-dot]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    const render = () => {
+      slideEls.forEach((el, i) => {
+        const offset = i === current ? "0" : i < current ? "-100%" : "100%";
+        el.style.transform = `translateX(${offset})`;
+        el.style.opacity = i === current ? "1" : "0";
+        el.setAttribute("data-active", String(i === current));
+      });
+      dots.forEach((dot, i) => dot.setAttribute("data-active", String(i === current)));
+    };
+
+    const goTo = (index: number) => {
+      current = (index + slideEls.length) % slideEls.length;
+      render();
+    };
+
+    const start = () => {
+      if (reduceMotion || timer) return;
+      timer = setInterval(() => goTo(current + 1), 4500);
+    };
+    const stop = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    dots.forEach((dot, i) =>
+      dot.addEventListener("click", () => {
+        goTo(i);
+        stop();
+        start();
+      })
+    );
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+
+    let dragStartX: number | null = null;
+    let dragStartY: number | null = null;
+    let dragging = false;
+    const SWIPE_THRESHOLD = 40;
+
+    root.addEventListener("pointerdown", (e) => {
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+      dragging = true;
+      stop();
+      e.preventDefault();
+    });
+
+    root.addEventListener("pointerup", (e) => {
+      if (!dragging || dragStartX === null || dragStartY === null) return;
+      const deltaX = e.clientX - dragStartX;
+      const deltaY = e.clientY - dragStartY;
+      dragging = false;
+      dragStartX = null;
+      dragStartY = null;
+      if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+        goTo(current + (deltaX < 0 ? 1 : -1));
+      } else {
+        const href = slideEls[current]?.getAttribute("data-href");
+        if (href) window.location.href = href;
+      }
+      start();
+    });
+
+    root.addEventListener("pointercancel", () => {
+      dragging = false;
+      dragStartX = null;
+      dragStartY = null;
+      start();
+    });
+
+    // Double rAF ensures initial CSS paint (all hidden) happens before
+    // render() sets data-active, so the stagger transition fires on load
+    requestAnimationFrame(() => requestAnimationFrame(() => render()));
+    start();
+  });
+</script>

@@ -4,12 +4,13 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import WhyChooseUs from "../components/WhyChooseUs.astro";
 import About from "../components/About.astro";
-import Products from "../components/Products.astro";
 import Coverage from "../components/Coverage.astro";
 import Process from "../components/Process.astro";
 import FAQ from "../components/FAQ.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
+import LithiumValleyHero from "../components/LithiumValleyHero.astro";
 
 const title = "Alphatech Energy | Φωτοβολταϊκά Πάνελ, Inverters & Μπαταρίες";
 const description =
@@ -20,8 +21,8 @@ const description =
   <Header />
   <main>
     <Hero />
+    <LithiumValleyHero />
     <WhyChooseUs />
-    <Products />
     <About />
     <Coverage />
     <Process />
@@ -29,4 +30,5 @@ const description =
     <ContactCTA />
   </main>
   <Footer />
+  <BackToTop />
 </BaseLayout>

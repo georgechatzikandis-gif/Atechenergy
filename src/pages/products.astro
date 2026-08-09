@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Products from "../components/Products.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
+
+const title = "Προϊόντα | Alphatech Energy";
+const description =
+  "Φωτοβολταϊκά πάνελ Monocrystalline, Topcon και HJT, μπαταρίες αποθήκευσης, inverters και φορτιστές EV — η πλήρης γκάμα προϊόντων της Alphatech Energy.";
+---
+
+<BaseLayout title={title} description={description} path="/products/">
+  <Header />
+  <main class="pt-24">
+    <Products />
+    <ContactCTA />
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>

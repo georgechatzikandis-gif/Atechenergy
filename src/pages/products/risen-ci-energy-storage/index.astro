@@ -1,0 +1,421 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+import heroImg from "../../../assets/hero/risen-ci-storage.jpg";
+import rooftopSolar from "../../../assets/products/ci-rooftop-solar.jpg";
+import sunsetSolar from "../../../assets/products/ci-sunset-solar.jpg";
+import bipvPanels from "../../../assets/products/ci-bipv-panels.jpg";
+import groundSolar from "../../../assets/products/ci-ground-solar.jpg";
+import storageContainers from "../../../assets/products/ci-storage-containers.jpg";
+import productSU5016 from "../../../assets/products/ci-product-su5016.jpg";
+
+const title = "C&I Αποθήκευση Ενέργειας Risen Energy | Alphatech Energy";
+const description =
+  "Ολοκληρωμένες εμπορικές & βιομηχανικές ενεργειακές λύσεις Risen Energy: κατανεμημένα φωτοβολταϊκά, BIPV, συστήματα αποθήκευσης DC/AC Coupled και βιομηχανικά energy storage containers.";
+---
+
+<BaseLayout title={title} description={description} path="/products/risen-ci-energy-storage/">
+  <Header />
+  <main class="pt-24">
+
+    {/* ── Breadcrumb ── */}
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">C&I Αποθήκευση Ενέργειας</span>
+        </nav>
+      </div>
+    </div>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="flex items-center justify-center overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
+          <Image
+            src={heroImg}
+            alt="Risen Energy C&I Energy Storage System"
+            width={600}
+            height={600}
+            class="h-auto w-full object-cover"
+          />
+        </div>
+
+        <div data-reveal>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Risen Energy · C&I / Utility-scale ESS</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
+            C&I Ενεργειακές Λύσεις
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+            Ολοκληρωμένη, αποδοτική και βιώσιμη ενεργειακή λύση για βιομηχανικές και εμπορικές εγκαταστάσεις. Με διάφορα μοντέλα συνεργασίας, καλύπτουμε κατανεμημένα φωτοβολταϊκά, σταθμούς αποθήκευσης ενέργειας και ολοκληρωμένα υβριδικά συστήματα — μειώνοντας το κόστος ενέργειας και την περιβαλλοντική επιβάρυνση.
+          </p>
+
+          <ul class="mt-6 space-y-2.5">
+            {[
+              "Ολοκληρωμένη ασφάλεια (Comprehensive Safety)",
+              "Υψηλή αξιοπιστία για βιομηχανικά περιβάλλοντα",
+              "Έξυπνη διαχείριση O&M — τηλεπαρακολούθηση",
+              "Κλιμακώσιμη αρχιτεκτονική: C&I έως utility-scale",
+              "Τεχνολογία LiFePO₄ με μακρά διάρκεια ζωής",
+              "Grid-connected & Off-grid λειτουργία",
+            ].map((f) => (
+              <li class="flex items-start gap-2.5 text-sm font-medium text-navy-900/75">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("products/")} class="btn btn-outline">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M11 18l-6-6 6-6"></path>
+              </svg>
+              Όλα τα Προϊόντα
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Specs Table ── */}
+    <section class="bg-white py-12 sm:py-16">
+      <div class="container-page max-w-3xl" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
+          {[
+            { label: "Τύπος", value: "C&I / Utility-scale ESS" },
+            { label: "Τεχνολογία Κυψέλης", value: "LiFePO₄" },
+            { label: "Εφαρμογή", value: "Εμπορικές & Βιομηχανικές" },
+            { label: "Λειτουργία", value: "Grid-connected / Off-grid" },
+            { label: "Κατασκευαστής", value: "Risen Energy" },
+            { label: "Κατηγορίες", value: "Residential · C&I · Utility-scale" },
+          ].map((s, i) => (
+            <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
+              <span class="text-sm text-navy-900/60">{s.label}</span>
+              <span class="text-sm font-bold text-navy-900">{s.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ═══════════════════════════════════════════════════════
+        SOLUTION SECTIONS
+        ═══════════════════════════════════════════════════════ */}
+
+    {/* Section divider */}
+    <div class="bg-ice-100/40 py-8">
+      <div class="container-page text-center">
+        <span class="inline-flex items-center gap-3">
+          <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Τύποι Λύσεων C&I</p>
+          <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+        </span>
+      </div>
+    </div>
+
+    {/* ── 1. Distributed PV Power Plant ── */}
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed on mobile, card-style on desktop */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-right lg:w-1/2 lg:ml-10">
+          <Image
+            src={rooftopSolar}
+            alt="Κατανεμημένο Φωτοβολταϊκό Πάρκο — αεροφωτογραφία βιομηχανικής εγκατάστασης"
+            width={800}
+            height={460}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+        <div class="lg:overflow-hidden">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 01</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Κατανεμημένο Φωτοβολταϊκό Σύστημα
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Μικρότερα συστήματα παραγωγής και τροφοδοσίας φωτοβολταϊκής ενέργειας σε χώρους κατανάλωσης ή κοντά σε αυτούς. Υποστηρίζουν την οικονομική λειτουργία υφιστάμενων δικτύων διανομής ή καλύπτουν και τις δύο ανάγκες ταυτόχρονα.
+          </p>
+          <ul class="mt-5 space-y-2">
+            {[
+              "Βιομηχανικές και εμπορικές οροφές",
+              "Μείωση λογαριασμών ρεύματος",
+              "Χαμηλό αποτύπωμα γης — εγκατάσταση στο υφιστάμενο κτίριο",
+              "Δυνατότητα συνδυασμού με αποθήκευση",
+            ].map((f) => (
+              <li class="flex items-center gap-2 text-sm text-navy-900/70">
+                <span class="h-1.5 w-1.5 rounded-full bg-azure-500 shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 2. BIPV System ── */}
+    <section class="bg-ice-100/40 py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 02</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Σύστημα BIPV — Δομικά Ενσωματωμένα Φωτοβολταϊκά
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-navy-900/60">
+            Ταυτόχρονος σχεδιασμός, κατασκευή και εγκατάσταση φωτοβολταϊκών συστημάτων με τα κτίρια. Τα πάνελ αποτελούν αναπόσπαστο στοιχείο του κτιριακού κελύφους — λειτουργούν ως δομικό υλικό ενώ παράλληλα παράγουν ενέργεια.
+          </p>
+        </div>
+
+        {/* Full-bleed 2-column on mobile via -mx, 2-col grid inside */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 grid grid-cols-2 gap-0.5 sm:gap-1 lg:gap-4 lg:rounded-2xl overflow-hidden">
+          <Image
+            src={sunsetSolar}
+            alt="BIPV — Βιομηχανική οροφή με φωτοβολταϊκά πάνελ στο ηλιοβασίλεμα"
+            width={800}
+            height={460}
+            class="aspect-[4/3] w-full object-cover"
+          />
+          <Image
+            src={bipvPanels}
+            alt="BIPV — Κοντινό πλάνο ενσωματωμένων φωτοβολταϊκών πάνελ σε βιομηχανική στέγη"
+            width={800}
+            height={480}
+            class="aspect-[4/3] w-full object-cover"
+          />
+        </div>
+
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          {[
+            { title: "Αισθητική Ενσωμάτωση", desc: "Ένα λεπτό σχέδιο που ταιριάζει αρμονικά με την αρχιτεκτονική του κτιρίου." },
+            { title: "Διπλή Λειτουργία", desc: "Δομικό υλικό και ενεργειακή πηγή ταυτόχρονα — μέγιστη αξιοποίηση επιφάνειας." },
+            { title: "Πλήρης Ενεργειακή Κάλυψη", desc: "Ιδανικό για νέα κτίρια και ανακαινίσεις με υψηλές ενεργειακές απαιτήσεις." },
+          ].map((c) => (
+            <div class="rounded-2xl bg-white p-5 shadow-card">
+              <h3 class="font-display text-base font-bold text-navy-900">{c.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-navy-900/60">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── 3. Integrated Solar & Storage (DC / AC Coupled) ── */}
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 03</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Ολοκληρωμένο Σύστημα Παραγωγής & Αποθήκευσης
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-navy-900/60">
+            Συνδυάζει φωτοβολταϊκή παραγωγή με αποθήκευση ενέργειας για σταθερή, αδιάλειπτη τροφοδοσία. Διαθέσιμο σε DC Coupled και AC Coupled διαμορφώσεις.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-azure-500/20 bg-gradient-to-br from-navy-950 to-navy-800 p-8 text-white">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-azure-500/20">
+              <svg class="h-5 w-5 text-azure-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.22-6.78-2.12 2.12M7.34 16.66l-2.12 2.12M16.78 16.66l2.12 2.12M7.34 7.34 5.22 5.22"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold">DC Coupled</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">
+              Ιδανικό για νέες εμπορικές και βιομηχανικές εγκαταστάσεις ηλιακής ενέργειας και αποθήκευσης. Υιοθετεί τη σχεδίαση ολοκληρωμένης μονάδας αποθήκευσης — χρειάζεται μόνο ένας inverter για την ταυτόχρονη παραγωγή PV και φόρτιση/εκφόρτιση μπαταρίας.
+            </p>
+            <ul class="mt-4 space-y-1.5">
+              {["Απλή αρχιτεκτονική — ένας inverter", "Υψηλότερη συνολική απόδοση", "Χαμηλότερο κόστος εγκατάστασης"].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-azure-200">
+                  <span class="h-1 w-1 rounded-full bg-azure-300 shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-navy-900/8 bg-ice-100/60 p-8">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-azure-500/10">
+              <svg class="h-5 w-5 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-navy-900">AC Coupled</h3>
+            <p class="mt-3 text-sm leading-relaxed text-navy-900/60">
+              Κατάλληλο για υφιστάμενα βιομηχανικά και εμπορικά δίκτυα ηλιακής ενέργειας που ήδη διαθέτουν αποθήκευση. Εγκαθίσταται ένας επιπλέον inverter αποθήκευσης στην AC πλευρά σε συνεργασία με τον υπάρχοντα grid-tied inverter.
+            </p>
+            <ul class="mt-4 space-y-1.5">
+              {["Εύκολη αναβάθμιση υφιστάμενου συστήματος", "Συμβατό με κάθε brand PV inverter", "Σταθερή, αξιόπιστη τροφοδοσία"].map((f) => (
+                <li class="flex items-center gap-2 text-sm text-navy-900/70">
+                  <span class="h-1 w-1 rounded-full bg-azure-500 shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 4. Ground-mounted Power Plant ── */}
+    <section class="bg-ice-100/40 py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed image on mobile */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-left lg:w-1/2 lg:mr-10">
+          <Image
+            src={groundSolar}
+            alt="Κεντρικός φωτοβολταϊκός σταθμός εδάφους — σειρές πάνελ σε ανοιχτό χώρο"
+            width={800}
+            height={460}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+        <div class="lg:overflow-hidden">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 04</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Κεντρικός Φωτοβολταϊκός Σταθμός Εδάφους
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Τα πάνελ μετατρέπουν άμεσα την ηλιακή ακτινοβολία σε DC ηλεκτρισμό, ο οποίος μετατρέπεται σε AC μέσω grid-connected inverters και οδηγείται στο δίκτυο μέσω έξυπνων υποσταθμών.
+          </p>
+          <ul class="mt-5 space-y-2">
+            {[
+              "Βέλτιστες γωνίες και προσανατολισμός πάνελ",
+              "Μεγάλες αποστάσεις μεταξύ στοιχείων — εξαιρετικός αερισμός",
+              "Έξυπνοι grid-connected inverters",
+              "Κατάλληλο για utility-scale ανάπτυξη",
+            ].map((f) => (
+              <li class="flex items-center gap-2 text-sm text-navy-900/70">
+                <span class="h-1.5 w-1.5 rounded-full bg-azure-500 shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 5. Energy Storage Power Station ── */}
+    <section class="bg-white py-12 sm:py-16 lg:py-20">
+      <div class="container-page" data-reveal>
+        {/* Full-bleed image on mobile */}
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl mb-8 lg:mb-0 lg:float-right lg:w-1/2 lg:ml-10">
+          <Image
+            src={storageContainers}
+            alt="Βιομηχανικός σταθμός αποθήκευσης ενέργειας — containers"
+            width={800}
+            height={460}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+        <div class="lg:overflow-hidden">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Λύση 05</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            Σταθμός Αποθήκευσης Ενέργειας
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Χρησιμοποιεί ηλεκτροχημικές μπαταρίες για αποθήκευση, μετατροπή και απόδοση ηλεκτρικής ενέργειας. Περιλαμβάνει τα απαραίτητα συστήματα σύνδεσης δικτύου, συντήρησης και επιθεώρησης. Για δίκτυα τάσης 10(6)kV και άνω, ενσωματώνει επιπλέον συλλεκτήριους αγωγούς και μετασχηματιστές ανύψωσης.
+          </p>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            {[
+              "Ηλεκτροχημικές μπαταρίες LiFePO₄",
+              "Σύνδεση 10(6)kV και άνω",
+              "BMS & EMS διαχείριση",
+              "Εγκατάσταση container",
+              "Πλήρης τηλεπαρακολούθηση",
+              "Scalable αρχιτεκτονική",
+            ].map((f) => (
+              <div class="flex items-center gap-2 rounded-xl bg-ice-100/60 px-3 py-2.5 text-xs font-semibold text-navy-900/75">
+                <svg class="h-3.5 w-3.5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 6. Energy Storage Products (SU5016U2500KC) ── */}
+    <section class="bg-navy-950 py-16 sm:py-20">
+      <div class="container-page" data-reveal>
+        <div class="mb-10 text-center">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-300 uppercase">Προϊόντα Αποθήκευσης</p>
+          <h2 class="mt-2 font-display text-2xl font-extrabold text-white sm:text-3xl">
+            Λύσεις Αποθήκευσης Risen Energy
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/60">
+            Χαμηλό κόστος επένδυσης · Υψηλή ενοποίηση · Εύκολη μεταφορά · Χαμηλό κόστος εγκατάστασης επί τόπου
+          </p>
+        </div>
+
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl bg-white/5 ring-1 ring-white/10">
+            <Image
+              src={productSU5016}
+              alt="Risen Energy SU5016U2500KC Energy Storage System"
+              width={800}
+              height={420}
+              class="aspect-video w-full object-contain"
+            />
+          </div>
+
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">SU5016U2500KC</h3>
+            <p class="mt-2 text-sm text-azure-300">Βιομηχανικό σύστημα αποθήκευσης ενέργειας</p>
+
+            <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {[
+                { icon: "🔒", label: "Rack Visual Switch" },
+                { icon: "⚡", label: "Short Circuit Protection" },
+                { icon: "🔥", label: "Fire Suppression System" },
+                { icon: "💧", label: "Water-based Firefighting" },
+                { icon: "🛡️", label: "Intrusion Detection" },
+                { icon: "🎛️", label: "Golden Shield Controller" },
+              ].map((f) => (
+                <div class="flex flex-col items-center gap-1.5 rounded-xl bg-white/5 px-3 py-4 text-center ring-1 ring-white/10">
+                  <span class="text-2xl" aria-hidden="true">{f.icon}</span>
+                  <span class="text-xs font-semibold leading-tight text-white/80">{f.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <p class="mt-6 text-sm leading-relaxed text-white/55">
+              Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── CTA ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14" data-reveal>
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">
+            Ενδιαφέρεστε για C&I Ενεργειακές Λύσεις;
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">
+            Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής προσαρμοσμένη στις ανάγκες σας.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>
