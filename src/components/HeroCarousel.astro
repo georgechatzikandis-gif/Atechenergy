@@ -1,6 +1,7 @@
 ---
 import { Image, getImage } from "astro:assets";
 import { withBase } from "../lib/paths";
+import lineup from "../assets/hero/tsun-lineup.jpg";
 import powertrunk from "../assets/hero/tsun-powertrunk.jpg";
 import slide02 from "../assets/hero/01-suntech-ultra-t2.png";
 import slide03 from "../assets/hero/02-home-energy-storage.png";
@@ -17,7 +18,8 @@ import mSlide06 from "../assets/hero/m-05-projoy-pefs-combiner.png";
 import mSlide07 from "../assets/hero/m-06-projoy-rapid-shutdown.png";
 import mSlide08 from "../assets/hero/m-07-risen-hyper-ion-pro.png";
 
-const [gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
+const [gmPowertrunk, gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
+  getImage({ src: powertrunk, width: 928, height: 1152 }),
   getImage({ src: mSlide02, width: 928, height: 1152 }),
   getImage({ src: mSlide03, width: 928, height: 1152 }),
   getImage({ src: mSlide04, width: 928, height: 1152 }),
@@ -29,11 +31,11 @@ const [gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
 
 const slides = [
   {
-    image: powertrunk,
-    mobileSrc: null,
+    image: lineup,
+    mobileSrc: gmPowertrunk.src,
     alt: "TSUN PowerTrunk Μικροαντιστροφέας",
-    width: 1284,
-    height: 2228,
+    width: 896,
+    height: 1200,
     label: "Μικροαντιστροφείς",
     title: "TSUN PowerTrunk",
     subtitle: "Hybrid Microinverter · 2000W",
