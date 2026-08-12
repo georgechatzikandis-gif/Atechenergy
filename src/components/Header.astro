@@ -7,12 +7,20 @@ const anchor = (id: string) => (isHome ? `#${id}` : withBase(`#${id}`));
 const homeHref = isHome ? "#home" : base;
 
 const navLinks = [
-  { href: homeHref, label: "Αρχική" },
-  { href: withBase("products/"), label: "Προϊόντα" },
-  { href: anchor("why-us"), label: "Γιατί Εμάς" },
-  { href: anchor("about"), label: "Σχετικά" },
-  { href: anchor("faq"), label: "Ερωτήσεις" },
-  { href: anchor("contact"), label: "Επικοινωνία" },
+  { href: homeHref, label: "Αρχική", key: "nav.home" },
+  { href: withBase("products/"), label: "Προϊόντα", key: "nav.products" },
+  { href: anchor("why-us"), label: "Γιατί Εμάς", key: "nav.why" },
+  { href: anchor("about"), label: "Σχετικά", key: "nav.about" },
+  { href: anchor("faq"), label: "Ερωτήσεις", key: "nav.faq" },
+  { href: anchor("contact"), label: "Επικοινωνία", key: "nav.contact" },
+];
+
+const langs = [
+  { code: "el", label: "ΕΛ" },
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
+  { code: "es", label: "ES" },
+  { code: "it", label: "IT" },
 ];
 ---
 
@@ -31,6 +39,7 @@ const navLinks = [
             <a
               href={link.href}
               class="rounded-full px-3 py-1.5 text-[13px] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white xl:px-4 xl:py-2 xl:text-sm 2xl:text-base"
+              data-i18n={link.key}
             >
               {link.label}
             </a>
@@ -38,8 +47,41 @@ const navLinks = [
         }
       </nav>
 
-      <div class="hidden items-center lg:flex">
-        <a href={anchor("contact")} class="btn btn-primary px-5 py-2.5 text-[13px] xl:px-6 xl:py-3 xl:text-sm 2xl:text-base">Ζητήστε Προσφορά</a>
+      <div class="hidden items-center gap-2 lg:flex">
+        <!-- Language switcher -->
+        <div class="relative" data-lang-switcher>
+          <button
+            type="button"
+            class="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.06] px-2.5 py-1.5 text-[12px] font-bold text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            aria-label="Επιλογή γλώσσας"
+            data-lang-toggle
+          >
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-lang-label>ΕΛ</span>
+            <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div
+            class="pointer-events-none absolute right-0 top-full mt-1.5 min-w-[5rem] rounded-xl border border-white/10 bg-navy-900/95 py-1 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-200"
+            data-lang-dropdown
+          >
+            {langs.map((l) => (
+              <button
+                type="button"
+                class="flex w-full items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-white/70 transition-colors hover:bg-white/10 hover:text-white data-[active=true]:text-azure-300"
+                data-lang-btn={l.code}
+                data-active={l.code === "el" ? "true" : "false"}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <a href={anchor("contact")} class="btn btn-primary px-5 py-2.5 text-[13px] xl:px-6 xl:py-3 xl:text-sm 2xl:text-base" data-i18n="header.cta">Ζητήστε Προσφορά</a>
       </div>
 
       <button
@@ -71,6 +113,7 @@ const navLinks = [
                 href={link.href}
                 class="rounded-xl px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white"
                 data-mobile-link
+                data-i18n={link.key}
               >
                 {link.label}
               </a>
@@ -79,7 +122,21 @@ const navLinks = [
           <a href="tel:+306976724504" class="mt-2 rounded-xl px-4 py-3 text-base font-semibold text-azure-300">
             +30 697 672 4504
           </a>
-          <a href={anchor("contact")} class="btn btn-primary mt-2 justify-center" data-mobile-link>Ζητήστε Προσφορά</a>
+          <a href={anchor("contact")} class="btn btn-primary mt-2 justify-center" data-mobile-link data-i18n="header.cta">Ζητήστε Προσφορά</a>
+
+          <!-- Mobile language switcher -->
+          <div class="mt-3 flex items-center gap-1.5 border-t border-white/10 pt-3 px-1 flex-wrap">
+            {langs.map((l) => (
+              <button
+                type="button"
+                class="rounded-lg border border-white/15 px-2.5 py-1 text-[12px] font-bold text-white/60 transition-colors hover:border-azure-400/40 hover:text-azure-300 data-[active=true]:border-azure-400/60 data-[active=true]:text-azure-300"
+                data-lang-btn={l.code}
+                data-active={l.code === "el" ? "true" : "false"}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
         </nav>
       </div>
     </div>
@@ -87,6 +144,7 @@ const navLinks = [
 </header>
 
 <script>
+  // Mobile menu
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const menu = document.querySelector<HTMLDivElement>("[data-mobile-menu]");
   const links = document.querySelectorAll<HTMLAnchorElement>("[data-mobile-link]");
@@ -106,4 +164,41 @@ const navLinks = [
 
   toggle?.addEventListener("click", () => setOpen(!open));
   links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+
+  // Language switcher dropdown
+  const langToggle = document.querySelector<HTMLButtonElement>("[data-lang-toggle]");
+  const langDropdown = document.querySelector<HTMLDivElement>("[data-lang-dropdown]");
+  const langLabel = document.querySelector<HTMLSpanElement>("[data-lang-label]");
+
+  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", fr: "FR", es: "ES", it: "IT" };
+
+  let dropOpen = false;
+  const setDrop = (v: boolean) => {
+    dropOpen = v;
+    if (!langDropdown) return;
+    langDropdown.classList.toggle("opacity-100", dropOpen);
+    langDropdown.classList.toggle("opacity-0", !dropOpen);
+    langDropdown.classList.toggle("pointer-events-auto", dropOpen);
+    langDropdown.classList.toggle("pointer-events-none", !dropOpen);
+  };
+
+  langToggle?.addEventListener("click", (e) => { e.stopPropagation(); setDrop(!dropOpen); });
+  document.addEventListener("click", () => setDrop(false));
+
+  // Language buttons
+  document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang-btn") || "el";
+      if (typeof window.__i18nApply === "function") window.__i18nApply(lang);
+      if (langLabel) langLabel.textContent = langLabels[lang] || lang.toUpperCase();
+      setDrop(false);
+      setOpen(false);
+    });
+  });
+
+  // Restore label from localStorage
+  try {
+    const saved = localStorage.getItem("lang") || "el";
+    if (langLabel) langLabel.textContent = langLabels[saved] || saved.toUpperCase();
+  } catch(_) {}
 </script>

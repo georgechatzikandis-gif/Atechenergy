@@ -9,19 +9,21 @@ const anchor = (id: string) => (isHome ? `#${id}` : withBase(`#${id}`));
 
 const columns = [
   {
+    titleKey: "footer.nav",
     title: "Πλοήγηση",
     links: [
-      { href: isHome ? "#home" : base, label: "Αρχική" },
-      { href: withBase("products/"), label: "Προϊόντα" },
-      { href: anchor("why-us"), label: "Γιατί Εμάς" },
-      { href: anchor("about"), label: "Σχετικά" },
+      { href: isHome ? "#home" : base, label: "Αρχική", key: "footer.home" },
+      { href: withBase("products/"), label: "Προϊόντα", key: "footer.products" },
+      { href: anchor("why-us"), label: "Γιατί Εμάς", key: "footer.why" },
+      { href: anchor("about"), label: "Σχετικά", key: "footer.about" },
     ],
   },
   {
+    titleKey: "footer.company",
     title: "Εταιρεία",
     links: [
-      { href: anchor("faq"), label: "Ερωτήσεις" },
-      { href: anchor("contact"), label: "Επικοινωνία" },
+      { href: anchor("faq"), label: "Ερωτήσεις", key: "footer.faq" },
+      { href: anchor("contact"), label: "Επικοινωνία", key: "footer.contactlink" },
     ],
   },
 ];
@@ -32,7 +34,7 @@ const columns = [
     <div class="grid gap-12 border-b border-white/10 pb-14 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
       <div>
         <Logo variant="light" />
-        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55" data-i18n="footer.desc">
           Επίσημος αντιπρόσωπος και διανομέας φωτοβολταϊκών πάνελ, inverters, μπαταριών και
           φορτιστών EV, για Ευρώπη και Λατινική Αμερική, από το 2008.
         </p>
@@ -41,11 +43,11 @@ const columns = [
       {
         columns.map((col) => (
           <div>
-            <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase">{col.title}</p>
+            <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase" data-i18n={col.titleKey}>{col.title}</p>
             <ul class="mt-5 flex flex-col gap-3">
               {col.links.map((l) => (
                 <li>
-                  <a href={l.href} class="text-sm text-white/65 transition-colors hover:text-white">
+                  <a href={l.href} class="text-sm text-white/65 transition-colors hover:text-white" data-i18n={l.key}>
                     {l.label}
                   </a>
                 </li>
@@ -56,7 +58,7 @@ const columns = [
       }
 
       <div>
-        <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase">Επικοινωνία</p>
+        <p class="text-xs font-bold tracking-[0.14em] text-white/40 uppercase" data-i18n="footer.contact">Επικοινωνία</p>
         <ul class="mt-5 flex flex-col gap-3 text-sm text-white/65">
           <li><a href="tel:+306976724504" class="hover:text-white">+30 697 672 4504</a></li>
           <li><a href="mailto:info@atechenergy.eu" class="hover:text-white">info@atechenergy.eu</a></li>
@@ -67,8 +69,8 @@ const columns = [
     </div>
 
     <div class="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
-      <p class="text-xs text-white/40">© {year} Alphatech Energy. Με επιφύλαξη παντός δικαιώματος.</p>
-      <p class="text-xs text-white/40">Επίσημος Διανομέας: Risen Group · SYL · Lithium Valley · Twinsel</p>
+      <p class="text-xs text-white/40">© {year} Alphatech Energy. <span data-i18n="footer.copyright">Με επιφύλαξη παντός δικαιώματος.</span></p>
+      <p class="text-xs text-white/40" data-i18n="footer.distributors">Επίσημος Διανομέας: Risen Group · SYL · Lithium Valley · Twinsel</p>
     </div>
   </div>
 </footer>
