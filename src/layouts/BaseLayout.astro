@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import I18n from "../components/I18n.astro";
 
 interface Props {
   title: string;
@@ -73,6 +74,7 @@ const organizationSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   </head>
   <body class="antialiased">
+    <I18n />
     <slot />
 
     <script>

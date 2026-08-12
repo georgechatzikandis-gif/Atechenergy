@@ -9,11 +9,11 @@ const mapQuery = encodeURIComponent(
     <div class="overflow-hidden rounded-[2rem] bg-navy-950 shadow-2xl">
       <div class="grid lg:grid-cols-2">
         <div class="p-10 sm:p-14 xl:p-16 2xl:p-20" data-reveal>
-          <span class="eyebrow border-white/20 bg-white/10 text-azure-200">Επικοινωνία</span>
-          <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl xl:text-5xl 2xl:text-6xl">
+          <span class="eyebrow border-white/20 bg-white/10 text-azure-200" data-i18n="contact.eyebrow">Επικοινωνία</span>
+          <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl xl:text-5xl 2xl:text-6xl" data-i18n="contact.h2">
             Είμαστε εδώ για εσάς!
           </h2>
-          <p class="mt-4 max-w-md text-white/65 xl:text-lg xl:max-w-lg 2xl:text-xl 2xl:max-w-xl">
+          <p class="mt-4 max-w-md text-white/65 xl:text-lg xl:max-w-lg 2xl:text-xl 2xl:max-w-xl" data-i18n="contact.desc">
             Έχετε κάποιο πλάνο στο μυαλό σας; Μπορούμε να σας βοηθήσουμε να το υλοποιήσετε —
             επικοινωνήστε μαζί μας.
           </p>
@@ -26,7 +26,7 @@ const mapQuery = encodeURIComponent(
                 </svg>
               </span>
               <span>
-                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase">Καλέστε μας</span>
+                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase" data-i18n="contact.phone">Καλέστε μας</span>
                 <span class="mt-0.5 block font-display font-bold text-white">+30 697 672 4504</span>
               </span>
             </a>
@@ -38,7 +38,7 @@ const mapQuery = encodeURIComponent(
                 </svg>
               </span>
               <span>
-                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase">Email μας</span>
+                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase" data-i18n="contact.email">Email μας</span>
                 <span class="mt-0.5 block font-display font-bold text-white">info@atechenergy.eu</span>
               </span>
             </a>
@@ -50,7 +50,7 @@ const mapQuery = encodeURIComponent(
                 </svg>
               </span>
               <span>
-                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase">Viber · Τεχνική Υποστήριξη</span>
+                <span class="block text-xs font-semibold tracking-wide text-white/50 uppercase" data-i18n="contact.viber">Viber · Τεχνική Υποστήριξη</span>
                 <span class="mt-0.5 block font-display font-bold text-white">+30 697 672 4504</span>
               </span>
             </a>
@@ -64,9 +64,11 @@ const mapQuery = encodeURIComponent(
           >
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
-                <label for="name" class="mb-1.5 block text-sm font-medium text-white/70">Ονοματεπώνυμο</label>
+                <label for="name" class="mb-1.5 block text-sm font-medium text-white/70" data-i18n="contact.name">Ονοματεπώνυμο</label>
                 <input id="name" name="Ονοματεπώνυμο" type="text" required autocomplete="name"
-                  class="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-white placeholder-white/30 outline-none transition-colors focus:border-azure-400" placeholder="Το όνομά σας" />
+                  class="w-full rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-white placeholder-white/30 outline-none transition-colors focus:border-azure-400"
+                  placeholder="Το όνομά σας"
+                  data-i18n-ph="contact.name.ph" />
               </div>
               <div>
                 <label for="email" class="mb-1.5 block text-sm font-medium text-white/70">Email</label>
@@ -75,11 +77,13 @@ const mapQuery = encodeURIComponent(
               </div>
             </div>
             <div>
-              <label for="message" class="mb-1.5 block text-sm font-medium text-white/70">Μήνυμα</label>
+              <label for="message" class="mb-1.5 block text-sm font-medium text-white/70" data-i18n="contact.msg">Μήνυμα</label>
               <textarea id="message" name="Μήνυμα" required rows="4"
-                class="w-full resize-none rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-white placeholder-white/30 outline-none transition-colors focus:border-azure-400" placeholder="Περιγράψτε το έργο σας..."></textarea>
+                class="w-full resize-none rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-white placeholder-white/30 outline-none transition-colors focus:border-azure-400"
+                placeholder="Περιγράψτε το έργο σας..."
+                data-i18n-ph="contact.msg.ph"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary justify-center">Αποστολή Μηνύματος</button>
+            <button type="submit" class="btn btn-primary justify-center" data-i18n="contact.submit">Αποστολή Μηνύματος</button>
           </form>
         </div>
 
