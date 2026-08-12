@@ -13,16 +13,16 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
 <section class="relative overflow-hidden bg-navy-950 pt-36 pb-20 sm:pt-40 sm:pb-24 xl:pt-48 xl:pb-28 2xl:pt-56 2xl:pb-32">
   <div class="container-page relative z-10">
     <div class="mx-auto max-w-3xl text-center xl:max-w-4xl 2xl:max-w-5xl" data-reveal>
-      <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm">Ενέργεια για ένα Βιώσιμο Μέλλον</span>
+      <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm" data-i18n="hero.eyebrow">Ενέργεια για ένα Βιώσιμο Μέλλον</span>
 
       <h1 class="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem] xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
-        Αξιόπιστες Ενεργειακές Λύσεις για
-        <span class="bg-gradient-to-r from-azure-300 via-azure-200 to-white bg-clip-text text-transparent">
+        <span data-i18n="hero.h1a">Αξιόπιστες Ενεργειακές Λύσεις για</span>
+        <span class="bg-gradient-to-r from-azure-300 via-azure-200 to-white bg-clip-text text-transparent" data-i18n="hero.h1b">
           Φωτοβολταϊκά Έργα
         </span>
       </h1>
 
-      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg xl:text-xl xl:max-w-2xl 2xl:text-2xl 2xl:max-w-3xl">
+      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg xl:text-xl xl:max-w-2xl 2xl:text-2xl 2xl:max-w-3xl" data-i18n="hero.desc">
         Φωτοβολταϊκά πάνελ, inverters, μπαταρίες αποθήκευσης και φορτιστές EV από κορυφαίους
         κατασκευαστές — με τεχνική υποστήριξη και ανταγωνιστικές τιμές, σε όλη την Ευρώπη
         και τη Λατινική Αμερική.
@@ -30,12 +30,12 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         <a href="#contact" class="btn btn-primary">
-          Ζητήστε Προσφορά
+          <span data-i18n="hero.btn1">Ζητήστε Προσφορά</span>
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6"></path>
           </svg>
         </a>
-        <a href={withBase("products/")} class="btn btn-ghost">Δείτε τα Προϊόντα</a>
+        <a href={withBase("products/")} class="btn btn-ghost" data-i18n="hero.btn2">Δείτε τα Προϊόντα</a>
         <a href={withBase("calculator/")} class="inline-flex items-center gap-2 rounded-xl border border-[#00e5b4]/40 bg-[#00e5b4]/10 px-5 py-2.5 text-sm font-semibold text-[#00e5b4] transition-all hover:bg-[#00e5b4]/20 hover:border-[#00e5b4]/60">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -45,18 +45,18 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
       </div>
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 pt-5 text-center xl:mt-10 xl:pt-6">
-        <span class="text-xs font-bold tracking-wide text-white/90 xl:text-sm">2008 · Ίδρυση</span>
+        <span class="text-xs font-bold tracking-wide text-white/90 xl:text-sm" data-i18n="hero.stat1">2008 · Ίδρυση</span>
         <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-        <span class="text-xs font-bold tracking-wide text-azure-300">Επίσημος Συνεργάτης Risen Energy</span>
+        <span class="text-xs font-bold tracking-wide text-azure-300" data-i18n="hero.stat2">Επίσημος Συνεργάτης Risen Energy</span>
         <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
-        <span class="text-xs font-bold tracking-wide text-white/90">2 Ήπειροι Διανομής</span>
+        <span class="text-xs font-bold tracking-wide text-white/90" data-i18n="hero.stat3">2 Ήπειροι Διανομής</span>
       </div>
 
       {/* Credential cards */}
       <div class="mt-10 border-t border-white/10 pt-8">
         <div class="mb-6 flex items-center justify-center gap-3">
           <span class="h-px w-10 bg-gradient-to-r from-transparent to-azure-300/60"></span>
-          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-300">
+          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-300" data-i18n="hero.award">
             Επίσημη Αντιπροσωπεία & Βραβεία
           </p>
           <span class="h-px w-10 bg-gradient-to-l from-transparent to-azure-300/60"></span>
