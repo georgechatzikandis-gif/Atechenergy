@@ -50,6 +50,45 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
         <span class="text-xs font-bold tracking-wide text-azure-300" data-i18n="hero.stat2">Επίσημος Συνεργάτης Risen Energy</span>
         <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
         <span class="text-xs font-bold tracking-wide text-white/90" data-i18n="hero.stat3">2 Ήπειροι Διανομής</span>
+        <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
+        <!-- Hero language switcher -->
+        <div class="relative" data-hero-lang-switcher>
+          <button
+            type="button"
+            class="flex items-center gap-1 text-xs font-bold text-white/60 transition-colors hover:text-white"
+            aria-label="Language / Γλώσσα"
+            data-hero-lang-toggle
+          >
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-hero-lang-label>ΕΛ</span>
+            <svg class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <div
+            class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 min-w-[4.5rem] rounded-xl border border-white/10 bg-navy-900/95 py-1 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-200"
+            data-hero-lang-dropdown
+          >
+            {[
+              { code: "el", label: "ΕΛ" },
+              { code: "en", label: "EN" },
+              { code: "fr", label: "FR" },
+              { code: "es", label: "ES" },
+              { code: "it", label: "IT" },
+            ].map((l) => (
+              <button
+                type="button"
+                class="flex w-full items-center justify-center px-3 py-1.5 text-[12px] font-bold text-white/60 transition-colors hover:bg-white/10 hover:text-white data-[active=true]:text-azure-300"
+                data-lang-btn={l.code}
+                data-active={l.code === "el" ? "true" : "false"}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Credential cards */}
@@ -87,3 +126,30 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
     </div>
   </div>
 </section>
+
+<script>
+  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", fr: "FR", es: "ES", it: "IT" };
+
+  const heroToggle = document.querySelector<HTMLButtonElement>("[data-hero-lang-toggle]");
+  const heroDropdown = document.querySelector<HTMLDivElement>("[data-hero-lang-dropdown]");
+  const heroLabel = document.querySelector<HTMLSpanElement>("[data-hero-lang-label]");
+
+  let dropOpen = false;
+  const setDrop = (v: boolean) => {
+    dropOpen = v;
+    if (!heroDropdown) return;
+    heroDropdown.classList.toggle("opacity-100", dropOpen);
+    heroDropdown.classList.toggle("opacity-0", !dropOpen);
+    heroDropdown.classList.toggle("pointer-events-auto", dropOpen);
+    heroDropdown.classList.toggle("pointer-events-none", !dropOpen);
+  };
+
+  heroToggle?.addEventListener("click", (e) => { e.stopPropagation(); setDrop(!dropOpen); });
+  document.addEventListener("click", () => setDrop(false));
+
+  // Restore label from localStorage
+  try {
+    const saved = localStorage.getItem("lang") || "el";
+    if (heroLabel) heroLabel.textContent = langLabels[saved] || saved.toUpperCase();
+  } catch(_) {}
+</script>
