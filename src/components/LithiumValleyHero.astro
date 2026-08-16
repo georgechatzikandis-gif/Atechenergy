@@ -1,21 +1,40 @@
 ---
 import { withBase } from "../lib/paths";
-import LithiumValleyCarousel from "./LithiumValleyCarousel.astro";
 ---
 
-<section id="lithiumvalley" class="relative h-[100svh] min-h-[520px] bg-navy-950">
-  <LithiumValleyCarousel />
+<section id="lithiumvalley" class="relative overflow-hidden bg-navy-950 py-24 sm:py-32 xl:py-40">
+  <!-- Subtle green glow -->
+  <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(52,211,153,0.07) 0%, transparent 70%)"></div>
 
-  {/* Partner badge overlay — top left */}
+  <!-- Partner badge top left -->
   <div class="pointer-events-none absolute left-5 top-5 z-30 flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 backdrop-blur-sm">
-    <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="background-color:#34d399"></span>
+    <span class="h-2 w-2 rounded-full animate-pulse" style="background-color:#34d399"></span>
     <span class="text-[10px] font-bold tracking-widest uppercase text-white/80">Συνεργάτης</span>
+  </div>
+
+  <div class="container-page relative z-10">
+    <div class="mx-auto max-w-5xl text-center" data-reveal>
+
+      <!-- LithiumValley Logo -->
+      <div class="lv-logo mx-auto mb-8 inline-flex select-none items-baseline leading-none">
+        <span class="lv-blue">
+          <sup class="lv-sup">+</sup>L<span class="lv-i">I<span class="lv-bar">−</span></span>THIUM</span><span class="lv-green">VALLEY</span>
+      </div>
+
+      <!-- ΕΠΙΣΗΜΟΣ ΣΥΝΕΡΓΑΤΗΣ -->
+      <div class="flex items-center justify-center gap-4">
+        <span class="h-px w-16 bg-gradient-to-r from-transparent" style="background-image:linear-gradient(to right, transparent, #34d399)"></span>
+        <p class="text-sm font-black tracking-[0.3em] uppercase" style="color:#34d399">ΕΠΙΣΗΜΟΣ ΣΥΝΕΡΓΑΤΗΣ</p>
+        <span class="h-px w-16" style="background-image:linear-gradient(to left, transparent, #34d399)"></span>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<section class="relative overflow-hidden bg-navy-950 pt-36 pb-20 sm:pt-40 sm:pb-24">
+<section class="relative overflow-hidden bg-navy-950 pt-0 pb-20 sm:pb-24 xl:pb-28 2xl:pb-32">
   <div class="container-page relative z-10">
-    <div class="mx-auto max-w-3xl text-center" data-reveal>
+    <div class="mx-auto max-w-3xl text-center xl:max-w-4xl 2xl:max-w-5xl" data-reveal>
       <span class="eyebrow border-white/25 bg-white/10 backdrop-blur-sm" style="color:#6ee7b7">Λύσεις Αποθήκευσης Ενέργειας</span>
 
       <h2 class="mt-5 font-display text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.4rem] xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
@@ -50,3 +69,34 @@ import LithiumValleyCarousel from "./LithiumValleyCarousel.astro";
     </div>
   </div>
 </section>
+
+<style>
+  .lv-logo {
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 9vw, 7.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .lv-blue { color: #1B44C7; }
+  .lv-green { color: #3DB63D; }
+  .lv-sup {
+    font-size: 0.3em;
+    vertical-align: super;
+    line-height: 0;
+    margin-right: 0.04em;
+  }
+  .lv-i {
+    display: inline-block;
+    position: relative;
+  }
+  .lv-bar {
+    position: absolute;
+    top: -0.55em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.32em;
+    line-height: 0;
+    font-weight: 900;
+  }
+</style>
