@@ -26,8 +26,8 @@ export const products: Product[] = [
     tag: "Monocrystalline PV Module",
     desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
     art: "mono",
-    photo: suntechLogo,
-    distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY · SUNTECH",
+    photo: risenLogo,
+    distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY",
   },
   {
     slug: "topcon-panels",
