@@ -27,14 +27,14 @@ const specs = [
       </p>
     </div>
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        products.map((p, i) => (
+    <div class="mt-16 flex justify-center">
+      {(() => {
+        const p = products[0];
+        return (
           <a
             href={withBase(`products/${p.slug}/`)}
-            class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]"
+            class="group relative w-full max-w-sm overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]"
             data-reveal
-            style={`transition-delay:${i * 60}ms`}
           >
             <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
               {p.photo ? (
@@ -66,8 +66,8 @@ const specs = [
               </span>
             </div>
           </a>
-        ))
-      }
+        );
+      })()}
     </div>
 
     <div class="mt-10 overflow-hidden rounded-[2rem] bg-navy-950 shadow-2xl" data-reveal>
