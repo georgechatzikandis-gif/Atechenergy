@@ -22,8 +22,8 @@ export interface Product {
 export const products: Product[] = [
   {
     slug: "monocrystalline-pv-module",
-    name: "Μονοκρυσταλλικά Πάνελ",
-    tag: "Monocrystalline PV Module",
+    name: "Πάνελ",
+    tag: "Risen Energy",
     desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
     art: "mono",
     photo: risenLogo,
