@@ -61,7 +61,7 @@ export const products: Product[] = [
   },
   {
     slug: "ev-chargers",
-    name: "Φορτιστές EV",
+    name: "Φορτιστές EVE",
     tag: "EV Chargers",
     desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
     art: "ev",
