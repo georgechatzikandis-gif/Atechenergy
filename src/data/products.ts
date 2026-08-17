@@ -1,9 +1,8 @@
 import firefighterSwitch from "../assets/products/firefighter-safety-switch.jpg";
-import hybridMicroinverter from "../assets/hero/tsun-powertrunk.jpg";
+import hybridMicroinverter from "../assets/products/tsun-powertrunk-card.jpg";
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 import suntechLogo from "../assets/brands/suntech-logo.png";
 import risenLogo from "../assets/brands/risen-logo.png";
-import tsunLogo from "../assets/brands/tsun-logo.png";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
 
@@ -119,7 +118,7 @@ export const products: Product[] = [
     desc: "700W ανά πάνελ, 4 MPPT trackers, 2000W on/off-grid, IP67, WiFi & Bluetooth — παράγει, αποθηκεύει και εξοικονομεί ενέργεια σε ένα μοναδικό σύστημα.",
     longDesc:
       "Το TSUN Hybrid Microinverter TSOL-MH2000 είναι το κεντρικό στοιχείο ενός plug & play υβριδικού συστήματος αποθήκευσης. Συνδέεται μεταξύ φωτοβολταϊκών πάνελ και μπαταρίας, φορτίζει την περίσσεια ενέργειας και την αποδίδει όταν χρειαστεί. Υποστηρίζει on-grid, off-grid και αποθήκευση ενέργειας — με εναλλαγή on/off-grid σε λιγότερο από 10ms για αδιάλειπτη παροχή ρεύματος.",
-    photo: tsunLogo,
+    photo: hybridMicroinverter,
     features: [
       "700W ανά πάνελ — έως 2800W συνολική ισχύς εισόδου (4 πάνελ)",
       "4 ανεξάρτητα MPPT trackers — μέγιστη απόδοση ακόμα και με σκίαση",
