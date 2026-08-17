@@ -30,15 +30,6 @@ export const products: Product[] = [
     distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY",
   },
   {
-    slug: "topcon-panels",
-    name: "Topcon Πάνελ",
-    tag: "Topcon Panels",
-    desc: "Τεχνολογία αιχμής N-type με ενισχυμένη απόδοση και χαμηλότερη ετήσια φθορά.",
-    art: "topcon",
-    photo: risenLogo,
-    distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY · SUNTECH",
-  },
-  {
     slug: "hjt-panels",
     name: "HJT Πάνελ",
     tag: "Heterojunction Panels",
