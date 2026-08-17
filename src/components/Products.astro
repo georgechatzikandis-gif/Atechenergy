@@ -3,6 +3,12 @@ import { Image } from "astro:assets";
 import ProductArt from "./ProductArt.astro";
 import { products } from "../data/products";
 import { withBase } from "../lib/paths";
+import risenLogo from "../assets/brands/risen-logo.png";
+import suntechLogo from "../assets/brands/suntech-logo.png";
+
+const restProducts = products.filter(
+  (p) => p.slug !== "monocrystalline-pv-module" && p.slug !== "risen-ci-energy-storage"
+);
 
 const specs = [
   { value: "132", label: "Cell Monocrystalline Module", key: "products.spec0" },
@@ -28,40 +34,82 @@ const specs = [
     </div>
 
     <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Risen Panel — hardcoded styled card */}
+      {(() => {
+        const p = products[0];
+        return (
+          <a href={withBase(`products/${p.slug}/`)} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
+            <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+              <Image src={p.photo!} alt={p.name} width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-8 pt-6">
+              <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
+              {p.distributor && <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/75 uppercase">{p.distributor}</p>}
+              <h3 class="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
+              <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-600">
+                <span data-i18n="products.more">Περισσότερα</span>
+                <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
+            </div>
+          </a>
+        );
+      })()}
+
+      {/* Risen Storage — hardcoded */}
+      <a href={withBase("products/risen-ci-energy-storage/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
+        <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+          <Image src={risenLogo} alt="Risen Energy Storage" width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div class="p-8 pt-6">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Risen Storage</p>
+          <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/75 uppercase">ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY</p>
+          <h3 class="mt-3 font-display text-xl font-bold text-navy-900">Αποθήκευση Ενέργειας</h3>
+          <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-600">
+            <span data-i18n="products.more">Περισσότερα</span>
+            <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </span>
+        </div>
+      </a>
+
+      {/* Suntech — hardcoded */}
+      <a href={withBase("products/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
+        <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+          <Image src={suntechLogo} alt="Suntech Solar Panels" width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div class="p-8 pt-6">
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Suntech</p>
+          <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/75 uppercase">ΦΩΤΟΒΟΛΤΑΪΚΑ ΠΑΝΕΛ</p>
+          <h3 class="mt-3 font-display text-xl font-bold text-navy-900">Πάνελ</h3>
+          <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-600">
+            <span data-i18n="products.more">Περισσότερα</span>
+            <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </span>
+        </div>
+      </a>
+
+      {/* Rest of products from array */}
       {
-        products.map((p, i) => (
+        restProducts.map((p, i) => (
           <a
             href={withBase(`products/${p.slug}/`)}
             class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]"
             data-reveal
-            style={`transition-delay:${i * 60}ms`}
+            style={`transition-delay:${(i + 3) * 60}ms`}
           >
             <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
               {p.photo ? (
-                <Image
-                  src={p.photo}
-                  alt={p.name}
-                  width={340}
-                  height={220}
-                  class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105"
-                />
+                <Image src={p.photo} alt={p.name} width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
               ) : (
                 <ProductArt kind={p.art!} class="h-32 w-auto transition-transform duration-500 group-hover:scale-105" />
               )}
             </div>
             <div class="p-8 pt-6">
               <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
-              {p.distributor && (
-                <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/75 uppercase">
-                  {p.distributor}
-                </p>
-              )}
+              {p.distributor && <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/75 uppercase">{p.distributor}</p>}
               <h3 class="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
               <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-azure-600">
                 <span data-i18n="products.more">Περισσότερα</span>
-                <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
+                <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </span>
             </div>
           </a>
