@@ -193,42 +193,16 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     }
   });
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = nameEl.value.trim();
     const msg  = msgEl.value.trim();
     if (!name || !msg) return;
 
-    const accessKey = form.dataset.key ?? "";
+    const text = encodeURIComponent(`Από: ${name}\n${msg}`);
+    window.open(`viber://chat?number=%2B306976724504&text=${text}`, "_blank");
 
-    submitEl.disabled = true;
-    submitLabel.textContent = "Αποστολή...";
-    errEl.classList.add("hidden");
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `Μήνυμα chat από ${name}`,
-          from_name: name,
-          message: msg,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        form.classList.add("hidden");
-        okEl.classList.remove("hidden");
-      } else {
-        throw new Error(data.message ?? "error");
-      }
-    } catch {
-      errEl.classList.remove("hidden");
-      submitEl.disabled = false;
-      submitLabel.textContent = "Αποστολή";
-    }
+    form.classList.add("hidden");
+    okEl.classList.remove("hidden");
   });
 </script>
