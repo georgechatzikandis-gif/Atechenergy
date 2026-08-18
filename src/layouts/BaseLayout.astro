@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import I18n from "../components/I18n.astro";
+import ViberBubble from "../components/ViberBubble.astro";
 
 interface Props {
   title: string;
@@ -76,6 +77,7 @@ const organizationSchema = {
   <body class="antialiased">
     <I18n />
     <slot />
+    <ViberBubble />
 
     <script>
       const targets = document.querySelectorAll("[data-reveal]");

@@ -1,4 +1,5 @@
 ---
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "";
 ---
 
 <!-- Floating chat button -->
@@ -64,7 +65,7 @@
     </div>
 
     {/* Contact form */}
-    <form id="chat-form" novalidate>
+    <form id="chat-form" novalidate data-key={accessKey}>
       <input
         type="text"
         name="name"
@@ -90,7 +91,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
           <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
         </svg>
-        Αποστολή
+        <span id="chat-submit-label">Αποστολή</span>
       </button>
       <p id="chat-err" class="mt-2 hidden text-center text-xs text-red-400">
         Κάτι πήγε στραβά. Δοκιμάστε ξανά αργότερα.
@@ -155,6 +156,7 @@
   const nameEl = document.getElementById("chat-name") as HTMLInputElement;
   const msgEl = document.getElementById("chat-msg") as HTMLTextAreaElement;
   const submitEl = document.getElementById("chat-submit") as HTMLButtonElement;
+  const submitLabel = document.getElementById("chat-submit-label")!;
   const errEl = document.getElementById("chat-err")!;
   const okEl = document.getElementById("chat-ok")!;
 
@@ -191,16 +193,42 @@
     }
   });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = nameEl.value.trim();
     const msg  = msgEl.value.trim();
     if (!name || !msg) return;
 
-    const text = encodeURIComponent(`Από: ${name}\n${msg}`);
-    window.location.href = `viber://chat?number=%2B306976724504&text=${text}`;
+    const accessKey = form.dataset.key ?? "";
 
-    form.classList.add("hidden");
-    okEl.classList.remove("hidden");
+    submitEl.disabled = true;
+    submitLabel.textContent = "Αποστολή...";
+    errEl.classList.add("hidden");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Μήνυμα chat από ${name}`,
+          from_name: name,
+          message: msg,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        form.classList.add("hidden");
+        okEl.classList.remove("hidden");
+      } else {
+        throw new Error(data.message ?? "error");
+      }
+    } catch {
+      errEl.classList.remove("hidden");
+      submitEl.disabled = false;
+      submitLabel.textContent = "Αποστολή";
+    }
   });
 </script>
