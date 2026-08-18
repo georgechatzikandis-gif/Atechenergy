@@ -11,9 +11,56 @@ import suntechLogo from "../../../assets/brands/suntech-logo.png";
 import datasheetP1 from "../../../assets/hero/suntech-ultra-t1-datasheet-p1.jpg";
 import datasheetP2 from "../../../assets/hero/suntech-ultra-t1-datasheet-p2.jpg";
 
+// Ultra T 2.0 model images
+import h48NfbP1 from "../../../assets/hero/suntech-h48-nfb-p1.jpg";
+import h48NfbP2 from "../../../assets/hero/suntech-h48-nfb-p2.jpg";
+import h48NthP1 from "../../../assets/hero/suntech-h48-nth-p1.jpg";
+import h48NthP2 from "../../../assets/hero/suntech-h48-nth-p2.jpg";
+import h48NkhP1 from "../../../assets/hero/suntech-h48-nkh-p1.jpg";
+import h48NkhP2 from "../../../assets/hero/suntech-h48-nkh-p2.jpg";
+import h54NfbP1 from "../../../assets/hero/suntech-h54-nfb-p1.jpg";
+import h54NfbP2 from "../../../assets/hero/suntech-h54-nfb-p2.jpg";
+import h54NthP1 from "../../../assets/hero/suntech-h54-nth-p1.jpg";
+import h54NthP2 from "../../../assets/hero/suntech-h54-nth-p2.jpg";
+import h54NkhP1 from "../../../assets/hero/suntech-h54-nkh-p1.jpg";
+import h54NkhP2 from "../../../assets/hero/suntech-h54-nkh-p2.jpg";
+import h66NshP1 from "../../../assets/hero/suntech-h66-nsh-p1.jpg";
+import h66NshP2 from "../../../assets/hero/suntech-h66-nsh-p2.jpg";
+import d66NshP1 from "../../../assets/hero/suntech-d66-nsh-p1.jpg";
+import d66NshP2 from "../../../assets/hero/suntech-d66-nsh-p2.jpg";
+
 const title = "Suntech Ultra T 2.0 Φωτοβολταϊκά Πάνελ | Alphatech Energy";
 const description =
   "Επίσημοι διανομείς Suntech στην Ελλάδα. Σειρά Ultra T 2.0 σε 3 διαμορφώσεις: 48-cell, 54-cell, 66-cell — bifacial, υψηλής απόδοσης, για οικιακά και εμπορικά έργα.";
+
+const models = [
+  {
+    group: "48-cell",
+    groupDesc: "Compact · Rooftop Optimized · 445–470W",
+    items: [
+      { name: "H48-Nfb+ Black Pro", type: "Monofacial Double-Glass", power: "445–465W", p1: h48NfbP1, p2: h48NfbP2 },
+      { name: "H48-Nth+ Black Thru", type: "Bifacial Double-Glass", power: "445–465W", p1: h48NthP1, p2: h48NthP2 },
+      { name: "H48-Nkh+ Black Frame", type: "Monofacial Double-Glass", power: "450–470W", p1: h48NkhP1, p2: h48NkhP2 },
+    ],
+  },
+  {
+    group: "54-cell",
+    groupDesc: "Balanced · High Performance · 495–520W",
+    items: [
+      { name: "H54-Nfb+ Black Pro", type: "Monofacial Double-Glass", power: "495–515W", p1: h54NfbP1, p2: h54NfbP2 },
+      { name: "H54-Nth+ Black Thru", type: "Bifacial Double-Glass", power: "495–515W", p1: h54NthP1, p2: h54NthP2 },
+      { name: "H54-Nkh+ Black Frame", type: "Monofacial Double-Glass", power: "500–520W", p1: h54NkhP1, p2: h54NkhP2 },
+    ],
+  },
+  {
+    group: "66-cell",
+    groupDesc: "High Output · Commercial Scale · 615–735W",
+    items: [
+      { name: "H66-Nsh+ Silver Frame", type: "Bifacial Double-Glass", power: "615–635W", p1: h66NshP1, p2: h66NshP2 },
+      { name: "D66-Nsh+ Silver Frame XL", type: "Bifacial Double-Glass", power: "715–735W", p1: d66NshP1, p2: d66NshP2 },
+    ],
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} path="/products/suntech-ultra-t2/">
@@ -37,13 +84,7 @@ const description =
     <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
         <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
-          <Image
-            src={heroImg}
-            alt="Suntech Ultra T 2.0 — 3 Configurations"
-            width={680}
-            height={400}
-            class="h-auto w-full object-cover"
-          />
+          <Image src={heroImg} alt="Suntech Ultra T 2.0 — 3 Configurations" width={680} height={400} class="h-auto w-full object-cover" />
         </div>
 
         <div data-reveal>
@@ -99,37 +140,14 @@ const description =
             <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Διαμορφώσεις Σειράς</p>
             <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
           </span>
-          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
-            48-cell | 54-cell | 66-cell
-          </h2>
-          <p class="mx-auto mt-3 max-w-xl text-base text-navy-900/55">
-            Μία σειρά, τρεις επιλογές — από compact οικιακές στέγες έως εμπορικές εγκαταστάσεις μεγάλης κλίμακας.
-          </p>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">48-cell | 54-cell | 66-cell</h2>
+          <p class="mx-auto mt-3 max-w-xl text-base text-navy-900/55">Μία σειρά, τρεις επιλογές — από compact οικιακές στέγες έως εμπορικές εγκαταστάσεις μεγάλης κλίμακας.</p>
         </div>
-
         <div class="grid gap-6 sm:grid-cols-3">
           {[
-            {
-              cells: "48-cell",
-              sub: "Compact · Rooftop Optimized",
-              desc: "Ιδανικό για μικρές οικιακές στέγες και χώρους περιορισμένης επιφάνειας. Εύκολη εγκατάσταση, υψηλή ενεργειακή πυκνότητα.",
-              use: ["Οικιακές στέγες", "Περιορισμένος χώρος", "Εύκολη τοποθέτηση"],
-              accent: false,
-            },
-            {
-              cells: "54-cell",
-              sub: "Balanced · High Performance",
-              desc: "Η ισορροπημένη επιλογή για οικιακά και μικρά εμπορικά έργα. Υψηλή απόδοση σε κάθε συνθήκη φωτισμού.",
-              use: ["Οικιακά & μικρά εμπορικά", "Βέλτιστη σχέση απόδοσης/κόστους", "Ευέλικτη εφαρμογή"],
-              accent: true,
-            },
-            {
-              cells: "66-cell",
-              sub: "High Output · Commercial Scale",
-              desc: "Μέγιστη ισχύς για εμπορικά και βιομηχανικά έργα. Υψηλή παραγωγή ανά πάνελ, ιδανικό για μεγάλες εγκαταστάσεις.",
-              use: ["Εμπορικά & βιομηχανικά", "Utility-scale εφαρμογές", "Μέγιστη ισχύς ανά πάνελ"],
-              accent: false,
-            },
+            { cells: "48-cell", sub: "Compact · Rooftop Optimized", desc: "Ιδανικό για μικρές οικιακές στέγες και χώρους περιορισμένης επιφάνειας.", use: ["Οικιακές στέγες", "Περιορισμένος χώρος", "Εύκολη τοποθέτηση"], accent: false },
+            { cells: "54-cell", sub: "Balanced · High Performance", desc: "Η ισορροπημένη επιλογή για οικιακά και μικρά εμπορικά έργα.", use: ["Οικιακά & μικρά εμπορικά", "Βέλτιστη σχέση απόδοσης/κόστους", "Ευέλικτη εφαρμογή"], accent: true },
+            { cells: "66-cell", sub: "High Output · Commercial Scale", desc: "Μέγιστη ισχύς για εμπορικά και βιομηχανικά έργα.", use: ["Εμπορικά & βιομηχανικά", "Utility-scale εφαρμογές", "Μέγιστη ισχύς ανά πάνελ"], accent: false },
           ].map((c) => (
             <div class={`rounded-2xl p-7 ${c.accent ? "border-2 border-azure-500/30 bg-gradient-to-br from-navy-950 to-navy-800 text-white shadow-[0_8px_32px_-8px_rgba(47,127,224,0.35)]" : "border border-navy-900/8 bg-ice-100/50"}`}>
               <p class={`text-2xl font-extrabold font-display ${c.accent ? "text-azure-300" : "text-azure-600"}`}>{c.cells}</p>
@@ -153,13 +171,7 @@ const description =
     <section class="bg-ice-100/40 py-4 sm:py-6">
       <div class="container-page" data-reveal>
         <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl">
-          <Image
-            src={panelsLandscape}
-            alt="Suntech Ultra T 2.0 — 48-cell, 54-cell, 66-cell configurations"
-            width={1400}
-            height={800}
-            class="w-full h-auto object-cover"
-          />
+          <Image src={panelsLandscape} alt="Suntech Ultra T 2.0 — 48-cell, 54-cell, 66-cell configurations" width={1400} height={800} class="w-full h-auto object-cover" />
         </div>
       </div>
     </section>
@@ -167,31 +179,13 @@ const description =
     {/* ── Feature pills ── */}
     <section class="bg-white py-14 sm:py-16">
       <div class="container-page" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl text-center mb-10">
-          Τεχνολογικά Χαρακτηριστικά
-        </h2>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl text-center mb-10">Τεχνολογικά Χαρακτηριστικά</h2>
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            {
-              icon: `<path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02.708.708M1 12h2m18 0h2M4.22 19.78l.707-.707M18.95 5.05l.707-.707"/>`,
-              title: "Bifacial",
-              desc: "Παράγει ενέργεια και από τις δύο πλευρές — αυξημένη παραγωγή έως +30% σε ανακλαστικό περιβάλλον.",
-            },
-            {
-              icon: `<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>`,
-              title: "High Efficiency",
-              desc: "Κελιά υψηλής απόδοσης για μέγιστη παραγωγή ενέργειας ανά τετραγωνικό μέτρο.",
-            },
-            {
-              icon: `<path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 8v4l3 3"/>`,
-              title: "Stable Power Generation",
-              desc: "Σταθερή και αξιόπιστη παραγωγή ισχύος ακόμα και σε συνθήκες χαμηλής ηλιοφάνειας.",
-            },
-            {
-              icon: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>`,
-              title: "Residential & Commercial",
-              desc: "Κατάλληλο για οικιακές στέγες, βιομηχανικές εγκαταστάσεις και εμπορικά κτίρια.",
-            },
+            { icon: `<path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02.708.708M1 12h2m18 0h2M4.22 19.78l.707-.707M18.95 5.05l.707-.707"/>`, title: "Bifacial", desc: "Παράγει ενέργεια και από τις δύο πλευρές — αυξημένη παραγωγή έως +30% σε ανακλαστικό περιβάλλον." },
+            { icon: `<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>`, title: "High Efficiency", desc: "Κελιά υψηλής απόδοσης για μέγιστη παραγωγή ενέργειας ανά τετραγωνικό μέτρο." },
+            { icon: `<path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 8v4l3 3"/>`, title: "Stable Power Generation", desc: "Σταθερή και αξιόπιστη παραγωγή ισχύος ακόμα και σε συνθήκες χαμηλής ηλιοφάνειας." },
+            { icon: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>`, title: "Residential & Commercial", desc: "Κατάλληλο για οικιακές στέγες, βιομηχανικές εγκαταστάσεις και εμπορικά κτίρια." },
           ].map((f) => (
             <div class="rounded-2xl border border-navy-900/8 bg-ice-100/50 p-6">
               <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-azure-500/10">
@@ -205,30 +199,8 @@ const description =
       </div>
     </section>
 
-    {/* ── Specs ── */}
-    <section class="bg-ice-100/40 py-12 sm:py-16">
-      <div class="container-page max-w-3xl" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
-        <div class="mt-6 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
-          {[
-            { label: "Σειρά", value: "Ultra T 2.0" },
-            { label: "Τεχνολογία", value: "Bifacial Monocrystalline" },
-            { label: "Διαμορφώσεις", value: "48-cell · 54-cell · 66-cell" },
-            { label: "Εφαρμογή", value: "Οικιακές & Εμπορικές" },
-            { label: "Κατασκευαστής", value: "Suntech Power" },
-            { label: "Εμπειρία", value: "25+ χρόνια στην αγορά" },
-          ].map((s, i) => (
-            <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
-              <span class="text-sm text-navy-900/60">{s.label}</span>
-              <span class="text-sm font-bold text-navy-900">{s.value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* ── Datasheet ── */}
-    <section class="bg-white py-14 sm:py-16">
+    {/* ── Datasheet Ultra T 1.0 ── */}
+    <section class="bg-ice-100/40 py-14 sm:py-16">
       <div class="container-page" data-reveal>
         <div class="mb-8 text-center">
           <span class="inline-flex items-center gap-3 mb-3">
@@ -236,7 +208,7 @@ const description =
             <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Τεχνικό Φυλλάδιο</p>
             <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
           </span>
-          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Datasheet Ultra T 1.0</h2>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Datasheet Ultra T 1.0 · C72/Nsh+ 580–600W</h2>
         </div>
         <div class="space-y-6">
           <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
@@ -249,6 +221,68 @@ const description =
       </div>
     </section>
 
+    {/* ── All Models (expandable) ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page">
+        <div class="text-center mb-8" data-reveal>
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Ultra T 2.0 · 8 Μοντέλα</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl mb-6">Όλα τα Μοντέλα Ultra T 2.0</h2>
+          <button
+            id="toggle-models"
+            class="inline-flex items-center gap-2.5 rounded-2xl bg-navy-950 px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:bg-navy-800"
+            aria-expanded="false"
+            aria-controls="all-models"
+          >
+            <svg id="toggle-icon" class="h-4 w-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+            <span id="toggle-label">Δείτε όλα τα Μοντέλα</span>
+          </button>
+        </div>
+
+        <div id="all-models" class="hidden space-y-14">
+          {models.map((group) => (
+            <div>
+              <div class="mb-6 flex items-center gap-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-azure-500/10 shrink-0">
+                  <svg class="h-5 w-5 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-xl font-extrabold text-navy-900">{group.group}</h3>
+                  <p class="text-xs font-semibold text-navy-900/50">{group.groupDesc}</p>
+                </div>
+              </div>
+
+              <div class="space-y-10">
+                {group.items.map((m) => (
+                  <div class="rounded-2xl border border-navy-900/8 bg-ice-100/30 overflow-hidden">
+                    <div class="border-b border-navy-900/8 bg-white px-6 py-4 flex items-center justify-between">
+                      <div>
+                        <p class="font-display text-base font-bold text-navy-900">{m.name}</p>
+                        <p class="text-xs text-navy-900/50">{m.type} · <span class="font-semibold text-azure-600">{m.power}</span></p>
+                      </div>
+                    </div>
+                    <div class="grid gap-0 sm:grid-cols-2">
+                      <div class="border-b sm:border-b-0 sm:border-r border-navy-900/8 overflow-hidden">
+                        <Image src={m.p1} alt={`${m.name} — Feature Sheet`} width={1284} height={1150} class="w-full h-auto" />
+                      </div>
+                      <div class="overflow-hidden">
+                        <Image src={m.p2} alt={`${m.name} — Specifications`} width={1284} height={1718} class="w-full h-auto" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* ── CTA ── */}
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page">
@@ -256,12 +290,8 @@ const description =
           <div class="mb-6 flex justify-center">
             <Image src={suntechLogo} alt="Suntech" width={160} height={48} class="h-10 w-auto brightness-0 invert opacity-80" />
           </div>
-          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">
-            Ενδιαφέρεστε για Suntech Ultra T 2.0;
-          </h2>
-          <p class="mx-auto mt-3 max-w-xl text-white/65">
-            Ως επίσημοι διανομείς Suntech, προσφέρουμε ανταγωνιστικές τιμές, άμεση διαθεσιμότητα και τεχνική υποστήριξη για κάθε τύπο έργου.
-          </p>
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">Ενδιαφέρεστε για Suntech Ultra T 2.0;</h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">Ως επίσημοι διανομείς Suntech, προσφέρουμε ανταγωνιστικές τιμές, άμεση διαθεσιμότητα και τεχνική υποστήριξη για κάθε τύπο έργου.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-4">
             <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
             <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
@@ -273,3 +303,19 @@ const description =
   <Footer />
   <BackToTop />
 </BaseLayout>
+
+<script>
+  const btn = document.getElementById("toggle-models");
+  const panel = document.getElementById("all-models");
+  const icon = document.getElementById("toggle-icon");
+  const label = document.getElementById("toggle-label");
+
+  btn?.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    panel?.classList.toggle("hidden");
+    if (icon) icon.style.transform = expanded ? "" : "rotate(180deg)";
+    if (label) label.textContent = expanded ? "Δείτε όλα τα Μοντέλα" : "Κλείσιμο Μοντέλων";
+    if (!expanded) panel?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
