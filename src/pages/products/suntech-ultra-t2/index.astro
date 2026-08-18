@@ -1,0 +1,251 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+import heroImg from "../../../assets/hero/suntech-ultra-t2-promo.jpg";
+import panelsLandscape from "../../../assets/hero/01-suntech-ultra-t2.png";
+import suntechLogo from "../../../assets/brands/suntech-logo.png";
+
+const title = "Suntech Ultra T 2.0 Φωτοβολταϊκά Πάνελ | Alphatech Energy";
+const description =
+  "Επίσημοι διανομείς Suntech στην Ελλάδα. Σειρά Ultra T 2.0 σε 3 διαμορφώσεις: 48-cell, 54-cell, 66-cell — bifacial, υψηλής απόδοσης, για οικιακά και εμπορικά έργα.";
+---
+
+<BaseLayout title={title} description={description} path="/products/suntech-ultra-t2/">
+  <Header />
+  <main class="pt-24">
+
+    {/* ── Breadcrumb ── */}
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">Suntech Ultra T 2.0</span>
+        </nav>
+      </div>
+    </div>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
+          <Image
+            src={heroImg}
+            alt="Suntech Ultra T 2.0 — 3 Configurations"
+            width={680}
+            height={400}
+            class="h-auto w-full object-cover"
+          />
+        </div>
+
+        <div data-reveal>
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-300/60 bg-amber-50 px-4 py-1.5">
+            <svg class="h-3.5 w-3.5 text-amber-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            <span class="text-xs font-bold tracking-wide text-amber-700">ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ SUNTECH</span>
+          </div>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Suntech · Ultra T 2.0</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl">
+            Ultra T 2.0 — Μία Σειρά για Κάθε Έργο
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+            Τρεις διαμορφώσεις, μία τεχνολογία αιχμής. Η σειρά Suntech Ultra T 2.0 με τεχνολογία bifacial προσφέρει υψηλή απόδοση και σταθερή παραγωγή ισχύος για οικιακά και εμπορικά φωτοβολταϊκά συστήματα.
+          </p>
+
+          <ul class="mt-6 space-y-2.5">
+            {[
+              "Bifacial τεχνολογία — ενέργεια από μπροστά και πίσω",
+              "Υψηλή απόδοση κελιών υπό πραγματικές συνθήκες",
+              "Σταθερή παραγωγή ισχύος σε κάθε καιρό",
+              "Ιδανικό για οικιακές και εμπορικές εγκαταστάσεις",
+              "3 διαμορφώσεις: 48-cell, 54-cell, 66-cell",
+              "25 χρόνια εμπειρίας Suntech — αξιόπιστος κατασκευαστής",
+            ].map((f) => (
+              <li class="flex items-start gap-2.5 text-sm font-medium text-navy-900/75">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("products/")} class="btn btn-outline">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M11 18l-6-6 6-6"></path>
+              </svg>
+              Όλα τα Προϊόντα
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 3 Configurations ── */}
+    <section class="bg-white py-14 sm:py-20">
+      <div class="container-page" data-reveal>
+        <div class="mb-10 text-center">
+          <span class="inline-flex items-center gap-3 mb-4">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Διαμορφώσεις Σειράς</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
+            48-cell | 54-cell | 66-cell
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-base text-navy-900/55">
+            Μία σειρά, τρεις επιλογές — από compact οικιακές στέγες έως εμπορικές εγκαταστάσεις μεγάλης κλίμακας.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-3">
+          {[
+            {
+              cells: "48-cell",
+              sub: "Compact · Rooftop Optimized",
+              desc: "Ιδανικό για μικρές οικιακές στέγες και χώρους περιορισμένης επιφάνειας. Εύκολη εγκατάσταση, υψηλή ενεργειακή πυκνότητα.",
+              use: ["Οικιακές στέγες", "Περιορισμένος χώρος", "Εύκολη τοποθέτηση"],
+              accent: false,
+            },
+            {
+              cells: "54-cell",
+              sub: "Balanced · High Performance",
+              desc: "Η ισορροπημένη επιλογή για οικιακά και μικρά εμπορικά έργα. Υψηλή απόδοση σε κάθε συνθήκη φωτισμού.",
+              use: ["Οικιακά & μικρά εμπορικά", "Βέλτιστη σχέση απόδοσης/κόστους", "Ευέλικτη εφαρμογή"],
+              accent: true,
+            },
+            {
+              cells: "66-cell",
+              sub: "High Output · Commercial Scale",
+              desc: "Μέγιστη ισχύς για εμπορικά και βιομηχανικά έργα. Υψηλή παραγωγή ανά πάνελ, ιδανικό για μεγάλες εγκαταστάσεις.",
+              use: ["Εμπορικά & βιομηχανικά", "Utility-scale εφαρμογές", "Μέγιστη ισχύς ανά πάνελ"],
+              accent: false,
+            },
+          ].map((c) => (
+            <div class={`rounded-2xl p-7 ${c.accent ? "border-2 border-azure-500/30 bg-gradient-to-br from-navy-950 to-navy-800 text-white shadow-[0_8px_32px_-8px_rgba(47,127,224,0.35)]" : "border border-navy-900/8 bg-ice-100/50"}`}>
+              <p class={`text-2xl font-extrabold font-display ${c.accent ? "text-azure-300" : "text-azure-600"}`}>{c.cells}</p>
+              <p class={`mt-1 text-xs font-bold tracking-wide ${c.accent ? "text-white/60" : "text-navy-900/50"}`}>{c.sub}</p>
+              <p class={`mt-4 text-sm leading-relaxed ${c.accent ? "text-white/70" : "text-navy-900/60"}`}>{c.desc}</p>
+              <ul class="mt-4 space-y-2">
+                {c.use.map((u) => (
+                  <li class={`flex items-center gap-2 text-xs font-semibold ${c.accent ? "text-azure-200" : "text-navy-900/70"}`}>
+                    <span class={`h-1.5 w-1.5 rounded-full shrink-0 ${c.accent ? "bg-azure-400" : "bg-azure-500"}`}></span>
+                    {u}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Full promo image ── */}
+    <section class="bg-ice-100/40 py-4 sm:py-6">
+      <div class="container-page" data-reveal>
+        <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl">
+          <Image
+            src={panelsLandscape}
+            alt="Suntech Ultra T 2.0 — 48-cell, 54-cell, 66-cell configurations"
+            width={1400}
+            height={800}
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* ── Feature pills ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl text-center mb-10">
+          Τεχνολογικά Χαρακτηριστικά
+        </h2>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: `<path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02.708.708M1 12h2m18 0h2M4.22 19.78l.707-.707M18.95 5.05l.707-.707"/>`,
+              title: "Bifacial",
+              desc: "Παράγει ενέργεια και από τις δύο πλευρές — αυξημένη παραγωγή έως +30% σε ανακλαστικό περιβάλλον.",
+            },
+            {
+              icon: `<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>`,
+              title: "High Efficiency",
+              desc: "Κελιά υψηλής απόδοσης για μέγιστη παραγωγή ενέργειας ανά τετραγωνικό μέτρο.",
+            },
+            {
+              icon: `<path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 8v4l3 3"/>`,
+              title: "Stable Power Generation",
+              desc: "Σταθερή και αξιόπιστη παραγωγή ισχύος ακόμα και σε συνθήκες χαμηλής ηλιοφάνειας.",
+            },
+            {
+              icon: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>`,
+              title: "Residential & Commercial",
+              desc: "Κατάλληλο για οικιακές στέγες, βιομηχανικές εγκαταστάσεις και εμπορικά κτίρια.",
+            },
+          ].map((f) => (
+            <div class="rounded-2xl border border-navy-900/8 bg-ice-100/50 p-6">
+              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-azure-500/10">
+                <svg class="h-5 w-5 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={f.icon} />
+              </div>
+              <h3 class="font-display text-base font-bold text-navy-900">{f.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-navy-900/60">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Specs ── */}
+    <section class="bg-ice-100/40 py-12 sm:py-16">
+      <div class="container-page max-w-3xl" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+        <div class="mt-6 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
+          {[
+            { label: "Σειρά", value: "Ultra T 2.0" },
+            { label: "Τεχνολογία", value: "Bifacial Monocrystalline" },
+            { label: "Διαμορφώσεις", value: "48-cell · 54-cell · 66-cell" },
+            { label: "Εφαρμογή", value: "Οικιακές & Εμπορικές" },
+            { label: "Κατασκευαστής", value: "Suntech Power" },
+            { label: "Εμπειρία", value: "25+ χρόνια στην αγορά" },
+          ].map((s, i) => (
+            <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
+              <span class="text-sm text-navy-900/60">{s.label}</span>
+              <span class="text-sm font-bold text-navy-900">{s.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── CTA ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14" data-reveal>
+          <div class="mb-6 flex justify-center">
+            <Image src={suntechLogo} alt="Suntech" width={160} height={48} class="h-10 w-auto brightness-0 invert opacity-80" />
+          </div>
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">
+            Ενδιαφέρεστε για Suntech Ultra T 2.0;
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">
+            Ως επίσημοι διανομείς Suntech, προσφέρουμε ανταγωνιστικές τιμές, άμεση διαθεσιμότητα και τεχνική υποστήριξη για κάθε τύπο έργου.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>
