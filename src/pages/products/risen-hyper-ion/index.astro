@@ -1,0 +1,208 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+import risenLogo from "../../../assets/brands/risen-logo.png";
+import heroImg from "../../../assets/hero/risen-hyperion-hero.jpg";
+import cellImg from "../../../assets/hero/risen-hyperion-cell.jpg";
+import advantagesImg from "../../../assets/hero/risen-hyperion-advantages.jpg";
+import capexImg from "../../../assets/hero/risen-hyperion-capex.jpg";
+import carbonImg from "../../../assets/hero/risen-hyperion-carbon.jpg";
+import reliabilityImg from "../../../assets/hero/risen-hyperion-reliability.jpg";
+import model745 from "../../../assets/hero/risen-hyperion-745wp.jpg";
+import model715 from "../../../assets/hero/risen-hyperion-715wp.jpg";
+---
+
+<BaseLayout title="Risen Hyper-ion Pro — HJT Bifacial Module | Atechenergy">
+  <Header />
+
+  <main class="pt-20">
+
+    {/* ── Breadcrumb ── */}
+    <nav class="border-b border-navy-900/8 bg-white px-6 py-3 text-xs text-navy-900/50">
+      <div class="container-page flex items-center gap-2">
+        <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+        <span>/</span>
+        <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+        <span>/</span>
+        <span class="font-semibold text-navy-900">Risen Hyper-ion Pro</span>
+      </div>
+    </nav>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-14 sm:py-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-3xl text-center mb-10" data-reveal>
+          <div class="mb-6 flex justify-center">
+            <Image src={risenLogo} alt="Risen Energy" width={160} height={48} class="h-10 w-auto" />
+          </div>
+          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600 mb-3">ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY</p>
+          <h1 class="font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            Hyper-ion Pro
+          </h1>
+          <p class="mt-3 text-lg text-navy-900/55">HJT Bifacial Module · 132 κελιά · έως 767Wp</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <div class="rounded-2xl border border-navy-900/8 bg-white px-5 py-3 shadow-sm">
+              <p class="font-display text-xl font-extrabold text-navy-900">767 Wp</p>
+              <p class="text-[11px] text-navy-900/50 mt-0.5">Μέγιστη Ισχύς</p>
+            </div>
+            <div class="rounded-2xl border border-navy-900/8 bg-white px-5 py-3 shadow-sm">
+              <p class="font-display text-xl font-extrabold text-navy-900">24.7%</p>
+              <p class="text-[11px] text-navy-900/50 mt-0.5">Μέγιστη Απόδοση</p>
+            </div>
+            <div class="rounded-2xl border border-navy-900/8 bg-white px-5 py-3 shadow-sm">
+              <p class="font-display text-xl font-extrabold text-navy-900">90±5%</p>
+              <p class="text-[11px] text-navy-900/50 mt-0.5">Bifaciality</p>
+            </div>
+            <div class="rounded-2xl border border-navy-900/8 bg-white px-5 py-3 shadow-sm">
+              <p class="font-display text-xl font-extrabold text-navy-900">-0.24%/°C</p>
+              <p class="text-[11px] text-navy-900/50 mt-0.5">Θερμοκρασιακός Συντελεστής</p>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card" data-reveal>
+          <Image src={heroImg} alt="Risen Hyper-ion Pro — HJT Bifacial Module" width={1284} height={2295} class="w-full h-auto" />
+        </div>
+      </div>
+    </section>
+
+    {/* ── Key Technologies ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Τεχνολογία</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">HJT Cell Architecture</h2>
+          <p class="mt-3 text-navy-900/55 max-w-xl mx-auto">Συμμετρικός σχεδιασμός με πλήρη παθητικοποίηση και στις δύο πλευρές — η τεχνολογία που ορίζει νέα πρότυπα απόδοσης.</p>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 mb-8">
+          {[
+            { title: "OBB Cell Technology", desc: "Zero busbar σχεδιασμός — ελάχιστη σκίαση, μέγιστη παραγωγή." },
+            { title: "Ultra-thin Cell Technology", desc: "Λεπτά κελιά υψηλής αντοχής για μειωμένο βάρος και χαμηλότερο carbon footprint." },
+            { title: "Hyper-link Interconnection", desc: "Stress-free τεχνολογία σύνδεσης — μηδενική καταπόνηση, μεγαλύτερη αξιοπιστία." },
+            { title: "Pure Silver <3.9mg/W", desc: "Ελάχιστη χρήση αργύρου χωρίς συμβιβασμούς στην απόδοση." },
+          ].map((f) => (
+            <div class="flex gap-4 rounded-2xl border border-navy-900/8 bg-ice-100/40 p-5">
+              <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-azure-500/10">
+                <svg class="h-4 w-4 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">{f.title}</p>
+                <p class="mt-1 text-xs text-navy-900/55 leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+          <Image src={cellImg} alt="HJT Cell Architecture — Risen Hyper-ion Pro" width={1284} height={2295} class="w-full h-auto" />
+        </div>
+      </div>
+    </section>
+
+    {/* ── Product Advantages ── */}
+    <section class="bg-ice-100/40 py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Πλεονεκτήματα</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Γιατί Hyper-ion Pro;</h2>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+          <Image src={advantagesImg} alt="Risen Hyper-ion Pro — Product Advantages" width={1284} height={1575} class="w-full h-auto" />
+        </div>
+      </div>
+    </section>
+
+    {/* ── CAPEX & Carbon side-by-side ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Οικονομική & Περιβαλλοντική Απόδοση</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Χαμηλότερο Κόστος, Μικρότερο Αποτύπωμα</h2>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+            <Image src={capexImg} alt="Lower CAPEX Costs and LCOE" width={1284} height={1725} class="w-full h-auto" />
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+            <Image src={carbonImg} alt="Lower Carbon Footprint" width={1284} height={1815} class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Reliability ── */}
+    <section class="bg-ice-100/40 py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Πιστοποιήσεις & Αξιοπιστία</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Διεθνείς Πιστοποιήσεις</h2>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+          <Image src={reliabilityImg} alt="Risen Hyper-ion Pro — Reliability & Certifications" width={1284} height={2295} class="w-full h-auto" />
+        </div>
+      </div>
+    </section>
+
+    {/* ── Models ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Σειρά Προϊόντων</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Hyper-ion Pro & Hyper-ion</h2>
+          <p class="mt-3 text-navy-900/55">132 HJT Bifacial Module — Alloy Steel Frame & Aluminum Alloy Frame</p>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-2xl border border-2 border-azure-500/30 shadow-[0_8px_32px_-8px_rgba(47,127,224,0.25)]">
+            <Image src={model745} alt="Risen Hyper-ion Pro 745Wp" width={1284} height={2180} class="w-full h-auto" />
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+            <Image src={model715} alt="Risen Hyper-ion 715Wp" width={1284} height={2180} class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── CTA ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14" data-reveal>
+          <div class="mb-6 flex justify-center">
+            <Image src={risenLogo} alt="Risen Energy" width={160} height={48} class="h-10 w-auto brightness-0 invert opacity-80" />
+          </div>
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">Ενδιαφέρεστε για Risen Hyper-ion Pro;</h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">Ως επίσημοι διανομείς Risen Energy, προσφέρουμε ανταγωνιστικές τιμές, άμεση διαθεσιμότητα και τεχνική υποστήριξη για κάθε τύπο έργου.</p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <BackToTop />
+  <Footer />
+</BaseLayout>
