@@ -8,6 +8,8 @@ import { withBase } from "../../../lib/paths";
 import heroImg from "../../../assets/hero/suntech-ultra-t2-promo.jpg";
 import panelsLandscape from "../../../assets/hero/01-suntech-ultra-t2.png";
 import suntechLogo from "../../../assets/brands/suntech-logo.png";
+import datasheetP1 from "../../../assets/hero/suntech-ultra-t1-datasheet-p1.jpg";
+import datasheetP2 from "../../../assets/hero/suntech-ultra-t1-datasheet-p2.jpg";
 
 const title = "Suntech Ultra T 2.0 Φωτοβολταϊκά Πάνελ | Alphatech Energy";
 const description =
@@ -221,6 +223,28 @@ const description =
               <span class="text-sm font-bold text-navy-900">{s.value}</span>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── Datasheet ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Τεχνικό Φυλλάδιο</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Datasheet Ultra T 1.0</h2>
+        </div>
+        <div class="space-y-6">
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+            <Image src={datasheetP1} alt="Suntech Ultra T 1.0 — Features & Certifications" width={1284} height={1150} class="w-full h-auto" />
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
+            <Image src={datasheetP2} alt="Suntech Ultra T 1.0 — Mechanical & Electrical Specifications" width={1284} height={1718} class="w-full h-auto" />
+          </div>
         </div>
       </div>
     </section>
