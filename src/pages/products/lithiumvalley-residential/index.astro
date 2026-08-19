@@ -6,6 +6,7 @@ import Footer from "../../../components/Footer.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 import { withBase } from "../../../lib/paths";
 import heroImg from "../../../assets/hero/hero-img3464.jpg";
+import lvCiLandscape from "../../../assets/lithiumvalley/lv-ci-landscape.png";
 import batW2 from "../../../assets/products/lv-bat-w2-56ac.jpg";
 import batW5 from "../../../assets/products/lv-bat-w5-12da.jpg";
 import w15 from "../../../assets/products/lv-w15-5a.jpg";
@@ -258,6 +259,63 @@ const products = [
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── C&I Products ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center mb-10" data-reveal>
+          <span class="eyebrow">C&I Αποθήκευση</span>
+          <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+            LithiumValley C&I Μπαταρίες
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-navy-900/60">
+            Ολοκληρωμένα συστήματα αποθήκευσης για εμπορικές και βιομηχανικές εφαρμογές.
+          </p>
+        </div>
+
+        <div class="mx-auto max-w-xs sm:max-w-none sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal>
+          <div class="group flex flex-col overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card transition-shadow hover:shadow-lg">
+            <div class="flex items-center justify-center bg-ice-50 p-6 h-56 overflow-hidden">
+              <Image
+                src={lvCiLandscape}
+                alt="LithiumValley C&I Energy Storage Cabinet"
+                width={400}
+                height={300}
+                class="h-full w-auto max-h-44 object-contain transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <p class="text-[11px] font-bold uppercase tracking-wider text-azure-600">C&I Cabinet</p>
+              <h3 class="mt-1 font-display text-base font-bold text-navy-900">C&I Energy Storage Cabinet</h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="rounded-full bg-navy-900/5 px-2.5 py-1 text-xs font-semibold text-navy-900/70">C&I Scale</span>
+                <span class="rounded-full bg-azure-50 px-2.5 py-1 text-xs font-semibold text-azure-700">LiFePO₄</span>
+              </div>
+              <ul class="mt-4 flex-1 space-y-1.5">
+                {[
+                  "Εμπορικές & Βιομηχανικές εφαρμογές",
+                  "Τεχνολογία LiFePO₄",
+                  "Ενσωματωμένο BMS",
+                  "Grid-connected & Off-grid",
+                  "Modular — κλιμακώσιμο σύστημα",
+                  "Τηλεπαρακολούθηση & διαχείριση",
+                ].map((f) => (
+                  <li class="flex items-start gap-2 text-xs text-navy-900/60">
+                    <svg class="mt-0.5 h-3.5 w-3.5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href={withBase("#contact")} class="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-azure-200 bg-azure-50 py-2.5 text-sm font-semibold text-azure-700 transition-colors hover:bg-azure-100">
+                Ζητήστε Τιμή
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
