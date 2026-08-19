@@ -30,13 +30,6 @@ export const products: Product[] = [
     distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY",
   },
   {
-    slug: "hjt-panels",
-    name: "HJT Πάνελ",
-    tag: "Heterojunction Panels",
-    desc: "Υβριδική τεχνολογία κελιών για μέγιστη απόδοση σε κάθε συνθήκη φωτισμού.",
-    art: "hjt",
-  },
-  {
     slug: "pv-storage-batteries",
     name: "Μπαταρίες Αποθήκευσης",
     tag: "PV Storage Batteries",
