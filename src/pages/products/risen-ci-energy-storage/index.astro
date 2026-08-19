@@ -346,7 +346,7 @@ const description =
       </div>
     </section>
 
-    {/* ── 6. Energy Storage Products (SU5016U2500KC) ── */}
+    {/* ── 6. Energy Storage Products ── */}
     <section class="bg-navy-950 py-16 sm:py-20">
       <div class="container-page" data-reveal>
         <div class="mb-10 text-center">
@@ -359,40 +359,75 @@ const description =
           </p>
         </div>
 
-        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div class="-mx-6 sm:-mx-8 lg:mx-0 overflow-hidden lg:rounded-2xl bg-white/5 ring-1 ring-white/10">
-            <Image
-              src={productSU5016}
-              alt="Risen Energy SU5016U2500KC Energy Storage System"
-              width={800}
-              height={420}
-              class="aspect-video w-full object-contain"
-            />
+        <div class="grid gap-8 lg:grid-cols-2">
+          {/* SU5016U2500KC */}
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden">
+            <div class="bg-white/5">
+              <Image
+                src={productSU5016}
+                alt="Risen Energy SU5016U2500KC Energy Storage System"
+                width={600}
+                height={360}
+                class="aspect-video w-full object-contain"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold text-white">SU5016U2500KC</h3>
+              <p class="mt-1 text-sm text-azure-300">Βιομηχανικό σύστημα αποθήκευσης ενέργειας</p>
+              <div class="mt-5 grid grid-cols-3 gap-3">
+                {[
+                  { icon: "🔒", label: "Rack Visual Switch" },
+                  { icon: "⚡", label: "Short Circuit Protection" },
+                  { icon: "🔥", label: "Fire Suppression System" },
+                  { icon: "💧", label: "Water-based Firefighting" },
+                  { icon: "🛡️", label: "Intrusion Detection" },
+                  { icon: "🎛️", label: "Golden Shield Controller" },
+                ].map((f) => (
+                  <div class="flex flex-col items-center gap-1.5 rounded-xl bg-white/5 px-3 py-4 text-center ring-1 ring-white/10">
+                    <span class="text-2xl" aria-hidden="true">{f.icon}</span>
+                    <span class="text-xs font-semibold leading-tight text-white/80">{f.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-white/55">
+                Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="font-display text-xl font-bold text-white">SU5016U2500KC</h3>
-            <p class="mt-2 text-sm text-azure-300">Βιομηχανικό σύστημα αποθήκευσης ενέργειας</p>
-
-            <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {[
-                { icon: "🔒", label: "Rack Visual Switch" },
-                { icon: "⚡", label: "Short Circuit Protection" },
-                { icon: "🔥", label: "Fire Suppression System" },
-                { icon: "💧", label: "Water-based Firefighting" },
-                { icon: "🛡️", label: "Intrusion Detection" },
-                { icon: "🎛️", label: "Golden Shield Controller" },
-              ].map((f) => (
-                <div class="flex flex-col items-center gap-1.5 rounded-xl bg-white/5 px-3 py-4 text-center ring-1 ring-white/10">
-                  <span class="text-2xl" aria-hidden="true">{f.icon}</span>
-                  <span class="text-xs font-semibold leading-tight text-white/80">{f.label}</span>
-                </div>
-              ))}
+          {/* BESS Risen – SYL */}
+          <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden">
+            <div class="bg-white/5">
+              <Image
+                src={storageContainers}
+                alt="BESS Risen Energy SYL Utility-scale Energy Storage System"
+                width={600}
+                height={360}
+                class="aspect-video w-full object-cover"
+              />
             </div>
-
-            <p class="mt-6 text-sm leading-relaxed text-white/55">
-              Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
-            </p>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold text-white">BESS Risen – SYL</h3>
+              <p class="mt-1 text-sm text-azure-300">Utility-scale σύστημα αποθήκευσης ενέργειας</p>
+              <div class="mt-5 grid grid-cols-3 gap-3">
+                {[
+                  { icon: "🏭", label: "Utility-scale ESS" },
+                  { icon: "⚡", label: "LiFePO₄ Technology" },
+                  { icon: "🔗", label: "Grid-connected" },
+                  { icon: "🛡️", label: "Multi-level Safety" },
+                  { icon: "📡", label: "Remote Monitoring" },
+                  { icon: "📦", label: "Container Design" },
+                ].map((f) => (
+                  <div class="flex flex-col items-center gap-1.5 rounded-xl bg-white/5 px-3 py-4 text-center ring-1 ring-white/10">
+                    <span class="text-2xl" aria-hidden="true">{f.icon}</span>
+                    <span class="text-xs font-semibold leading-tight text-white/80">{f.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-white/55">
+                Βιομηχανικό σύστημα αποθήκευσης μεγάλης κλίμακας σε σχεδιασμό container — ιδανικό για utility-scale εγκαταστάσεις με υψηλές απαιτήσεις χωρητικότητας και αξιοπιστίας.
+              </p>
+            </div>
           </div>
         </div>
       </div>
