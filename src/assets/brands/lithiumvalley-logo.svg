@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" fill="none">
-  <!-- LITHIUM in blue -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 100" fill="none">
   <text font-family="'Arial Black','Arial',sans-serif" font-weight="900" font-size="72" letter-spacing="-1" fill="#1B4FC8">
     <tspan x="0" y="76">LITHIUM</tspan>
   </text>
-  <!-- VALLEY in green -->
   <text font-family="'Arial Black','Arial',sans-serif" font-weight="900" font-size="72" letter-spacing="-1" fill="#5CC85A">
-    <tspan x="286" y="76">VALLEY</tspan>
+    <tspan x="290" y="76">VALLEY</tspan>
   </text>
-  <!-- + above I (first I in LITHIUM) -->
   <text font-family="'Arial Black','Arial',sans-serif" font-weight="900" font-size="22" fill="#1B4FC8">
     <tspan x="36" y="14">+</tspan>
   </text>
-  <!-- − above H crossbar area -->
   <text font-family="'Arial Black','Arial',sans-serif" font-weight="900" font-size="22" fill="#1B4FC8">
     <tspan x="118" y="14">−</tspan>
   </text>
