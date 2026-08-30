@@ -5,24 +5,21 @@ import lineupWide from "../assets/hero/tsun-lineup-wide.jpg";
 import microinverters from "../assets/hero/tsun-microinverters.jpg";
 import slide02 from "../assets/hero/01-suntech-ultra-t2.png";
 import slide03 from "../assets/hero/02-home-energy-storage.png";
-import slide04 from "../assets/hero/03-marine-batteries.png";
 import slide05 from "../assets/lithiumvalley/lv-ci-landscape.png";
 import slide06 from "../assets/hero/05-projoy-pefs-combiner.png";
 import slide07 from "../assets/hero/06-projoy-rapid-shutdown.png";
 import slide08 from "../assets/hero/07-risen-hyper-ion-pro.png";
 import mSlide02 from "../assets/hero/m-01-suntech-ultra-t2.png";
 import mSlide03 from "../assets/hero/m-02-home-energy-storage.png";
-import mSlide04 from "../assets/hero/m-03-marine-batteries.png";
 import mSlide05 from "../assets/lithiumvalley/lv-ci-portrait.png";
 import mSlide06 from "../assets/hero/m-05-projoy-pefs-combiner.png";
 import mSlide07 from "../assets/hero/m-06-projoy-rapid-shutdown.png";
 import mSlide08 from "../assets/hero/m-07-risen-hyper-ion-pro.png";
 
-const [gmMicroinverters, gm02, gm03, gm04, gm05, gm06, gm07, gm08] = await Promise.all([
+const [gmMicroinverters, gm02, gm03, gm05, gm06, gm07, gm08] = await Promise.all([
   getImage({ src: microinverters, width: 928, height: 1152 }),
   getImage({ src: mSlide02, width: 928, height: 1152 }),
   getImage({ src: mSlide03, width: 928, height: 1152 }),
-  getImage({ src: mSlide04, width: 928, height: 1152 }),
   getImage({ src: mSlide05, width: 928, height: 1152 }),
   getImage({ src: mSlide06, width: 928, height: 1152 }),
   getImage({ src: mSlide07, width: 928, height: 1152 }),
@@ -63,18 +60,6 @@ const slides = [
     label: "Οικιακές Λύσεις",
     title: "Home Energy System",
     subtitle: "Solar · Storage · EV Charging",
-    href: withBase("products/lithiumvalley-residential/"),
-    hideText: false,
-  },
-  {
-    image: slide04,
-    mobileSrc: gm04.src,
-    alt: "LithiumValley Μπαταρίες Li-ion για Σκάφος και Υπαίθριο",
-    width: 1376,
-    height: 768,
-    label: "Μπαταρίες Li-ion",
-    title: "LithiumValley 12V Pro",
-    subtitle: "Rechargeable Li-ion · Marine & Outdoor",
     href: withBase("products/lithiumvalley-residential/"),
     hideText: false,
   },
