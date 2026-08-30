@@ -3,6 +3,7 @@ import hybridMicroinverter from "../assets/products/tsun-microinverter-card.jpg"
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 import suntechLogo from "../assets/brands/suntech-logo.png";
 import risenLogo from "../assets/brands/risen-logo.png";
+import lvHomeStorage from "../assets/lithiumvalley/lv-home-storage.jpg";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
 
@@ -34,7 +35,7 @@ export const products: Product[] = [
     name: "Μπαταρίες Αποθήκευσης",
     tag: "PV Storage Batteries",
     desc: "Συστήματα αποθήκευσης ενέργειας για αυτονομία και βελτιστοποίηση της κατανάλωσης.",
-    art: "battery",
+    photo: lvHomeStorage,
   },
   {
     slug: "grid-hybrid-inverters",
