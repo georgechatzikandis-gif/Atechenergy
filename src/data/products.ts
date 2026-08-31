@@ -5,6 +5,7 @@ import suntechLogo from "../assets/brands/suntech-logo.png";
 import risenLogo from "../assets/brands/risen-logo.png";
 import risenPanelSnow from "../assets/products/risen-panel-snow.png";
 import evChargerAlphatech from "../assets/products/ev-charger-alphatech.jpg";
+import evChargerAlpatechHero from "../assets/products/ev-charger-alphatech-hero.jpg";
 import lvCiBattery from "../assets/lithiumvalley/lv-ci-landscape.png";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
@@ -17,6 +18,7 @@ export interface Product {
   longDesc?: string;
   art?: ProductArtKind;
   photo?: ImageMetadata;
+  heroPhoto?: ImageMetadata;
   distributor?: string;
   features?: string[];
   specs?: { label: string; value: string }[];
@@ -51,6 +53,7 @@ export const products: Product[] = [
     tag: "EVE Chargers",
     desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
     photo: evChargerAlphatech,
+    heroPhoto: evChargerAlpatechHero,
   },
   {
     slug: "risen-ci-energy-storage",
