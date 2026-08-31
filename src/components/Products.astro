@@ -40,8 +40,8 @@ const specs = [
         const p = products[0];
         return (
           <a href={withBase("products/risen-hyper-ion/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
-            <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
-              <Image src={p.photo!} alt={p.name} width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+            <div class="h-40 overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+              <Image src={p.photo!} alt={p.name} width={340} height={220} class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div class="p-8 pt-6">
               <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
