@@ -4,6 +4,7 @@ import ProductArt from "./ProductArt.astro";
 import { products } from "../data/products";
 import { withBase } from "../lib/paths";
 import risenLogo from "../assets/brands/risen-logo.png";
+import risenCiEssCard from "../assets/products/risen-ci-ess-card.jpg";
 import suntechLogo from "../assets/brands/suntech-logo.png";
 import lvLogoUrl from "../assets/brands/lithiumvalley-logo.svg?url";
 
@@ -58,8 +59,8 @@ const specs = [
 
       {/* Risen Storage — hardcoded */}
       <a href={withBase("products/risen-ci-energy-storage/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
-        <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
-          <Image src={risenLogo} alt="Risen Energy Storage" width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+        <div class="flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+          <Image src={risenCiEssCard} alt="Risen Energy Storage" width={340} height={440} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
         </div>
         <div class="p-8 pt-6">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Risen Storage</p>
