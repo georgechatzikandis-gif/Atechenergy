@@ -3,6 +3,7 @@ import hybridMicroinverter from "../assets/products/tsun-microinverter-card.jpg"
 import risenCiStorage from "../assets/hero/risen-ci-storage.jpg";
 import suntechLogo from "../assets/brands/suntech-logo.png";
 import risenLogo from "../assets/brands/risen-logo.png";
+import risenPanelSnow from "../assets/products/risen-panel-snow.png";
 import lvCiBattery from "../assets/lithiumvalley/lv-ci-landscape.png";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
@@ -26,8 +27,7 @@ export const products: Product[] = [
     name: "Πάνελ",
     tag: "Risen Energy",
     desc: "Υψηλής απόδοσης μονοκρυσταλλικά φωτοβολταϊκά πάνελ για οικιακές και εμπορικές εγκαταστάσεις.",
-    art: "mono",
-    photo: risenLogo,
+    photo: risenPanelSnow,
     distributor: "ΕΠΙΣΗΜΟΣ ΔΙΑΝΟΜΕΑΣ RISEN ENERGY",
   },
   {
