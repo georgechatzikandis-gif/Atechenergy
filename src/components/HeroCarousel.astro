@@ -317,7 +317,7 @@ const slides = [
       dragStartY = null;
       if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
         goTo(current + (deltaX < 0 ? 1 : -1));
-      } else {
+      } else if (Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8) {
         const href = slideEls[current]?.getAttribute("data-href");
         if (href) window.location.href = href;
       }
