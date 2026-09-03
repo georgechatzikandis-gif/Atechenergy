@@ -8,6 +8,7 @@ import risenCiEssCard from "../assets/products/risen-ci-ess-card.jpg";
 import suntechLogo from "../assets/brands/suntech-logo.png";
 import lvLogoUrl from "../assets/brands/lithiumvalley-logo.svg?url";
 import projoyLogo from "../assets/brands/projoy-logo.png";
+import suntechConfigs from "../assets/products/suntech-ultra-t2-configs.png";
 
 const restProducts = products.filter(
   (p) => p.slug !== "monocrystalline-pv-module" && p.slug !== "risen-ci-energy-storage"
@@ -70,8 +71,10 @@ const restProducts = products.filter(
 
       {/* Suntech — hardcoded */}
       <a href={withBase("products/suntech-ultra-t2/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
-        <div class="flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
-          <Image src={suntechLogo} alt="Suntech Solar Panels" width={340} height={220} class="h-32 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105" />
+        <div class="flex h-56 items-center justify-center gap-4 px-4 overflow-hidden bg-gradient-to-br from-ice-100 to-white">
+          <Image src={suntechConfigs} alt="Suntech Ultra T 2.0 Configurations" width={200} height={240} class="h-48 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <div class="h-20 w-px bg-navy-900/10 shrink-0" />
+          <Image src={suntechLogo} alt="Suntech" width={160} height={80} class="h-10 w-auto object-contain opacity-85 transition-transform duration-500 group-hover:scale-105" />
         </div>
         <div class="p-8 pt-6">
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Suntech</p>
