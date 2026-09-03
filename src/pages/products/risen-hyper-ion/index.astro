@@ -14,6 +14,11 @@ import carbonImg from "../../../assets/hero/risen-hyperion-carbon.jpg";
 import reliabilityImg from "../../../assets/hero/risen-hyperion-reliability.jpg";
 import model745 from "../../../assets/hero/risen-hyperion-745wp.jpg";
 import model715 from "../../../assets/hero/risen-hyperion-715wp.jpg";
+import hyperIonUltra from "../../../assets/products/risen-hyper-ion-ultra.png";
+import hyperIonPro from "../../../assets/products/risen-hyper-ion-pro-module.png";
+import topcon132 from "../../../assets/products/risen-topcon-132.png";
+import topcon108 from "../../../assets/products/risen-topcon-108.png";
+import antiGlare from "../../../assets/products/risen-anti-glare.png";
 ---
 
 <BaseLayout title="Risen Hyper-ion Pro — HJT Bifacial Module | Atechenergy">
@@ -179,6 +184,58 @@ import model715 from "../../../assets/hero/risen-hyperion-715wp.jpg";
           </div>
           <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card">
             <Image src={model715} alt="Risen Hyper-ion 715Wp" width={1284} height={1355} class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Full Risen Panel Range ── */}
+    <section class="bg-white py-14 sm:py-16">
+      <div class="container-page" data-reveal>
+        <div class="mb-8 text-center">
+          <span class="inline-flex items-center gap-3 mb-3">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent to-azure-300/60"></span>
+            <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-azure-600">Πλήρης Γκάμα</p>
+            <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
+          </span>
+          <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Σειρά Πάνελ Risen Energy</h2>
+          <p class="mt-3 text-navy-900/55">HJT Hyper-ion · TOPCon · Anti-glare — πλήρης γκάμα για κάθε εφαρμογή</p>
+        </div>
+
+        <div class="mb-4">
+          <p class="text-xs font-bold tracking-[0.18em] uppercase text-azure-600 mb-4">HJT Hyper-ion Module</p>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-ice-100/30 p-4 flex flex-col items-center">
+              <Image src={hyperIonUltra} alt="Risen Hyper-ion Ultra 132 HJT Bifacial Module" width={618} height={1185} class="h-64 w-auto object-contain" />
+              <p class="mt-3 text-sm font-bold text-navy-900 text-center">Hyper-ion Ultra 132 HJT</p>
+              <p class="text-xs text-navy-900/50 text-center">Bifacial Module</p>
+            </div>
+            <div class="overflow-hidden rounded-2xl border-2 border-azure-500/30 bg-ice-100/30 p-4 flex flex-col items-center shadow-[0_8px_24px_-8px_rgba(47,127,224,0.2)]">
+              <Image src={hyperIonPro} alt="Risen Hyper-ion Pro 132 HJT Bifacial Module" width={622} height={1185} class="h-64 w-auto object-contain" />
+              <p class="mt-3 text-sm font-bold text-navy-900 text-center">Hyper-ion Pro 132 HJT</p>
+              <p class="text-xs text-azure-600 text-center font-semibold">Bifacial Module · up to 767Wp</p>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-ice-100/30 p-4 flex flex-col items-center">
+              <Image src={antiGlare} alt="Risen Anti-glare Module" width={618} height={940} class="h-64 w-auto object-contain" />
+              <p class="mt-3 text-sm font-bold text-navy-900 text-center">Anti-glare Module</p>
+              <p class="text-xs text-navy-900/50 text-center">HJT Bifacial</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <p class="text-xs font-bold tracking-[0.18em] uppercase text-azure-600 mb-4">TOPCon Module</p>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-ice-100/30 p-4 flex flex-col items-center">
+              <Image src={topcon132} alt="Risen TOPCon 132 n-type Bifacial Monocrystalline Module" width={618} height={1190} class="h-64 w-auto object-contain" />
+              <p class="mt-3 text-sm font-bold text-navy-900 text-center">TOPCon 132 n-type</p>
+              <p class="text-xs text-navy-900/50 text-center">Bifacial Monocrystalline · Aluminum Alloy frame</p>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-ice-100/30 p-4 flex flex-col items-center">
+              <Image src={topcon108} alt="Risen TOPCon 108 n-type Bifacial Monocrystalline Module" width={622} height={1190} class="h-64 w-auto object-contain" />
+              <p class="mt-3 text-sm font-bold text-navy-900 text-center">TOPCon 108 n-type</p>
+              <p class="text-xs text-navy-900/50 text-center">Bifacial Monocrystalline · Black Aluminum Alloy frame</p>
+            </div>
           </div>
         </div>
       </div>
