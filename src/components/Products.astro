@@ -39,8 +39,8 @@ const restProducts = products.filter(
           <a href={withBase("products/risen-hyper-ion/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
             <div class="relative h-56 overflow-hidden bg-gradient-to-br from-ice-100 to-white flex items-center justify-center">
               <Image src={p.photo!} alt={p.name} width={340} height={455} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
-              <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-                <Image src={risenLogo} alt="Risen Energy" width={80} height={40} class="h-5 w-auto object-contain" />
+              <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+                <Image src={risenLogo} alt="Risen Energy" width={80} height={40} class="h-5 w-full object-contain" />
               </div>
             </div>
             <div class="p-8 pt-6">
@@ -60,8 +60,8 @@ const restProducts = products.filter(
       <a href={withBase("products/risen-ci-energy-storage/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
         <div class="relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-ice-100 to-white">
           <Image src={risenCiEssCard} alt="Risen Energy Storage" width={340} height={420} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
-          <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-            <Image src={risenLogo} alt="Risen Energy" width={80} height={40} class="h-5 w-auto object-contain" />
+          <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+            <Image src={risenLogo} alt="Risen Energy" width={80} height={40} class="h-5 w-full object-contain" />
           </div>
         </div>
         <div class="p-8 pt-6">
@@ -79,8 +79,8 @@ const restProducts = products.filter(
       <a href={withBase("products/suntech-ultra-t2/")} class="group relative overflow-hidden rounded-3xl border border-navy-900/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(47,127,224,0.25)]" data-reveal>
         <div class="relative h-56 overflow-hidden bg-gradient-to-br from-ice-100 to-white flex items-center justify-center">
           <Image src={suntechConfigs} alt="Suntech Ultra T 2.0 Configurations" width={340} height={420} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
-          <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-            <Image src={suntechLogo} alt="Suntech" width={80} height={40} class="h-5 w-auto object-contain" />
+          <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+            <Image src={suntechLogo} alt="Suntech" width={80} height={40} class="h-5 w-full object-contain" />
           </div>
         </div>
         <div class="p-8 pt-6">
@@ -111,18 +111,18 @@ const restProducts = products.filter(
                   <>
                     <Image src={p.photo} alt={p.name} width={340} height={p.slug === "pv-storage-batteries" ? 190 : p.slug === "firefighter-safety-switch" ? 349 : 590} class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
                     {p.slug === "firefighter-safety-switch" && (
-                      <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-                        <Image src={projoyLogo} alt="Projoy Electric" width={80} height={30} class="h-5 w-auto object-contain" />
+                      <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+                        <Image src={projoyLogo} alt="Projoy Electric" width={80} height={30} class="h-5 w-full object-contain" />
                       </div>
                     )}
                     {p.slug === "hybrid-microinverter-2000w" && (
-                      <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-                        <Image src={tsunLogo} alt="TSUN" width={80} height={30} class="h-5 w-auto object-contain" />
+                      <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+                        <Image src={tsunLogo} alt="TSUN" width={80} height={30} class="h-5 w-full object-contain" />
                       </div>
                     )}
                     {p.slug === "pv-storage-batteries" && (
-                      <div class="absolute bottom-2 right-3 rounded-lg bg-white/85 px-2 py-1 shadow-sm backdrop-blur-sm">
-                        <Image src={lvLogoBadge} alt="LithiumValley" width={80} height={44} class="h-5 w-auto object-contain" />
+                      <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+                        <Image src={lvLogoBadge} alt="LithiumValley" width={80} height={44} class="h-5 w-full object-contain" />
                       </div>
                     )}
                   </>
