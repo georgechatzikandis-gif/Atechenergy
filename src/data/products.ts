@@ -6,7 +6,7 @@ import risenLogo from "../assets/brands/risen-logo.png";
 import risenPanelSnow from "../assets/products/risen-panel-snow.png";
 import evChargerAlphatech from "../assets/products/ev-charger-alphatech.jpg";
 import evChargerAlpatechHero from "../assets/products/ev-charger-alphatech-hero.jpg";
-import lvCiBattery from "../assets/lithiumvalley/lv-ci-landscape.png";
+import lvCiBattery from "../assets/products/lithiumvalley-cabinet.jpg";
 
 export type ProductArtKind = "mono" | "topcon" | "hjt" | "battery" | "inverter" | "ev";
 
