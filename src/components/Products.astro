@@ -103,13 +103,20 @@ const restProducts = products.filter(
             data-reveal
             style={`transition-delay:${(i + 3) * 60}ms`}
           >
-            <div class={`relative overflow-hidden bg-gradient-to-br from-ice-100 to-white ${p.slug === "ev-chargers" ? "flex h-56 items-center justify-center" : "h-40"}`}>
+            <div class={`relative overflow-hidden bg-gradient-to-br from-ice-100 to-white ${(p.slug === "ev-chargers" || p.slug === "pv-storage-batteries") ? "flex h-56 items-center justify-center" : "h-40"}`}>
               {p.photo ? (
-                p.slug === "ev-chargers" ? (
-                  <Image src={p.photo} alt={p.name} width={340} height={504} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                (p.slug === "ev-chargers" || p.slug === "pv-storage-batteries") ? (
+                  <>
+                    <Image src={p.photo} alt={p.name} width={340} height={p.slug === "pv-storage-batteries" ? 374 : 504} class="h-52 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                    {p.slug === "pv-storage-batteries" && (
+                      <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
+                        <Image src={lvLogoBadge} alt="LithiumValley" width={80} height={44} class="h-5 w-full object-contain" />
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <>
-                    <Image src={p.photo} alt={p.name} width={340} height={p.slug === "pv-storage-batteries" ? 190 : p.slug === "firefighter-safety-switch" ? 349 : 590} class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={p.photo} alt={p.name} width={340} height={p.slug === "firefighter-safety-switch" ? 349 : 590} class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
                     {p.slug === "firefighter-safety-switch" && (
                       <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
                         <Image src={projoyLogo} alt="Projoy Electric" width={80} height={30} class="h-5 w-full object-contain" />
@@ -118,11 +125,6 @@ const restProducts = products.filter(
                     {p.slug === "hybrid-microinverter-2000w" && (
                       <div class="absolute bottom-2 right-2 overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
                         <Image src={tsunLogo} alt="TSUN" width={90} height={30} class="h-5 w-auto object-contain" />
-                      </div>
-                    )}
-                    {p.slug === "pv-storage-batteries" && (
-                      <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
-                        <Image src={lvLogoBadge} alt="LithiumValley" width={80} height={44} class="h-5 w-full object-contain" />
                       </div>
                     )}
                   </>
