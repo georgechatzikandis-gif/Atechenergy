@@ -10,6 +10,14 @@ import lvCiLandscape from "../../../assets/products/lv-ci-cabinet.jpg";
 import batW5 from "../../../assets/products/lv-bat-w5-12da.jpg";
 import w15 from "../../../assets/products/lv-w15-5a.jpg";
 import w16 from "../../../assets/products/lv-w16-5a.jpg";
+import lvSc100aP1 from "../../../assets/products/lv-sc100a-p1.jpg";
+import lvSc100aP2 from "../../../assets/products/lv-sc100a-p2.jpg";
+import lvW105aP1 from "../../../assets/products/lv-w105a-p1.jpg";
+import lvW105aP2 from "../../../assets/products/lv-w105a-p2.jpg";
+import lvSc261lP1 from "../../../assets/products/lv-sc261l-p1.jpg";
+import lvSc261lP2 from "../../../assets/products/lv-sc261l-p2.jpg";
+import lvGoodweP1 from "../../../assets/products/lv-goodwe-p1.jpg";
+import lvGoodweP2 from "../../../assets/products/lv-goodwe-p2.jpg";
 
 const title = "LithiumValley Οικιακή Αποθήκευση Ενέργειας | Alphatech Energy";
 const description =
@@ -133,6 +141,10 @@ const products = [
           <div class="mt-8 flex flex-wrap gap-4">
             <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
             <a href={withBase("products/")} class="btn btn-outline">Όλα τα Προϊόντα</a>
+            <a href="#datasheets" class="inline-flex items-center gap-2 rounded-xl border border-azure-200 bg-azure-50 px-5 py-3 text-sm font-semibold text-azure-700 shadow-sm transition hover:bg-azure-100 hover:-translate-y-0.5">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Δείτε τα Datasheets
+            </a>
           </div>
         </div>
       </div>
@@ -298,6 +310,36 @@ const products = [
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    {/* ── Datasheet Gallery ── */}
+    <section id="datasheets" class="bg-ice-50/60 py-16 sm:py-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center mb-10" data-reveal>
+          <span class="eyebrow border-azure-500/20 text-azure-600">Τεχνικά Φυλλάδια</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">Datasheets</h2>
+        </div>
+
+        {[
+          { label: "SC100A / SC114A CI BESS", file: "LV-SC100A-SC114A-Datasheet.pdf", pages: [lvSc100aP1, lvSc100aP2] },
+          { label: "W105A", file: "LV-W105A-Datasheet.pdf", pages: [lvW105aP1, lvW105aP2] },
+          { label: "SC261L CI BESS", file: "LV-SC261L-Datasheet.pdf", pages: [lvSc261lP1, lvSc261lP2] },
+          { label: "ET 25–50 kW", file: "LV-GoodWe-ET-25-50kW-Datasheet.pdf", pages: [lvGoodweP1, lvGoodweP2] },
+        ].map((ds) => (
+          <div class="mb-10" data-reveal>
+            <p class="mb-4 text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{ds.label}</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {ds.pages.map((img, i) => (
+                <a href={withBase(`downloads/${ds.file}`)} target="_blank" rel="noopener"
+                   class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
+                  <Image src={img} alt={`${ds.label} Datasheet σελίδα ${i + 1}`} width={1190} height={840}
+                         class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
