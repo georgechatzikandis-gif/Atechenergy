@@ -1,0 +1,188 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import BackToTop from "../../../components/BackToTop.astro";
+import { withBase } from "../../../lib/paths";
+
+import risenProP1 from "../../../assets/products/risen-pro-p1.jpg";
+import risenProP2 from "../../../assets/products/risen-pro-p2.jpg";
+import risenRsm108P1 from "../../../assets/products/risen-rsm108-p1.jpg";
+import risenRsm108P2 from "../../../assets/products/risen-rsm108-p2.jpg";
+import risenRsm13211P1 from "../../../assets/products/risen-rsm132-11-p1.jpg";
+import risenRsm13211P2 from "../../../assets/products/risen-rsm132-11-p2.jpg";
+import risenAntiglareP1 from "../../../assets/products/risen-antiglare-p1.jpg";
+import risenAntiglareP2 from "../../../assets/products/risen-antiglare-p2.jpg";
+import risenUltraP1 from "../../../assets/products/risen-ultra-p1.jpg";
+import risenUltraP2 from "../../../assets/products/risen-ultra-p2.jpg";
+
+const title = "Φωτοβολταϊκά Πάνελ Risen Energy | Alphatech Energy";
+const description = "Μονοκρυσταλλικά φωτοβολταϊκά πάνελ Risen Energy — Pro, Ultra, Anti-Glare και άλλες σειρές για κάθε εγκατάσταση.";
+
+const models = [
+  {
+    slug: "pro",
+    label: "Pro Series",
+    name: "RSM132-8 720–735W BHDG",
+    desc: "Υψηλής απόδοσης μονοκρυσταλλικό πάνελ με τεχνολογία TOPCON. Ιδανικό για οικιακές και εμπορικές εγκαταστάσεις.",
+    file: "Risen-Pro-RSM132-8-Datasheet.pdf",
+    pages: [risenProP1, risenProP2],
+  },
+  {
+    slug: "rsm108",
+    label: "RSM108-11 — Black Frame",
+    name: "RSM108-11 490–515W BNDG",
+    desc: "Μαύρο πλαίσιο, premium αισθητική. Ιδανικό για αρχιτεκτονικές εγκαταστάσεις σε κατοικίες.",
+    file: "Risen-RSM108-11-Datasheet.pdf",
+    pages: [risenRsm108P1, risenRsm108P2],
+  },
+  {
+    slug: "rsm132-11",
+    label: "RSM132-11",
+    name: "RSM132-11 615–640W BNDG",
+    desc: "Μεγάλης ισχύος πάνελ για μεγάλες εγκαταστάσεις. Εξαιρετική απόδοση ακόμα και σε συνθήκες χαμηλού φωτισμού.",
+    file: "Risen-RSM132-11-Datasheet.pdf",
+    pages: [risenRsm13211P1, risenRsm13211P2],
+  },
+  {
+    slug: "anti-glare",
+    label: "Anti-Glare Series",
+    name: "RSM132-8 710–730W BHDG Anti-Glare",
+    desc: "Ειδική αντιθαμβωτική επίστρωση. Κατάλληλο για αεροδρόμια, αυτοκινητόδρομους και ευαίσθητες περιοχές.",
+    file: "Risen-Anti-Glare-RSM132-8-Datasheet.pdf",
+    pages: [risenAntiglareP1, risenAntiglareP2],
+  },
+  {
+    slug: "ultra",
+    label: "Ultra Series",
+    name: "RSM132-8 740–760W BHDG Ultra",
+    desc: "Κορυφαία σειρά της Risen. Η υψηλότερη απόδοση για μεγάλης κλίμακας έργα.",
+    file: "Risen-Ultra-RSM132-8-Datasheet.pdf",
+    pages: [risenUltraP1, risenUltraP2],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path="/products/monocrystalline-pv-module/">
+  <Header />
+  <main class="pt-24">
+
+    {/* ── Breadcrumb ── */}
+    <div class="border-b border-navy-900/8 bg-white">
+      <div class="container-page py-4">
+        <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/50">
+          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <span aria-hidden="true">/</span>
+          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-navy-900">Φωτοβολταϊκά Πάνελ Risen</span>
+        </nav>
+      </div>
+    </div>
+
+    {/* ── Hero ── */}
+    <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
+      <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
+          <Image src={risenProP1} alt="Risen Energy Pro Series RSM132-8" width={1163} height={1588} class="h-auto w-full object-cover" />
+        </div>
+
+        <div data-reveal>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Risen Energy</p>
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
+            Φωτοβολταϊκά Πάνελ
+          </h1>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/60">
+            Μονοκρυσταλλικά πάνελ υψηλής απόδοσης από τη Risen Energy — μία από τις κορυφαίες εταιρείες φωτοβολταϊκών παγκοσμίως.
+          </p>
+
+          <ul class="mt-6 space-y-2.5">
+            {[
+              "Τεχνολογία TOPCON υψηλής απόδοσης",
+              "Σειρές Pro, Ultra, Anti-Glare και άλλες",
+              "Ισχύς από 490W έως 760W ανά πάνελ",
+              "IEC 1500V πιστοποίηση",
+              "Αντοχή σε χαλάζι, άνεμο και χιόνι",
+              "25ετής εγγύηση απόδοσης",
+            ].map((f) => (
+              <li class="flex items-start gap-2.5 text-sm font-medium text-navy-900/75">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="#datasheets" class="inline-flex items-center gap-2 rounded-xl border border-azure-200 bg-azure-50 px-5 py-3 text-sm font-semibold text-azure-700 shadow-sm transition hover:bg-azure-100 hover:-translate-y-0.5">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Δείτε τα Datasheets
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Datasheet Gallery ── */}
+    <section id="datasheets" class="bg-ice-50/60 py-16 sm:py-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center mb-12" data-reveal>
+          <span class="eyebrow border-azure-500/20 text-azure-600">Τεχνικά Φυλλάδια</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+            Datasheets <span class="text-azure-500">Risen Energy</span>
+          </h2>
+        </div>
+
+        {models.map((m) => (
+          <div class="mb-16" data-reveal>
+            <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{m.label}</p>
+                <h3 class="mt-1 font-display text-xl font-bold text-navy-900">{m.name}</h3>
+                <p class="mt-1 text-sm text-navy-900/60 max-w-lg">{m.desc}</p>
+              </div>
+              <a href={withBase(`downloads/${m.file}`)} target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white px-4 py-2.5 text-sm font-semibold text-navy-900 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 shrink-0">
+                <svg class="h-4 w-4 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                </svg>
+                Datasheet PDF
+              </a>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {m.pages.map((img, i) => (
+                <a href={withBase(`downloads/${m.file}`)} target="_blank" rel="noopener"
+                   class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
+                  <Image src={img} alt={`${m.name} σελίδα ${i + 1}`} width={1163} height={1588}
+                         class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* ── CTA ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page">
+        <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14">
+          <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">Ενδιαφέρεστε για Φωτοβολταϊκά Πάνελ;</h2>
+          <p class="mx-auto mt-3 max-w-xl text-white/65">
+            Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+  <BackToTop />
+</BaseLayout>
