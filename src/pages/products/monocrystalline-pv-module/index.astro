@@ -154,11 +154,21 @@ const models = [
             </div>
             <div class="grid gap-4 sm:grid-cols-2">
               {m.pages.map((img, i) => (
-                <a href={withBase(`downloads/${m.file}`)} target="_blank" rel="noopener"
-                   class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
-                  <Image src={img} alt={`${m.name} σελίδα ${i + 1}`} width={1163} height={1588}
-                         class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
-                </a>
+                <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
+                  <a href={withBase(`downloads/${m.file}`)} target="_blank" rel="noopener" class="group block overflow-hidden">
+                    <Image src={img} alt={`${m.name} σελίδα ${i + 1}`} width={1163} height={1588}
+                           class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                  </a>
+                  <div class="px-4 py-3 border-t border-navy-900/8">
+                    <a href={withBase(`downloads/${m.file}`)} target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-azure-600 hover:text-azure-700 transition">
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                      </svg>
+                      {m.label} — Datasheet PDF
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
