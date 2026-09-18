@@ -226,7 +226,7 @@ import antiGlare from "../../../assets/products/risen-anti-glare.png";
             ].map((m) => (
               <div class={`overflow-hidden rounded-2xl bg-white flex flex-col ${m.border}`}>
                 <div class="flex items-center justify-center bg-gradient-to-b from-ice-100/60 to-ice-200/40 p-8" style="min-height:28rem">
-                  <Image src={m.img} alt={m.alt} width={m.w} height={m.h} class="h-[26rem] w-auto object-contain drop-shadow-lg" />
+                  <Image src={m.img} alt={m.alt} width={m.w} height={m.h} style="height:26rem;width:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15))" />
                 </div>
                 <div class="px-5 py-4 border-t border-navy-900/8">
                   <p class="text-sm font-bold text-navy-900">{m.name}</p>
@@ -251,7 +251,7 @@ import antiGlare from "../../../assets/products/risen-anti-glare.png";
             ].map((m) => (
               <div class="overflow-hidden rounded-2xl border border-navy-900/8 bg-white flex flex-col">
                 <div class="flex items-center justify-center bg-gradient-to-b from-ice-100/60 to-ice-200/40 p-8" style="min-height:28rem">
-                  <Image src={m.img} alt={m.alt} width={m.w} height={m.h} class="h-[26rem] w-auto object-contain drop-shadow-lg" />
+                  <Image src={m.img} alt={m.alt} width={m.w} height={m.h} style="height:26rem;width:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15))" />
                 </div>
                 <div class="px-5 py-4 border-t border-navy-900/8">
                   <p class="text-sm font-bold text-navy-900">{m.name}</p>
