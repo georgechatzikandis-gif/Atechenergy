@@ -52,8 +52,8 @@ export const products: Product[] = [
     name: "Φορτιστές EVE",
     tag: "EVE Chargers",
     desc: "Φορτιστές ηλεκτρικών οχημάτων για οικιακή και επαγγελματική χρήση.",
-    photo: evChargerAlphatech,
-    heroPhoto: evChargerAlpatechHero,
+    photo: evChargerAlpatechHero,
+    heroPhoto: evChargerAlphatech,
   },
   {
     slug: "risen-ci-energy-storage",
