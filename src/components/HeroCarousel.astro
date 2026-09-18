@@ -48,7 +48,7 @@ const slides = [
     label: "Φωτοβολταϊκά Πάνελ",
     title: "Suntech Ultra T 2.0",
     subtitle: "48-cell · 54-cell · 66-cell",
-    href: null,
+    href: withBase("products/suntech-ultra-t2/"),
     hideText: false,
   },
   {
@@ -108,7 +108,7 @@ const slides = [
     label: "Φωτοβολταϊκά Πάνελ",
     title: "Risen Hyper-ion Pro",
     subtitle: "24.7% Efficiency · 767W · 0BB Cell Technology",
-    href: null,
+    href: withBase("products/risen-hyper-ion/"),
     hideText: false,
   },
 ];
@@ -167,6 +167,16 @@ const slides = [
               <p class="hero-slide-subtitle mt-1.5 text-sm sm:text-base text-white/70 font-medium">
                 {s.subtitle}
               </p>
+              {s.href && (
+                <a
+                  href={s.href}
+                  class="hero-slide-cta pointer-events-auto mt-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm border border-white/25 hover:bg-white/25 transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  Δείτε Προϊόν
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              )}
             </div>
           </>
         )}
@@ -217,7 +227,8 @@ const slides = [
   /* ── Text stagger pop-in ── */
   .hero-slide-label,
   .hero-slide-title,
-  .hero-slide-subtitle {
+  .hero-slide-subtitle,
+  .hero-slide-cta {
     opacity: 0;
     transform: translateY(22px);
     transition-property: opacity, transform;
@@ -239,6 +250,11 @@ const slides = [
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.5s;
+  }
+  [data-slide][data-active="true"] .hero-slide-cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.64s;
   }
 </style>
 
