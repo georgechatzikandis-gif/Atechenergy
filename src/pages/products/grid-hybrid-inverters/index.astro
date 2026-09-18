@@ -5,12 +5,6 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 import { withBase } from "../../../lib/paths";
-import goodweP1 from "../../../assets/products/lv-goodwe-p1.jpg";
-import goodweP2 from "../../../assets/products/lv-goodwe-p2.jpg";
-import goodweP3 from "../../../assets/products/lv-goodwe-p3.jpg";
-import goodweP4 from "../../../assets/products/lv-goodwe-p4.jpg";
-import goodweP5 from "../../../assets/products/lv-goodwe-p5.jpg";
-import goodweP6 from "../../../assets/products/lv-goodwe-p6.jpg";
 import sc100aP3 from "../../../assets/products/lv-sc100a-p3.jpg";
 import sc100aP4 from "../../../assets/products/lv-sc100a-p4.jpg";
 import sc100aP5 from "../../../assets/products/lv-sc100a-p5.jpg";
@@ -41,7 +35,7 @@ const description = "Grid & Hybrid Inverters από κορυφαίους κατ�
     <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
         <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
-          <Image src={goodweP1} alt="GoodWe Hybrid Inverter SG-EH3P50K-H" width={1225} height={1650} class="h-auto w-full object-cover" />
+          <Image src={sc100aP3} alt="Hybrid Inverter SG-EH3P50K-H" width={1225} height={1650} class="h-auto w-full object-cover" />
         </div>
 
         <div data-reveal>
@@ -91,7 +85,6 @@ const description = "Grid & Hybrid Inverters από κορυφαίους κατ�
         </div>
 
         {[
-          { label: "GoodWe ET 25–50 kW — SG-EH3P50K-H", file: "LV-GoodWe-ET-25-50kW-Datasheet.pdf", pages: [goodweP1, goodweP2, goodweP3, goodweP4, goodweP5, goodweP6] },
           { label: "SC100A / SC114A CI BESS — Inverter Specs", file: "LV-SC100A-SC114A-Datasheet.pdf", pages: [sc100aP3, sc100aP4, sc100aP5, sc100aP6] },
         ].map((ds) => (
           <div class="mb-10" data-reveal>
@@ -109,13 +102,6 @@ const description = "Grid & Hybrid Inverters από κορυφαίους κατ�
         ))}
 
         <div class="flex flex-wrap justify-center gap-4" data-reveal>
-          <a href={withBase("downloads/LV-GoodWe-ET-25-50kW-Datasheet.pdf")} target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white px-5 py-3 text-sm font-semibold text-navy-900 shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
-            <svg class="h-4 w-4 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
-            </svg>
-            GoodWe ET 25–50 kW — Datasheet PDF
-          </a>
           <a href={withBase("downloads/LV-SC100A-SC114A-Datasheet.pdf")} target="_blank" rel="noopener"
              class="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white px-5 py-3 text-sm font-semibold text-navy-900 shadow-sm transition hover:shadow-md hover:-translate-y-0.5">
             <svg class="h-4 w-4 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
