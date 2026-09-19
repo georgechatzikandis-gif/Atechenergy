@@ -99,15 +99,37 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     </form>
 
     {/* Success state */}
-    <div id="chat-ok" class="hidden">
+    <div id="chat-ok" class="hidden space-y-3">
       <div class="flex items-end gap-2">
         <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#7360f2] text-[10px] font-bold text-white">
           AE
         </div>
         <div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-white/10 px-3 py-2 text-sm leading-relaxed text-white/90">
-          Ευχαριστούμε! 😊 Θα επικοινωνήσουμε μαζί σας σύντομα.
+          Αντιγράψτε το παρακάτω μήνυμα και στείλτε το στο Viber! 👇
         </div>
       </div>
+      <div class="relative rounded-xl border border-white/10 bg-white/5 p-3">
+        <p id="chat-ok-text" class="whitespace-pre-wrap text-xs leading-relaxed text-white/80"></p>
+        <button
+          type="button"
+          id="chat-copy-btn"
+          class="mt-2 flex items-center gap-1.5 text-xs font-semibold text-[#a78bfa] hover:text-white transition-colors"
+        >
+          <svg id="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg id="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 hidden text-green-400" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span id="copy-label">Αντιγραφή μηνύματος</span>
+        </button>
+      </div>
+      <a
+        id="chat-viber-link"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#9b59b6] to-[#7360f2] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M11.4 2C6.2 2 2 6 2 11c0 2.7 1.2 5.2 3.2 7l-.8 2.8 2.9-.7C8.7 21 10 21.4 11.4 21.4 16.6 21.4 21 17.4 21 12.2 21 6.9 16.7 2 11.4 2z"/></svg>
+        Άνοιγμα Viber
+      </a>
     </div>
   </div>
 </div>
@@ -159,6 +181,12 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
   const submitLabel = document.getElementById("chat-submit-label")!;
   const errEl = document.getElementById("chat-err")!;
   const okEl = document.getElementById("chat-ok")!;
+  const okTextEl = document.getElementById("chat-ok-text")!;
+  const viberLink = document.getElementById("chat-viber-link") as HTMLAnchorElement;
+  const copyBtn = document.getElementById("chat-copy-btn")!;
+  const copyIcon = document.getElementById("copy-icon")!;
+  const checkIcon = document.getElementById("check-icon")!;
+  const copyLabel = document.getElementById("copy-label")!;;
 
   let isOpen = false;
 
@@ -199,10 +227,38 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     const msg  = msgEl.value.trim();
     if (!name || !msg) return;
 
-    const text = encodeURIComponent(`Από: ${name}\n${msg}`);
-    window.open(`viber://chat?number=%2B306976724504&text=${text}`, "_blank");
+    const composed = `Από: ${name}\n${msg}`;
+    const text = encodeURIComponent(composed);
+    const viberUrl = `viber://chat?number=%2B306976724504&text=${text}`;
+
+    okTextEl.textContent = composed;
+    viberLink.href = viberUrl;
 
     form.classList.add("hidden");
     okEl.classList.remove("hidden");
+  });
+
+  copyBtn.addEventListener("click", async () => {
+    const txt = okTextEl.textContent ?? "";
+    try {
+      await navigator.clipboard.writeText(txt);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = txt;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    copyIcon.classList.add("hidden");
+    checkIcon.classList.remove("hidden");
+    copyLabel.textContent = "Αντιγράφηκε!";
+    setTimeout(() => {
+      copyIcon.classList.remove("hidden");
+      checkIcon.classList.add("hidden");
+      copyLabel.textContent = "Αντιγραφή μηνύματος";
+    }, 2000);
   });
 </script>
