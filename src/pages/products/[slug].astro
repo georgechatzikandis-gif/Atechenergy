@@ -38,10 +38,10 @@ const description = product.longDesc ?? product.desc;
 
     <section class="bg-gradient-to-b from-white to-ice-100/40 py-16 sm:py-20">
       <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div class={`overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card${product.slug === "ev-chargers" ? " aspect-[9/16]" : ""}`} data-reveal>
+        <div class="overflow-hidden rounded-[2rem] border border-navy-900/8 bg-white shadow-card" data-reveal>
           {
             (product.heroPhoto ?? product.photo) ? (
-              <Image src={product.heroPhoto ?? product.photo!} alt={product.name} width={600} height={product.slug === "ev-chargers" ? 1067 : 450} class={product.slug === "ev-chargers" ? "h-full w-full object-cover" : "h-auto w-full object-cover"} />
+              <Image src={product.heroPhoto ?? product.photo!} alt={product.name} width={600} height={product.slug === "ev-chargers" ? 889 : 450} class="h-auto w-full object-cover" />
             ) : (
               <ProductArt kind={product.art!} class="h-56 w-auto" />
             )
