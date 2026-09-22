@@ -103,11 +103,11 @@ const restProducts = products.filter(
             data-reveal
             style={`transition-delay:${(i + 3) * 60}ms`}
           >
-            <div class={`relative overflow-hidden bg-gradient-to-br from-ice-100 to-white ${(p.slug === "ev-chargers" || p.slug === "pv-storage-batteries") ? "flex h-56 items-center justify-center" : "h-40"}`}>
+            <div class={`relative overflow-hidden bg-gradient-to-br from-ice-100 to-white ${p.slug === "ev-chargers" ? "aspect-[9/16]" : p.slug === "pv-storage-batteries" ? "flex h-56 items-center justify-center" : "h-40"}`}>
               {p.photo ? (
                 (p.slug === "ev-chargers" || p.slug === "pv-storage-batteries") ? (
                   <>
-                    <Image src={p.photo} alt={p.name} width={340} height={p.slug === "pv-storage-batteries" ? 374 : 504} class={`transition-transform duration-500 group-hover:scale-105 ${p.slug === "ev-chargers" ? "h-full w-full object-cover object-center" : "h-52 w-auto object-contain"}`} />
+                    <Image src={p.photo} alt={p.name} width={340} height={p.slug === "pv-storage-batteries" ? 374 : 604} class={`transition-transform duration-500 group-hover:scale-105 ${p.slug === "ev-chargers" ? "h-full w-full object-cover object-center" : "h-52 w-auto object-contain"}`} />
                     {p.slug === "pv-storage-batteries" && (
                       <div class="absolute bottom-2 right-2 max-w-[72px] overflow-hidden rounded-lg bg-white/90 px-2 py-1 shadow-sm backdrop-blur-sm">
                         <Image src={lvLogoBadge} alt="LithiumValley" width={80} height={44} class="h-5 w-full object-contain" />
