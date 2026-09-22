@@ -160,8 +160,18 @@ import antiGlare from "../../../assets/products/risen-anti-glare.png";
           </span>
           <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Διεθνείς Πιστοποιήσεις</h2>
         </div>
-        <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card aspect-[4/5]">
+        {/* Mobile: single portrait card */}
+        <div class="lg:hidden overflow-hidden rounded-2xl border border-navy-900/8 shadow-card aspect-[4/5]">
           <Image src={reliabilityImg} alt="Risen Hyper-ion Pro — Reliability & Certifications" width={1284} height={2020} class="w-full h-full object-cover object-top" />
+        </div>
+        {/* Desktop: two landscape cards side by side */}
+        <div class="hidden lg:grid grid-cols-2 gap-6">
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card aspect-[4/3]">
+            <Image src={reliabilityImg} alt="Risen Hyper-ion Pro — Reliability & Certifications" width={1284} height={2020} class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-navy-900/8 shadow-card aspect-[4/3]">
+            <Image src={reliabilityImg} alt="Risen Hyper-ion Pro — Reliability & Certifications" width={1284} height={2020} class="w-full h-full object-cover object-bottom" />
+          </div>
         </div>
       </div>
     </section>
