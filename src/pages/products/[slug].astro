@@ -51,7 +51,7 @@ const description = product.longDesc ?? product.desc;
         <div data-reveal>
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{product.tag}</p>
           <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">{product.name}</h1>
-          <p class="mt-5 text-lg leading-relaxed text-navy-900/82">{product.longDesc ?? product.desc}</p>
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">{product.longDesc ?? product.desc}</p>
 
           <div class="mt-8 flex flex-wrap gap-4">
             <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
@@ -92,7 +92,7 @@ const description = product.longDesc ?? product.desc;
                   <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
-                  <span class="text-lg leading-relaxed font-medium text-navy-900/92">{f}</span>
+                  <span class="text-lg leading-relaxed font-medium text-navy-900/92 xl:text-xl 2xl:text-2xl">{f}</span>
                 </li>
               ))}
             </ul>
@@ -109,12 +109,12 @@ const description = product.longDesc ?? product.desc;
             <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white">
               {product.specs.map((s, i) => (
                 <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
-                  <span class="text-lg text-navy-900/82">{s.label}</span>
-                  <span class="text-lg font-bold text-navy-900">{s.value}</span>
+                  <span class="text-lg text-navy-900/82 xl:text-xl 2xl:text-2xl">{s.label}</span>
+                  <span class="text-lg font-bold text-navy-900 xl:text-xl 2xl:text-2xl">{s.value}</span>
                 </div>
               ))}
             </div>
-            <p class="mt-4 text-base text-navy-900/75">
+            <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
               Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
             </p>
           </div>
