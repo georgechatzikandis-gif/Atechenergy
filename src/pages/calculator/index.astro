@@ -25,7 +25,7 @@ const description =
         <h1 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
           C&I Energy <span style="color:#00e5b4;">Calculator</span>
         </h1>
-        <p class="mt-5 text-base leading-relaxed sm:text-lg" style="color:rgba(255,255,255,0.6);">
+        <p class="mt-5 text-base leading-relaxed sm:text-lg xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.6);">
           Υπολογίστε ενδεικτικά το κατάλληλο φωτοβολταϊκό και σύστημα αποθήκευσης για supermarket,
           κρεοπωλεία, ψυκτικές αποθήκες και επιχειρήσεις με συνεχή φορτία ψύξης.
         </p>
@@ -43,7 +43,7 @@ const description =
       <div class="mx-auto max-w-2xl space-y-5">
 
         <h2 class="text-2xl font-extrabold text-white">Υπολογισμός συστήματος</h2>
-        <p class="text-base" style="color:rgba(255,255,255,0.45);">
+        <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);">
           Συμπληρώστε τα βασικά ενεργειακά στοιχεία. Τα αποτελέσματα ανανεώνονται άμεσα.
         </p>
 
@@ -148,15 +148,15 @@ const description =
             </summary>
             <div class="mt-4 space-y-4 pt-4" style="border-top:1px solid rgba(255,255,255,0.08);">
               <div>
-                <label class="clabel text-sm">Ηλιακή απόδοση (kWh/kWp/έτος)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg">Ηλιακή απόδοση (kWh/kWp/έτος)</label>
                 <input id="inp-yield" type="number" value="1500" class="cinput w-full" />
               </div>
               <div>
-                <label class="clabel text-sm">Κόστος ΦΒ (€/kWp)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg">Κόστος ΦΒ (€/kWp)</label>
                 <input id="inp-pv-cost" type="number" value="600" class="cinput w-full" />
               </div>
               <div>
-                <label class="clabel text-sm">Κόστος BESS (€/kWh)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg">Κόστος BESS (€/kWh)</label>
                 <input id="inp-bess-cost" type="number" value="350" class="cinput w-full" />
               </div>
             </div>
@@ -167,7 +167,7 @@ const description =
             Υπολογισμός Λύσης →
           </button>
 
-          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.3);">
+          <p class="text-sm leading-relaxed xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.3);">
             Ενδεικτικό εργαλείο αρχικής αξιολόγησης. Δεν αντικαθιστά τεχνική μελέτη,
             ανάλυση 15λέπτων μετρήσεων, στατική επάρκεια ή όρους σύνδεσης.
           </p>
@@ -178,12 +178,12 @@ const description =
 
           <!-- Main savings -->
           <div class="rounded-2xl p-6" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
-            <p class="text-base" style="color:rgba(255,255,255,0.5);">Εκτιμώμενο συνολικό ετήσιο όφελος</p>
+            <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.5);">Εκτιμώμενο συνολικό ετήσιο όφελος</p>
             <div class="mt-1 font-display font-extrabold text-white leading-none" style="font-size:2.8rem;">
               <span id="res-savings">—</span>
               <span class="text-2xl ml-1">€ / έτος</span>
             </div>
-            <p id="res-savings-pct" class="mt-2 text-base" style="color:rgba(255,255,255,0.45);"></p>
+            <p id="res-savings-pct" class="mt-2 text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);"></p>
           </div>
 
           <!-- 4 tiles -->
@@ -197,7 +197,7 @@ const description =
               <div class="rounded-2xl p-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
                 <div class="text-2xl mb-1">{t.icon}</div>
                 <div id={t.id} class="text-2xl font-extrabold text-white">—</div>
-                <div class="text-sm mt-0.5" style="color:rgba(255,255,255,0.45);">{t.label}</div>
+                <div class="text-sm mt-0.5 xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.45);">{t.label}</div>
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ const description =
     <section class="px-4 sm:px-6 pb-20">
       <div class="mx-auto max-w-2xl">
         <h2 class="text-2xl font-extrabold text-white mb-2">Διαθέσιμος εξοπλισμός BESS</h2>
-        <p class="text-base mb-6" style="color:rgba(255,255,255,0.45);">
+        <p class="text-base mb-6 xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);">
           Τα μοντέλα έχουν ενσωματωθεί στη μηχανή επιλογής του calculator με βάση χωρητικότητα και ονομαστική ισχύ.
         </p>
         <div id="bess-catalog" class="space-y-4"></div>
@@ -253,7 +253,7 @@ const description =
           <h2 class="text-2xl font-extrabold text-white leading-tight">
             Χρειάζεστε τεχνική<br />προμελέτη;
           </h2>
-          <p class="mt-3 text-base leading-relaxed" style="color:rgba(255,255,255,0.55);">
+          <p class="mt-3 text-base leading-relaxed xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.55);">
             Στείλτε τα στοιχεία του έργου και το αποτέλεσμα του calculator στην ομάδα της Alphatech.
           </p>
           <a href={withBase("#contact")}
