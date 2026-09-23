@@ -49,7 +49,7 @@ const description =
           <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
             Υβριδικό Microinverter 2000W
           </h1>
-          <p class="mt-5 text-lg leading-relaxed text-navy-900/82">
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
             Το κεντρικό στοιχείο ενός plug & play υβριδικού συστήματος αποθήκευσης. Παράγει, αποθηκεύει και εξοικονομεί ενέργεια — με εναλλαγή on/off-grid σε λιγότερο από 10ms για αδιάλειπτη παροχή ρεύματος.
           </p>
 
@@ -62,7 +62,7 @@ const description =
             ].map((s) => (
               <div class="rounded-2xl border border-navy-900/8 bg-white px-4 py-3 text-center shadow-card">
                 <p class="font-display text-2xl font-extrabold text-azure-600">{s.value}</p>
-                <p class="mt-0.5 text-sm font-semibold text-navy-900/78">{s.label}</p>
+                <p class="mt-0.5 text-sm font-semibold text-navy-900/78 xl:text-base 2xl:text-lg">{s.label}</p>
               </div>
             ))}
           </div>
@@ -74,7 +74,7 @@ const description =
               "2000W on-grid/off-grid + 150% overload για 2 δευτερόλεπτα",
               "IP67 · λειτουργία -40°C έως +65°C · WiFi & Bluetooth",
             ].map((f) => (
-              <li class="flex items-start gap-2.5 text-lg font-medium text-navy-900/88">
+              <li class="flex items-start gap-2.5 text-lg font-medium text-navy-900/88 xl:text-xl 2xl:text-2xl">
                 <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
@@ -114,30 +114,30 @@ const description =
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Max Solar Power,<br />Backup That Never Blinks
           </h2>
-          <p class="mt-4 text-lg leading-relaxed text-navy-900/82">
+          <p class="mt-4 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
             Έως 700W ανά πάνελ (2800W συνολικά) με 4 MPPT trackers για μέγιστη εκμετάλλευση κάθε ακτίνας φωτός. Η έξυπνη φόρτιση/εκφόρτιση μειώνει τους λογαριασμούς ρεύματος άμεσα.
           </p>
 
           <div class="mt-6 grid grid-cols-2 gap-4">
             <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
               <p class="font-display text-3xl font-extrabold text-azure-600">700W</p>
-              <p class="mt-1 text-base font-semibold text-navy-900/82">ανά πάνελ</p>
-              <p class="mt-1 text-base text-navy-900/76">Έως 2800W συνολικά (4 πάνελ)</p>
+              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl">ανά πάνελ</p>
+              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl">Έως 2800W συνολικά (4 πάνελ)</p>
             </div>
             <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
               <p class="font-display text-3xl font-extrabold text-azure-600">4× MPPT</p>
-              <p class="mt-1 text-base font-semibold text-navy-900/82">Ανεξάρτητοι trackers</p>
-              <p class="mt-1 text-base text-navy-900/76">Εξάγει περισσότερη ενέργεια</p>
+              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl">Ανεξάρτητοι trackers</p>
+              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl">Εξάγει περισσότερη ενέργεια</p>
             </div>
           </div>
 
           <div class="mt-5 rounded-2xl border border-navy-900/8 bg-ice-100/60 p-5">
             <p class="text-sm font-bold text-navy-900">Power When You Need It Most</p>
-            <p class="mt-1.5 text-lg leading-relaxed text-navy-900/82">
+            <p class="mt-1.5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
               2000W on/off-grid + 150% overload (2s) = zero surge anxiety.<br />
               Smart Charge/Discharge · On/Off-Grid Ready · 150% Overload
             </p>
-            <p class="mt-2 text-base text-navy-900/75">
+            <p class="mt-2 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
               * Η έξοδος μπορεί να περιορίζεται από τοπικούς κανονισμούς — π.χ. 800W για Γερμανία.
             </p>
           </div>
@@ -176,7 +176,7 @@ const description =
             <div class="rounded-2xl bg-white p-7 shadow-card">
               <span class="text-3xl" aria-hidden="true">{c.icon}</span>
               <h3 class="mt-4 font-display text-lg font-bold text-navy-900">{c.title}</h3>
-              <p class="mt-2 text-lg leading-relaxed text-navy-900/82">{c.desc}</p>
+              <p class="mt-2 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -215,7 +215,7 @@ const description =
               <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <span class="text-lg leading-relaxed font-medium text-navy-900/92">{f}</span>
+              <span class="text-lg leading-relaxed font-medium text-navy-900/92 xl:text-xl 2xl:text-2xl">{f}</span>
             </li>
           ))}
         </ul>
@@ -243,12 +243,12 @@ const description =
             { label: "Βάρος", value: "8 kg" },
           ].map((s, i) => (
             <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
-              <span class="text-lg text-navy-900/82">{s.label}</span>
-              <span class="text-lg font-bold text-navy-900 text-right">{s.value}</span>
+              <span class="text-lg text-navy-900/82 xl:text-xl 2xl:text-2xl">{s.label}</span>
+              <span class="text-lg font-bold text-navy-900 text-right xl:text-xl 2xl:text-2xl">{s.value}</span>
             </div>
           ))}
         </div>
-        <p class="mt-4 text-base text-navy-900/75">
+        <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
           Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
         </p>
       </div>
