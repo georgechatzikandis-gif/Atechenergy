@@ -109,7 +109,7 @@ const models = [
               "3 διαμορφώσεις: 48-cell, 54-cell, 66-cell",
               "25 χρόνια εμπειρίας Suntech — αξιόπιστος κατασκευαστής",
             ].map((f) => (
-              <li class="flex items-start gap-2.5 text-base font-medium text-navy-900/88">
+              <li class="flex items-start gap-2.5 text-lg font-medium text-navy-900/88">
                 <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
@@ -141,7 +141,7 @@ const models = [
             <span class="h-px w-12 bg-gradient-to-l from-transparent to-azure-300/60"></span>
           </span>
           <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">48-cell | 54-cell | 66-cell</h2>
-          <p class="mx-auto mt-3 max-w-xl text-base text-navy-900/80">Μία σειρά, τρεις επιλογές — από compact οικιακές στέγες έως εμπορικές εγκαταστάσεις μεγάλης κλίμακας.</p>
+          <p class="mx-auto mt-3 max-w-xl text-lg text-navy-900/80">Μία σειρά, τρεις επιλογές — από compact οικιακές στέγες έως εμπορικές εγκαταστάσεις μεγάλης κλίμακας.</p>
         </div>
         <div class="grid gap-6 sm:grid-cols-3">
           {[
@@ -151,11 +151,11 @@ const models = [
           ].map((c) => (
             <div class={`rounded-2xl p-7 ${c.accent ? "border-2 border-azure-500/30 bg-gradient-to-br from-navy-950 to-navy-800 text-white shadow-[0_8px_32px_-8px_rgba(47,127,224,0.35)]" : "border border-navy-900/8 bg-ice-100/50"}`}>
               <p class={`text-2xl font-extrabold font-display ${c.accent ? "text-azure-300" : "text-azure-600"}`}>{c.cells}</p>
-              <p class={`mt-1 text-sm font-bold tracking-wide ${c.accent ? "text-white/60" : "text-navy-900/78"}`}>{c.sub}</p>
-              <p class={`mt-4 text-base leading-relaxed ${c.accent ? "text-white/70" : "text-navy-900/82"}`}>{c.desc}</p>
+              <p class={`mt-1 text-base font-bold tracking-wide ${c.accent ? "text-white/60" : "text-navy-900/78"}`}>{c.sub}</p>
+              <p class={`mt-4 text-lg leading-relaxed ${c.accent ? "text-white/70" : "text-navy-900/82"}`}>{c.desc}</p>
               <ul class="mt-4 space-y-2">
                 {c.use.map((u) => (
-                  <li class={`flex items-center gap-2 text-sm font-semibold ${c.accent ? "text-azure-200" : "text-navy-900/86"}`}>
+                  <li class={`flex items-center gap-2 text-base font-semibold ${c.accent ? "text-azure-200" : "text-navy-900/86"}`}>
                     <span class={`h-1.5 w-1.5 rounded-full shrink-0 ${c.accent ? "bg-azure-400" : "bg-azure-500"}`}></span>
                     {u}
                   </li>
@@ -192,7 +192,7 @@ const models = [
                 <svg class="h-5 w-5 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={f.icon} />
               </div>
               <h3 class="font-display text-base font-bold text-navy-900">{f.title}</h3>
-              <p class="mt-2 text-base leading-relaxed text-navy-900/82">{f.desc}</p>
+              <p class="mt-2 text-lg leading-relaxed text-navy-900/82">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -253,7 +253,7 @@ const models = [
                 </div>
                 <div>
                   <h3 class="font-display text-xl font-extrabold text-navy-900">{group.group}</h3>
-                  <p class="text-sm font-semibold text-navy-900/78">{group.groupDesc}</p>
+                  <p class="text-base font-semibold text-navy-900/78">{group.groupDesc}</p>
                 </div>
               </div>
 
@@ -263,7 +263,7 @@ const models = [
                     <div class="border-b border-navy-900/8 bg-white px-6 py-4 flex items-center justify-between">
                       <div>
                         <p class="font-display text-base font-bold text-navy-900">{m.name}</p>
-                        <p class="text-sm text-navy-900/78">{m.type} · <span class="font-semibold text-azure-600">{m.power}</span></p>
+                        <p class="text-base text-navy-900/78">{m.type} · <span class="font-semibold text-azure-600">{m.power}</span></p>
                       </div>
                     </div>
                     <div class="grid gap-0 sm:grid-cols-2">
