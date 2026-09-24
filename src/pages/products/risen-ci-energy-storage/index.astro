@@ -14,7 +14,6 @@ import storageContainers from "../../../assets/products/bess-risen-syl.jpg";
 import bessReliable from "../../../assets/products/risen-bess-syl-reliable.webp";
 import productSU5016 from "../../../assets/hero/risen-etron-5mwh-ess.jpg";
 import etronDatasheetP1 from "../../../assets/products/risen-etron-5mwh-datasheet-p1.png";
-import etronDatasheetP2 from "../../../assets/products/risen-etron-5mwh-datasheet-p2.png";
 
 const title = "C&I Αποθήκευση Ενέργειας Risen Energy | Alphatech Energy";
 const description =
@@ -396,14 +395,14 @@ const description =
                 Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
               </p>
               <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                {[etronDatasheetP1, etronDatasheetP2].map((img, i) => (
+                {[etronDatasheetP1, productSU5016].map((img, i) => (
                   <a
                     href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
                     target="_blank"
                     rel="noopener"
                     class="group overflow-hidden rounded-2xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
                   >
-                    <Image src={img} alt={`Risen eTron 5MWh ESS Datasheet σελίδα ${i + 1}`} width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                    <Image src={img} alt={i === 0 ? "Risen eTron 5MWh ESS Datasheet σελίδα 1" : "Risen Energy SU5016U2500KC eTron 5MWh Liquid-Cooled ESS"} width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
                   </a>
                 ))}
               </div>
