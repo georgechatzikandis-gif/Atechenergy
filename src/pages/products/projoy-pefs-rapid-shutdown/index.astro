@@ -454,6 +454,32 @@ const controlBoxModels = [
       </div>
     </section>
 
+    {/* ── Datasheets ── */}
+    <section class="bg-white py-16 sm:py-20">
+      <div class="container-page" data-reveal>
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl text-center">
+          Τεχνικά Φυλλάδια
+        </h2>
+        <div class="mt-8 mx-auto max-w-xl flex flex-col gap-3">
+          {[
+            { label: "Projoy Panel-RSD Metal — Datasheet 2026", file: "Projoy-Panel-RSD-Metal-V2026.pdf" },
+            { label: "PEFS-PL Series — Rapid Shutdown Module Level", file: "Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf" },
+            { label: "PEFS-EL Series — Firefighter Safety Switch", file: "Projoy-Firefighter-Safety-Switch.pdf" },
+          ].map((d) => (
+            <a
+              href={withBase(`downloads/${d.file}`)}
+              target="_blank"
+              rel="noopener"
+              class="flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-5 py-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+            >
+              <svg class="h-8 w-8 shrink-0 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              <span class="text-sm font-semibold text-navy-900">{d.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* ── Datasheet Preview ── */}
     <section id="datasheets" class="bg-ice-50/60 py-16 sm:py-20">
       <div class="container-page">
@@ -497,32 +523,6 @@ const controlBoxModels = [
           {[firefighterDatasheetP1, firefighterDatasheetP2].map((img, i) => (
             <a href={withBase("downloads/Projoy-Firefighter-Safety-Switch.pdf")} target="_blank" rel="noopener" class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
               <Image src={img} alt={`Projoy PEFS-EL Firefighter Safety Switch Datasheet σελίδα ${i + 1}`} width={2977} height={2020} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* ── Datasheets ── */}
-    <section class="bg-white py-16 sm:py-20">
-      <div class="container-page" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl text-center">
-          Τεχνικά Φυλλάδια
-        </h2>
-        <div class="mt-8 mx-auto max-w-xl flex flex-col gap-3">
-          {[
-            { label: "Projoy Panel-RSD Metal — Datasheet 2026", file: "Projoy-Panel-RSD-Metal-V2026.pdf" },
-            { label: "PEFS-PL Series — Rapid Shutdown Module Level", file: "Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf" },
-            { label: "PEFS-EL Series — Firefighter Safety Switch", file: "Projoy-Firefighter-Safety-Switch.pdf" },
-          ].map((d) => (
-            <a
-              href={withBase(`downloads/${d.file}`)}
-              target="_blank"
-              rel="noopener"
-              class="flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-5 py-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
-            >
-              <svg class="h-8 w-8 shrink-0 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-              <span class="text-sm font-semibold text-navy-900">{d.label}</span>
             </a>
           ))}
         </div>
