@@ -6,6 +6,8 @@ import Footer from "../../../components/Footer.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 import { withBase } from "../../../lib/paths";
 import heroImg from "../../../assets/hero/projoy-pefs-combiner.jpg";
+import rapidShutdownCatImg from "../../../assets/products/projoy-rapid-shutdown-crop.jpg";
+import firefighterCatImg from "../../../assets/products/projoy-combiner-crop.jpg";
 import datasheetP1 from "../../../assets/products/projoy-rsd-datasheet-p1.jpg";
 import datasheetP2 from "../../../assets/products/projoy-rsd-datasheet-p2.jpg";
 import datasheetP3 from "../../../assets/products/projoy-rsd-datasheet-p3.jpg";
@@ -142,6 +144,46 @@ const controlBoxModels = [
               Δες τα Datasheets
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Product Category Buttons ── */}
+    <section class="bg-ice-50/60 py-12 sm:py-14">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center mb-8" data-reveal>
+          <span class="eyebrow">Κατηγορίες Προϊόντος</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+            Επιλέξτε Σειρά PEFS
+          </h2>
+        </div>
+        <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2" data-reveal>
+          <a
+            href={withBase("downloads/Projoy-Panel-RSD-Metal-V2026.pdf")}
+            target="_blank"
+            rel="noopener"
+            class="group overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <div class="aspect-[4/3] overflow-hidden bg-white">
+              <Image src={rapidShutdownCatImg} alt="Rapid Shutdown (Module Level)" width={750} height={530} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <div class="p-5 text-center">
+              <p class="font-display text-lg font-bold text-navy-900">Rapid Shutdown (Module Level)</p>
+            </div>
+          </a>
+          <a
+            href={withBase("downloads/Projoy-Firefighter-Safety-Switch.pdf")}
+            target="_blank"
+            rel="noopener"
+            class="group overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <div class="aspect-[4/3] overflow-hidden bg-white">
+              <Image src={firefighterCatImg} alt="Firefighter Safety Switch (String-level RSD)" width={710} height={520} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <div class="p-5 text-center">
+              <p class="font-display text-lg font-bold text-navy-900">Firefighter Safety Switch (String-level RSD)</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
