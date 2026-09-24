@@ -394,17 +394,15 @@ const description =
               <p class="mt-5 text-lg leading-relaxed text-white/55 xl:text-xl 2xl:text-2xl">
                 Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
               </p>
-              <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                {[etronDatasheetP1, productSU5016].map((img, i) => (
-                  <a
-                    href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
-                    target="_blank"
-                    rel="noopener"
-                    class="group overflow-hidden rounded-2xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
-                  >
-                    <Image src={img} alt={i === 0 ? "Risen eTron 5MWh ESS Datasheet σελίδα 1" : "Risen Energy SU5016U2500KC eTron 5MWh Liquid-Cooled ESS"} width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
-                  </a>
-                ))}
+              <div class="mt-6">
+                <a
+                  href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
+                  target="_blank"
+                  rel="noopener"
+                  class="group mx-auto block max-w-sm overflow-hidden rounded-2xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
+                >
+                  <Image src={etronDatasheetP1} alt="Risen eTron 5MWh ESS Datasheet σελίδα 1" width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                </a>
               </div>
               <div class="mt-6 flex justify-center">
                 <a
