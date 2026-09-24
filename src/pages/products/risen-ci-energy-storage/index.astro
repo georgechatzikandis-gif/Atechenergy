@@ -364,22 +364,24 @@ const description =
         <div class="flex flex-col gap-8">
           {/* SU5016U2500KC */}
           <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 overflow-hidden">
-            <div class="bg-white/5">
-              <Image
-                src={productSU5016}
-                alt="Risen Energy SU5016U2500KC eTron 5MWh Liquid-Cooled ESS"
-                width={700}
-                height={950}
-                class="mx-auto h-auto w-full max-w-md object-contain"
-              />
-              <a
-                href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
-                target="_blank"
-                rel="noopener"
-                class="group mx-auto mt-4 block max-w-md overflow-hidden rounded-xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
-              >
-                <Image src={etronDatasheetP2} alt="Risen eTron 5MWh ESS — Technical Specification" width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
-              </a>
+            <div class="bg-white/5 p-4 sm:p-6">
+              <div class="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2 sm:items-start">
+                <Image
+                  src={productSU5016}
+                  alt="Risen Energy SU5016U2500KC eTron 5MWh Liquid-Cooled ESS"
+                  width={700}
+                  height={950}
+                  class="h-auto w-full rounded-xl object-contain"
+                />
+                <a
+                  href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
+                  target="_blank"
+                  rel="noopener"
+                  class="group block overflow-hidden rounded-xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
+                >
+                  <Image src={etronDatasheetP2} alt="Risen eTron 5MWh ESS — Technical Specification" width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                </a>
+              </div>
             </div>
             <div class="p-6">
               <h3 class="font-display text-xl font-bold text-white">SU5016U2500KC</h3>
