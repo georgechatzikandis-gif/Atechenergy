@@ -12,6 +12,10 @@ import datasheetP1 from "../../../assets/products/projoy-rsd-datasheet-p1.jpg";
 import datasheetP2 from "../../../assets/products/projoy-rsd-datasheet-p2.jpg";
 import datasheetP3 from "../../../assets/products/projoy-rsd-datasheet-p3.jpg";
 import datasheetP4 from "../../../assets/products/projoy-rsd-datasheet-p4.jpg";
+import rsdModuleDatasheetP1 from "../../../assets/products/projoy-rsd-module-datasheet-p1.png";
+import rsdModuleDatasheetP2 from "../../../assets/products/projoy-rsd-module-datasheet-p2.png";
+import firefighterDatasheetP1 from "../../../assets/products/projoy-firefighter-datasheet-p1.png";
+import firefighterDatasheetP2 from "../../../assets/products/projoy-firefighter-datasheet-p2.png";
 
 const title = "Projoy PEFS Series — Rapid Shutdown PV | Alphatech Energy";
 const description =
@@ -159,7 +163,7 @@ const controlBoxModels = [
         </div>
         <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2" data-reveal>
           <a
-            href={withBase("downloads/Projoy-Panel-RSD-Metal-V2026.pdf")}
+            href={withBase("downloads/Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf")}
             target="_blank"
             rel="noopener"
             class="group overflow-hidden rounded-2xl border border-navy-900/10 bg-white shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
@@ -466,6 +470,36 @@ const controlBoxModels = [
             </a>
           ))}
         </div>
+
+        {/* PEFS-PL Series — Rapid Shutdown Module Level */}
+        <div class="mx-auto max-w-2xl text-center mt-16 mb-10" data-reveal>
+          <span class="eyebrow">PEFS-PL Series</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+            Rapid Shutdown — Module Level Datasheet
+          </h2>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2" data-reveal>
+          {[rsdModuleDatasheetP1, rsdModuleDatasheetP2].map((img, i) => (
+            <a href={withBase("downloads/Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf")} target="_blank" rel="noopener" class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
+              <Image src={img} alt={`Projoy PEFS-PL Rapid Shutdown Module Level Datasheet σελίδα ${i + 1}`} width={2977} height={2020} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+            </a>
+          ))}
+        </div>
+
+        {/* PEFS-EL Series — Firefighter Safety Switch */}
+        <div class="mx-auto max-w-2xl text-center mt-16 mb-10" data-reveal>
+          <span class="eyebrow">PEFS-EL Series</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+            Firefighter Safety Switch Datasheet
+          </h2>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2" data-reveal>
+          {[firefighterDatasheetP1, firefighterDatasheetP2].map((img, i) => (
+            <a href={withBase("downloads/Projoy-Firefighter-Safety-Switch.pdf")} target="_blank" rel="noopener" class="group overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-sm transition hover:shadow-md">
+              <Image src={img} alt={`Projoy PEFS-EL Firefighter Safety Switch Datasheet σελίδα ${i + 1}`} width={2977} height={2020} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -478,6 +512,8 @@ const controlBoxModels = [
         <div class="mt-8 mx-auto max-w-xl flex flex-col gap-3">
           {[
             { label: "Projoy Panel-RSD Metal — Datasheet 2026", file: "Projoy-Panel-RSD-Metal-V2026.pdf" },
+            { label: "PEFS-PL Series — Rapid Shutdown Module Level", file: "Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf" },
+            { label: "PEFS-EL Series — Firefighter Safety Switch", file: "Projoy-Firefighter-Safety-Switch.pdf" },
           ].map((d) => (
             <a
               href={withBase(`downloads/${d.file}`)}
