@@ -13,6 +13,8 @@ import groundSolar from "../../../assets/products/ci-ground-solar.jpg";
 import storageContainers from "../../../assets/products/bess-risen-syl.jpg";
 import bessReliable from "../../../assets/products/risen-bess-syl-reliable.webp";
 import productSU5016 from "../../../assets/hero/risen-etron-5mwh-ess.jpg";
+import etronDatasheetP1 from "../../../assets/products/risen-etron-5mwh-datasheet-p1.png";
+import etronDatasheetP2 from "../../../assets/products/risen-etron-5mwh-datasheet-p2.png";
 
 const title = "C&I Αποθήκευση Ενέργειας Risen Energy | Alphatech Energy";
 const description =
@@ -393,16 +395,17 @@ const description =
               <p class="mt-5 text-lg leading-relaxed text-white/55 xl:text-xl 2xl:text-2xl">
                 Ολοκληρωμένο σύστημα αποθήκευσης για βιομηχανικές εφαρμογές με ενσωματωμένα συστήματα ασφαλείας πολλαπλών επιπέδων, έξυπνη διαχείριση και δυνατότητα γρήγορης ανάπτυξης.
               </p>
-              <div class="mt-6 flex justify-center">
-                <a
-                  href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
-                  target="_blank"
-                  rel="noopener"
-                  class="inline-flex w-full max-w-md items-center justify-center gap-3 rounded-2xl bg-azure-600 px-8 py-5 text-base font-bold text-white shadow-lg shadow-azure-600/30 transition hover:bg-azure-700 hover:shadow-azure-600/40"
-                >
-                  <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-                  Κατάλογος
-                </a>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                {[etronDatasheetP1, etronDatasheetP2].map((img, i) => (
+                  <a
+                    href={withBase("downloads/Risen-eTron-5MWh-Liquid-Cooled-ESS-SU5016U2500KC.pdf")}
+                    target="_blank"
+                    rel="noopener"
+                    class="group overflow-hidden rounded-2xl ring-1 ring-white/10 bg-white transition hover:ring-azure-400/60"
+                  >
+                    <Image src={img} alt={`Risen eTron 5MWh ESS Datasheet σελίδα ${i + 1}`} width={745} height={1010} class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
