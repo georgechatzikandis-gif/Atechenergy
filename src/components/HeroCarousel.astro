@@ -331,9 +331,11 @@ const slides = [
       dragging = false;
       dragStartX = null;
       dragStartY = null;
+      const target = e.target as HTMLElement;
+      const isControl = target.closest("[data-prev],[data-next],[data-dot]");
       if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
         goTo(current + (deltaX < 0 ? 1 : -1));
-      } else if (Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8) {
+      } else if (!isControl && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8) {
         const href = slideEls[current]?.getAttribute("data-href");
         if (href) window.location.href = href;
       }
