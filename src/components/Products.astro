@@ -136,18 +136,18 @@ const restProducts = products.filter(
               )}
             </div>
             <div class="p-8 pt-6">
-              <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">{p.tag}</p>
+              <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase" data-i18n={`productData.${p.slug}.tag`}>{p.tag}</p>
               {p.slug === "pv-storage-batteries" && (
                 <img src={lvLogoUrl} alt="Lithium Valley" class="mt-2 h-5 w-auto opacity-90" />
               )}
               {p.slug === "firefighter-safety-switch" && (
                 <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/86 uppercase" data-i18n="productsGrid.firefighter.badge">PROJOY</p>
               )}
-              {p.distributor && <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/86 uppercase">{p.distributor}</p>}
-              <h3 class="mt-3 font-display text-xl font-bold text-navy-900">{p.name}</h3>
+              {p.distributor && <p class="mt-1.5 text-[11px] font-extrabold tracking-[0.12em] text-navy-900/86 uppercase" data-i18n={`productData.${p.slug}.distributor`}>{p.distributor}</p>}
+              <h3 class="mt-3 font-display text-xl font-bold text-navy-900" data-i18n={`productData.${p.slug}.name`}>{p.name}</h3>
               {p.slug === "firefighter-safety-switch" && (
                 <>
-                  <p class="mt-2 text-base leading-relaxed text-navy-900/78 xl:text-lg 2xl:text-xl">{p.desc}</p>
+                  <p class="mt-2 text-base leading-relaxed text-navy-900/78 xl:text-lg 2xl:text-xl" data-i18n={`productData.${p.slug}.desc`}>{p.desc}</p>
                   <div class="mt-3 flex flex-wrap gap-1.5">
                     {[
                       { key: "certNec", label: "NEC 2017/2020" },
