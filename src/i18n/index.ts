@@ -12,6 +12,7 @@ import { dict as hybridMicroinverter2000w } from "./pages/hybrid-microinverter-2
 import { dict as slugTemplate } from "./pages/slug-template";
 import { dict as productsListing } from "./pages/products-listing";
 import { dict as calculator } from "./pages/calculator";
+import { dict as productData } from "./pages/product-data";
 
 const pageDicts: Record<Lang, Dict>[] = [
   homeExtra,
@@ -26,6 +27,7 @@ const pageDicts: Record<Lang, Dict>[] = [
   slugTemplate,
   productsListing,
   calculator,
+  productData,
 ];
 
 const langs: Lang[] = ["el", "en", "de", "fr", "es", "it"];

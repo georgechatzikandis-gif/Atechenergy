@@ -24,7 +24,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
   </svg>
 
   {/* Tooltip */}
-  <span class="pointer-events-none absolute right-16 whitespace-nowrap rounded-lg bg-[#7360f2] px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
+  <span class="pointer-events-none absolute right-16 whitespace-nowrap rounded-lg bg-[#7360f2] px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100" data-i18n="chat.tooltip">
     Στείλτε μήνυμα
   </span>
 </button>
@@ -47,7 +47,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
       <p class="text-sm font-semibold text-white">Alphatech Energy</p>
       <p class="flex items-center gap-1.5 text-[11px] text-white/75">
         <span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>
-        Συνήθως απαντάμε σύντομα
+        <span data-i18n="chat.status">Συνήθως απαντάμε σύντομα</span>
       </p>
     </div>
   </div>
@@ -59,7 +59,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
       <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#7360f2] text-[10px] font-bold text-white">
         AE
       </div>
-      <div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-white/10 px-3 py-2 text-sm leading-relaxed text-white/90">
+      <div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-white/10 px-3 py-2 text-sm leading-relaxed text-white/90" data-i18n="chat.greeting">
         Γεια σας! 👋 Πώς μπορούμε να σας βοηθήσουμε;
       </div>
     </div>
@@ -74,6 +74,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         required
         autocomplete="name"
         class="mb-2 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-white/35 focus:border-[#7360f2] focus:ring-1 focus:ring-[#7360f2]"
+        data-i18n-ph="chat.name.ph"
       />
       <textarea
         name="message"
@@ -82,6 +83,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         rows="3"
         required
         class="mb-3 w-full resize-none rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-white/35 focus:border-[#7360f2] focus:ring-1 focus:ring-[#7360f2]"
+        data-i18n-ph="chat.msg.ph"
       ></textarea>
       <button
         type="submit"
@@ -91,9 +93,9 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
           <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
         </svg>
-        <span id="chat-submit-label">Αποστολή</span>
+        <span id="chat-submit-label" data-i18n="chat.submit">Αποστολή</span>
       </button>
-      <p id="chat-err" class="mt-2 hidden text-center text-xs text-red-400">
+      <p id="chat-err" class="mt-2 hidden text-center text-xs text-red-400" data-i18n="chat.error">
         Κάτι πήγε στραβά. Δοκιμάστε ξανά αργότερα.
       </p>
     </form>
@@ -104,7 +106,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         <div class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#7360f2] text-[10px] font-bold text-white">
           AE
         </div>
-        <div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-white/10 px-3 py-2 text-sm leading-relaxed text-white/90">
+        <div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-white/10 px-3 py-2 text-sm leading-relaxed text-white/90" data-i18n="chat.copyPrompt">
           Αντιγράψτε το παρακάτω μήνυμα και στείλτε το στο Viber! 👇
         </div>
       </div>
@@ -117,7 +119,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         >
           <svg id="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           <svg id="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 hidden text-green-400" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span id="copy-label">Αντιγραφή μηνύματος</span>
+          <span id="copy-label" data-i18n="chat.copyLabel">Αντιγραφή μηνύματος</span>
         </button>
       </div>
       <a
@@ -128,7 +130,7 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
         class="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#9b59b6] to-[#7360f2] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M11.4 2C6.2 2 2 6 2 11c0 2.7 1.2 5.2 3.2 7l-.8 2.8 2.9-.7C8.7 21 10 21.4 11.4 21.4 16.6 21.4 21 17.4 21 12.2 21 6.9 16.7 2 11.4 2z"/></svg>
-        Άνοιγμα Viber
+        <span data-i18n="chat.openViber">Άνοιγμα Viber</span>
       </a>
     </div>
   </div>
@@ -227,7 +229,8 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     const msg  = msgEl.value.trim();
     if (!name || !msg) return;
 
-    const composed = `Από: ${name}\n${msg}`;
+    const t = (window as any).__i18nT || ((k: string) => k);
+    const composed = `${t("chat.from")}: ${name}\n${msg}`;
     const text = encodeURIComponent(composed);
     const viberUrl = `viber://chat?number=%2B306976724504&text=${text}`;
 
@@ -254,11 +257,12 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     }
     copyIcon.classList.add("hidden");
     checkIcon.classList.remove("hidden");
-    copyLabel.textContent = "Αντιγράφηκε!";
+    const t = (window as any).__i18nT || ((k: string) => k);
+    copyLabel.textContent = t("chat.copied");
     setTimeout(() => {
       copyIcon.classList.remove("hidden");
       checkIcon.classList.add("hidden");
-      copyLabel.textContent = "Αντιγραφή μηνύματος";
+      copyLabel.textContent = t("chat.copyLabel");
     }, 2000);
   });
 </script>

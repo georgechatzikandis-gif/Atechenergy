@@ -229,22 +229,22 @@ const description =
         <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
           {[
             { label: "Μοντέλο", value: "TSOL-MH2000" },
-            { label: "Ισχύς Εισόδου PV", value: "400~700+ Wp ανά πάνελ" },
-            { label: "Αριθμός Πάνελ", value: "1 έως 4" },
+            { label: "Ισχύς Εισόδου PV", value: "400~700+ Wp ανά πάνελ", vKey: "microinverter.specs.row1.value" },
+            { label: "Αριθμός Πάνελ", value: "1 έως 4", vKey: "microinverter.specs.row2.value" },
             { label: "Max Ισχύς Φόρτισης/Εκφόρτισης", value: "2000W" },
-            { label: "Max Ισχύς AC On-grid", value: "2000W (ή 800W ανά χώρα)" },
+            { label: "Max Ισχύς AC On-grid", value: "2000W (ή 800W ανά χώρα)", vKey: "microinverter.specs.row4.value" },
             { label: "Max Ισχύς AC Off-grid", value: "2000W" },
             { label: "Overload", value: "150% (2s)" },
             { label: "Εναλλαγή On/Off-grid", value: "<10ms" },
             { label: "Βαθμός Προστασίας", value: "IP67" },
-            { label: "Θερμοκρασία Λειτουργίας", value: "-40°C έως +65°C" },
+            { label: "Θερμοκρασία Λειτουργίας", value: "-40°C έως +65°C", vKey: "microinverter.specs.row9.value" },
             { label: "Συνδεσιμότητα", value: "WiFi, Bluetooth, RS485" },
             { label: "Διαστάσεις (ΠxΥxΒ mm)", value: "360 × 320 × 51" },
             { label: "Βάρος", value: "8 kg" },
           ].map((s, i) => (
             <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
               <span class="text-lg text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n={`microinverter.specs.row${i}.label`}>{s.label}</span>
-              <span class="text-lg font-bold text-navy-900 text-right xl:text-xl 2xl:text-2xl">{s.value}</span>
+              <span class="text-lg font-bold text-navy-900 text-right xl:text-xl 2xl:text-2xl" data-i18n={s.vKey}>{s.value}</span>
             </div>
           ))}
         </div>
