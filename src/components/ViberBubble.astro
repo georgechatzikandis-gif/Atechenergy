@@ -223,7 +223,34 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     }
   });
 
-  form.addEventListener("submit", (e) => {
+  const copyToClipboard = async (txt: string) => {
+    try {
+      await navigator.clipboard.writeText(txt);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = txt;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+  };
+
+  const showCopiedState = () => {
+    copyIcon.classList.add("hidden");
+    checkIcon.classList.remove("hidden");
+    const t = (window as any).__i18nT || ((k: string) => k);
+    copyLabel.textContent = t("chat.copied");
+    setTimeout(() => {
+      copyIcon.classList.remove("hidden");
+      checkIcon.classList.add("hidden");
+      copyLabel.textContent = t("chat.copyLabel");
+    }, 2000);
+  };
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = nameEl.value.trim();
     const msg  = msgEl.value.trim();
@@ -237,32 +264,17 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
     okTextEl.textContent = composed;
     viberLink.href = viberUrl;
 
+    // Auto-copy to clipboard so the message is ready to paste in Viber immediately.
+    await copyToClipboard(composed);
+    showCopiedState();
+
     form.classList.add("hidden");
     okEl.classList.remove("hidden");
   });
 
   copyBtn.addEventListener("click", async () => {
     const txt = okTextEl.textContent ?? "";
-    try {
-      await navigator.clipboard.writeText(txt);
-    } catch {
-      const ta = document.createElement("textarea");
-      ta.value = txt;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-    }
-    copyIcon.classList.add("hidden");
-    checkIcon.classList.remove("hidden");
-    const t = (window as any).__i18nT || ((k: string) => k);
-    copyLabel.textContent = t("chat.copied");
-    setTimeout(() => {
-      copyIcon.classList.remove("hidden");
-      checkIcon.classList.add("hidden");
-      copyLabel.textContent = t("chat.copyLabel");
-    }, 2000);
+    await copyToClipboard(txt);
+    showCopiedState();
   });
 </script>
