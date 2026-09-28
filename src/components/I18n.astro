@@ -22,11 +22,20 @@ const T = buildDictionary();
     document.querySelectorAll("[data-lang-btn]").forEach(function(btn) {
       btn.setAttribute("data-active", btn.getAttribute("data-lang-btn") === lang ? "true" : "false");
     });
+    window.__i18nLang = lang;
+    document.dispatchEvent(new CustomEvent("i18n:change", { detail: { lang: lang } }));
     try { localStorage.setItem("lang", lang); } catch(e) {}
   }
 
   var savedLang = "el";
   try { savedLang = localStorage.getItem("lang") || "el"; } catch(e) {}
+
+  window.__i18nDict = T;
+  window.__i18nLang = savedLang;
+  window.__i18nT = function(key) {
+    var dict = T[window.__i18nLang] || T.el;
+    return dict[key] !== undefined ? dict[key] : (T.el[key] !== undefined ? T.el[key] : key);
+  };
 
   document.addEventListener("DOMContentLoaded", function() {
     if (savedLang !== "el") applyLang(savedLang);
