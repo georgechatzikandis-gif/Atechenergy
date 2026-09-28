@@ -3,6 +3,7 @@ import type { Lang, Dict } from "../base";
 export const dict: Record<Lang, Dict> = {
   el: {
     "productData.pv-storage-batteries.name": "Μπαταρίες Αποθήκευσης",
+    "productData.hybrid-microinverter-2000w.name": "Υβριδικό Microinverter 2000W",
     "productData.pv-storage-batteries.desc":
       "Συστήματα αποθήκευσης ενέργειας για αυτονομία και βελτιστοποίηση της κατανάλωσης.",
     "productData.ev-chargers.name": "Φορτιστές EVE",
@@ -24,6 +25,7 @@ export const dict: Record<Lang, Dict> = {
   },
   en: {
     "productData.pv-storage-batteries.name": "Storage Batteries",
+    "productData.hybrid-microinverter-2000w.name": "Hybrid Microinverter 2000W",
     "productData.pv-storage-batteries.desc":
       "Energy storage systems for self-sufficiency and optimized consumption.",
     "productData.ev-chargers.name": "EVE Chargers",
@@ -45,6 +47,7 @@ export const dict: Record<Lang, Dict> = {
   },
   de: {
     "productData.pv-storage-batteries.name": "Speicherbatterien",
+    "productData.hybrid-microinverter-2000w.name": "Hybrid-Mikrowechselrichter 2000W",
     "productData.pv-storage-batteries.desc":
       "Energiespeichersysteme für Autarkie und optimierten Verbrauch.",
     "productData.ev-chargers.name": "EVE-Ladegeräte",
@@ -66,6 +69,7 @@ export const dict: Record<Lang, Dict> = {
   },
   fr: {
     "productData.pv-storage-batteries.name": "Batteries de Stockage",
+    "productData.hybrid-microinverter-2000w.name": "Micro-onduleur Hybride 2000W",
     "productData.pv-storage-batteries.desc":
       "Systèmes de stockage d'énergie pour l'autonomie et l'optimisation de la consommation.",
     "productData.ev-chargers.name": "Chargeurs EVE",
@@ -87,6 +91,7 @@ export const dict: Record<Lang, Dict> = {
   },
   es: {
     "productData.pv-storage-batteries.name": "Baterías de Almacenamiento",
+    "productData.hybrid-microinverter-2000w.name": "Microinversor Híbrido 2000W",
     "productData.pv-storage-batteries.desc":
       "Sistemas de almacenamiento de energía para la autonomía y la optimización del consumo.",
     "productData.ev-chargers.name": "Cargadores EVE",
@@ -108,6 +113,7 @@ export const dict: Record<Lang, Dict> = {
   },
   it: {
     "productData.pv-storage-batteries.name": "Batterie di Accumulo",
+    "productData.hybrid-microinverter-2000w.name": "Microinverter Ibrido 2000W",
     "productData.pv-storage-batteries.desc":
       "Sistemi di accumulo energetico per l'autonomia e l'ottimizzazione dei consumi.",
     "productData.ev-chargers.name": "Caricatori EVE",

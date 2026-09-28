@@ -9,6 +9,8 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.",
     "slugTemplate.cta.desc": "Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής.",
     "slugTemplate.cta.call": "Καλέστε μας",
+    "slugTemplate.cta.titlePrefix": "Ενδιαφέρεστε για",
+    "slugTemplate.cta.titleSuffix": ";",
   },
   en: {
     "slugTemplate.requestQuote": "Request a Quote",
@@ -18,6 +20,8 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Indicative data. For the complete technical datasheet, please contact us.",
     "slugTemplate.cta.desc": "Contact us for technical information, availability and a price quote.",
     "slugTemplate.cta.call": "Call Us",
+    "slugTemplate.cta.titlePrefix": "Interested in",
+    "slugTemplate.cta.titleSuffix": "?",
   },
   de: {
     "slugTemplate.requestQuote": "Angebot anfordern",
@@ -27,6 +31,8 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Unverbindliche Angaben. Für das vollständige technische Datenblatt kontaktieren Sie uns bitte.",
     "slugTemplate.cta.desc": "Kontaktieren Sie uns für technische Informationen, Verfügbarkeit und ein Preisangebot.",
     "slugTemplate.cta.call": "Rufen Sie uns an",
+    "slugTemplate.cta.titlePrefix": "Interesse an",
+    "slugTemplate.cta.titleSuffix": "?",
   },
   fr: {
     "slugTemplate.requestQuote": "Demander un Devis",
@@ -36,6 +42,8 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Données indicatives. Pour la fiche technique complète, contactez-nous.",
     "slugTemplate.cta.desc": "Contactez-nous pour des informations techniques, la disponibilité et un devis.",
     "slugTemplate.cta.call": "Appelez-Nous",
+    "slugTemplate.cta.titlePrefix": "Intéressé par",
+    "slugTemplate.cta.titleSuffix": " ?",
   },
   es: {
     "slugTemplate.requestQuote": "Solicitar Cotización",
@@ -45,6 +53,8 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Datos indicativos. Para la ficha técnica completa, contáctenos.",
     "slugTemplate.cta.desc": "Contáctenos para información técnica, disponibilidad y una cotización.",
     "slugTemplate.cta.call": "Llámenos",
+    "slugTemplate.cta.titlePrefix": "¿Interesado en",
+    "slugTemplate.cta.titleSuffix": "?",
   },
   it: {
     "slugTemplate.requestQuote": "Richiedi un Preventivo",
@@ -54,5 +64,7 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.specs.disclaimer": "Dati indicativi. Per la scheda tecnica completa, contattaci.",
     "slugTemplate.cta.desc": "Contattaci per informazioni tecniche, disponibilità e un preventivo.",
     "slugTemplate.cta.call": "Chiamaci",
+    "slugTemplate.cta.titlePrefix": "Interessato a",
+    "slugTemplate.cta.titleSuffix": "?",
   },
 };
