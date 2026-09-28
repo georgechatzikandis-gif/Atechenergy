@@ -18,6 +18,7 @@ const navLinks = [
 const langs = [
   { code: "el", label: "ΕΛ" },
   { code: "en", label: "EN" },
+  { code: "de", label: "DE" },
   { code: "fr", label: "FR" },
   { code: "es", label: "ES" },
   { code: "it", label: "IT" },
@@ -170,7 +171,7 @@ const langs = [
   const langDropdown = document.querySelector<HTMLDivElement>("[data-lang-dropdown]");
   const langLabel = document.querySelector<HTMLSpanElement>("[data-lang-label]");
 
-  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", fr: "FR", es: "ES", it: "IT" };
+  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", de: "DE", fr: "FR", es: "ES", it: "IT" };
 
   let dropOpen = false;
   const setDrop = (v: boolean) => {
