@@ -171,6 +171,91 @@ export const dict: Record<Lang, Dict> = {
     "lithiumValley.cta.desc":
       "Send us your energy needs and we'll recommend the right storage system, with a competitive price and technical support.",
   },
+  de: {
+    "lithiumValley.breadcrumb.current": "LithiumValley Heimspeicher",
+
+    "lithiumValley.hero.tag": "LithiumValley · Heimspeicher",
+    "lithiumValley.hero.h1": "Energiespeichersysteme für Zuhause",
+    "lithiumValley.hero.desc":
+      "Zuverlässige Energiespeicherung für Privathaushalte und kleine Unternehmen. LithiumValley-Batterien mit LiFePO₄-Technologie sorgen für Energieunabhängigkeit, lange Lebensdauer und sicheren Betrieb.",
+    "lithiumValley.hero.feat0": "LiFePO₄-Technologie — über 6.000 Ladezyklen",
+    "lithiumValley.hero.feat1": "Wandmontage & freistehende Modelle für jeden Raum",
+    "lithiumValley.hero.feat2": "Integriertes BMS — Lastschutz",
+    "lithiumValley.hero.feat3": "Kompatibel mit führenden Hybrid-Wechselrichtern",
+    "lithiumValley.hero.feat4": "Offizieller LithiumValley-Distributor in Griechenland",
+    "lithiumValley.hero.feat5": "Technischer Support & Garantie",
+    "lithiumValley.hero.btn1": "Angebot Anfordern",
+    "lithiumValley.hero.btn2": "Alle Produkte",
+    "lithiumValley.hero.btn3": "Datasheets Ansehen",
+
+    "lithiumValley.badge0.label": "Anerkennung",
+    "lithiumValley.badge0.value": "Offizieller, preisgekrönter Distributor",
+    "lithiumValley.badge1.label": "Garantie",
+    "lithiumValley.badge1.value": "10 Jahre Produktgarantie",
+    "lithiumValley.badge2.label": "Technologie",
+    "lithiumValley.badge2.value": "LiFePO₄ — über 6.000 Zyklen",
+
+    "lithiumValley.products.eyebrow": "Heimspeicher-Serie",
+    "lithiumValley.products.h2": "LithiumValley-Batterien",
+    "lithiumValley.products.desc":
+      "Finden Sie das ideale Speichersystem für Ihr Zuhause. Alle Modelle verfügen über LiFePO₄-Technologie und ein integriertes BMS.",
+    "lithiumValley.products.priceBtn": "Preis Anfragen",
+
+    "lithiumValley.residential0.name": "Wandbatterie",
+    "lithiumValley.residential0.feat0": "Kapazität von 5 kWh",
+    "lithiumValley.residential0.feat1": "LiFePO₄-Technologie",
+    "lithiumValley.residential0.feat2": "Wandinstallation (Wandmontage)",
+    "lithiumValley.residential0.feat3": "IP65-Schutz",
+    "lithiumValley.residential0.feat4": "Integriertes BMS",
+    "lithiumValley.residential0.feat5": "Modular — erweiterbar",
+
+    "lithiumValley.residential1.name": "LFP-Hausbatterie",
+    "lithiumValley.residential1.feat0": "Kapazität von 10 kWh",
+    "lithiumValley.residential1.feat1": "Freistehend auf Rollen (mobil)",
+    "lithiumValley.residential1.feat2": "LiFePO₄-Technologie",
+    "lithiumValley.residential1.feat3": "Hohe Energiedichte",
+    "lithiumValley.residential1.feat4": "Integriertes BMS",
+    "lithiumValley.residential1.feat5": "Einfach zu bewegen & installieren",
+
+    "lithiumValley.residential2.name": "LFP-Hausbatterie",
+    "lithiumValley.residential2.badge": "NEU",
+    "lithiumValley.residential2.feat0": "Kapazität von 16 kWh",
+    "lithiumValley.residential2.feat1": "Freistehend — Wandmontage-Design",
+    "lithiumValley.residential2.feat2": "LiFePO₄ der neuen Generation",
+    "lithiumValley.residential2.feat3": "Höhere Ladeeffizienz",
+    "lithiumValley.residential2.feat4": "Integriertes BMS",
+    "lithiumValley.residential2.feat5": "Erweiterbar in Reihe / parallel",
+
+    "lithiumValley.ci.eyebrow": "C&I-Speicher",
+    "lithiumValley.ci.h2": "LithiumValley C&I-Batterien",
+    "lithiumValley.ci.desc": "Komplette Speichersysteme für gewerbliche und industrielle Anwendungen.",
+
+    "lithiumValley.ciCard.eyebrow": "C&I-Schrank",
+    "lithiumValley.ciCard.name": "C&I-Energiespeicherschrank",
+    "lithiumValley.ciCard.tag0": "C&I-Skala",
+    "lithiumValley.ciCard.feat0": "Gewerbliche & industrielle Anwendungen",
+    "lithiumValley.ciCard.feat1": "LiFePO₄-Technologie",
+    "lithiumValley.ciCard.feat2": "Integriertes BMS",
+    "lithiumValley.ciCard.feat3": "Netzgekoppelt & Inselbetrieb",
+    "lithiumValley.ciCard.feat4": "Modular — skalierbares System",
+    "lithiumValley.ciCard.feat5": "Fernüberwachung & -verwaltung",
+    "lithiumValley.ciCard.priceBtn": "Preis Anfragen",
+
+    "lithiumValley.datasheets.eyebrow": "Technische Broschüren",
+    "lithiumValley.datasheets.h2": 'Datasheets <span class="text-azure-500">LithiumValley</span>',
+
+    "lithiumValley.downloadsList.eyebrow": "Technische Datenblätter",
+    "lithiumValley.downloadsList.h2": "Datenblätter Herunterladen",
+    "lithiumValley.downloadsList.item0.label": "Datenblatt W105A",
+    "lithiumValley.downloadsList.item1.label": "Datenblatt SC100A / SC114A CI BESS",
+    "lithiumValley.downloadsList.item2.label": "Datenblatt SC261L CI BESS",
+
+    "lithiumValley.cta.eyebrow": "Kontaktieren Sie uns",
+    "lithiumValley.cta.h2a": "Angebot Anfordern für",
+    "lithiumValley.cta.h2b": "LithiumValley-Batterien",
+    "lithiumValley.cta.desc":
+      "Teilen Sie uns Ihren Energiebedarf mit und wir empfehlen Ihnen das passende Speichersystem zu einem wettbewerbsfähigen Preis mit technischem Support.",
+  },
   fr: {
     "lithiumValley.breadcrumb.current": "Stockage Résidentiel LithiumValley",
 

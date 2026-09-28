@@ -74,6 +74,7 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
             {[
               { code: "el", label: "ΕΛ" },
               { code: "en", label: "EN" },
+              { code: "de", label: "DE" },
               { code: "fr", label: "FR" },
               { code: "es", label: "ES" },
               { code: "it", label: "IT" },
@@ -128,7 +129,7 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
 </section>
 
 <script>
-  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", fr: "FR", es: "ES", it: "IT" };
+  const langLabels: Record<string, string> = { el: "ΕΛ", en: "EN", de: "DE", fr: "FR", es: "ES", it: "IT" };
 
   const heroToggle = document.querySelector<HTMLButtonElement>("[data-hero-lang-toggle]");
   const heroDropdown = document.querySelector<HTMLDivElement>("[data-hero-lang-dropdown]");
