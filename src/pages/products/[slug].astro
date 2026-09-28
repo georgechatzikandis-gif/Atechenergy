@@ -105,7 +105,7 @@ const description = product.longDesc ?? product.desc;
       product.specs && (
         <section class="bg-ice-100/40 py-16 sm:py-20">
           <div class="container-page">
-            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl" data-i18n="slugTemplate.specs.h2">Τεχνικά Στοιχεία</h2>
             <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white">
               {product.specs.map((s, i) => (
                 <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
@@ -114,7 +114,7 @@ const description = product.longDesc ?? product.desc;
                 </div>
               ))}
             </div>
-            <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
+            <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl" data-i18n="slugTemplate.specs.disclaimer">
               Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
             </p>
           </div>
@@ -126,12 +126,12 @@ const description = product.longDesc ?? product.desc;
       <div class="container-page">
         <div class="overflow-hidden rounded-[2rem] bg-navy-950 p-10 text-center shadow-2xl sm:p-14">
           <h2 class="font-display text-2xl font-extrabold text-white sm:text-3xl">Ενδιαφέρεστε για {product.name};</h2>
-          <p class="mx-auto mt-3 max-w-xl text-white/65">
+          <p class="mx-auto mt-3 max-w-xl text-white/65" data-i18n="slugTemplate.cta.desc">
             Επικοινωνήστε μαζί μας για τεχνικές πληροφορίες, διαθεσιμότητα και προσφορά τιμής.
           </p>
           <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
-            <a href="tel:+306976724504" class="btn btn-ghost">Καλέστε μας</a>
+            <a href={withBase("#contact")} class="btn btn-primary" data-i18n="slugTemplate.requestQuote">Ζητήστε Προσφορά</a>
+            <a href="tel:+306976724504" class="btn btn-ghost" data-i18n="slugTemplate.cta.call">Καλέστε μας</a>
           </div>
         </div>
       </div>
