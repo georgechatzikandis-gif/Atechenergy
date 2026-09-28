@@ -159,13 +159,13 @@ const slides = [
           <>
             <div class="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
             <div class="slide-text absolute bottom-14 left-6 z-10 sm:bottom-16 sm:left-10">
-              <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2">
+              <span class="hero-slide-label block text-[11px] font-bold tracking-[0.2em] uppercase text-azure-300 mb-2" data-i18n={`heroCarousel.slide${i}.label`}>
                 {s.label}
               </span>
-              <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+              <h2 class="hero-slide-title text-[1.6rem] sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight" data-i18n={`heroCarousel.slide${i}.title`}>
                 {s.title}
               </h2>
-              <p class="hero-slide-subtitle mt-1.5 text-base sm:text-lg text-white/70 font-medium xl:text-lg 2xl:text-xl">
+              <p class="hero-slide-subtitle mt-1.5 text-base sm:text-lg text-white/70 font-medium xl:text-lg 2xl:text-xl" data-i18n={`heroCarousel.slide${i}.subtitle`}>
                 {s.subtitle}
               </p>
               {s.href && (

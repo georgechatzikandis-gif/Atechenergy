@@ -19,20 +19,26 @@ const description =
     <section style="background:linear-gradient(to bottom,#0d1f36,#071525);" class="px-6 py-14 sm:py-20 text-center">
       <div class="mx-auto max-w-2xl">
         <span class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase mb-6"
-          style="color:#00e5b4;border:1px solid rgba(0,229,180,0.3);">
+          style="color:#00e5b4;border:1px solid rgba(0,229,180,0.3);" data-i18n="calculator.hero.badge">
           ⚡ Ενεργειακή Προμελέτη σε 2 Λεπτά
         </span>
         <h1 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
           C&I Energy <span style="color:#00e5b4;">Calculator</span>
         </h1>
-        <p class="mt-5 text-base leading-relaxed sm:text-lg xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.6);">
+        <p class="mt-5 text-base leading-relaxed sm:text-lg xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.6);" data-i18n="calculator.hero.desc">
           Υπολογίστε ενδεικτικά το κατάλληλο φωτοβολταϊκό και σύστημα αποθήκευσης για supermarket,
           κρεοπωλεία, ψυκτικές αποθήκες και επιχειρήσεις με συνεχή φορτία ψύξης.
         </p>
         <div class="mt-6 flex flex-wrap justify-center gap-2">
-          {["☀️ PV sizing","🔋 BESS επιλογή","💶 Ετήσια εξοικονόμηση","🌍 CO₂","⏱️ Απόσβεση"].map(t => (
+          {[
+            { key: "tag0", label: "☀️ PV sizing" },
+            { key: "tag1", label: "🔋 BESS επιλογή" },
+            { key: "tag2", label: "💶 Ετήσια εξοικονόμηση" },
+            { key: "tag3", label: "🌍 CO₂" },
+            { key: "tag4", label: "⏱️ Απόσβεση" },
+          ].map(t => (
             <span class="rounded-full px-3.5 py-1.5 text-xs font-medium"
-              style="color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);">{t}</span>
+              style="color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);" data-i18n={`calculator.hero.${t.key}`}>{t.label}</span>
           ))}
         </div>
       </div>
