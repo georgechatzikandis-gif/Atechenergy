@@ -27,9 +27,9 @@ const description = product.longDesc ?? product.desc;
     <div class="border-b border-navy-900/8 bg-white">
       <div class="container-page py-4">
         <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/78">
-          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <a href={withBase("")} class="hover:text-azure-600" data-i18n="nav.home">Αρχική</a>
           <span aria-hidden="true">/</span>
-          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <a href={withBase("products/")} class="hover:text-azure-600" data-i18n="nav.products">Προϊόντα</a>
           <span aria-hidden="true">/</span>
           <span class="font-medium text-navy-900">{product.name}</span>
         </nav>
@@ -54,12 +54,12 @@ const description = product.longDesc ?? product.desc;
           <p class="mt-5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">{product.longDesc ?? product.desc}</p>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("#contact")} class="btn btn-primary" data-i18n="slugTemplate.requestQuote">Ζητήστε Προσφορά</a>
             <a href={withBase("products/")} class="btn btn-outline">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M19 12H5M11 18l-6-6 6-6"></path>
               </svg>
-              Όλα τα Προϊόντα
+              <span data-i18n="slugTemplate.allProducts">Όλα τα Προϊόντα</span>
             </a>
           </div>
 
@@ -85,7 +85,7 @@ const description = product.longDesc ?? product.desc;
       product.features && (
         <section class="bg-white py-16 sm:py-20">
           <div class="container-page">
-            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Χαρακτηριστικά</h2>
+            <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl" data-i18n="slugTemplate.features.h2">Χαρακτηριστικά</h2>
             <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {product.features.map((f) => (
                 <li class="flex items-start gap-3 rounded-2xl border border-navy-900/8 bg-ice-100/40 p-5">
