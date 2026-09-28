@@ -309,14 +309,16 @@ const models = [
   const btn = document.getElementById("toggle-models");
   const panel = document.getElementById("all-models");
   const icon = document.getElementById("toggle-icon");
-  const label = document.getElementById("toggle-label");
+  const labelShow = document.getElementById("toggle-label-show");
+  const labelHide = document.getElementById("toggle-label-hide");
 
   btn?.addEventListener("click", () => {
     const expanded = btn.getAttribute("aria-expanded") === "true";
     btn.setAttribute("aria-expanded", String(!expanded));
     panel?.classList.toggle("hidden");
     if (icon) icon.style.transform = expanded ? "" : "rotate(180deg)";
-    if (label) label.textContent = expanded ? "Δείτε όλα τα Μοντέλα" : "Κλείσιμο Μοντέλων";
+    labelShow?.classList.toggle("hidden", !expanded);
+    labelHide?.classList.toggle("hidden", expanded);
     if (!expanded) panel?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 </script>

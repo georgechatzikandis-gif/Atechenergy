@@ -149,7 +149,7 @@ const description =
     <section class="bg-ice-100/40 py-16 sm:py-20">
       <div class="container-page" data-reveal>
         <div class="mb-10 text-center">
-          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Αξιοπιστία</p>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase" data-i18n="microinverter.safety.eyebrow">Αξιοπιστία</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Safety You Can Trust
           </h2>
@@ -172,11 +172,11 @@ const description =
               title: "Πιστοποιημένο, χωρίς περιπλοκές",
               desc: "Πληροί όλα τα πρότυπα δικτύου. Χρήση αμέσως με αξιόπιστη απόδοση για χρόνια.",
             },
-          ].map((c) => (
+          ].map((c, i) => (
             <div class="rounded-2xl bg-white p-7 shadow-card">
               <span class="text-3xl" aria-hidden="true">{c.icon}</span>
-              <h3 class="mt-4 font-display text-lg font-bold text-navy-900">{c.title}</h3>
-              <p class="mt-2 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">{c.desc}</p>
+              <h3 class="mt-4 font-display text-lg font-bold text-navy-900" data-i18n={`microinverter.safety.card${i}.title`}>{c.title}</h3>
+              <p class="mt-2 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n={`microinverter.safety.card${i}.desc`}>{c.desc}</p>
             </div>
           ))}
         </div>
@@ -197,7 +197,7 @@ const description =
     {/* ── Full features grid ── */}
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Χαρακτηριστικά</h2>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl" data-i18n="microinverter.features.h2">Χαρακτηριστικά</h2>
         <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             "700W ανά πάνελ — έως 2800W συνολική ισχύς εισόδου (4 πάνελ)",
@@ -210,12 +210,12 @@ const description =
             "WiFi, Bluetooth & RS485 — παρακολούθηση και έλεγχος από οπουδήποτε",
             "Συμβατό με πολλούς τύπους μπαταριών LiFePO4",
             "Zero Export (προαιρετικά) — συμμόρφωση με κανονισμούς δικτύου",
-          ].map((f) => (
+          ].map((f, i) => (
             <li class="flex items-start gap-3 rounded-2xl border border-navy-900/8 bg-ice-100/40 p-5">
               <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <span class="text-lg leading-relaxed font-medium text-navy-900/92 xl:text-xl 2xl:text-2xl">{f}</span>
+              <span class="text-lg leading-relaxed font-medium text-navy-900/92 xl:text-xl 2xl:text-2xl" data-i18n={`microinverter.features.feat${i}`}>{f}</span>
             </li>
           ))}
         </ul>
@@ -225,7 +225,7 @@ const description =
     {/* ── Specs table ── */}
     <section class="bg-ice-100/40 py-16 sm:py-20">
       <div class="container-page" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">Τεχνικά Στοιχεία</h2>
+        <h2 class="font-display text-2xl font-extrabold text-navy-900 sm:text-3xl" data-i18n="microinverter.specs.h2">Τεχνικά Στοιχεία</h2>
         <div class="mt-8 overflow-hidden rounded-2xl border border-navy-900/8 bg-white shadow-card">
           {[
             { label: "Μοντέλο", value: "TSOL-MH2000" },
@@ -243,12 +243,12 @@ const description =
             { label: "Βάρος", value: "8 kg" },
           ].map((s, i) => (
             <div class={`flex items-center justify-between gap-4 px-6 py-4 ${i % 2 === 1 ? "bg-ice-100/40" : ""}`}>
-              <span class="text-lg text-navy-900/82 xl:text-xl 2xl:text-2xl">{s.label}</span>
+              <span class="text-lg text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n={`microinverter.specs.row${i}.label`}>{s.label}</span>
               <span class="text-lg font-bold text-navy-900 text-right xl:text-xl 2xl:text-2xl">{s.value}</span>
             </div>
           ))}
         </div>
-        <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
+        <p class="mt-4 text-base text-navy-900/75 xl:text-lg 2xl:text-xl" data-i18n="microinverter.specs.disclaimer">
           Ενδεικτικά στοιχεία. Για πλήρες τεχνικό φυλλάδιο επικοινωνήστε μαζί μας.
         </p>
       </div>
