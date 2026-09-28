@@ -90,9 +90,9 @@ const controlBoxModels = [
     <div class="border-b border-navy-900/8 bg-white">
       <div class="container-page py-4">
         <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/78">
-          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <a href={withBase("")} class="hover:text-azure-600" data-i18n="nav.home">Αρχική</a>
           <span aria-hidden="true">/</span>
-          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <a href={withBase("products/")} class="hover:text-azure-600" data-i18n="nav.products">Προϊόντα</a>
           <span aria-hidden="true">/</span>
           <span class="font-medium text-navy-900">Projoy PEFS Rapid Shutdown</span>
         </nav>
@@ -118,7 +118,7 @@ const controlBoxModels = [
             PEFS Series — Rapid Shutdown
           </h1>
           <p class="mt-2 text-lg font-medium text-navy-900/78 xl:text-xl 2xl:text-2xl">PV Combiner Box · Module-Level Safety</p>
-          <p class="mt-4 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
+          <p class="mt-4 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n="projoy.hero.desc">
             Το PROJOY PEFS-PL Series Module-level Rapid Shutdown είναι αξιόπιστη συσκευή ασφαλείας σύμφωνα με τα πρότυπα NEC 2017/2020 690.12, UL1741 &amp; UL3741 για φωτοβολταϊκά συστήματα σε στέγες. Εξασφαλίζει χαμηλό κόστος BOS, διπλό επίπεδο ασφαλείας και πλήρη προστασία ανθρώπων και εξοπλισμού.
           </p>
 
@@ -145,7 +145,7 @@ const controlBoxModels = [
               class="inline-flex items-center gap-2 rounded-xl border border-azure-200 bg-azure-50 px-5 py-3 text-sm font-semibold text-azure-700 shadow-sm transition hover:bg-azure-100 hover:-translate-y-0.5"
             >
               <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-              Δες τα Datasheets
+              <span data-i18n="projoy.hero.btnDatasheets">Δες τα Datasheets</span>
             </a>
           </div>
         </div>
@@ -156,8 +156,8 @@ const controlBoxModels = [
     <section class="bg-ice-50/60 py-12 sm:py-14">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center mb-8" data-reveal>
-          <span class="eyebrow">Κατηγορίες Προϊόντος</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <span class="eyebrow" data-i18n="projoy.categories.eyebrow">Κατηγορίες Προϊόντος</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.categories.h2">
             Επιλέξτε Σειρά PEFS
           </h2>
         </div>
@@ -172,7 +172,7 @@ const controlBoxModels = [
               <Image src={rapidShutdownCatImg} alt="Rapid Shutdown (Module Level)" width={750} height={530} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             <div class="p-5 text-center">
-              <p class="font-display text-lg font-bold text-navy-900">Rapid Shutdown (Module Level)</p>
+              <p class="font-display text-lg font-bold text-navy-900" data-i18n="projoy.categoryA.title">Rapid Shutdown (Module Level)</p>
             </div>
           </a>
           <a
@@ -185,7 +185,7 @@ const controlBoxModels = [
               <Image src={firefighterCatImg} alt="Firefighter Safety Switch (String-level RSD)" width={710} height={520} class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             <div class="p-5 text-center">
-              <p class="font-display text-lg font-bold text-navy-900">Firefighter Safety Switch (String-level RSD)</p>
+              <p class="font-display text-lg font-bold text-navy-900" data-i18n="projoy.categoryB.title">Firefighter Safety Switch (String-level RSD)</p>
             </div>
           </a>
         </div>
@@ -196,8 +196,8 @@ const controlBoxModels = [
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <span class="eyebrow">Rapid Shutdown — Module Level</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <span class="eyebrow" data-i18n="projoy.features.eyebrow">Rapid Shutdown — Module Level</span>
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.features.h2">
             Χαρακτηριστικά Προϊόντος
           </h2>
         </div>
@@ -213,12 +213,12 @@ const controlBoxModels = [
             "Ανεξάρτητος έλεγχος γραμμής — χωρίς παρεμβολές",
             "25 χρόνια διάρκεια ζωής · 12 χρόνια εγγύηση",
             "Πιστοποιήσεις: CE, UL 1741 & UL 3741",
-          ].map((f) => (
+          ].map((f, i) => (
             <div class="flex items-start gap-3 rounded-xl border border-navy-900/6 bg-ice-50 px-4 py-3">
               <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <span class="text-lg text-navy-900/86 xl:text-xl 2xl:text-2xl">{f}</span>
+              <span class="text-lg text-navy-900/86 xl:text-xl 2xl:text-2xl" data-i18n={`projoy.features.item${i}`}>{f}</span>
             </div>
           ))}
         </div>
@@ -229,7 +229,7 @@ const controlBoxModels = [
     <section class="bg-ice-50/60 py-16 sm:py-20">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.craftsmanship.h2">
             High Craftsmanship &amp; Standards
           </h2>
           <p class="mt-2 text-lg text-navy-900/78 xl:text-xl 2xl:text-2xl">PEFS-PL Series</p>
@@ -245,11 +245,11 @@ const controlBoxModels = [
             { icon: "⏳", title: "25 χρόνια διάρκεια ζωής", desc: "Μακρόχρονη απόδοση" },
             { icon: "🔌", title: "Universal compatibility", desc: "Slim EMC Design, εύκολη εγκατάσταση" },
             { icon: "☀️", title: "Diad & Triad PV modules", desc: "Πλήρης συμβατότητα" },
-          ].map((item) => (
+          ].map((item, i) => (
             <div class="rounded-2xl border border-navy-900/6 bg-white p-5 text-center shadow-sm">
               <div class="mb-3 text-3xl">{item.icon}</div>
-              <p class="text-sm font-bold text-navy-900">{item.title}</p>
-              <p class="mt-1 text-base text-navy-900/80 xl:text-lg 2xl:text-xl">{item.desc}</p>
+              <p class="text-sm font-bold text-navy-900" data-i18n={`projoy.craftsmanship.card${i}.title`}>{item.title}</p>
+              <p class="mt-1 text-base text-navy-900/80 xl:text-lg 2xl:text-xl" data-i18n={`projoy.craftsmanship.card${i}.desc`}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -261,7 +261,7 @@ const controlBoxModels = [
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center" data-reveal>
           <span class="eyebrow">Module-Level RSD</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.moduleSpecs.h2">
             Τεχνικά Χαρακτηριστικά
           </h2>
           <p class="mt-2 text-lg text-navy-900/78 xl:text-xl 2xl:text-2xl">PEFS-PL Series — Product Models</p>
@@ -271,7 +271,7 @@ const controlBoxModels = [
           <table class="w-full min-w-[600px] text-lg xl:text-xl 2xl:text-2xl">
             <thead>
               <tr class="bg-navy-900 text-white">
-                <th class="px-4 py-3 text-left font-semibold">Παράμετρος</th>
+                <th class="px-4 py-3 text-left font-semibold" data-i18n="projoy.specs.paramHeader">Παράμετρος</th>
                 {moduleModels.map((m) => (
                   <th class="px-4 py-3 text-center font-semibold">{m.model}</th>
                 ))}
@@ -287,7 +287,7 @@ const controlBoxModels = [
                 { label: "Power Consumption", key: "powerConsumption" },
               ].map((row, ri) => (
                 <tr class={ri % 2 === 0 ? "bg-white" : "bg-ice-50/60"}>
-                  <td class="px-4 py-3 font-medium text-navy-900/92">{row.label}</td>
+                  <td class="px-4 py-3 font-medium text-navy-900/92" data-i18n={`projoy.moduleSpecs.row${ri}.label`}>{row.label}</td>
                   {moduleModels.map((m) => (
                     <td class="px-4 py-3 text-center text-navy-900/75">{(m as any)[row.key]}</td>
                   ))}
@@ -303,7 +303,7 @@ const controlBoxModels = [
     <section class="bg-navy-950 py-16 sm:py-20">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm">Εξαρτήματα Συστήματος</span>
+          <span class="eyebrow border-white/25 bg-white/10 text-azure-200 backdrop-blur-sm" data-i18n="projoy.controlBox.eyebrow">Εξαρτήματα Συστήματος</span>
           <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
             Rapid Shutdown Control Box
           </h2>
@@ -321,11 +321,11 @@ const controlBoxModels = [
             { icon: "🛡️", title: "IP65", desc: "Αδιάβροχη προστασία" },
             { icon: "🌡️", title: "Max 50°C", desc: "Μηδενική υποβάθμιση απόδοσης" },
             { icon: "📡", title: "Anti-interference", desc: "Σταθερή & αξιόπιστη λειτουργία" },
-          ].map((item) => (
+          ].map((item, i) => (
             <div class="rounded-xl border border-white/8 bg-white/5 p-4 text-center">
               <div class="mb-2 text-2xl">{item.icon}</div>
-              <p class="text-sm font-bold text-white">{item.title}</p>
-              <p class="mt-1 text-base text-white/50 xl:text-lg 2xl:text-xl">{item.desc}</p>
+              <p class="text-sm font-bold text-white" data-i18n={`projoy.controlBox.card${i}.title`}>{item.title}</p>
+              <p class="mt-1 text-base text-white/50 xl:text-lg 2xl:text-xl" data-i18n={`projoy.controlBox.card${i}.desc`}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -335,7 +335,7 @@ const controlBoxModels = [
           <table class="w-full min-w-[560px] text-lg xl:text-xl 2xl:text-2xl">
             <thead>
               <tr class="bg-white/10 text-white">
-                <th class="px-4 py-3 text-left font-semibold">Παράμετρος</th>
+                <th class="px-4 py-3 text-left font-semibold" data-i18n="projoy.specs.paramHeader">Παράμετρος</th>
                 {controlBoxModels.map((m) => (
                   <th class="px-4 py-3 text-center font-semibold text-base xl:text-lg 2xl:text-xl">{m.model}</th>
                 ))}
@@ -348,7 +348,7 @@ const controlBoxModels = [
                 { label: "Output Current", key: "outputCurrent" },
               ].map((row, ri) => (
                 <tr class={ri % 2 === 0 ? "bg-white/5" : "bg-white/[0.02]"}>
-                  <td class="px-4 py-3 font-medium text-white/70">{row.label}</td>
+                  <td class="px-4 py-3 font-medium text-white/70" data-i18n={`projoy.controlBoxSpecs.row${ri}.label`}>{row.label}</td>
                   {controlBoxModels.map((m) => (
                     <td class="px-4 py-3 text-center text-white/55">{(m as any)[row.key]}</td>
                   ))}
@@ -364,11 +364,11 @@ const controlBoxModels = [
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <span class="eyebrow">String-Level Safety</span>
+          <span class="eyebrow" data-i18n="projoy.firefighter.eyebrow">String-Level Safety</span>
           <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
             PEFS-EL Series — Firefighter Safety Switch
           </h2>
-          <p class="mt-3 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
+          <p class="mt-3 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n="projoy.firefighter.desc">
             Το PROJOY PEFS-EL Series String-level Firefighter Safety Switch εφαρμόζεται σε οικιακά και C&amp;I φωτοβολταϊκά. Μέγιστη τάση βρόχου έως 1500V. Σε περίπτωση έκτακτης ανάγκης, αποκόπτει άμεσα την υψηλή τάση μεταξύ PV modules και inverter.
           </p>
         </div>
@@ -380,12 +380,12 @@ const controlBoxModels = [
             "V0 flame retardant grade · anti-UV F1 grade",
             "Πιστοποιήσεις: TÜV, CE, CB, SAA, UL",
             "IP65 design · Optional anti-PIL",
-          ].map((f) => (
+          ].map((f, i) => (
             <div class="flex items-start gap-3 rounded-xl border border-navy-900/6 bg-ice-50 px-4 py-3">
               <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
-              <span class="text-lg text-navy-900/86 xl:text-xl 2xl:text-2xl">{f}</span>
+              <span class="text-lg text-navy-900/86 xl:text-xl 2xl:text-2xl" data-i18n={`projoy.firefighter.feature${i}`}>{f}</span>
             </div>
           ))}
         </div>
@@ -402,18 +402,18 @@ const controlBoxModels = [
             { icon: "🌧️", title: "IP65 Outdoor", desc: "Πλήρης προστασία για εξωτερικούς χώρους" },
             { icon: "🌡️", title: "Over temp > 70°C", desc: "Αυτόματο shutdown υπερθέρμανσης" },
             { icon: "📡", title: "FB1 / FB2 Monitoring", desc: "Εξωτερική παρακολούθηση μέσω FB1 FB2" },
-          ].map((item) => (
+          ].map((item, i) => (
             <div class="rounded-xl border border-navy-900/6 bg-ice-50/60 p-4 text-center">
               <div class="mb-2 text-2xl">{item.icon}</div>
-              <p class="text-sm font-bold text-navy-900">{item.title}</p>
-              <p class="mt-1 text-base text-navy-900/80 xl:text-lg 2xl:text-xl">{item.desc}</p>
+              <p class="text-sm font-bold text-navy-900" data-i18n={`projoy.firefighter.standard${i}.title`}>{item.title}</p>
+              <p class="mt-1 text-base text-navy-900/80 xl:text-lg 2xl:text-xl" data-i18n={`projoy.firefighter.standard${i}.desc`}>{item.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Models */}
         <div class="mt-12" data-reveal>
-          <p class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-navy-900/75">Διαθέσιμα Μοντέλα</p>
+          <p class="mb-4 text-center text-xs font-bold uppercase tracking-widest text-navy-900/75" data-i18n="projoy.firefighter.modelsLabel">Διαθέσιμα Μοντέλα</p>
           <div class="flex flex-wrap justify-center gap-3">
             {["PEFS-EL Series (1–2 Strings)", "PEFS-EL Series (3–5 Strings)", "PEFS-EL Series (6–10 Strings)"].map((m) => (
               <span class="rounded-full border border-azure-200 bg-azure-50 px-4 py-2 text-sm font-semibold text-azure-700">
@@ -428,8 +428,8 @@ const controlBoxModels = [
           <table class="w-full min-w-[480px] text-lg xl:text-xl 2xl:text-2xl">
             <thead>
               <tr class="bg-navy-900 text-white">
-                <th class="px-4 py-3 text-left font-semibold">Παράμετρος</th>
-                <th class="px-4 py-3 text-right font-semibold">Τιμή</th>
+                <th class="px-4 py-3 text-left font-semibold" data-i18n="projoy.specs.paramHeader">Παράμετρος</th>
+                <th class="px-4 py-3 text-right font-semibold" data-i18n="projoy.firefighter.specs.valueHeader">Τιμή</th>
               </tr>
             </thead>
             <tbody>
@@ -444,7 +444,7 @@ const controlBoxModels = [
                 { label: "PID Recovery Current Output (night)", value: "6.7mA" },
               ].map((row, ri) => (
                 <tr class={ri % 2 === 0 ? "bg-white" : "bg-ice-50/60"}>
-                  <td class="px-4 py-3 font-medium text-navy-900/92">{row.label}</td>
+                  <td class="px-4 py-3 font-medium text-navy-900/92" data-i18n={`projoy.firefighter.specs.row${ri}.label`}>{row.label}</td>
                   <td class="px-4 py-3 text-right font-semibold text-azure-700">{row.value}</td>
                 </tr>
               ))}
@@ -457,7 +457,7 @@ const controlBoxModels = [
     {/* ── Datasheets ── */}
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl text-center">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl text-center" data-i18n="projoy.datasheetsList.h2">
           Τεχνικά Φυλλάδια
         </h2>
         <div class="mt-8 mx-auto max-w-xl flex flex-col gap-3">
@@ -465,7 +465,7 @@ const controlBoxModels = [
             { label: "Projoy Panel-RSD Metal — Datasheet 2026", file: "Projoy-Panel-RSD-Metal-V2026.pdf" },
             { label: "PEFS-PL Series — Rapid Shutdown Module Level", file: "Projoy-PEFS-PL-RapidShutdown-ModuleLevel-Datasheet-EN.pdf" },
             { label: "PEFS-EL Series — Firefighter Safety Switch", file: "Projoy-Firefighter-Safety-Switch.pdf" },
-          ].map((d) => (
+          ].map((d, i) => (
             <a
               href={withBase(`downloads/${d.file}`)}
               target="_blank"
@@ -473,7 +473,7 @@ const controlBoxModels = [
               class="flex items-center gap-3 rounded-2xl border border-navy-900/10 bg-white px-5 py-4 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
             >
               <svg class="h-8 w-8 shrink-0 text-azure-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-              <span class="text-sm font-semibold text-navy-900">{d.label}</span>
+              <span class="text-sm font-semibold text-navy-900" data-i18n={`projoy.datasheetsList.item${i}.label`}>{d.label}</span>
             </a>
           ))}
         </div>
@@ -485,7 +485,7 @@ const controlBoxModels = [
       <div class="container-page">
         <div class="mx-auto max-w-2xl text-center mb-10" data-reveal>
           <span class="eyebrow">Panel-RSD Metal 2026</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.datasheetPreview0.h2">
             Datasheet
           </h2>
         </div>
@@ -500,7 +500,7 @@ const controlBoxModels = [
         {/* PEFS-PL Series — Rapid Shutdown Module Level */}
         <div class="mx-auto max-w-2xl text-center mt-16 mb-10" data-reveal>
           <span class="eyebrow">PEFS-PL Series</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.datasheetPreview1.h2">
             Rapid Shutdown — Module Level Datasheet
           </h2>
         </div>
@@ -515,7 +515,7 @@ const controlBoxModels = [
         {/* PEFS-EL Series — Firefighter Safety Switch */}
         <div class="mx-auto max-w-2xl text-center mt-16 mb-10" data-reveal>
           <span class="eyebrow">PEFS-EL Series</span>
-          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+          <h2 class="mt-4 font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.datasheetPreview2.h2">
             Firefighter Safety Switch Datasheet
           </h2>
         </div>
@@ -532,10 +532,10 @@ const controlBoxModels = [
     {/* ── Contact ── */}
     <section class="bg-white py-16 sm:py-20">
       <div class="container-page text-center" data-reveal>
-        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl" data-i18n="projoy.cta.h2">
           Ζητήστε Προσφορά
         </h2>
-        <p class="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
+        <p class="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n="projoy.cta.desc">
           Επικοινωνήστε μαζί μας για τιμές, διαθεσιμότητα και τεχνική υποστήριξη στα συστήματα Projoy PEFS.
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -545,7 +545,7 @@ const controlBoxModels = [
             </svg>
             +30 697 672 4504
           </a>
-          <a href={withBase("products/")} class="btn btn-outline">Όλα τα Προϊόντα</a>
+          <a href={withBase("products/")} class="btn btn-outline" data-i18n="projoy.cta.allProducts">Όλα τα Προϊόντα</a>
         </div>
       </div>
     </section>
