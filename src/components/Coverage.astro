@@ -3,10 +3,12 @@ const partners = ["RISEN GROUP", "SYL BATTERIES", "LITHIUM VALLEY", "SUNTECH", "
 
 const regions = [
   {
+    key: "coverage.region0",
     name: "Ευρώπη",
     desc: "Κύριος πυλώνας δραστηριότητας με άμεση εξυπηρέτηση συνεργατών και ταχεία διανομή.",
   },
   {
+    key: "coverage.region1",
     name: "Λατινική Αμερική",
     desc: "Αναπτυσσόμενο δίκτυο συνεργατών με στόχο τη διεύρυνση της παρουσίας μας στην αγορά.",
   },
@@ -17,11 +19,11 @@ const regions = [
   <div class="container-page">
     <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
       <div data-reveal>
-        <span class="eyebrow border-azure-500/20 text-azure-600">Διανομή</span>
-        <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
+        <span class="eyebrow border-azure-500/20 text-azure-600" data-i18n="coverage.eyebrow">Διανομή</span>
+        <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl" data-i18n="coverage.h2">
           Ενεργό δίκτυο διανομής σε Ευρώπη &amp; Λατινική Αμερική
         </h2>
-        <p class="mt-5 text-lg leading-relaxed text-navy-900/80 xl:text-xl 2xl:text-2xl">
+        <p class="mt-5 text-lg leading-relaxed text-navy-900/80 xl:text-xl 2xl:text-2xl" data-i18n="coverage.desc">
           Ως επίσημος αντιπρόσωπος κορυφαίων κατασκευαστών, εξυπηρετούμε συνεργάτες και πελάτες
           με ταχύτητα, συνέπεια και τεχνική υποστήριξη — σε κάθε στάδιο της αλυσίδας εφοδιασμού.
         </p>
@@ -35,9 +37,9 @@ const regions = [
                     <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" />
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
-                  <h3 class="font-display font-bold text-navy-900">{r.name}</h3>
+                  <h3 class="font-display font-bold text-navy-900" data-i18n={`${r.key}.name`}>{r.name}</h3>
                 </div>
-                <p class="mt-2.5 text-base leading-relaxed text-navy-900/80 xl:text-lg 2xl:text-xl">{r.desc}</p>
+                <p class="mt-2.5 text-base leading-relaxed text-navy-900/80 xl:text-lg 2xl:text-xl" data-i18n={`${r.key}.desc`}>{r.desc}</p>
               </div>
             ))
           }
@@ -47,7 +49,7 @@ const regions = [
           <svg class="mt-0.5 h-5 w-5 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6" />
           </svg>
-          <p><span class="font-semibold text-navy-900">Έδρα:</span> 7ο χλμ Θεσσαλονίκης – Καβάλας, περιοχή Τιτάν, Ευκαρπία 564 29, Ελλάδα</p>
+          <p><span class="font-semibold text-navy-900" data-i18n="coverage.hq.label">Έδρα:</span> <span data-i18n="coverage.hq.address">7ο χλμ Θεσσαλονίκης – Καβάλας, περιοχή Τιτάν, Ευκαρπία 564 29, Ελλάδα</span></p>
         </div>
       </div>
 
@@ -70,7 +72,7 @@ const regions = [
     </div>
 
     <div class="mt-24 border-t border-navy-900/8 pt-12" data-reveal>
-      <p class="text-center text-xs font-bold tracking-[0.18em] text-navy-900/68 uppercase">
+      <p class="text-center text-xs font-bold tracking-[0.18em] text-navy-900/68 uppercase" data-i18n="coverage.partners.eyebrow">
         Επίσημος Συνεργάτης &amp; Διανομέας
       </p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-x-14 gap-y-6">
