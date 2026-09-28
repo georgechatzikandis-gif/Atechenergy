@@ -19,6 +19,15 @@ export const dict: Record<Lang, Dict> = {
     "slugTemplate.cta.desc": "Contact us for technical information, availability and a price quote.",
     "slugTemplate.cta.call": "Call Us",
   },
+  de: {
+    "slugTemplate.requestQuote": "Angebot anfordern",
+    "slugTemplate.allProducts": "Alle Produkte",
+    "slugTemplate.features.h2": "Eigenschaften",
+    "slugTemplate.specs.h2": "Technische Daten",
+    "slugTemplate.specs.disclaimer": "Unverbindliche Angaben. Für das vollständige technische Datenblatt kontaktieren Sie uns bitte.",
+    "slugTemplate.cta.desc": "Kontaktieren Sie uns für technische Informationen, Verfügbarkeit und ein Preisangebot.",
+    "slugTemplate.cta.call": "Rufen Sie uns an",
+  },
   fr: {
     "slugTemplate.requestQuote": "Demander un Devis",
     "slugTemplate.allProducts": "Tous les Produits",
