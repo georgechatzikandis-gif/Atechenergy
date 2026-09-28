@@ -371,6 +371,31 @@ const MONTHLY_PROFILES = {
 };
 const SOLAR_PROFILE = [4.2,5.3,8.1,9.8,11.4,12.5,13.0,12.1,10.1,7.4,4.2,1.9];
 const MONTH_LABELS  = ['Ι','Φ','Μ','Α','Μ','Ι','Ι','Α','Σ','Ο','Ν','Δ'];
+function getMonthLabels() {
+  try {
+    var t = window.__i18nT ? window.__i18nT('calculator.monthLabels') : null;
+    if (t && t.indexOf(',') > -1) return t.split(',');
+  } catch (e) {}
+  return MONTH_LABELS;
+}
+
+// Localize the Greek word fragments embedded in the BESS_MODELS data below.
+function localizedCool(cool) {
+  if (!cool) return cool;
+  var t = window.__i18nT ? window.__i18nT('calculator.equipment.integratedPcs') : 'Ενσωματωμένο PCS';
+  return cool.replace('Ενσωματωμένο PCS', t);
+}
+function localizedCycles(cycles) {
+  if (!cycles) return cycles;
+  var t = window.__i18nT ? window.__i18nT('calculator.equipment.cyclesUnit') : 'κύκλοι';
+  return cycles.replace('κύκλοι', t);
+}
+function localizedExtra(extra) {
+  if (!extra) return extra;
+  var upTo = window.__i18nT ? window.__i18nT('calculator.equipment.upTo') : 'έως';
+  var inParallel = window.__i18nT ? window.__i18nT('calculator.equipment.inParallel') : 'παράλληλα';
+  return extra.replace('έως', upTo).replace('παράλληλα', inParallel);
+}
 
 const BESS_MODELS = [
   {id:'SC100A50P-06W', kwh:100.3, kw:50,  cool:'Smart air cooling', ip:'IP55', cycles:'≥8.000 κύκλοι', tags:['Air cooled','50 kW','All-in-one']},
@@ -410,7 +435,7 @@ function runCalc() {
   const bessCostKwh = val('inp-bess-cost', 350);
 
   if (!annualKwh || !roofM2) {
-    alert('Παρακαλώ συμπληρώστε την ετήσια κατανάλωση (kWh) και τη διαθέσιμη στέγη (m²).');
+    alert(window.__i18nT('calculator.validation.missingFields'));
     return;
   }
 
@@ -455,10 +480,10 @@ function runCalc() {
   // ── UPDATE DOM ──
   $('results').classList.remove('hidden');
   $('res-savings').textContent     = Math.round(totalSav).toLocaleString('el-GR');
-  $('res-savings-pct').textContent = `${savPct}% εκτιμώμενη μείωση συνολικού κόστους`;
+  $('res-savings-pct').textContent = `${savPct}% ${window.__i18nT('calculator.results.savingsPctSuffix')}`;
   $('res-pv').textContent          = pvKwp ? `${pvKwp} kWp` : '—';
   $('res-bess').textContent        = bess.totalKwh ? `${bess.totalKwh} kWh` : '—';
-  $('res-payback').textContent     = payback > 0 ? `${(Math.round(payback*10)/10).toLocaleString('el-GR')} έτη` : '—';
+  $('res-payback').textContent     = payback > 0 ? `${(Math.round(payback*10)/10).toLocaleString('el-GR')} ${window.__i18nT('calculator.results.years')}` : '—';
   $('res-co2').textContent         = co2 ? `${co2} t` : '—';
 
   drawChart(mBefore, mAfter);
@@ -476,6 +501,7 @@ function drawChart(before, after) {
 
   let out = `<line x1="${PAD}" y1="${chartH}" x2="${W-PAD}" y2="${chartH}" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>`;
 
+  const monthLabels = getMonthLabels();
   before.forEach((b, i) => {
     const x  = PAD + i * barW;
     const bh = b * scale;
@@ -483,7 +509,7 @@ function drawChart(before, after) {
     const gw = barW * 0.36;
     out += `<rect x="${x+barW*0.06}" y="${chartH-bh}" width="${gw}" height="${bh}" rx="2" fill="#3b82f6" opacity="0.75"/>`;
     out += `<rect x="${x+barW*0.50}" y="${chartH-ah}" width="${gw}" height="${ah}" rx="2" fill="#00e5b4" opacity="0.85"/>`;
-    out += `<text x="${x+barW/2}" y="${H}" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="9">${MONTH_LABELS[i]}</text>`;
+    out += `<text x="${x+barW/2}" y="${H}" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="9">${monthLabels[i]}</text>`;
   });
 
   svg.innerHTML = out;
@@ -498,9 +524,9 @@ function renderEquipment(pvKwp, pvAnnual, bess, bessTarget, goal) {
       <div style="padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.08);">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;">
           <div>
-            <div style="font-weight:700;color:#fff;font-size:0.9rem;">Φωτοβολταϊκό σύστημα</div>
+            <div style="font-weight:700;color:#fff;font-size:0.9rem;">${window.__i18nT('calculator.equipment.pvTitle')}</div>
             <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.25rem;">
-              ${pvKwp} kWp · Εκτιμώμενη παραγωγή ${(Math.round(pvAnnual/1000)*1000).toLocaleString('el-GR')} kWh/έτος · EMS / Zero Export όπου απαιτείται
+              ${pvKwp} kWp · ${window.__i18nT('calculator.equipment.estProduction')} ${(Math.round(pvAnnual/1000)*1000).toLocaleString('el-GR')} ${window.__i18nT('calculator.equipment.kwhPerYear')} · ${window.__i18nT('calculator.equipment.emsZeroExport')}
             </div>
           </div>
           <span style="flex-shrink:0;border-radius:0.5rem;padding:0.2rem 0.75rem;font-size:0.75rem;font-weight:700;background:rgba(0,229,180,0.12);color:#00e5b4;">${pvKwp} kWp</span>
@@ -516,7 +542,7 @@ function renderEquipment(pvKwp, pvAnnual, bess, bessTarget, goal) {
           <div>
             <div style="font-weight:700;color:#fff;font-size:0.9rem;">${bess.model.id}</div>
             <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:0.25rem;">
-              ${bess.model.kwh} kWh / ${bess.model.kw} kW · ${bess.model.cool} · ${bess.model.ip}${bess.model.cycles ? ' · '+bess.model.cycles : ''}
+              ${bess.model.kwh} kWh / ${bess.model.kw} kW · ${localizedCool(bess.model.cool)} · ${bess.model.ip}${bess.model.cycles ? ' · '+localizedCycles(bess.model.cycles) : ''}
             </div>
           </div>
           <span style="flex-shrink:0;border-radius:0.5rem;padding:0.2rem 0.75rem;font-size:0.75rem;font-weight:700;background:rgba(0,229,180,0.12);color:#00e5b4;">${cab}</span>
@@ -525,13 +551,13 @@ function renderEquipment(pvKwp, pvAnnual, bess, bessTarget, goal) {
     if (bess.cabinets > 1) {
       html += `
         <div style="border-radius:0.75rem;padding:0.875rem 1rem;font-size:0.75rem;line-height:1.6;color:rgba(255,220,100,0.8);background:rgba(255,200,0,0.07);border-left:3px solid rgba(255,200,0,0.35);">
-          Στόχος BESS: περίπου ${Math.round(bessTarget)} kWh / ${bess.model.kw} kW. Επιλεγμένη διαμόρφωση: ${bess.totalKwh} kWh / ${bess.cabinets * bess.model.kw} kW.
-          Η τελική επιλογή απαιτεί καμπύλη φορτίου 15 λεπτών και επιβεβαίωση από μηχανικό.
+          ${window.__i18nT('calculator.equipment.bessTargetLabel')} ${Math.round(bessTarget)} kWh / ${bess.model.kw} kW. ${window.__i18nT('calculator.equipment.selectedConfigLabel')} ${bess.totalKwh} kWh / ${bess.cabinets * bess.model.kw} kW.
+          ${window.__i18nT('calculator.equipment.finalSelectionNote')}
         </div>`;
     }
   }
 
-  $('equipment-list').innerHTML = html || '<p style="color:rgba(255,255,255,0.35);font-size:0.875rem;">Συμπληρώστε τα στοιχεία για να δείτε τον προτεινόμενο εξοπλισμό.</p>';
+  $('equipment-list').innerHTML = html || `<p style="color:rgba(255,255,255,0.35);font-size:0.875rem;">${window.__i18nT('calculator.equipment.emptyState')}</p>`;
 }
 
 // ── BESS CATALOG ──────────────────────────────────────────────────────────
@@ -547,7 +573,7 @@ function renderCatalog() {
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;">${m.id}</div>
       <div style="font-size:1.75rem;font-weight:900;color:#00e5b4;margin-bottom:0.2rem;">${m.kwh} kWh</div>
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;">
-        ${m.kw} kW · ${m.cool} · LiFePO₄ · ${m.ip}${m.cycles ? ' · '+m.cycles : ''}${m.extra ? ' · '+m.extra : ''}
+        ${m.kw} kW · ${localizedCool(m.cool)} · LiFePO₄ · ${m.ip}${m.cycles ? ' · '+localizedCycles(m.cycles) : ''}${m.extra ? ' · '+localizedExtra(m.extra) : ''}
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
         ${m.tags.map(t => `<span style="border-radius:999px;padding:0.2rem 0.75rem;font-size:0.7rem;font-weight:500;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.1);">${t}</span>`).join('')}
@@ -572,4 +598,14 @@ document.getElementById('btn-calc').addEventListener('click', runCalc);
 
 renderCatalog();
 runCalc();
+
+// Re-render dynamic, JS-generated content (catalog + results/equipment)
+// whenever the visitor switches language, since it isn't covered by data-i18n.
+document.addEventListener('i18n:change', function() {
+  renderCatalog();
+  const resultsEl = $('results');
+  if (resultsEl && !resultsEl.classList.contains('hidden')) {
+    runCalc();
+  }
+});
 </script>
