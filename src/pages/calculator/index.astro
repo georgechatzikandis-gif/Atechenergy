@@ -48,35 +48,35 @@ const description =
     <section class="px-4 sm:px-6 pb-16">
       <div class="mx-auto max-w-2xl space-y-5">
 
-        <h2 class="text-2xl font-extrabold text-white">Υπολογισμός συστήματος</h2>
-        <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);">
+        <h2 class="text-2xl font-extrabold text-white" data-i18n="calculator.calc.h2">Υπολογισμός συστήματος</h2>
+        <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);" data-i18n="calculator.calc.desc">
           Συμπληρώστε τα βασικά ενεργειακά στοιχεία. Τα αποτελέσματα ανανεώνονται άμεσα.
         </p>
 
         <!-- Input card -->
         <div class="rounded-2xl p-6 space-y-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
           <div class="flex items-center justify-between">
-            <h3 class="font-bold text-white">Στοιχεία εγκατάστασης</h3>
+            <h3 class="font-bold text-white" data-i18n="calculator.calc.cardTitle">Στοιχεία εγκατάστασης</h3>
             <span class="text-xs font-bold rounded-full px-3 py-1"
-              style="background:rgba(0,229,180,0.12);color:#00e5b4;border:1px solid rgba(0,229,180,0.3);">LIVE CALC</span>
+              style="background:rgba(0,229,180,0.12);color:#00e5b4;border:1px solid rgba(0,229,180,0.3);" data-i18n="calculator.calc.liveBadge">LIVE CALC</span>
           </div>
 
           <!-- Business type -->
           <div>
-            <label class="clabel">Τύπος επιχείρησης</label>
+            <label class="clabel" data-i18n="calculator.field.business.label">Τύπος επιχείρησης</label>
             <select id="inp-business" class="csel">
               <option value="supermarket">Super Market</option>
-              <option value="butcher">Κρεοπωλείο</option>
-              <option value="coldstore">Ψυκτικές Αποθήκες</option>
-              <option value="bakery">Αρτοποιείο</option>
-              <option value="restaurant">Εστιατόριο / Catering</option>
-              <option value="other">Άλλο</option>
+              <option value="butcher" data-i18n="calculator.field.business.optButcher">Κρεοπωλείο</option>
+              <option value="coldstore" data-i18n="calculator.field.business.optColdstore">Ψυκτικές Αποθήκες</option>
+              <option value="bakery" data-i18n="calculator.field.business.optBakery">Αρτοποιείο</option>
+              <option value="restaurant" data-i18n="calculator.field.business.optRestaurant">Εστιατόριο / Catering</option>
+              <option value="other" data-i18n="calculator.field.business.optOther">Άλλο</option>
             </select>
           </div>
 
           <!-- Annual kWh -->
           <div>
-            <label class="clabel">Ετήσια κατανάλωση</label>
+            <label class="clabel" data-i18n="calculator.field.annual.label">Ετήσια κατανάλωση</label>
             <div class="relative">
               <input id="inp-annual" type="number" value="420000" class="cinput w-full pr-14" />
               <span class="cunit">kWh</span>
@@ -85,7 +85,7 @@ const description =
 
           <!-- Monthly bill -->
           <div>
-            <label class="clabel">Μηνιαίος λογαριασμός</label>
+            <label class="clabel" data-i18n="calculator.field.bill.label">Μηνιαίος λογαριασμός</label>
             <div class="relative">
               <input id="inp-bill" type="number" value="7500" class="cinput w-full pr-8" />
               <span class="cunit">€</span>
@@ -94,7 +94,7 @@ const description =
 
           <!-- Energy price -->
           <div>
-            <label class="clabel">Τιμή ενέργειας</label>
+            <label class="clabel" data-i18n="calculator.field.price.label">Τιμή ενέργειας</label>
             <div class="relative">
               <input id="inp-price" type="number" step="0.01" value="0.18" class="cinput w-full pr-16" />
               <span class="cunit">€/kWh</span>
@@ -103,20 +103,20 @@ const description =
 
           <!-- Operating hours -->
           <div>
-            <label class="clabel">Ώρες λειτουργίας</label>
+            <label class="clabel" data-i18n="calculator.field.hours.label">Ώρες λειτουργίας</label>
             <select id="inp-hours" class="csel">
               <option value="24/7">24/7</option>
-              <option value="16h">08:00 – 23:00 (16ω)</option>
-              <option value="14h">08:00 – 22:00 (14ω)</option>
-              <option value="12h">08:00 – 20:00 (12ω)</option>
+              <option value="16h" data-i18n="calculator.field.hours.opt16">08:00 – 23:00 (16ω)</option>
+              <option value="14h" data-i18n="calculator.field.hours.opt14">08:00 – 22:00 (14ω)</option>
+              <option value="12h" data-i18n="calculator.field.hours.opt12">08:00 – 20:00 (12ω)</option>
             </select>
           </div>
 
           <!-- Cooling slider -->
           <div>
             <label class="clabel">
-              Κατανάλωση που αφορά ψύξη
-              <span style="color:rgba(255,255,255,0.35);font-size:0.7rem;margin-left:0.3rem;">εκτίμηση</span>
+              <span data-i18n="calculator.field.cooling.label">Κατανάλωση που αφορά ψύξη</span>
+              <span style="color:rgba(255,255,255,0.35);font-size:0.7rem;margin-left:0.3rem;" data-i18n="calculator.field.cooling.hint">εκτίμηση</span>
             </label>
             <div class="flex items-center gap-4">
               <input id="inp-cooling" type="range" min="0" max="100" value="40" class="cslider flex-1" />
@@ -127,7 +127,7 @@ const description =
 
           <!-- Roof -->
           <div>
-            <label class="clabel">Διαθέσιμη στέγη</label>
+            <label class="clabel" data-i18n="calculator.field.roof.label">Διαθέσιμη στέγη</label>
             <div class="relative">
               <input id="inp-roof" type="number" value="1200" class="cinput w-full pr-10" />
               <span class="cunit">m²</span>
@@ -136,11 +136,11 @@ const description =
 
           <!-- Goal -->
           <div>
-            <label class="clabel">Στόχος λύσης</label>
+            <label class="clabel" data-i18n="calculator.field.goal.label">Στόχος λύσης</label>
             <select id="inp-goal" class="csel">
-              <option value="pv+bess">ΦΒ + Μπαταρία</option>
-              <option value="pv">Μόνο ΦΒ</option>
-              <option value="bess">Μόνο Μπαταρία</option>
+              <option value="pv+bess" data-i18n="calculator.field.goal.optPvBess">ΦΒ + Μπαταρία</option>
+              <option value="pv" data-i18n="calculator.field.goal.optPvOnly">Μόνο ΦΒ</option>
+              <option value="bess" data-i18n="calculator.field.goal.optBessOnly">Μόνο Μπαταρία</option>
             </select>
           </div>
 
@@ -150,30 +150,30 @@ const description =
               style="color:#00e5b4;">
               <svg class="h-4 w-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
-              Προηγμένες παραδοχές
+              <span data-i18n="calculator.advanced.summary">Προηγμένες παραδοχές</span>
             </summary>
             <div class="mt-4 space-y-4 pt-4" style="border-top:1px solid rgba(255,255,255,0.08);">
               <div>
-                <label class="clabel text-sm xl:text-base 2xl:text-lg">Ηλιακή απόδοση (kWh/kWp/έτος)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg" data-i18n="calculator.advanced.yield.label">Ηλιακή απόδοση (kWh/kWp/έτος)</label>
                 <input id="inp-yield" type="number" value="1500" class="cinput w-full" />
               </div>
               <div>
-                <label class="clabel text-sm xl:text-base 2xl:text-lg">Κόστος ΦΒ (€/kWp)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg" data-i18n="calculator.advanced.pvCost.label">Κόστος ΦΒ (€/kWp)</label>
                 <input id="inp-pv-cost" type="number" value="600" class="cinput w-full" />
               </div>
               <div>
-                <label class="clabel text-sm xl:text-base 2xl:text-lg">Κόστος BESS (€/kWh)</label>
+                <label class="clabel text-sm xl:text-base 2xl:text-lg" data-i18n="calculator.advanced.bessCost.label">Κόστος BESS (€/kWh)</label>
                 <input id="inp-bess-cost" type="number" value="350" class="cinput w-full" />
               </div>
             </div>
           </details>
 
           <button id="btn-calc" class="w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-opacity hover:opacity-90 active:scale-[0.99]"
-            style="background:#00e5b4;color:#071525;">
+            style="background:#00e5b4;color:#071525;" data-i18n="calculator.calc.button">
             Υπολογισμός Λύσης →
           </button>
 
-          <p class="text-sm leading-relaxed xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.3);">
+          <p class="text-sm leading-relaxed xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.3);" data-i18n="calculator.disclaimer">
             Ενδεικτικό εργαλείο αρχικής αξιολόγησης. Δεν αντικαθιστά τεχνική μελέτη,
             ανάλυση 15λέπτων μετρήσεων, στατική επάρκεια ή όρους σύνδεσης.
           </p>
@@ -184,10 +184,10 @@ const description =
 
           <!-- Main savings -->
           <div class="rounded-2xl p-6" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
-            <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.5);">Εκτιμώμενο συνολικό ετήσιο όφελος</p>
+            <p class="text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.5);" data-i18n="calculator.results.savingsLabel">Εκτιμώμενο συνολικό ετήσιο όφελος</p>
             <div class="mt-1 font-display font-extrabold text-white leading-none" style="font-size:2.8rem;">
               <span id="res-savings">—</span>
-              <span class="text-2xl ml-1">€ / έτος</span>
+              <span class="text-2xl ml-1" data-i18n="calculator.results.savingsUnit">€ / έτος</span>
             </div>
             <p id="res-savings-pct" class="mt-2 text-base xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);"></p>
           </div>
@@ -195,15 +195,15 @@ const description =
           <!-- 4 tiles -->
           <div class="grid grid-cols-2 gap-3">
             {[
-              {id:"res-pv",  icon:"☀️", label:"Προτεινόμενο ΦΒ"},
-              {id:"res-bess",icon:"🔋", label:"Εγκατεστημένο BESS"},
-              {id:"res-payback",icon:"⏱️",label:"Απλή απόσβεση"},
-              {id:"res-co2", icon:"🌍", label:"CO₂ / έτος"},
+              {id:"res-pv",  icon:"☀️", key:"pvLabel",      label:"Προτεινόμενο ΦΒ"},
+              {id:"res-bess",icon:"🔋", key:"bessLabel",    label:"Εγκατεστημένο BESS"},
+              {id:"res-payback",icon:"⏱️",key:"paybackLabel",label:"Απλή απόσβεση"},
+              {id:"res-co2", icon:"🌍", key:"co2Label",     label:"CO₂ / έτος"},
             ].map(t => (
               <div class="rounded-2xl p-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
                 <div class="text-2xl mb-1">{t.icon}</div>
                 <div id={t.id} class="text-2xl font-extrabold text-white">—</div>
-                <div class="text-sm mt-0.5 xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.45);">{t.label}</div>
+                <div class="text-sm mt-0.5 xl:text-base 2xl:text-lg" style="color:rgba(255,255,255,0.45);" data-i18n={`calculator.results.${t.key}`}>{t.label}</div>
               </div>
             ))}
           </div>
@@ -211,13 +211,13 @@ const description =
           <!-- Monthly chart -->
           <div class="rounded-2xl p-5" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-sm font-bold text-white">Μηνιαία κατανάλωση και συμψηφισμός</h3>
+              <h3 class="text-sm font-bold text-white" data-i18n="calculator.chart.h3">Μηνιαία κατανάλωση και συμψηφισμός</h3>
               <div class="flex items-center gap-3 text-xs" style="color:rgba(255,255,255,0.5);">
                 <span class="flex items-center gap-1.5">
-                  <span class="inline-block h-2 w-2 rounded-full" style="background:#3b82f6;"></span>Πριν
+                  <span class="inline-block h-2 w-2 rounded-full" style="background:#3b82f6;"></span><span data-i18n="calculator.chart.before">Πριν</span>
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <span class="inline-block h-2 w-2 rounded-full" style="background:#00e5b4;"></span>Μετά
+                  <span class="inline-block h-2 w-2 rounded-full" style="background:#00e5b4;"></span><span data-i18n="calculator.chart.after">Μετά</span>
                 </span>
               </div>
             </div>
@@ -226,14 +226,14 @@ const description =
 
           <!-- Recommended equipment -->
           <div class="rounded-2xl p-6" style="background:#0d1f36;border:1px solid rgba(255,255,255,0.08);">
-            <h3 class="font-bold text-white mb-5">Προτεινόμενος εξοπλισμός</h3>
+            <h3 class="font-bold text-white mb-5" data-i18n="calculator.equipment.h3">Προτεινόμενος εξοπλισμός</h3>
             <div id="equipment-list" class="space-y-5"></div>
           </div>
 
           <!-- PDF -->
           <button onclick="window.print()"
             class="w-full py-4 rounded-xl font-bold text-sm tracking-wide text-white transition-opacity hover:opacity-75"
-            style="background:#0d1f36;border:2px solid rgba(255,255,255,0.15);">
+            style="background:#0d1f36;border:2px solid rgba(255,255,255,0.15);" data-i18n="calculator.print.button">
             🖨️ &nbsp;Εκτύπωση / Αποθήκευση PDF
           </button>
 
@@ -244,8 +244,8 @@ const description =
     <!-- ── BESS CATALOG ── -->
     <section class="px-4 sm:px-6 pb-20">
       <div class="mx-auto max-w-2xl">
-        <h2 class="text-2xl font-extrabold text-white mb-2">Διαθέσιμος εξοπλισμός BESS</h2>
-        <p class="text-base mb-6 xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);">
+        <h2 class="text-2xl font-extrabold text-white mb-2" data-i18n="calculator.catalog.h2">Διαθέσιμος εξοπλισμός BESS</h2>
+        <p class="text-base mb-6 xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.45);" data-i18n="calculator.catalog.desc">
           Τα μοντέλα έχουν ενσωματωθεί στη μηχανή επιλογής του calculator με βάση χωρητικότητα και ονομαστική ισχύ.
         </p>
         <div id="bess-catalog" class="space-y-4"></div>
@@ -256,15 +256,15 @@ const description =
     <section class="px-4 sm:px-6 pb-24">
       <div class="mx-auto max-w-2xl">
         <div class="rounded-2xl p-8" style="background:#0d1f36;border:1px solid rgba(0,229,180,0.2);">
-          <h2 class="text-2xl font-extrabold text-white leading-tight">
+          <h2 class="text-2xl font-extrabold text-white leading-tight" data-i18n-html="calculator.cta.h2">
             Χρειάζεστε τεχνική<br />προμελέτη;
           </h2>
-          <p class="mt-3 text-base leading-relaxed xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.55);">
+          <p class="mt-3 text-base leading-relaxed xl:text-lg 2xl:text-xl" style="color:rgba(255,255,255,0.55);" data-i18n="calculator.cta.desc">
             Στείλτε τα στοιχεία του έργου και το αποτέλεσμα του calculator στην ομάδα της Alphatech.
           </p>
           <a href={withBase("#contact")}
             class="mt-6 flex items-center justify-center w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-opacity hover:opacity-90"
-            style="background:#00e5b4;color:#071525;">
+            style="background:#00e5b4;color:#071525;" data-i18n="calculator.cta.button">
             Ζητήστε Δωρεάν Μελέτη
           </a>
         </div>
@@ -272,7 +272,7 @@ const description =
     </section>
 
     <!-- footer note -->
-    <div class="pb-6 text-center text-xs" style="color:rgba(255,255,255,0.25);">
+    <div class="pb-6 text-center text-xs" style="color:rgba(255,255,255,0.25);" data-i18n="calculator.footer.note">
       © 2026 ALPHATECH · C&I Energy Calculator · Τα αποτελέσματα είναι ενδεικτικά.
     </div>
 
