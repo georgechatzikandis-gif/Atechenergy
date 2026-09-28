@@ -22,9 +22,9 @@ const description =
     <div class="border-b border-navy-900/8 bg-white">
       <div class="container-page py-4">
         <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-sm text-navy-900/78">
-          <a href={withBase("")} class="hover:text-azure-600">Αρχική</a>
+          <a href={withBase("")} class="hover:text-azure-600" data-i18n="nav.home">Αρχική</a>
           <span aria-hidden="true">/</span>
-          <a href={withBase("products/")} class="hover:text-azure-600">Προϊόντα</a>
+          <a href={withBase("products/")} class="hover:text-azure-600" data-i18n="nav.products">Προϊόντα</a>
           <span aria-hidden="true">/</span>
           <span class="font-medium text-navy-900">Hybrid Microinverter 2000W</span>
         </nav>
@@ -46,10 +46,10 @@ const description =
 
         <div data-reveal>
           <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">TSUN · TSOL-MH2000</p>
-          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl">
+          <h1 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl 2xl:text-6xl" data-i18n="microinverter.hero.h1">
             Υβριδικό Microinverter 2000W
           </h1>
-          <p class="mt-5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
+          <p class="mt-5 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n="microinverter.hero.desc">
             Το κεντρικό στοιχείο ενός plug & play υβριδικού συστήματος αποθήκευσης. Παράγει, αποθηκεύει και εξοικονομεί ενέργεια — με εναλλαγή on/off-grid σε λιγότερο από 10ms για αδιάλειπτη παροχή ρεύματος.
           </p>
 
@@ -59,10 +59,10 @@ const description =
               { value: "700W", label: "ανά πάνελ" },
               { value: "4×", label: "MPPT" },
               { value: "<10ms", label: "εναλλαγή" },
-            ].map((s) => (
+            ].map((s, i) => (
               <div class="rounded-2xl border border-navy-900/8 bg-white px-4 py-3 text-center shadow-card">
                 <p class="font-display text-2xl font-extrabold text-azure-600">{s.value}</p>
-                <p class="mt-0.5 text-sm font-semibold text-navy-900/78 xl:text-base 2xl:text-lg">{s.label}</p>
+                <p class="mt-0.5 text-sm font-semibold text-navy-900/78 xl:text-base 2xl:text-lg" data-i18n={`microinverter.stat${i}.label`}>{s.label}</p>
               </div>
             ))}
           </div>
@@ -73,23 +73,23 @@ const description =
               "4 ανεξάρτητα MPPT trackers — μέγιστη απόδοση ακόμα και με σκίαση",
               "2000W on-grid/off-grid + 150% overload για 2 δευτερόλεπτα",
               "IP67 · λειτουργία -40°C έως +65°C · WiFi & Bluetooth",
-            ].map((f) => (
+            ].map((f, i) => (
               <li class="flex items-start gap-2.5 text-lg font-medium text-navy-900/88 xl:text-xl 2xl:text-2xl">
                 <svg class="mt-0.5 h-4 w-4 shrink-0 text-azure-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                {f}
+                <span data-i18n={`microinverter.hero.feat${i}`}>{f}</span>
               </li>
             ))}
           </ul>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href={withBase("#contact")} class="btn btn-primary">Ζητήστε Προσφορά</a>
+            <a href={withBase("#contact")} class="btn btn-primary" data-i18n="microinverter.requestQuote">Ζητήστε Προσφορά</a>
             <a href={withBase("products/")} class="btn btn-outline">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M19 12H5M11 18l-6-6 6-6"></path>
               </svg>
-              Όλα τα Προϊόντα
+              <span data-i18n="microinverter.allProducts">Όλα τα Προϊόντα</span>
             </a>
           </div>
         </div>
@@ -110,24 +110,24 @@ const description =
         </div>
 
         <div>
-          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase">Μέγιστη Απόδοση</p>
+          <p class="text-xs font-bold tracking-[0.14em] text-azure-600 uppercase" data-i18n="microinverter.maxPower.eyebrow">Μέγιστη Απόδοση</p>
           <h2 class="mt-2 font-display text-2xl font-extrabold text-navy-900 sm:text-3xl">
             Max Solar Power,<br />Backup That Never Blinks
           </h2>
-          <p class="mt-4 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl">
+          <p class="mt-4 text-lg leading-relaxed text-navy-900/82 xl:text-xl 2xl:text-2xl" data-i18n="microinverter.maxPower.desc">
             Έως 700W ανά πάνελ (2800W συνολικά) με 4 MPPT trackers για μέγιστη εκμετάλλευση κάθε ακτίνας φωτός. Η έξυπνη φόρτιση/εκφόρτιση μειώνει τους λογαριασμούς ρεύματος άμεσα.
           </p>
 
           <div class="mt-6 grid grid-cols-2 gap-4">
             <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
               <p class="font-display text-3xl font-extrabold text-azure-600">700W</p>
-              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl">ανά πάνελ</p>
-              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl">Έως 2800W συνολικά (4 πάνελ)</p>
+              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl" data-i18n="microinverter.stat0.label">ανά πάνελ</p>
+              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl" data-i18n="microinverter.maxPower.card0.sub">Έως 2800W συνολικά (4 πάνελ)</p>
             </div>
             <div class="rounded-2xl border border-azure-500/20 bg-azure-500/5 p-5">
               <p class="font-display text-3xl font-extrabold text-azure-600">4× MPPT</p>
-              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl">Ανεξάρτητοι trackers</p>
-              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl">Εξάγει περισσότερη ενέργεια</p>
+              <p class="mt-1 text-base font-semibold text-navy-900/82 xl:text-lg 2xl:text-xl" data-i18n="microinverter.maxPower.card1.label">Ανεξάρτητοι trackers</p>
+              <p class="mt-1 text-base text-navy-900/76 xl:text-lg 2xl:text-xl" data-i18n="microinverter.maxPower.card1.sub">Εξάγει περισσότερη ενέργεια</p>
             </div>
           </div>
 
@@ -137,7 +137,7 @@ const description =
               2000W on/off-grid + 150% overload (2s) = zero surge anxiety.<br />
               Smart Charge/Discharge · On/Off-Grid Ready · 150% Overload
             </p>
-            <p class="mt-2 text-base text-navy-900/75 xl:text-lg 2xl:text-xl">
+            <p class="mt-2 text-base text-navy-900/75 xl:text-lg 2xl:text-xl" data-i18n="microinverter.maxPower.note">
               * Η έξοδος μπορεί να περιορίζεται από τοπικούς κανονισμούς — π.χ. 800W για Γερμανία.
             </p>
           </div>
