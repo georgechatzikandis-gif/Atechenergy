@@ -245,6 +245,128 @@ export const dict: Record<Lang, Dict> = {
     "risenCi.cta.btn1": "Request a Quote",
     "risenCi.cta.btn2": "Call Us",
   },
+  de: {
+    "risenCi.breadcrumb.current": "C&I Energiespeicherung",
+
+    "risenCi.hero.tag": "Risen Energy · C&I / Utility-scale ESS",
+    "risenCi.hero.h1": "C&I Energielösungen",
+    "risenCi.hero.desc":
+      "Eine vollständige, effiziente und nachhaltige Energielösung für Industrie- und Gewerbeanlagen. Mit verschiedenen Kooperationsmodellen decken wir verteilte Photovoltaik, Energiespeicherstationen und vollständig integrierte Hybridsysteme ab — und senken so Energiekosten und Umweltbelastung.",
+    "risenCi.hero.feat0": "Umfassende Sicherheit (Comprehensive Safety)",
+    "risenCi.hero.feat1": "Hohe Zuverlässigkeit für industrielle Umgebungen",
+    "risenCi.hero.feat2": "Intelligentes O&M-Management — Fernüberwachung",
+    "risenCi.hero.feat3": "Skalierbare Architektur: von C&I bis Utility-scale",
+    "risenCi.hero.feat4": "LiFePO₄-Technologie mit langer Lebensdauer",
+    "risenCi.hero.feat5": "Netzgekoppelter & netzunabhängiger Betrieb",
+    "risenCi.hero.btn1": "Angebot Anfordern",
+    "risenCi.hero.btn2": "Datenblätter",
+    "risenCi.hero.btn3": "Alle Produkte",
+
+    "risenCi.specs.h2": "Technische Daten",
+    "risenCi.specs.row0.label": "Typ",
+    "risenCi.specs.row0.value": "C&I / Utility-scale ESS",
+    "risenCi.specs.row1.label": "Zelltechnologie",
+    "risenCi.specs.row1.value": "LiFePO₄",
+    "risenCi.specs.row2.label": "Anwendung",
+    "risenCi.specs.row2.value": "Gewerbe & Industrie",
+    "risenCi.specs.row3.label": "Betrieb",
+    "risenCi.specs.row3.value": "Grid-connected / Off-grid",
+    "risenCi.specs.row4.label": "Hersteller",
+    "risenCi.specs.row4.value": "Risen Energy",
+    "risenCi.specs.row5.label": "Kategorien",
+    "risenCi.specs.row5.value": "Residential · C&I · Utility-scale",
+
+    "risenCi.solutionsLabel": "C&I Lösungstypen",
+
+    "risenCi.solution0.tag": "Lösung 01",
+    "risenCi.solution0.h2": "Verteiltes Photovoltaiksystem",
+    "risenCi.solution0.desc":
+      "Kleinere Systeme zur Erzeugung und Einspeisung von Solarstrom am oder in der Nähe des Verbrauchsortes. Sie unterstützen den wirtschaftlichen Betrieb bestehender Verteilnetze oder decken beide Bedürfnisse gleichzeitig ab.",
+    "risenCi.solution0.feat0": "Industrie- und Gewerbedächer",
+    "risenCi.solution0.feat1": "Geringere Stromrechnungen",
+    "risenCi.solution0.feat2": "Geringer Flächenbedarf — Installation auf dem bestehenden Gebäude",
+    "risenCi.solution0.feat3": "Kombinierbar mit Energiespeicherung",
+
+    "risenCi.solution1.tag": "Lösung 02",
+    "risenCi.solution1.h2": "BIPV-System — Gebäudeintegrierte Photovoltaik",
+    "risenCi.solution1.desc":
+      "Photovoltaiksysteme, die gemeinsam mit dem Gebäude geplant, gebaut und installiert werden. Die Module sind fester Bestandteil der Gebäudehülle — sie dienen gleichzeitig als Baumaterial und zur Stromerzeugung.",
+    "risenCi.solution1.card0.title": "Ästhetische Integration",
+    "risenCi.solution1.card0.desc": "Ein schlankes Design, das sich harmonisch in die Architektur des Gebäudes einfügt.",
+    "risenCi.solution1.card1.title": "Doppelfunktion",
+    "risenCi.solution1.card1.desc": "Baumaterial und Energiequelle zugleich — maximale Nutzung der Fläche.",
+    "risenCi.solution1.card2.title": "Vollständige Energieversorgung",
+    "risenCi.solution1.card2.desc": "Ideal für Neubauten und Sanierungen mit hohem Energiebedarf.",
+
+    "risenCi.solution2.tag": "Lösung 03",
+    "risenCi.solution2.h2": "Integriertes System für Erzeugung & Speicherung",
+    "risenCi.solution2.desc":
+      "Kombiniert Photovoltaik-Erzeugung mit Energiespeicherung für eine stabile, unterbrechungsfreie Stromversorgung. Verfügbar in DC Coupled- und AC Coupled-Konfigurationen.",
+    "risenCi.solution2.dc.h3": "DC Coupled",
+    "risenCi.solution2.dc.desc":
+      "Ideal für neue Solar-plus-Speicher-Anlagen im Gewerbe- und Industriebereich. Setzt auf ein integriertes Speichereinheit-Design — es wird nur ein einziger Wechselrichter für gleichzeitige PV-Erzeugung und Batterieladung/-entladung benötigt.",
+    "risenCi.solution2.dc.feat0": "Einfache Architektur — ein einziger Wechselrichter",
+    "risenCi.solution2.dc.feat1": "Höherer Gesamtwirkungsgrad",
+    "risenCi.solution2.dc.feat2": "Geringere Installationskosten",
+    "risenCi.solution2.ac.h3": "AC Coupled",
+    "risenCi.solution2.ac.desc":
+      "Geeignet für bestehende industrielle und gewerbliche Solarnetze, die bereits über eine Speicherung verfügen. Ein zusätzlicher Speicher-Wechselrichter wird auf der AC-Seite installiert und arbeitet zusammen mit dem vorhandenen netzgekoppelten Wechselrichter.",
+    "risenCi.solution2.ac.feat0": "Einfache Aufrüstung eines bestehenden Systems",
+    "risenCi.solution2.ac.feat1": "Kompatibel mit PV-Wechselrichtern jeder Marke",
+    "risenCi.solution2.ac.feat2": "Stabile, zuverlässige Stromversorgung",
+
+    "risenCi.solution3.tag": "Lösung 04",
+    "risenCi.solution3.h2": "Zentrale bodenmontierte Photovoltaikanlage",
+    "risenCi.solution3.desc":
+      "Die Module wandeln Sonnenstrahlung direkt in Gleichstrom (DC) um, der über netzgekoppelte Wechselrichter in Wechselstrom (AC) umgewandelt und über intelligente Umspannstationen ins Netz eingespeist wird.",
+    "risenCi.solution3.feat0": "Optimale Modulwinkel und -ausrichtung",
+    "risenCi.solution3.feat1": "Große Abstände zwischen den Reihen — hervorragende Belüftung",
+    "risenCi.solution3.feat2": "Intelligente netzgekoppelte Wechselrichter",
+    "risenCi.solution3.feat3": "Geeignet für Entwicklungen im Utility-scale-Bereich",
+
+    "risenCi.solution4.tag": "Lösung 05",
+    "risenCi.solution4.h2": "Energiespeicher-Kraftwerk",
+    "risenCi.solution4.desc":
+      "Nutzt elektrochemische Batterien zur Speicherung, Umwandlung und Abgabe elektrischer Energie. Umfasst die notwendigen Systeme für Netzanschluss, Wartung und Inspektion. Für Netze mit 10(6)kV und darüber werden zusätzlich Sammelkabel und Aufwärtstransformatoren integriert.",
+    "risenCi.solution4.feat0": "Elektrochemische LiFePO₄-Batterien",
+    "risenCi.solution4.feat1": "Netzanschluss ab 10(6)kV",
+    "risenCi.solution4.feat2": "BMS- & EMS-Management",
+    "risenCi.solution4.feat3": "Containerinstallation",
+    "risenCi.solution4.feat4": "Vollständige Fernüberwachung",
+    "risenCi.solution4.feat5": "Skalierbare Architektur",
+
+    "risenCi.products.eyebrow": "Speicherprodukte",
+    "risenCi.products.h2": "Risen Energy Speicherlösungen",
+    "risenCi.products.desc": "Geringe Investitionskosten · Hohe Integration · Einfacher Transport · Geringe Installationskosten vor Ort",
+
+    "risenCi.productA.subtitle": "Industrielles Energiespeichersystem",
+    "risenCi.productA.chip0": "Rack-Sichtschalter",
+    "risenCi.productA.chip1": "Kurzschlussschutz",
+    "risenCi.productA.chip2": "Brandlöschsystem",
+    "risenCi.productA.chip3": "Wasserbasierte Brandbekämpfung",
+    "risenCi.productA.chip4": "Einbruchserkennung",
+    "risenCi.productA.chip5": "Golden Shield-Controller",
+    "risenCi.productA.desc":
+      "Ein integriertes Speichersystem für industrielle Anwendungen mit eingebauten mehrstufigen Sicherheitssystemen, intelligentem Management und schneller Einsatzbereitschaft.",
+    "risenCi.productA.pdfBtn": "PDF Herunterladen",
+
+    "risenCi.catalogBtn": "Katalog",
+
+    "risenCi.productB.subtitle": "Utility-scale Energiespeichersystem",
+    "risenCi.productB.chip0": "Utility-scale ESS",
+    "risenCi.productB.chip1": "LiFePO₄-Technologie",
+    "risenCi.productB.chip2": "Netzgekoppelt",
+    "risenCi.productB.chip3": "Mehrstufige Sicherheit",
+    "risenCi.productB.chip4": "Fernüberwachung",
+    "risenCi.productB.chip5": "Container-Design",
+    "risenCi.productB.desc":
+      "Ein großmaßstäbliches industrielles Energiespeichersystem in Container-Bauweise — ideal für Utility-scale-Anlagen mit hohen Anforderungen an Kapazität und Zuverlässigkeit.",
+
+    "risenCi.cta.h2": "Interesse an C&I Energielösungen?",
+    "risenCi.cta.desc": "Kontaktieren Sie uns für technische Informationen, Verfügbarkeit und ein auf Ihre Bedürfnisse zugeschnittenes Angebot.",
+    "risenCi.cta.btn1": "Angebot Anfordern",
+    "risenCi.cta.btn2": "Rufen Sie uns an",
+  },
   fr: {
     "risenCi.breadcrumb.current": "Stockage d'Énergie C&I",
 
