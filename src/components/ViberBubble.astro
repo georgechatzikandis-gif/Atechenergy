@@ -270,6 +270,9 @@ const accessKey = "a730cfba-9e29-4441-af93-5fe1ada52230";
 
     form.classList.add("hidden");
     okEl.classList.remove("hidden");
+
+    // Auto-open Viber with the message pre-filled (falls back to clipboard paste if unsupported).
+    window.location.href = viberUrl;
   });
 
   copyBtn.addEventListener("click", async () => {
