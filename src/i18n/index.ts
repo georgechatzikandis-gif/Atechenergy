@@ -28,7 +28,7 @@ const pageDicts: Record<Lang, Dict>[] = [
   calculator,
 ];
 
-const langs: Lang[] = ["el", "en", "fr", "es", "it"];
+const langs: Lang[] = ["el", "en", "de", "fr", "es", "it"];
 
 export function buildDictionary(): Record<Lang, Dict> {
   const merged = {} as Record<Lang, Dict>;
