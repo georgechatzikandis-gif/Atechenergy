@@ -1,32 +1,21 @@
 ---
 ---
 
-<section class="relative bg-white py-20 sm:py-24 xl:py-28" data-reveal>
+<section class="bg-white py-10 sm:py-12 text-center" data-reveal>
   <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <span class="eyebrow border-azure-500/20 text-azure-600" data-i18n="offers.eyebrow">Προσφορές</span>
-      <h2 class="mt-5 font-display text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl xl:text-5xl" data-i18n="offers.h2">
-        Επερχόμενες Προσφορές
-      </h2>
-      <p class="mt-4 text-lg text-navy-900/75 xl:text-xl" data-i18n="offers.desc">
-        Ετοιμάζουμε αποκλειστικές προσφορές σε επιλεγμένα προϊόντα. Μείνετε συντονισμένοι!
-      </p>
-    </div>
-
-    <div class="mx-auto mt-12 max-w-3xl" data-reveal>
-      <div class="flex flex-col items-center gap-4 rounded-3xl border-2 border-dashed border-azure-300/60 bg-ice-100/40 px-8 py-14 text-center sm:py-16">
-        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-azure-600/10 text-azure-600">
-          <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24L4 3a1 1 0 0 0-1 1l.24 5.59a2 2 0 0 0 .59 1.41l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83Z"/>
-            <circle cx="7.5" cy="7.5" r="1.25" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-        <p class="font-display text-xl font-bold text-navy-900 sm:text-2xl" data-i18n="offers.comingSoon">Σύντομα κοντά σας</p>
-        <p class="max-w-md text-base text-navy-900/70 xl:text-lg" data-i18n="offers.comingSoon.desc">
-          Οι πρώτες μας προσφορές έρχονται σύντομα. Επικοινωνήστε μαζί μας για να ενημερωθείτε πρώτοι.
-        </p>
-        <a href="#contact" class="btn btn-primary mt-2" data-i18n="offers.cta">Επικοινωνήστε Μαζί Μας</a>
-      </div>
-    </div>
+    <button id="offers-btn" type="button" class="btn btn-outline">
+      <span data-i18n="offers.button">Προσφορές</span>
+    </button>
+    <p id="offers-msg" class="mt-3 text-sm font-bold tracking-wide text-azure-600 hidden" data-i18n="offers.underConstruction">
+      Υπό Κατασκευή
+    </p>
   </div>
 </section>
+
+<script>
+  const btn = document.getElementById("offers-btn");
+  const msg = document.getElementById("offers-msg");
+  btn?.addEventListener("click", () => {
+    msg?.classList.remove("hidden");
+  });
+</script>
