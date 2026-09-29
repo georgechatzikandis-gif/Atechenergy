@@ -44,6 +44,15 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
         </a>
       </div>
 
+      <div class="mt-5 flex flex-col items-center gap-2">
+        <button id="offers-btn" type="button" class="btn btn-ghost">
+          <span data-i18n="offers.button">Προσφορές</span>
+        </button>
+        <p id="offers-msg" class="text-sm font-bold tracking-wide text-azure-300 hidden" data-i18n="offers.underConstruction">
+          Υπό Κατασκευή
+        </p>
+      </div>
+
       <div class="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 border-t border-white/10 pt-5 text-center xl:mt-10 xl:pt-6">
         <span class="text-xs font-bold tracking-wide text-white/90 xl:text-sm" data-i18n="hero.stat1">2008 · Ίδρυση</span>
         <span class="h-3 w-px bg-white/20" aria-hidden="true"></span>
@@ -147,6 +156,12 @@ import risenCert from "../assets/credentials/risen-distributor-cert.jpg";
 
   heroToggle?.addEventListener("click", (e) => { e.stopPropagation(); setDrop(!dropOpen); });
   document.addEventListener("click", () => setDrop(false));
+
+  const offersBtn = document.getElementById("offers-btn");
+  const offersMsg = document.getElementById("offers-msg");
+  offersBtn?.addEventListener("click", () => {
+    offersMsg?.classList.remove("hidden");
+  });
 
   // Restore label from localStorage
   try {
