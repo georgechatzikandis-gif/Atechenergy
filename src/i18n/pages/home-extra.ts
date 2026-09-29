@@ -46,12 +46,8 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Προσφορές",
-    "offers.h2": "Επερχόμενες Προσφορές",
-    "offers.desc": "Ετοιμάζουμε αποκλειστικές προσφορές σε επιλεγμένα προϊόντα. Μείνετε συντονισμένοι!",
-    "offers.comingSoon": "Σύντομα κοντά σας",
-    "offers.comingSoon.desc": "Οι πρώτες μας προσφορές έρχονται σύντομα. Επικοινωνήστε μαζί μας για να ενημερωθείτε πρώτοι.",
-    "offers.cta": "Επικοινωνήστε Μαζί Μας",
+    "offers.button": "Προσφορές",
+    "offers.underConstruction": "Υπό Κατασκευή",
     },
     en: {
     "process.eyebrow": "How We Work",
@@ -98,12 +94,8 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Offers",
-    "offers.h2": "Upcoming Offers",
-    "offers.desc": "We're preparing exclusive offers on selected products. Stay tuned!",
-    "offers.comingSoon": "Coming Soon",
-    "offers.comingSoon.desc": "Our first offers are coming soon. Contact us to be the first to know.",
-    "offers.cta": "Contact Us",
+    "offers.button": "Offers",
+    "offers.underConstruction": "Under Construction",
     },
     de: {
     "process.eyebrow": "Wie Wir Arbeiten",
@@ -150,12 +142,8 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Angebote",
-    "offers.h2": "Kommende Angebote",
-    "offers.desc": "Wir bereiten exklusive Angebote für ausgewählte Produkte vor. Bleiben Sie dran!",
-    "offers.comingSoon": "Demnächst verfügbar",
-    "offers.comingSoon.desc": "Unsere ersten Angebote kommen bald. Kontaktieren Sie uns, um als Erste informiert zu werden.",
-    "offers.cta": "Kontaktieren Sie Uns",
+    "offers.button": "Angebote",
+    "offers.underConstruction": "Im Aufbau",
     },
     fr: {
     "process.eyebrow": "Comment Nous Travaillons",
@@ -202,12 +190,8 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Offres",
-    "offers.h2": "Offres à Venir",
-    "offers.desc": "Nous préparons des offres exclusives sur une sélection de produits. Restez à l'écoute !",
-    "offers.comingSoon": "Bientôt Disponible",
-    "offers.comingSoon.desc": "Nos premières offres arrivent bientôt. Contactez-nous pour être informé en premier.",
-    "offers.cta": "Contactez-Nous",
+    "offers.button": "Offres",
+    "offers.underConstruction": "En Construction",
     },
     es: {
     "process.eyebrow": "Cómo Trabajamos",
@@ -254,12 +238,8 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Ofertas",
-    "offers.h2": "Próximas Ofertas",
-    "offers.desc": "Estamos preparando ofertas exclusivas en productos seleccionados. ¡Manténgase atento!",
-    "offers.comingSoon": "Próximamente",
-    "offers.comingSoon.desc": "Nuestras primeras ofertas llegan pronto. Contáctenos para ser el primero en saberlo.",
-    "offers.cta": "Contáctenos",
+    "offers.button": "Ofertas",
+    "offers.underConstruction": "En Construcción",
     },
     it: {
     "process.eyebrow": "Come Lavoriamo",
@@ -306,11 +286,7 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.title": "Risen Hyper-ion Pro",
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
-    "offers.eyebrow": "Offerte",
-    "offers.h2": "Offerte in Arrivo",
-    "offers.desc": "Stiamo preparando offerte esclusive su prodotti selezionati. Restate sintonizzati!",
-    "offers.comingSoon": "Prossimamente",
-    "offers.comingSoon.desc": "Le nostre prime offerte arrivano presto. Contattaci per essere il primo a saperlo.",
-    "offers.cta": "Contattaci",
+    "offers.button": "Offerte",
+    "offers.underConstruction": "In Costruzione",
     },
   };
