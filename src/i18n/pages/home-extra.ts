@@ -47,7 +47,6 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Προσφορές",
-    "offers.underConstruction": "Υπό Κατασκευή",
     },
     en: {
     "process.eyebrow": "How We Work",
@@ -95,7 +94,6 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Offers",
-    "offers.underConstruction": "Under Construction",
     },
     de: {
     "process.eyebrow": "Wie Wir Arbeiten",
@@ -143,7 +141,6 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Angebote",
-    "offers.underConstruction": "Im Aufbau",
     },
     fr: {
     "process.eyebrow": "Comment Nous Travaillons",
@@ -191,7 +188,6 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Offres",
-    "offers.underConstruction": "En Construction",
     },
     es: {
     "process.eyebrow": "Cómo Trabajamos",
@@ -239,7 +235,6 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Ofertas",
-    "offers.underConstruction": "En Construcción",
     },
     it: {
     "process.eyebrow": "Come Lavoriamo",
@@ -287,6 +282,5 @@ export const dict: Record<Lang, Dict> = {
     "heroCarousel.slide6.subtitle": "24.7% Efficiency · 767W · 0BB Cell Technology",
 
     "offers.button": "Offerte",
-    "offers.underConstruction": "In Costruzione",
     },
   };
