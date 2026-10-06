@@ -46,6 +46,13 @@ const langs = [
             </a>
           ))
         }
+        <button
+          type="button"
+          class="rounded-full px-3 py-1.5 text-[13px] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white xl:px-4 xl:py-2 xl:text-sm 2xl:text-base"
+          data-offers-btn
+        >
+          Προσφορές
+        </button>
       </nav>
 
       <div class="hidden items-center gap-2 lg:flex">
@@ -120,6 +127,13 @@ const langs = [
               </a>
             ))
           }
+          <button
+            type="button"
+            class="rounded-xl px-4 py-3 text-left text-base font-medium text-white/85 hover:bg-white/10 hover:text-white"
+            data-offers-btn
+          >
+            Προσφορές
+          </button>
           <a href="tel:+306976724504" class="mt-2 rounded-xl px-4 py-3 text-base font-semibold text-azure-300">
             +30 697 672 4504
           </a>
@@ -202,4 +216,13 @@ const langs = [
     const saved = localStorage.getItem("lang") || "el";
     if (langLabel) langLabel.textContent = langLabels[saved] || saved.toUpperCase();
   } catch(_) {}
+
+  // "Offers" nav button — reveals "Under construction" instead of navigating
+  document.querySelectorAll<HTMLButtonElement>("[data-offers-btn]").forEach((btn) => {
+    const original = btn.textContent;
+    btn.addEventListener("click", () => {
+      btn.textContent = "Υπό Κατασκευή";
+      setTimeout(() => { btn.textContent = original; }, 2500);
+    });
+  });
 </script>
